@@ -721,3 +721,10 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 31ms (Views: 28.6ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2019-10-07 17:51:57 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 405ms (Views: 401.1ms | ActiveRecord: 0.0ms)
+
+
