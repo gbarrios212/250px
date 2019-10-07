@@ -1,0 +1,45 @@
+Started GET "/" for ::1 at 2019-10-07 14:24:42 -0400
+
+PG::ConnectionBad - FATAL:  database "fullstack250px_development" does not exist
+:
+
+Started POST "/__better_errors/9b5314544b885a61/variables" for ::1 at 2019-10-07 14:24:43 -0400
+  [1m[35m (627.3ms)[0m  [1m[35mCREATE DATABASE "fullstack250px_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (396.7ms)[0m  [1m[35mCREATE DATABASE "fullstack250px_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2019-10-07 14:25:14 -0400
+Processing by StaticPagesController#root as HTML
+Completed 406 Not Acceptable in 67ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::UnknownFormat - StaticPagesController#root is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.:
+
+Started POST "/__better_errors/7136f624078543ed/variables" for ::1 at 2019-10-07 14:25:14 -0400
+Started GET "/" for ::1 at 2019-10-07 14:25:16 -0400
+Processing by StaticPagesController#root as HTML
+Completed 406 Not Acceptable in 49ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::UnknownFormat - StaticPagesController#root is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.:
+
+Started POST "/__better_errors/970a315455b6e38e/variables" for ::1 at 2019-10-07 14:25:16 -0400
+Started GET "/" for ::1 at 2019-10-07 14:26:40 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 1165ms (Views: 1162.5ms | ActiveRecord: 0.0ms)
+
+
