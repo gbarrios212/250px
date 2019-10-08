@@ -53,8 +53,8 @@ class Greeting extends React.Component {
 </i> */}
 
 
-                    <div class="dropdown">
-                        <button onClick={this.toggleClass} class="dropbtn"><i className="fas fa-user-circle"></i></button>
+                    <div className="dropdown">
+                        <button onClick={this.toggleClass} className="dropbtn"><i className="fas fa-user-circle"></i></button>
                     {/* <div id="myDropdown" className="dropdown-content"> */}
                         {/* <div id="myDropdown" className={this.state.show ? 'dropdown-content show' : 'dropdown-content'>
                             <a href="#">Link 1</a>
