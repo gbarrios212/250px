@@ -27,9 +27,9 @@ class SessionForm extends React.Component {
     
     
     render() {
-        const header = this.props.formType === "signup" ? (
+        const header = this.props.formType === "Sign Up" ? (
             <h3>Sign Up</h3>) : ( <h3>Log In</h3> );
-        const sessionLink = this.props.formType === "signup" ? (
+        const sessionLink = this.props.formType === "Sign Up" ? (
             <Link to="/login">Log In</Link>
             ) : ( <Link to="/signup">Sign Up</Link> );
         
@@ -44,7 +44,7 @@ class SessionForm extends React.Component {
             {header}
             {sessionLink}
             <ul>{errorsList}</ul>
-            <form>
+            <form className="form">
                 <label> Username:
                     <input
                         type="text"
@@ -68,7 +68,7 @@ class SessionForm extends React.Component {
                         onChange={this.update("password")}
                     />
                 </label>
-                <button onClick={this.handleSubmit}>Submit</button>
+                <button onClick={this.handleSubmit}>{this.props.formType}</button>
             </form>
         </div>)
     }
