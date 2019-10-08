@@ -66,3 +66,13 @@
     left: 234px;
     top: 20px;
 }
+
+.guest-login{
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.guest-login a{
+    text-decoration: none;
+    color: #0099e5; 
+}

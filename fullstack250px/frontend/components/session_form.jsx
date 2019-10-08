@@ -13,9 +13,14 @@ class SessionForm extends React.Component {
       this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    update(type) {
+    update(...types) {
         return (e) => {
-            this.setState({[type]: e.target.value})
+            // debugger
+            types.forEach(type =>{
+
+                return this.setState({[type]: e.target.value})
+            }
+                )
         } 
     }
   
@@ -30,8 +35,8 @@ class SessionForm extends React.Component {
         const header = this.props.formType === "Sign Up" ? (
             <h3>Sign Up</h3>) : ( <h3>Log In</h3> );
         const sessionLink = this.props.formType === "Sign Up" ? (
-            <Link to="/login">Log In</Link>
-            ) : ( <Link to="/signup">Sign Up</Link> );
+            <Link to="/login">Log in</Link>
+            ) : ( <Link to="/signup">Sign up</Link> );
         
         const errorsList = (this.props.errors) ? ( 
             this.props.errors.map((error, index) => (
@@ -42,7 +47,6 @@ class SessionForm extends React.Component {
 
         const emailField = this.props.formType === "Sign Up" ? (
             <div>
-
             <label htmlFor="email"> Email:</label>
                     <input
                         type="text"
@@ -53,8 +57,6 @@ class SessionForm extends React.Component {
            
             </div>
                 ) : (<div></div>)
-        
-        // return (<div className="modal-form">
         return (<div className="session-form"> 
             <ul>{errorsList}</ul>
             <form className="form">
@@ -79,6 +81,7 @@ class SessionForm extends React.Component {
                 
                 <button onClick={this.handleSubmit}>{this.props.formType}</button>
                 <div className="alt-form-link">{sessionLink}</div>
+                <div className="guest-login">Proceed as <button onClick={this.update(["username", "password"])} value={"guest"}>guest</button></div>
             </form>
         </div>)
     }
