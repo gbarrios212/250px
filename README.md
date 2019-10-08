@@ -1,44 +1,24 @@
-# 250px
+# README
 
-#montserrat and pt serif?
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
+Things you may want to cover:
 
-scroll transition?
+* Ruby version
 
-$(window).scroll(function() {    
-    var scroll = $(window).scrollTop();
+* System dependencies
 
-    if (scroll >= 200) {
-        $(".main-wrapper").addClass("blue");
-    } 
-    
-    //if(scroll>=400) {
-    //  $(".main-wrapper").addClass("green");
-    //}
-  
-    else {
-       $(".main-wrapper").removeClass("blue");
-       //$(".main-wrapper").removeClass("green");
-    }
-});
+* Configuration
 
-/* body {
-  background-color: red;
-  min-height:1200px;
-  transition:background-color 0.75s ease;
-} */
+* Database creation
 
-.main-wrapper{
-   border-left: 9px solid red; 
-   /* background-color: red; */
-   transition:border-left-color 0.9s ease;
-   min-height: 1020px; 
-}
+* Database initialization
 
-.blue {
-  border-left-color: blue;
-}
+* How to run the test suite
 
-.green {
-  border-left-color: green;
-}
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
