@@ -39,18 +39,28 @@ class SessionForm extends React.Component {
         ))) : (
             <div></div>
         );
+
+        const emailField = this.props.formType === "Sign Up" ? (
+            <label> Email:
+                    <input
+                        type="text"
+                        value={this.state.email}
+                        onChange={this.update("email")}
+                        />
+                </label>
+                ) : (<div></div>)
         
-        return (<div className="session-form">
-            {header}
-            {sessionLink}
+        // return (<div className="modal-form">
+        return (<div className="session-form"> 
             <ul>{errorsList}</ul>
             <form className="form">
+            {header}
                 <label> Username:
                     <input
                         type="text"
                         value={this.state.username}
                         onChange={this.update("username")}
-                    />
+                        />
                 </label>
                 <br/>
                 <label> Email:
@@ -58,7 +68,7 @@ class SessionForm extends React.Component {
                         type="text"
                         value={this.state.email}
                         onChange={this.update("email")}
-                    />
+                        />
                 </label>
                 <br/>
                 <label> Password:
@@ -66,9 +76,10 @@ class SessionForm extends React.Component {
                         type="text"
                         value={this.state.password}
                         onChange={this.update("password")}
-                    />
+                        />
                 </label>
                 <button onClick={this.handleSubmit}>{this.props.formType}</button>
+                <div className="alt-form-link">{sessionLink}</div>
             </form>
         </div>)
     }
