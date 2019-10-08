@@ -6,6 +6,9 @@ const Greeting = (props) => {
     if (!props.currentUser){
         return(
             <section className="header">
+                <div className="logo">
+                    250px
+                </div>
                 <div className="nav">
                     <i className="fas fa-search"></i>
                     <input className="search" type="text" placeholder="Search 250px"/>
