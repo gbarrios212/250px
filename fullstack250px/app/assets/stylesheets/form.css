@@ -1,0 +1,30 @@
+.form{
+    display: block;
+    border: 1px solid #eeeff2;
+    background-color: #fff;
+    width: 400px;
+    margin: auto;
+    padding: 32px 40px 24px;
+    color: #71767a;
+    position: relative;
+    border-radius: 3px;
+    z-index: 1;
+}
+
+.form input{
+    font-size: 14px;
+    padding: 8px 10px;
+    color: #525558;
+    border: 1px solid rgba(185,193,199,0.5);
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-transition: border-color 0.2s;
+    -moz-transition: border-color 0.2s;
+    transition: border-color 0.2s;
+    resize: none;
+    line-height: 1.4em;
+}
+
+.form label{
+    
+}
