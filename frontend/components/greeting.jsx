@@ -3,15 +3,14 @@ import { Link, Route } from 'react-router-dom';
 
 class Greeting extends React.Component {
     constructor(props){
-        //debugger;
         super(props)
         this.state = {
             show: false,
         };
 
-        this.myFunction = this.myFunction.bind(this)
+        this.toggleClass = this.toggleClass.bind(this)
     }
-    // debugger;
+
     toggleClass() {
         const currentState = this.state.active;
         this.setState({ show: !currentState });
