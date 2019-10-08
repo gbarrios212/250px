@@ -27,18 +27,6 @@
     line-height: 1.4em;
 }
 
-/* .form label{
-    margin-bottom: 200px;
-} */
-
-/* .form label input{
-    display: block;
-    background: white;
-    border: 1px solid #ccc;
-    width: calc(100% - 22px);
-} */
-
-/* test start */
 .form label {
     display: block;
     width: calc(100% - 22px);
@@ -51,7 +39,6 @@
     width: calc(100% - 22px);
 }
 
-/* test end */
 
 .form button{
     background: #b5deda;
