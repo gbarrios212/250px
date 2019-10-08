@@ -1,11 +1,27 @@
 import React from 'react';
 import { Link, Route } from 'react-router-dom';
 
-const Greeting = (props) => {
+class Greeting extends React.Component {
+    constructor(props){
+        //debugger;
+        super(props)
+        this.state = {
+            show: false,
+        };
+
+        this.myFunction = this.myFunction.bind(this)
+    }
     // debugger;
-    if (!props.currentUser){
-        return(
-            <section className="header">
+    toggleClass() {
+        const currentState = this.state.active;
+        this.setState({ show: !currentState });
+      }
+
+      render(){
+
+          if (!this.props.currentUser){
+              return(
+                  <section className="header">
                 <div className="logo">
                     250px
                 </div>
@@ -21,28 +37,48 @@ const Greeting = (props) => {
     } else {
         return(
             <div>
+                <section className="header">
+                    <div className="logo">
+                        250px
+                    </div>
+                    <div className="nav">
+                        <i className="fas fa-search"></i>
+                        <input className="search" type="text" placeholder="Search 250px"/>
+                    </div>
+{/*                      
+    <i className="fas fa-user-circle">
+    
+    <ul className="dropdown">
+    <li><button onClick={props.logout}>Log Out</button></li>
+    </ul>
+</i> */}
 
-            <section className="header">
-                <div className="logo">
-                    250px
-                </div>
-                <div className="nav">
-                    <i className="fas fa-search"></i>
-                    <input className="search" type="text" placeholder="Search 250px"/>
-                     
-                <i className="fas fa-user-circle"></i>
+
+                    <div class="dropdown">
+                        <button onClick={this.toggleClass} class="dropbtn"><i className="fas fa-user-circle"></i></button>
+                    {/* <div id="myDropdown" className="dropdown-content"> */}
+                        {/* <div id="myDropdown" className={this.state.show ? 'dropdown-content show' : 'dropdown-content'>
+                            <a href="#">Link 1</a>
+                            <a href="#">Link 2</a>
+                            <a href="#">Link 3</a>
+                        </div> */}
+                {/* </div> */}
+
+
+
+
                 {/* <Route path="/manage/upload" component={render (somtething-dropdownComponent)}></Route> */}
                 <i className="fas fa-plus"></i>
                     
                 </div>
-            </section>
+                </section>
             <div className="greeting">
-                <h1>Well check you out, {props.currentUser.username}!</h1>
-                <button onClick={props.logout}>Log Out</button>
+                <h1>Well check you out, {this.props.currentUser.username}!</h1>  
             </div>
-        </div>
+            </div>
         )
     }
+}
 }
 
 export default Greeting;

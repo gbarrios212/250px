@@ -2,3 +2,11 @@
     position: relative;
     top: 100px;
 }
+
+.dropdown{
+    position: relative;
+}
+
+.fa-user-circle{
+    position: relative;
+}

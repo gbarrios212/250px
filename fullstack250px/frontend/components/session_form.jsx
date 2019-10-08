@@ -17,7 +17,7 @@ class SessionForm extends React.Component {
 
     update(...types) {
         return (e) => {
-            debugger
+            //debugger
             types.forEach(type =>{
 
                 return this.setState({[type]: e.target.value})
