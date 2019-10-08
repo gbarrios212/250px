@@ -41,6 +41,11 @@
     text-indent: 45px;
 }
 
+.search:focus{
+    border-radius: 30px;
+    outline: 5px;
+}
+
 .fa-search:before {
     content: "\f002";
     left: 75px;
@@ -59,3 +64,12 @@
     color: #292828;
     cursor: pointer;
 }
+
+.fa-user-circle{
+    font-size: 25px;
+}
+
+.fa-plus{
+    font-size: 25px;
+}
+

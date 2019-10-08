@@ -41,14 +41,17 @@ class SessionForm extends React.Component {
         );
 
         const emailField = this.props.formType === "Sign Up" ? (
-            <label> Email:
+            <div>
+
+            <label for="email"> Email:</label>
                     <input
                         type="text"
                         value={this.state.email}
                         onChange={this.update("email")}
-                        />
+                        id="email"/>
                         <br/>
-                </label>
+           
+            </div>
                 ) : (<div></div>)
         
         // return (<div className="modal-form">
@@ -56,23 +59,23 @@ class SessionForm extends React.Component {
             <ul>{errorsList}</ul>
             <form className="form">
             {header}
-                <label> Username:
+                <label for="username"> Username:</label>
                     <input
                         type="text"
                         value={this.state.username}
                         onChange={this.update("username")}
-                        />
-                </label>
+                        id="username"/>
                 <br/>
                 {emailField}
                 
-                <label> Password:
+                <label for="password"> Password:</label>
                     <input
                         type="text"
                         value={this.state.password}
                         onChange={this.update("password")}
+                        id="password"
                         />
-                </label>
+                
                 <button onClick={this.handleSubmit}>{this.props.formType}</button>
                 <div className="alt-form-link">{sessionLink}</div>
             </form>

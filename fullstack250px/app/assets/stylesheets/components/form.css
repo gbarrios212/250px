@@ -31,12 +31,27 @@
     margin-bottom: 200px;
 } */
 
-.form label input{
+/* .form label input{
+    display: block;
+    background: white;
+    border: 1px solid #ccc;
+    width: calc(100% - 22px);
+} */
+
+/* test start */
+.form label {
+    display: block;
+    width: calc(100% - 22px);
+    margin-bottom: 10px;
+}
+.form input{
     display: block;
     background: white;
     border: 1px solid #ccc;
     width: calc(100% - 22px);
 }
+
+/* test end */
 
 .form button{
     background: #b5deda;
