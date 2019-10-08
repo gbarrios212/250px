@@ -5,17 +5,19 @@ class SessionForm extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        username: "",
-        email: "",
-        password: ""
-      };
+          username: "",
+          email: "",
+          password: ""
+        };
+        // debugger;
 
       this.handleSubmit = this.handleSubmit.bind(this);
+      this.demoLogin = this.demoLogin.bind(this);
     }
 
     update(...types) {
         return (e) => {
-            // debugger
+            debugger
             types.forEach(type =>{
 
                 return this.setState({[type]: e.target.value})
@@ -29,7 +31,14 @@ class SessionForm extends React.Component {
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
     }
+
+    demoLogin(e){
+        e.preventDefault();
+        this.props.demoLogin();
+    }
     
+    //mdp demoLogin
+    //
     
     render() {
         const header = this.props.formType === "Sign Up" ? (
@@ -57,6 +66,13 @@ class SessionForm extends React.Component {
            
             </div>
                 ) : (<div></div>)
+
+        // const guestLink = this.props.formType === "Sign Up" ? (
+        //     <div>Proceed as <Link to="/login">guest</Link></div>
+        // ) : (
+        //     <div className="guest-login">Proceed as <Link to="#" onClick={this.update("username", "password").bind(this)} value={"guest"}>guest</Link></div>
+        // )
+
         return (<div className="session-form"> 
             <ul>{errorsList}</ul>
             <form className="form">
@@ -80,8 +96,9 @@ class SessionForm extends React.Component {
                         />
                 
                 <button onClick={this.handleSubmit}>{this.props.formType}</button>
+                <div className="guest-login"><button onClick={this.demoLogin}>Proceed as guest</button></div>
                 <div className="alt-form-link">{sessionLink}</div>
-                <div className="guest-login">Proceed as <button onClick={this.update(["username", "password"])} value={"guest"}>guest</button></div>
+                {/* {guestLink} */}
             </form>
         </div>)
     }
