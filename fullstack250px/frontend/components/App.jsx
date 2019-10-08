@@ -9,7 +9,7 @@ import { AuthRoute } from '../util/route_util';
 const App = () => (
   <header>
     <GreetingContainer />
-    <h1>Nice. This is an app.</h1>
+    {/* <h1>Nice. This is an app.</h1> */}
     <AuthRoute path="/signup" component={SignUpFormContainer}/>
     <AuthRoute path="/login" component={LoginFormContainer}/>
   </header>

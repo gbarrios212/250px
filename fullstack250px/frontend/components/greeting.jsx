@@ -5,11 +5,13 @@ const Greeting = (props) => {
     // debugger;
     if (!props.currentUser){
         return(
-            <div className="nav">
-                <input type="text" value="Search 250px"/>
-                <Link to="/signup">Sign Up</Link>
-                <Link to="/login">Log In</Link>
-            </div>
+            <section className="header">
+                <div className="nav">
+                    <input className="search" type="text" placeholder="Search 250px"/>
+                    <Link to="/signup">Sign Up</Link>
+                    <Link to="/login">Log In</Link>
+                </div>
+            </section>
         )
     } else {
         return(
