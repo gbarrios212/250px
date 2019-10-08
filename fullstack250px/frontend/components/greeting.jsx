@@ -7,7 +7,10 @@ const Greeting = (props) => {
         return(
             <section className="header">
                 <div className="nav">
+                    <i className="fas fa-search">
+
                     <input className="search" type="text" placeholder="Search 250px"/>
+                    </i>
                     <Link to="/signup">Sign Up</Link>
                     <Link to="/login">Log In</Link>
                 </div>

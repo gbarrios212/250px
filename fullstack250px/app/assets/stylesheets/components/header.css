@@ -19,12 +19,15 @@ h1:hover{
 }
 
 .header{
-    height: 100px;
+    height: 75px;
     display: flex;
     width: 100%;
-    height: auto;
+    top: 0;
+    left: 0;
     position: fixed;
     background: white;
+    border-bottom: 1px solid rgba(66, 36, 12, 0.205);
+    z-index: 40;
 }
 
 .nav{
@@ -33,10 +36,10 @@ h1:hover{
     right: 15px;
     justify-content: flex-end;
     align-items: center;
-
     padding-bottom: 20px;
-    border-bottom: 1px solid rgba(66, 36, 12, 0.205);
-    transition:border-left-color 0.9s ease;
+    transition: border-left-color 0.9s ease;
+    top: 0;
+    padding: 20px;
 }
 
 .nav > * {
@@ -53,6 +56,8 @@ h1:hover{
     border: 1px solid #dfe1e5;
     width: 250px;
     height: 30px;
+    text-align: left;
+    text-indent: 40px;
 }
 
 
