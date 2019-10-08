@@ -14,7 +14,7 @@ const Greeting = (props) => {
         return(
             <div className="greeting">
                 <h1>Well check you out, {props.currentUser.username}!</h1>
-                <button onClick={props.logout()}>Log Out</button>
+                <button onClick={props.logout}>Log Out</button>
             </div>
         )
     }
