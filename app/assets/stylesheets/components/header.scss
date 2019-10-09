@@ -21,7 +21,7 @@
     align-items: center;
     padding-bottom: 20px;
     transition: border-left-color 0.9s ease;
-    top: -10px;
+    top: 0px;
     padding: 20px;
 }
 
@@ -78,7 +78,7 @@
 }
 
 .dropbtn {
-    padding: 16px;
+    padding: 0px;
     border: none;
     cursor: pointer;
 }
@@ -140,4 +140,8 @@
 .show {
     display:block;
     border-radius: 5px;
+}
+
+.fas{
+    line-height: 0;
 }
