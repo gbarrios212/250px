@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Greeting from './greeting';
+import Navbar from './navbar';
 import { logout } from '../actions/session_actions';
 
 const msp = (state) => ({
@@ -11,4 +11,4 @@ const mdp = (dispatch) => ({
 
 })
 
-export default connect(msp, mdp)(Greeting);
+export default connect(msp, mdp)(Navbar);
