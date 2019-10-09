@@ -42,6 +42,11 @@
     width: calc(100% - 22px);
 }
 
+.form input:focus {
+    border-color: #0099e5;
+}
+
+
 
 .form-submit{
     background: #b5deda;

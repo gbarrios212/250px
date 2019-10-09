@@ -10,6 +10,10 @@ class Navbar extends React.Component {
         this.toggleClass = this.toggleClass.bind(this);
     }
 
+    componentDidMount(){
+        this.setState({ show: false });
+    }
+
     toggleClass(e) {
         e.preventDefault();
         const currentState = this.state.show;

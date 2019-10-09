@@ -1,6 +1,13 @@
 .greeting{
     position: relative;
     top: 200px;
+    display: block;
+    font-size: 48px;
+    line-height: 53px;
+    letter-spacing: -0.4px;
+    color: black;
+    cursor: pointer;
+    text-shadow: 0px 1px 0x #7571719e;
 }
 
 .dropdown{
