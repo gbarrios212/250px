@@ -13,7 +13,7 @@ const mapdDspatchToProps = (dispatch, ownProps) => {
     return {
         processForm: (user) => dispatch(signup(user)),
         demoLogin: () => dispatch(login({username: "guest", password: "guest"})),
-        // clearErrors: () => dispatch(clearErrors())
+        clearErrors: () => dispatch(clearErrors())
     };
 };
 

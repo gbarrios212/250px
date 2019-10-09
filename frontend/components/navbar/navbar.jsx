@@ -38,12 +38,6 @@ class Navbar extends React.Component {
                         </span>
                     </div>
                 </section>
-
-                {/* <div className="splash-signup">
-                    <button>
-                        <Link to="/signup">Sign Up</Link>
-                    </button>
-                </div> */}
             </div>
             )
         } else {
@@ -60,8 +54,6 @@ class Navbar extends React.Component {
                                 </button>
                                 <div id="myDropdown" className={this.state.show ? 'dropdown-content show' : 'dropdown-content'}>
                                     <button className="logout" onClick={this.props.logout}>Log Out</button>
-                                    {/* <a href="#">Link 2</a>
-                                    <a href="#">Link 3</a> */}
                                 </div>
                             </div>
                             <i className="fas fa-plus"></i>    
