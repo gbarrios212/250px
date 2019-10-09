@@ -19,7 +19,7 @@ class Navbar extends React.Component {
     render(){
         const logo = (
             <div className="logo">
-                250px
+                <Link to="/">250px</Link>
             </div>
         )
 
