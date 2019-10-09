@@ -36,7 +36,9 @@ class Navbar extends React.Component {
                     <div className="nav">
                         <i className="fas fa-search"></i>
                         <input className="search" type="text" placeholder="Search 250px"/> 
-                        <Link to="/login">Log In</Link>
+                        <span className="login-styling">
+                            <Link to="/login">Log In</Link>
+                        </span>
                         <span className="signup-styling">
                             <Link to="/signup">Sign Up</Link>
                         </span>

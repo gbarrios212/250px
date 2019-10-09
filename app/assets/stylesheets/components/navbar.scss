@@ -32,6 +32,13 @@
     font-weight: 600;
 }
 
+.login-styling{
+    transition: color 0.2s ease 0s;
+}
+.login-styling:hover{
+    color: #0099e5; 
+}
+
 .signup-styling{
     display: inline-flex;
     -webkit-box-pack: center;
@@ -50,12 +57,14 @@
     border-style: solid;
     margin: 0px;
     border-color: rgb(34, 34, 34);
+    transition: color 0.2s ease 0s;
 }
 
 .signup-styling:hover{
     background-color: transparent;
     color: #0099e5; 
     border-color: rgb(34, 34, 34);
+    
 }
 
 .search{
