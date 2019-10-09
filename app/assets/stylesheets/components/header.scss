@@ -121,14 +121,19 @@
     border-bottom: 10px solid white;
     box-sizing: border-box;
 
-}
-  
-  /* Links inside the dropdown */
-.dropdown-content a {
+/*links for dropdown below*/
+.logout{
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    width: 100%;
+    cursor: pointer;
+}
+
+.logout:hover{
+    color: white;
+    background:rgb(41, 134, 247);;
 }
 
 .show {

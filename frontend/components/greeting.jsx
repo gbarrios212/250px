@@ -48,7 +48,7 @@ class Greeting extends React.Component {
                                     <i className="fas fa-user-circle"></i>
                                 </button>
                                 <div id="myDropdown" className={this.state.show ? 'dropdown-content show' : 'dropdown-content'}>
-                                    <a href="#">Log Out</a>
+                                    <button className="logout" onClick={this.props.logout}>Log Out</button>
                                     {/* <a href="#">Link 2</a>
                                     <a href="#">Link 3</a> */}
                                 </div>
