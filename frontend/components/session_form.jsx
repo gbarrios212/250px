@@ -74,13 +74,16 @@ class SessionForm extends React.Component {
         // )
 
         return (<div className="session-form"> 
-            <span className="errors-holder">
+            {/* <span className="errors-holder">
                 <div className="errors">
                     <ul>{errorsList}</ul>
                 </div>
-            </span>
+            </span> */}
             <form className="form">
             {header}
+            
+            {errorsList}
+            <br/>
                 <label htmlFor="username"> Username:</label>
                     <input
                         type="text"
