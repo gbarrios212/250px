@@ -59,7 +59,8 @@
 }
 
 .search{
-    background: #e4dfdf;
+    // background: #e4dfdf;
+    background: #e6e3e3;
     border-radius: 30px;
     display: flex;
     border: 1px solid #dfe1e5;
@@ -91,6 +92,11 @@
     font-family: unset;
     color: #292828;
     cursor: pointer;
+}
+
+.logo:hover{
+    background-color: transparent;
+    color: #0099e5; 
 }
 
 .fa-user-circle{
