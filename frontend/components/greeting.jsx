@@ -25,6 +25,8 @@ class Greeting extends React.Component {
 
         if (!this.props.currentUser){
             return(
+            <div>
+
                 <section className="header">
                     {logo}
                     <div className="nav">
@@ -34,6 +36,13 @@ class Greeting extends React.Component {
                         <Link to="/login">Log In</Link>
                     </div>
                 </section>
+
+                {/* <div className="splash-signup">
+                    <button>
+                        <Link to="/signup">Sign Up</Link>
+                    </button>
+                </div> */}
+            </div>
             )
         } else {
             return(
