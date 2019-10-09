@@ -9,17 +9,18 @@ class SessionForm extends React.Component {
           email: "",
           password: ""
         };
-        // debugger;
 
       this.handleSubmit = this.handleSubmit.bind(this);
       this.demoLogin = this.demoLogin.bind(this);
     }
 
+    componentWillUnmount(){
+        
+    }
+
     update(...types) {
         return (e) => {
-            //debugger
             types.forEach(type =>{
-
                 return this.setState({[type]: e.target.value})
             }
                 )
@@ -36,9 +37,6 @@ class SessionForm extends React.Component {
         e.preventDefault();
         this.props.demoLogin();
     }
-    
-    //mdp demoLogin
-    //
     
     render() {
         const header = this.props.formType === "Sign Up" ? (
@@ -67,18 +65,7 @@ class SessionForm extends React.Component {
             </div>
                 ) : (<div></div>)
 
-        // const guestLink = this.props.formType === "Sign Up" ? (
-        //     <div>Proceed as <Link to="/login">guest</Link></div>
-        // ) : (
-        //     <div className="guest-login">Proceed as <Link to="#" onClick={this.update("username", "password").bind(this)} value={"guest"}>guest</Link></div>
-        // )
-
         return (<div className="session-form"> 
-            {/* <span className="errors-holder">
-                <div className="errors">
-                    <ul>{errorsList}</ul>
-                </div>
-            </span> */}
             <form className="form">
             {header}
             
@@ -108,7 +95,6 @@ class SessionForm extends React.Component {
                         onClick={this.demoLogin}>guest</button>
                     </div>
                 <div className="alt-form-link">{sessionLink}</div>
-                {/* {guestLink} */}
             </form>
         </div>)
     }

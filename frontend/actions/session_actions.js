@@ -35,3 +35,6 @@ export const signup = (user) => (dispatch) => {
         .then((user) => dispatch(receiveCurrentUser(user)), err => dispatch(receiveErrors(err.responseJSON)));
 }
 
+// export const clearErrors = () => (dispatch) => {
+//     return 
+// }
