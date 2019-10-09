@@ -102,8 +102,11 @@ class SessionForm extends React.Component {
                         id="password"
                         />
                 
-                <button onClick={this.handleSubmit}>{this.props.formType}</button>
-                <div className="guest-login"><button className="guest-button" onClick={this.demoLogin}>Proceed as Guest</button></div>
+                <button className="form-submit" onClick={this.handleSubmit}>{this.props.formType}</button>
+                <div className="guest-login">
+                    <button className="guest-button" 
+                        onClick={this.demoLogin}>guest</button>
+                    </div>
                 <div className="alt-form-link">{sessionLink}</div>
                 {/* {guestLink} */}
             </form>

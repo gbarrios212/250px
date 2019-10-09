@@ -71,10 +71,13 @@
     font-size: 30px;
     position: relative;
     left: -8px;
+    padding-left: 23px;
 }
 
 .fa-plus{
     font-size: 25px;
+    padding-left: 20px;
+    padding-right: 10px;
 }
 
 .dropbtn {
@@ -100,6 +103,7 @@
     position: absolute;
     background-color: rgb(255, 255, 255);
     top: 60px;
+    left: 21px;
     min-width: 140px;
     margin-top: -10px;
     margin-left: -32px;
