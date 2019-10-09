@@ -32,8 +32,10 @@ class Greeting extends React.Component {
                     <div className="nav">
                         <i className="fas fa-search"></i>
                         <input className="search" type="text" placeholder="Search 250px"/> 
-                        <Link to="/signup">Sign Up</Link>
                         <Link to="/login">Log In</Link>
+                        <span className="signup-styling">
+                            <Link to="/signup">Sign Up</Link>
+                        </span>
                     </div>
                 </section>
 
