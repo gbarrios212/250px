@@ -68,7 +68,9 @@
 }
 
 .fa-user-circle{
-    font-size: 25px;
+    font-size: 30px;
+    position: relative;
+    left: -8px;
 }
 
 .fa-plus{
@@ -96,10 +98,29 @@
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 3px -3px 5px 1px rgba(43, 43, 43, 0.2);
+    background-color: rgb(255, 255, 255);
+    top: 60px;
+    min-width: 140px;
+    margin-top: 0px;
+    margin-left: -20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 4px 12px, rgba(0, 0, 0, 0.08) 0px 0px 4px;
     z-index: 1;
+    padding: 8px 0px;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.dropdown-content::after{
+    top: -8px;
+    content: "";
+    position: absolute;
+    left: 30px;
+    filter: drop-shadow(rgba(0, 0, 0, 0.1) 0px -2px 1px);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid white;
+    box-sizing: border-box;
+
 }
   
   /* Links inside the dropdown */
