@@ -52,6 +52,7 @@
     left: -15px;
     top: 15px;
     line-height: 1.4em;
+    cursor: pointer;
 
 }
 
@@ -70,9 +71,34 @@
 .guest-login{
     font-size: 14px;
     line-height: 1.5;
+    cursor: pointer;
 }
 
 .guest-login a{
     text-decoration: none;
     color: #0099e5; 
+}
+
+.errors{
+    background: red;
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    position: absolute;
+    top: 50px;
+    z-index: 999;
+    min-height: 18px;
+    /* padding: 0px 22px 0px 32px; */
+    /* background: transparent; */
+    width: 800px;
+    height: 20px;
+    /* z-index: 2147483646; */
+    /* transition: -webkit-transform 10s ease-in-out 0s; */
+    position: fixed !important;
+    left: 0px !important;
+    bottom: 0px !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+    background: rgb(214, 107, 0);
+    /* opacity: 0;
 }
