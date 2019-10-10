@@ -13,7 +13,7 @@ class PhotosForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const formData = new FormData();
-        debugger;
+        // debugger;
         formData.append('post[title]', this.state.title);
         let keys = Object.keys(this.state)
         keys.forEach(key => {
