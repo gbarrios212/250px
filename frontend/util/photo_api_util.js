@@ -3,3 +3,11 @@ export const fetchPhotos = () => {
         url: "/api/photos"
     })
 }
+
+export const createPhoto = (photo) => {
+    return $.ajax({
+        method: "POST",
+        url: "/api/photos",
+        data: { photo }
+    })
+}
