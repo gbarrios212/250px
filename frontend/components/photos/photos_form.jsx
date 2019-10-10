@@ -3,7 +3,7 @@ import React from 'react';
 class PhotosForm extends React.Component {
     constructor(props){
         super(props);
-        let newPhotoProps = Object.assign({}, this.props.photo, {photoFile: null});
+        let newPhotoProps = Object.assign({}, this.props.photo, {photoConnect: null});
         this.state = newPhotoProps;
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -13,21 +13,27 @@ class PhotosForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const formData = new FormData();
-        // formData.append('post[title]', this.state.title);
-        formData.append('photo[name]', this.state.name);
-        formData.append('photo[location]', this.state.location);
-        formData.append('photo[lat]', this.state.lat);
-        formData.append('photo[long]', this.state.long);
-        formData.append('photo[date_taken]', this.state.date_taken);
-        formData.append('photo[camera]', this.state.camera);
-        formData.append('photo[lens]', this.state.lens);
-        formData.append('photo[focal_length]', this.state.focal_length);
-        formData.append('photo[aperture]', this.state.aperture);
-        formData.append('photo[shutter_speed]', this.state.shutter_speed);
-        formData.append('photo[iso]', this.state.iso);
-        formData.append('photo[description]', this.state.description);
-        formData.append('photo[author_id]', this.state.author_id);
-        formData.append('photo[photoConnect]', this.state.photoFile);
+        debugger;
+        formData.append('post[title]', this.state.title);
+        let keys = Object.keys(this.state)
+        keys.forEach(key => {
+            formData.append(`photo[${key}]`, this.state[key])
+        })
+        // formData.append(`photo[${this.state}]`);
+        // formData.append('photo[name]', this.state.name);
+        // formData.append('photo[location]', this.state.location);
+        // formData.append('photo[lat]', this.state.lat);
+        // formData.append('photo[long]', this.state.long);
+        // formData.append('photo[date_taken]', this.state.date_taken);
+        // formData.append('photo[camera]', this.state.camera);
+        // formData.append('photo[lens]', this.state.lens);
+        // formData.append('photo[focal_length]', this.state.focal_length);
+        // formData.append('photo[aperture]', this.state.aperture);
+        // formData.append('photo[shutter_speed]', this.state.shutter_speed);
+        // formData.append('photo[iso]', this.state.iso);
+        // formData.append('photo[description]', this.state.description);
+        // formData.append('photo[author_id]', this.state.author_id);
+        // formData.append('photo[photoConnect]', this.state.photoConnect);
         $.ajax({
             url: 'api/photos',
             method: 'POST',
@@ -40,7 +46,7 @@ class PhotosForm extends React.Component {
     }
 
     handleFile(e) {
-        this.setState({photoFile: e.currentTarget.files[0]});
+        this.setState({photoConnect: e.currentTarget.files[0]});
     }
 
     update(field) {

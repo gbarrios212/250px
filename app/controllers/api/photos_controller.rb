@@ -12,6 +12,7 @@ class Api::PhotosController < ApplicationController
     def create 
         debugger;
         photo = Photo.new(photo_params)
+        photo.author_id = current_user.id
         if photo.save 
             render json: {message: "Neat!"}
         else 
@@ -40,7 +41,6 @@ class Api::PhotosController < ApplicationController
             :aperture, 
             :shutter_speed, 
             :iso, 
-            :description,
-            :author_id)
+            :description)
     end
 end

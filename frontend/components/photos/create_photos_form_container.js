@@ -14,8 +14,7 @@ const msp = (state, ownProps) => ({
     aperture: "",
     shutter_speed: "",
     iso: "",
-    description: "",
-    author_id: 1}
+    description: ""}
 })
 
 const mdp = (dispatch) => ({
