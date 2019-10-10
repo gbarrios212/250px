@@ -16,9 +16,9 @@ class PhotosIndex extends React.Component{
             return <PhotosIndexItem photo={photo} />
         })
         return (
-            <div>
+            <span>
                 {photosList}
-            </div>
+            </span>
         )
     }
 }

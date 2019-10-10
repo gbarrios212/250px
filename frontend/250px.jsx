@@ -8,7 +8,8 @@ import Root from './components/root'
 // window.login = login;
 // window.signup = signup;
 // window.logout = logout;
-
+import { fetchPhotos } from './util/photo_api_util'
+window.fetchPhotos = fetchPhotos
 //test store
 //
 
