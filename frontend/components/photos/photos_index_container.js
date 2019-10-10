@@ -1,6 +1,6 @@
 import PhotosIndex from './photos_index';
 import { connect } from 'react-redux';
-import fetchPhotos from '../../actions/photo_actions';
+import { fetchPhotos } from '../../actions/photo_actions';
 
 const msp = (state) => ({
     photos: Object.values(state.entities.photos)
