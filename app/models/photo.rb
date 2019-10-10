@@ -1,5 +1,7 @@
 class Photo < ApplicationRecord
-    validates :name, :author_id, presence: true 
+    validates :name, :author_id, presence: true
+    
+    validate :ensure_photo
     # validates :author_id, uniqueness: true
 
     belongs_to :author, 
@@ -17,4 +19,11 @@ class Photo < ApplicationRecord
     # has_many :galleries, 
     #     through: :photo_galleries
     #     source: :galleries check this!!!!
+
+    def ensure_photo
+        unless self.photoConnect.attached?
+            errors[:photo] << "Must be attached"
+            debugger;
+        end
+    end
 end

@@ -3,7 +3,7 @@ import React from 'react';
 const PhotosIndexItem = ({photo}) => {
     return (
         <div>
-            <li>{photo.name}
+            <li>
                 <br/>
                 <img src={photo.photoUrl} alt=""></img>
             </li>
