@@ -12,3 +12,6 @@ bird = User.create!(username: "bird", email: "bird@bird.com", password_digest: B
 chimp = User.create!(username: "chimp", email: "chimp@chimp.com", password_digest: BCrypt::Password.create("chimpchimp"))
 ham = User.create!(username: "ham", email: "ham@ham.com", password_digest: BCrypt::Password.create("hamham"))
 monkey = User.create!(username: "monkey", email: "monkey@monkey.com", password_digest: BCrypt::Password.create("monkeymonkey"))
+
+
+photo = Photo.create!(name: "sweet photo", author_id: 3)
