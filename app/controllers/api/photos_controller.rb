@@ -30,6 +30,7 @@ class Api::PhotosController < ApplicationController
     def photo_params 
         params.require(:photo).permit(:name, 
             :photoConnect, 
+            :photoUrl,
             :location, 
             :lat, 
             :long, 
