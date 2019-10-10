@@ -7,4 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-guest = User.create!(username: "guest", email: "guest@guest.com", password_digest: BCrypt::Password.create("guest"))
+guest = User.create!(username: "guest", email: "guest@guest.com", password_digest: BCrypt::Password.create("guestguest"))
+bird = User.create!(username: "bird", email: "bird@bird.com", password_digest: BCrypt::Password.create("birdbird"))
+chimp = User.create!(username: "chimp", email: "chimp@chimp.com", password_digest: BCrypt::Password.create("chimpchimp"))
+ham = User.create!(username: "ham", email: "ham@ham.com", password_digest: BCrypt::Password.create("hamham"))
+monkey = User.create!(username: "monkey", email: "monkey@monkey.com", password_digest: BCrypt::Password.create("monkeymonkey"))
