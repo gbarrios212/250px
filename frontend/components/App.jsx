@@ -6,7 +6,7 @@ import LoginFormContainer from './session/login_form_container';
 import { AuthRoute } from '../util/route_util';
 import SplashContainer from './splash/splash_container';
 import PhotosIndexContainer from './photos/photos_index_container';
-
+import CreatePhotosFormContainer from './photos/create_photos_form_container'
 
 const App = () => (
   <>
@@ -17,6 +17,7 @@ const App = () => (
       <AuthRoute path="/login" component={LoginFormContainer}/>
       <Route exact path="/" component={SplashContainer} />
       <Route exact path="/" component={PhotosIndexContainer} />
+      <Route exact path="/" component={CreatePhotosFormContainer} />
   </>
 );
 

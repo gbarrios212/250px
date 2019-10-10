@@ -15,7 +15,7 @@ const msp = (state, ownProps) => ({
     shutter_speed: "",
     iso: "",
     description: "",
-    author_id: ""}
+    author_id: 1}
 })
 
 const mdp = (dispatch) => ({
@@ -23,3 +23,5 @@ const mdp = (dispatch) => ({
 })
 
 export default connect(msp, mdp)(PhotosForm);
+
+//note temp hard-coded author_id
