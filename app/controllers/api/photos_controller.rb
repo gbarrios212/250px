@@ -9,6 +9,16 @@ class Api::PhotosController < ApplicationController
         render :index
     end
 
+    def create 
+    end
+
+    def update 
+    end
+
+    def delete
+    end
+    
+
     private 
     def photo_params 
         params.require(:photo).permit(:name)
