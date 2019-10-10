@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PhotosIndexItem from './photos_index_item';
 
 class PhotosIndex extends React.Component{
     constructor(props){
@@ -21,3 +22,5 @@ class PhotosIndex extends React.Component{
         )
     }
 }
+
+export default PhotosIndex;
