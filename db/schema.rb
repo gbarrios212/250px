@@ -10,10 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_07_182949) do
+ActiveRecord::Schema.define(version: 2019_10_10_020157) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "photos", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "location"
+    t.float "lat"
+    t.float "long"
+    t.date "date_taken"
+    t.string "camera"
+    t.string "lens"
+    t.string "focal_length"
+    t.string "aperture"
+    t.string "shutter_speed"
+    t.string "iso"
+    t.text "description"
+    t.integer "author_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["author_id"], name: "index_photos_on_author_id", unique: true
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username", null: false
