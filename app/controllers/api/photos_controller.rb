@@ -10,6 +10,13 @@ class Api::PhotosController < ApplicationController
     end
 
     def create 
+        debugger;
+        photo = Photo.new(photo_params)
+        if photo.save 
+            render json: {message: "Neat!"}
+        else 
+            render json: photo.errors.full_messages
+        end
     end
 
     def update 
@@ -21,6 +28,19 @@ class Api::PhotosController < ApplicationController
 
     private 
     def photo_params 
-        params.require(:photo).permit(:name)
+        params.require(:photo).permit(:name, 
+            :photoConnect, 
+            :location, 
+            :lat, 
+            :long, 
+            :date_taken, 
+            :camera, 
+            :lens, 
+            :focal_length, 
+            :aperture, 
+            :shutter_speed, 
+            :iso, 
+            :description,
+            :author_id)
     end
 end

@@ -3,13 +3,44 @@ import React from 'react';
 class PhotosForm extends React.Component {
     constructor(props){
         super(props);
-        this.state = this.props.photo;
+        let newPhotoProps = Object.assign({}, this.props.photo, {photoFile: null});
+        this.state = newPhotoProps;
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleFile = this.handleFile.bind(this);
     }
 
     handleSubmit(e) {
         e.preventDefault();
+        const formData = new FormData();
+        // formData.append('post[title]', this.state.title);
+        formData.append('photo[name]', this.state.name);
+        formData.append('photo[location]', this.state.location);
+        formData.append('photo[lat]', this.state.lat);
+        formData.append('photo[long]', this.state.long);
+        formData.append('photo[date_taken]', this.state.date_taken);
+        formData.append('photo[camera]', this.state.camera);
+        formData.append('photo[lens]', this.state.lens);
+        formData.append('photo[focal_length]', this.state.focal_length);
+        formData.append('photo[aperture]', this.state.aperture);
+        formData.append('photo[shutter_speed]', this.state.shutter_speed);
+        formData.append('photo[iso]', this.state.iso);
+        formData.append('photo[description]', this.state.description);
+        formData.append('photo[author_id]', this.state.author_id);
+        formData.append('photo[photoConnect]', this.state.photoFile);
+        $.ajax({
+            url: 'api/photos',
+            method: 'POST',
+            data: formData,
+            contentType: false, 
+            processData: false
+        }).then((response) => console.log(response.message),
+            (response) => console.log(response.responseJSON)
+        );
+    }
+
+    handleFile(e) {
+        this.setState({photoFile: e.currentTarget.files[0]});
     }
 
     update(field) {
@@ -19,9 +50,10 @@ class PhotosForm extends React.Component {
     }
 
     render() {
-
         return (
             <form className="create_form" onSubmit={this.handleSubmit}>
+                <label htmlFor="file">Choose File:</label>
+                <input id="file" type="file" onChange={this.handleFile} />
                 <label htmlFor="name">Name:</label>
                 <input id="name" type="text" onChange={this.update("name")} value={this.state.name}/>
                 <label htmlFor="location">Location:</label>
