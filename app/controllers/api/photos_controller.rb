@@ -13,17 +13,29 @@ class Api::PhotosController < ApplicationController
         photo = Photo.new(photo_params)
         photo.author_id = current_user.id
         if photo.save 
-            render json: {message: "Neat!"}
+            # render json: {message: "Neat!"}
+            render :show
         else 
-            # console.log photo.errors.full_messages
             render json: photo.errors.full_messages, status: 422
         end
     end
 
     def update 
+        photo = Photo.find(params[:id])
+        if photo.update!(photo_params) 
+            # render json: {message: "Neat!"}
+            render :show
+        else 
+            render json: photo.errors.full_messages, status: 422
+        end
+
     end
 
-    def delete
+    def destroy
+        @photo = Photo.find(params[:id])
+        @photo.destroy
+        
+        render :show
     end
     
 

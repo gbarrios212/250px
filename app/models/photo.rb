@@ -22,7 +22,7 @@ class Photo < ApplicationRecord
 
     def ensure_photo
         unless self.photoConnect.attached?
-            errors[:photo] << "Must be attached"
+            errors[:photo] << "must be attached"
         end
     end
 end
