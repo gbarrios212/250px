@@ -15,7 +15,8 @@ class Api::PhotosController < ApplicationController
         if photo.save 
             render json: {message: "Neat!"}
         else 
-            render json: photo.errors.full_messages
+            # console.log photo.errors.full_messages
+            render json: photo.errors.full_messages, status: 422
         end
     end
 
