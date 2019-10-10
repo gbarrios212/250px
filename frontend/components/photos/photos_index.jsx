@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import PhotosIndexItem from './photos_index_item';
 
 class PhotosIndex extends React.Component{
@@ -15,10 +14,11 @@ class PhotosIndex extends React.Component{
         let photosList = this.props.photos.map(photo => {
             return <PhotosIndexItem photo={photo} key={photo.id}/>
         })
+        debugger;
         return (
-            <span>
+            <ul className="photos-index">
                 {photosList}
-            </span>
+            </ul>
         )
     }
 }

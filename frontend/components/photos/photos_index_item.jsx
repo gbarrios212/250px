@@ -3,12 +3,10 @@ import React from 'react';
 const PhotosIndexItem = ({photo}) => {
     return (
         <div>
-            <ul>
-                <li>{photo.name}
-                    <br/>
-                    {photo.photo}
-                </li>
-            </ul>
+            <li>{photo.name}
+                <br/>
+                <img src={photo.photoUrl} alt=""></img>
+            </li>
         </div>
     )
 }
