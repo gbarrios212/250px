@@ -13,7 +13,7 @@ class PhotosIndex extends React.Component{
 
     render() {
         let photosList = this.props.photos.map(photo => {
-            return <PhotosIndexItem photo={photo} />
+            return <PhotosIndexItem photo={photo} key={photo.id}/>
         })
         return (
             <span>
