@@ -18,6 +18,11 @@ const App = () => (
       <Route exact path="/" component={SplashContainer} />
       <Route exact path="/" component={PhotosIndexContainer} />
       <Route exact path="/" component={CreatePhotosFormContainer} />
+      
+
+      {/* <Route path="/photos/new" component={CreatePhotosFormContainer} /> */}
+      <Route path="/photos/:photoId" component={ShowPhotoContainer} />
+      {/* <Route path="/photos/:photoId/edit" component={ShowPhotoContainer} /> */}
   </>
 );
 
