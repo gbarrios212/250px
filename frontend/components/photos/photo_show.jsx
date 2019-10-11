@@ -8,13 +8,16 @@ class PhotoShow extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        if (prevProps.photo.id != this.props.match.params.photoId) {
+        // debugger;
+        // if (prevProps.photo.id != this.props.match.params.photoId) 
+        if (prevProps.match.params.photoId != this.props.match.params.photoId)
+        {
           this.props.fetchPhoto(this.props.match.params.photoId);
         }
     }
 
   render () {
-    //   debugger
+      debugger
       if (!this.props.photo) {
         return <div>Loading...</div>;
       }

@@ -3,6 +3,7 @@ import * as photoApiUtil from '../util/photo_api_util';
 export const RECEIVE_ALL_PHOTOS = "RECEIVE_ALL_PHOTOS";
 export const RECEIVE_PHOTO = "RECEIVE_PHOTO";
 export const REMOVE_PHOTO = "REMOVE_PHOTO";
+// export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 
 const receiveAllPhotos = (photos) => ({
     type: RECEIVE_ALL_PHOTOS, 
@@ -18,6 +19,13 @@ const removePhoto = (id) => ({
     type: REMOVE_PHOTO, 
     id
 })
+
+// const receiveErrors = (errors) => ({
+//     type: RECEIVE_ERRORS,
+//     errors
+// })
+
+//display errors?
 
 export const fetchPhotos = () => (dispatch) => {
     return photoApiUtil.fetchPhotos()

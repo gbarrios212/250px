@@ -66,9 +66,9 @@ class Navbar extends React.Component {
                         </div>
                     </section>
                             
-                    <div className="greeting">
+                    {/* <div className="greeting">
                         <h1>Well check you out, {this.props.currentUser.username}!</h1>  
-                    </div>
+                    </div> */}
                 </div>
             )
         }
