@@ -42,20 +42,20 @@ class Api::PhotosController < ApplicationController
     private 
     def photo_params 
         params.require(:photo).permit(:name, 
-        :photoUrl,
-        :category,
-        :location, 
-        :lat, 
-        :long, 
-        :date_taken, 
-        :camera, 
-        :lens, 
-        :focal_length, 
-        :aperture, 
-        :shutter_speed, 
-        :iso, 
-        :description,
-        photoConnects: []
+            :photoConnect, 
+            :photoUrl,
+            :category,
+            :location, 
+            :lat, 
+            :long, 
+            :date_taken, 
+            :camera, 
+            :lens, 
+            :focal_length, 
+            :aperture, 
+            :shutter_speed, 
+            :iso, 
+            :description
         )
     end
 end
