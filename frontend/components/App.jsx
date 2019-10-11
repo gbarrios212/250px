@@ -8,6 +8,7 @@ import SplashContainer from './splash/splash_container';
 import PhotosIndexContainer from './photos/photos_index_container';
 import CreatePhotosFormContainer from './photos/create_photos_form_container'
 import PhotoShowContainer from './photos/photo_show_container';
+import PhotoEditFormContainer from './photos/photo_edit_form_container';
 
 const App = () => (
   <>
@@ -23,7 +24,7 @@ const App = () => (
 
       {/* <Route path="/photos/new" component={CreatePhotosFormContainer} /> */}
       <Route path="/photos/:photoId" component={PhotoShowContainer} />
-      {/* <Route path="/photos/:photoId/edit" component={ShowPhotoContainer} /> */}
+      <Route path="/photos/:photoId/edit" component={PhotoEditFormContainer} />
   </>
 );
 

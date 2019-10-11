@@ -24,6 +24,7 @@ class PhotoShow extends React.Component {
     return (
       <div>
           <img src={this.props.photo.photoUrl} alt=""></img>
+          <Link to={`/photos/${this.props.photo.id}/edit`}>Edit this Cat!</Link>
       </div>
     );
   }

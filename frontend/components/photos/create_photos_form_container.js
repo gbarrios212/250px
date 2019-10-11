@@ -22,5 +22,3 @@ const mdp = (dispatch) => ({
 })
 
 export default connect(msp, mdp)(PhotosForm);
-
-//note temp hard-coded author_id
