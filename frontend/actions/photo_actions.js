@@ -43,7 +43,7 @@ export const createPhoto = (photo) => (dispatch) => {
 }
 
 export const updatePhoto = (photo) => (dispatch) => {
-    debugger;
+    // debugger;
     return photoApiUtil.updatePhoto(photo)
         .then(photo => dispatch(receivePhoto(photo)));
 }
