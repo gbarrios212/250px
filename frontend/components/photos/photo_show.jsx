@@ -17,14 +17,18 @@ class PhotoShow extends React.Component {
     }
 
   render () {
-    //   debugger
+      debugger
       if (!this.props.photo) {
         return <div>Loading...</div>;
       }
     return (
-      <div>
-          <img src={this.props.photo.photoUrl} alt=""></img>
-          <Link to={`/photos/${this.props.photo.id}/edit`}>Edit this Cat!</Link>
+      <div className="matte-box">
+        <div className="outer-container">
+          <div className="inner-container">
+            <img className="show-img" src={this.props.photo.photoUrl} alt=""></img>
+            <Link to={`/photos/${this.props.photo.id}/edit`}>Edit this Cat!</Link>
+          </div>
+        </div>
       </div>
     );
   }

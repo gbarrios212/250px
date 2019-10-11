@@ -54,6 +54,14 @@ class Api::PhotosController < ApplicationController
             :aperture, 
             :shutter_speed, 
             :iso, 
-            :description)
+            :description,
+            :id, 
+            #why
+            :author_id
+            #why
+        )
     end
 end
+
+#WHAT IS THIS TALKING ABOUT 
+#error: Actions may not have an undefined "type" property. Have you misspelled a constant?

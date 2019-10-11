@@ -12,3 +12,41 @@
     max-height: 250px;
     margin: 15px;
 }
+
+.show-img{
+    width: auto;
+    height: auto;
+    max-height: 100%;
+    max-width: 100%;
+    vertical-align: middle;
+    border-style: none;
+}
+
+.inner-container{
+    display: flex;
+    position: relative;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+}
+
+.matte-box{
+    display: block;
+    position: absolute;
+    top: 76px;
+    left: 0;
+    background-color: rgb(34, 34, 34);
+    width: 100%;
+}
+
+.inner-container a{
+    display: block;
+    z-index: 100;
+    position: relative;
+    top: 50px;
+}
