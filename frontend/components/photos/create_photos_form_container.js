@@ -4,6 +4,7 @@ import { createPhoto } from '../../actions/photo_actions';
 
 const msp = (state, ownProps) => ({
     photo: { name: "", 
+    category: "",
     location: "",
     lat: "",
     long: "",

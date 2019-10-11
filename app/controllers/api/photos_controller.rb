@@ -44,6 +44,7 @@ class Api::PhotosController < ApplicationController
         params.require(:photo).permit(:name, 
             :photoConnect, 
             :photoUrl,
+            :category,
             :location, 
             :lat, 
             :long, 

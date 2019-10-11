@@ -55,6 +55,41 @@ class PhotosForm extends React.Component {
                 {preview}
                 <label htmlFor="name">Name:</label>
                 <input id="name" type="text" onChange={this.update("name")} value={this.state.name}/>
+                
+                <label htmlFor="category">Category:</label>
+                <select id="category" name="category" type="text" onChange={this.update("category")} value={this.state.category}>
+                    <option value="uncategorized">Uncategorized</option>
+                    <option value="abstract">Abstract</option>
+                    <option value="aerial">Aerial</option>
+                    <option value="animals">Animals</option>
+                    <option value="black and white">Black and White</option>
+                    <option value="celebrities">Celebrities</option>
+                    <option value="city and architecture">City & Architecture</option>
+                    <option value="commercial">Commercial</option>
+                    <option value="concert">Concert</option>
+                    <option value="family">Family</option>
+                    <option value="fashion">Fashion</option>
+                    <option value="film">Film</option>
+                    <option value="fine art">Fine Art</option>
+                    <option value="food">Food</option>
+                    <option value="journalism">Journalism</option>
+                    <option value="landscapes">Landscapes</option>
+                    <option value="macro">Macro</option>
+                    <option value="nature">Nature</option>
+                    <option value="night">Night</option>
+                    <option value="nude">Nude</option>
+                    <option value="people">People</option>
+                    <option value="performing arts">Performing Arts</option>
+                    <option value="sport">Sport</option>
+                    <option value="still life">Still Life</option>
+                    <option value="street">Street</option>
+                    <option value="transportation">Transportation</option>
+                    <option value="travel">Travel</option>
+                    <option value="underwater">Underwater</option>
+                    <option value="urban exploration">Urban Exploration</option>
+                    <option value="wedding">Wedding</option>
+                </select>
+                
                 <label htmlFor="location">Location:</label>
                 <input id="location" type="text" onChange={this.update("location")} value={this.state.location}/>
                 <label htmlFor="lat">Latitude:</label>
