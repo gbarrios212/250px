@@ -22,7 +22,7 @@ class Api::PhotosController < ApplicationController
 
     def update 
         @photo = Photo.find(params[:id])
-        if @photo.update!(photo_params) 
+        if @photo.update(photo_params) 
             # render json: {message: "Neat!"}
             render :show
         else 

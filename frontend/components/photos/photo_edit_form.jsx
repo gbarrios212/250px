@@ -5,7 +5,7 @@ class PhotoEditForm extends React.Component {
     constructor(props){
       super(props)
       this.state = this.props.photo
-      // debugger;
+
       this.handleSubmit = this.handleSubmit.bind(this);
       this.confirmDelete = this.confirmDelete.bind(this);
     }
@@ -16,9 +16,9 @@ class PhotoEditForm extends React.Component {
 
     handleSubmit(e) {
       e.preventDefault();
-      // debugger;
       this.props.action(this.state)
-        .then(this.props.history.push(`/photos/${this.props.photo.id}`));
+        // .then(this.props.history.push(`/photos/${this.props.photo.id}`))
+        ;
     }
     
     update(field) {
