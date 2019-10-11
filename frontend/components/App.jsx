@@ -19,14 +19,11 @@ const App = () => (
       <AuthRoute path="/login" component={LoginFormContainer}/>
       <Route exact path="/" component={SplashContainer} />
       <Route exact path="/" component={PhotosIndexContainer} />
-      {/* <Route exact path="/" component={CreatePhotosFormContainer} />
-       */}
 
-      {/* <Route path="/photos/new" component={CreatePhotosFormContainer} /> */}
       <Route exact path="/photos/:photoId" component={PhotoShowContainer} />
       <ProtectedRoute exact path="/photos/:photoId/edit" component={PhotoEditFormContainer} />
       <ProtectedRoute exact path="/manage/upload" component={CreatePhotosFormContainer} />
-      {/* <Route exact path="/manage/:upload" component={CreatePhotosFormContainer} /> */}
+      <ProtectedRoute exact path="/manage/all" component={CreatePhotosFormContainer} />
 
   </>
 );
