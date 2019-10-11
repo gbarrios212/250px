@@ -7,6 +7,7 @@ class PhotoEditForm extends React.Component {
       this.state = this.props.photo
       // debugger;
       this.handleSubmit = this.handleSubmit.bind(this);
+      this.confirmDelete = this.confirmDelete.bind(this);
     }
 
     handleSubmit(e) {
@@ -19,6 +20,14 @@ class PhotoEditForm extends React.Component {
     update(field) {
       return e => {
           this.setState({[field]: e.currentTarget.value})
+      }
+    }
+
+    confirmDelete(e){
+      e.preventDefault();
+      let result = confirm("Are you furr real?");
+      if (result){
+        this.props.deletePhoto(this.props.photo.id).then(this.props.history.push("/"))
       }
     }
 
@@ -102,7 +111,7 @@ class PhotoEditForm extends React.Component {
           <label htmlFor="description">Description</label>
           <input id="description" type="text" onChange={this.update("description")} value={this.state.description}/>
           <button className="edit-button">Change that Cat!</button>
-          <button className="delete-button" onClick={() => this.props.deletePhoto(this.props.photo.id).then(this.props.history.push("/"))}>Delete this Cat :(</button>
+          <button className="delete-button" onClick={this.confirmDelete}>Delete this Cat :(</button>
         </form>
       );
     }
