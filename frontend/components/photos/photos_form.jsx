@@ -69,7 +69,7 @@ class PhotosForm extends React.Component {
                 {errorsList}
                 <br/>
                 <label htmlFor="file">Choose File:</label>
-                <input id="file" type="file" onChange={this.handleFile} />
+                <input id="file" type="file" onChange={this.handleFile} multiple/>
                 <h3>Image Preview</h3>
                 {preview}
                 <label htmlFor="name">Name:</label>
