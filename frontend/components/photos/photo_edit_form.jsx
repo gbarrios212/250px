@@ -18,7 +18,7 @@ class PhotoEditForm extends React.Component {
       e.preventDefault();
       // debugger;
       this.props.action(this.state)
-        .then(this.props.history.push('/'));
+        .then(this.props.history.push(`/photos/${this.props.photo.id}`));
     }
     
     update(field) {
