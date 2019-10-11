@@ -20,7 +20,9 @@ class PhotosForm extends React.Component {
         const formData = new FormData();
         let keys = Object.keys(this.state)
         keys.forEach(key => {
-            formData.append(`photo[${key}]`, this.state[key])
+            if (this.state[key]){
+                formData.append(`photo[${key}]`, this.state[key])
+            }
         })
         $.ajax({
             url: 'api/photos',
