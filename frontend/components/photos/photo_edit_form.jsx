@@ -10,6 +10,10 @@ class PhotoEditForm extends React.Component {
       this.confirmDelete = this.confirmDelete.bind(this);
     }
 
+    componentWillUnmount(){
+      this.props.clearErrors();
+    }
+
     handleSubmit(e) {
       e.preventDefault();
       // debugger;
@@ -44,9 +48,18 @@ class PhotoEditForm extends React.Component {
     }
   
     render() {
+
+      const errorsList = (this.props.errors) ? ( 
+        this.props.errors.map((error, index) => (
+        <li key={index}>{error}</li>
+      ))) : (
+        <div></div>
+      );
+      
       // debugger;
       return (
         <form className="edit_form" onSubmit={this.handleSubmit}>
+          {errorsList}
           {/* <label htmlFor="file">Choose File:</label>
           <input id="file" type="file" onChange={this.handleFile} />
           <h3>Image Preview</h3>

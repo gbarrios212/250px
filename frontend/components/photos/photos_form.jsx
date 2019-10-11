@@ -10,6 +10,10 @@ class PhotosForm extends React.Component {
         this.handleFile = this.handleFile.bind(this);
     }
 
+    componentWillUnmount(){
+        this.props.clearErrors();
+    }
+
     handleSubmit(e) {
         e.preventDefault();
         const formData = new FormData();
@@ -46,9 +50,20 @@ class PhotosForm extends React.Component {
     }
 
     render() {
+    
+        const errorsList = (this.props.errors) ? ( 
+            this.props.errors.map((error, index) => (
+            <li key={index}>{error}</li>
+        ))) : (
+            <div></div>
+        );
+
+        debugger; 
+        
         const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null;
         return (
             <form className="create_form" onSubmit={this.handleSubmit}>
+                {errorsList}
                 <label htmlFor="file">Choose File:</label>
                 <input id="file" type="file" onChange={this.handleFile} />
                 <h3>Image Preview</h3>
@@ -89,7 +104,7 @@ class PhotosForm extends React.Component {
                     <option value="urban exploration">Urban Exploration</option>
                     <option value="wedding">Wedding</option>
                 </select>
-                
+
                 <label htmlFor="location">Location:</label>
                 <input id="location" type="text" onChange={this.update("location")} value={this.state.location}/>
                 <label htmlFor="lat">Latitude:</label>
