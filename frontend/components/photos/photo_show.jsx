@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 class PhotoShow extends React.Component {
     componentDidMount() {
-        debugger;
+        // debugger;
         this.props.fetchPhoto(this.props.match.params.photoId);
     }
 
@@ -17,7 +17,7 @@ class PhotoShow extends React.Component {
     }
 
   render () {
-      debugger
+    //   debugger
       if (!this.props.photo) {
         return <div>Loading...</div>;
       }

@@ -5,13 +5,15 @@ class PhotoEditForm extends React.Component {
     constructor(props){
       super(props)
       this.state = this.props.photo
-
+      // debugger;
       this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSubmit(e) {
       e.preventDefault();
+      debugger;
       this.props.action(this.state)
+        .then(() => this.props.history.push('/'));
     }
     
     update(field) {
@@ -21,16 +23,19 @@ class PhotoEditForm extends React.Component {
     }
 
     componentDidMount() {
+      // debugger;
       this.props.fetchPhoto(this.props.match.params.photoId);
     }
   
     componentDidUpdate(prevProps) {
+      // debugger;
       if (prevProps.photo.id != this.props.match.params.photoId) {
         this.props.fetchphoto(this.props.match.params.photoId);
       }
     }
   
     render() {
+      // debugger;
       return (
         <form className="edit_form" onSubmit={this.handleSubmit}>
           {/* <label htmlFor="file">Choose File:</label>
@@ -62,6 +67,7 @@ class PhotoEditForm extends React.Component {
           <label htmlFor="description">Description</label>
           <input id="description" type="text" onChange={this.update("description")} value={this.state.description}/>
           <button className="edit-button">Change that Cat!</button>
+          {/* <button className="delete-button" onClick={this.props.deletePhoto(this.props.photo.id)}>Delete this Cat :(</button> */}
         </form>
       );
     }

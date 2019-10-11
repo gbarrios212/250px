@@ -23,8 +23,8 @@ const App = () => (
       
 
       {/* <Route path="/photos/new" component={CreatePhotosFormContainer} /> */}
-      <Route path="/photos/:photoId" component={PhotoShowContainer} />
-      <Route path="/photos/:photoId/edit" component={PhotoEditFormContainer} />
+      <Route exact path="/photos/:photoId" component={PhotoShowContainer} />
+      <Route exact path="/photos/:photoId/edit" component={PhotoEditFormContainer} />
   </>
 );
 

@@ -1,5 +1,5 @@
 .edit_form{
-    display: none;
+    display: block;
     margin: auto;
     border: 1px solid #eeeff2;
     background-color: #fff;
@@ -34,6 +34,21 @@
 }
 
 .edit-button{
+    display: block;
+    background: #b5deda;
+    margin: 15px;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 3px;
+    width: calc(100% - 150px);
+    position: relative;
+    left: -15px;
+    top: 15px;
+    line-height: 1.4em;
+    cursor: pointer;
+}
+
+.delete-button{
     display: block;
     background: #b5deda;
     margin: 15px;
