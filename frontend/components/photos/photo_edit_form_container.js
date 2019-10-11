@@ -1,7 +1,7 @@
 import { deletePhoto } from '../../actions/photo_actions';
 import { fetchPhoto } from '../../actions/photo_actions';
 import { connect } from 'react-redux'
-import { updatePhoto } from '../../util/photo_api_util';
+import { updatePhoto } from '../../actions/photo_actions';
 import PhotoEditForm from './photo_edit_form';
 
 const msp = (state, ownProps) => ({

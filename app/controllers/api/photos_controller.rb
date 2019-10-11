@@ -10,23 +10,23 @@ class Api::PhotosController < ApplicationController
     end
 
     def create 
-        photo = Photo.new(photo_params)
-        photo.author_id = current_user.id
-        if photo.save 
+        @photo = Photo.new(photo_params)
+        @photo.author_id = current_user.id
+        if @photo.save 
             # render json: {message: "Neat!"}
             render :show
         else 
-            render json: photo.errors.full_messages, status: 422
+            render json: @photo.errors.full_messages, status: 422
         end
     end
 
     def update 
-        photo = Photo.find(params[:id])
-        if photo.update!(photo_params) 
+        @photo = Photo.find(params[:id])
+        if @photo.update!(photo_params) 
             # render json: {message: "Neat!"}
             render :show
         else 
-            render json: photo.errors.full_messages, status: 422
+            render json: @photo.errors.full_messages, status: 422
         end
 
     end
@@ -54,11 +54,7 @@ class Api::PhotosController < ApplicationController
             :aperture, 
             :shutter_speed, 
             :iso, 
-            :description,
-            :id, 
-            #why
-            :author_id
-            #why
+            :description
         )
     end
 end

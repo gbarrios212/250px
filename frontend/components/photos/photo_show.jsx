@@ -2,11 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class PhotoShow extends React.Component {
-  constructor(props){
-    super(props)
+  // constructor(props){
+  //   super(props)
 
-    this.state = {photo: this.props.photo};
-  }
+  //   this.state = {photo: this.props.photo};
+  // }
 
 
   componentDidMount() {
@@ -19,8 +19,8 @@ class PhotoShow extends React.Component {
       // if (prevProps.photo.id != this.props.match.params.photoId) 
     if (prevProps.match.params.photoId !== this.props.match.params.photoId){
       this.props.fetchPhoto(this.props.match.params.photoId);
-    } else if(prevProps.photo !== this.props.photo){
-      this.setState({photo: this.props.photo})
+    // } else if(prevProps.photo !== this.props.photo){
+    //   this.setState({photo: this.props.photo})
     }
   }
 

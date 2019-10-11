@@ -13,7 +13,7 @@ class PhotoEditForm extends React.Component {
       e.preventDefault();
       // debugger;
       this.props.action(this.state)
-        .then(() => this.props.history.push('/'));
+        .then(this.props.history.push('/'));
     }
     
     update(field) {
@@ -67,7 +67,7 @@ class PhotoEditForm extends React.Component {
           <label htmlFor="description">Description</label>
           <input id="description" type="text" onChange={this.update("description")} value={this.state.description}/>
           <button className="edit-button">Change that Cat!</button>
-          <button className="delete-button" onClick={() => this.props.deletePhoto(this.props.photo.id)}>Delete this Cat :(</button>
+          <button className="delete-button" onClick={() => this.props.deletePhoto(this.props.photo.id).then(this.props.history.push("/"))}>Delete this Cat :(</button>
         </form>
       );
     }
