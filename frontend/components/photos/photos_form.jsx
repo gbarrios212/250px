@@ -54,17 +54,18 @@ class PhotosForm extends React.Component {
     
         const errorsList = (this.props.errors) ? ( 
             this.props.errors.map((error, index) => (
-            <li key={index}>{error}</li>
+            <li className="errors" key={index}>{error}</li>
         ))) : (
             <div></div>
         );
 
-        debugger; 
+        // debugger; 
         
         const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null;
         return (
             <form className="create_form" onSubmit={this.handleSubmit}>
                 {errorsList}
+                <br/>
                 <label htmlFor="file">Choose File:</label>
                 <input id="file" type="file" onChange={this.handleFile} />
                 <h3>Image Preview</h3>

@@ -51,7 +51,7 @@ class PhotoEditForm extends React.Component {
 
       const errorsList = (this.props.errors) ? ( 
         this.props.errors.map((error, index) => (
-        <li key={index}>{error}</li>
+        <li className="errors" key={index}>{error}</li>
       ))) : (
         <div></div>
       );
@@ -59,6 +59,7 @@ class PhotoEditForm extends React.Component {
       // debugger;
       return (
         <form className="edit_form" onSubmit={this.handleSubmit}>
+          <br/>
           {errorsList}
           {/* <label htmlFor="file">Choose File:</label>
           <input id="file" type="file" onChange={this.handleFile} />
