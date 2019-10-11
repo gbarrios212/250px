@@ -1,6 +1,6 @@
 import PhotosForm from './photos_form';
 import { connect } from 'react-redux'
-import { createPhoto, clearErrors } from '../../actions/photo_actions';
+import { createPhoto, clearErrors, receiveErrors } from '../../actions/photo_actions';
 
 const msp = (state, ownProps) => ({
     photo: 
@@ -22,7 +22,8 @@ const msp = (state, ownProps) => ({
 
 const mdp = (dispatch) => ({
     action: (photo) => dispatch(createPhoto(photo)), 
-    clearErrors: () => dispatch(clearErrors())
+    clearErrors: () => dispatch(clearErrors()),
+    receivePhotoErrors: (errors) => dispatch(receiveErrors(errors)) 
 })
 
 export default connect(msp, mdp)(PhotosForm);

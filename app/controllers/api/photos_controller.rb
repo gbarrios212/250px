@@ -59,6 +59,3 @@ class Api::PhotosController < ApplicationController
         )
     end
 end
-
-#WHAT IS THIS TALKING ABOUT 
-#error: Actions may not have an undefined "type" property. Have you misspelled a constant?

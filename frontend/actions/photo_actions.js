@@ -3,8 +3,8 @@ import * as photoApiUtil from '../util/photo_api_util';
 export const RECEIVE_ALL_PHOTOS = "RECEIVE_ALL_PHOTOS";
 export const RECEIVE_PHOTO = "RECEIVE_PHOTO";
 export const REMOVE_PHOTO = "REMOVE_PHOTO";
-export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
-export const CLEAR_ERRORS = "CLEAR_ERRORS"; 
+export const RECEIVE_PHOTO_ERRORS = "RECEIVE_PHOTO_ERRORS";
+export const CLEAR_PHOTO_ERRORS = "CLEAR_PHOTO_ERRORS"; 
 
 const receiveAllPhotos = (photos) => ({
     type: RECEIVE_ALL_PHOTOS, 
@@ -21,13 +21,13 @@ const removePhoto = (id) => ({
     id
 })
 
-const receiveErrors = (errors) => ({
-    type: RECEIVE_ERRORS,
+export const receiveErrors = (errors) => ({
+    type: RECEIVE_PHOTO_ERRORS,
     errors
 })
 
 export const clearErrors = () => ({
-    type: CLEAR_ERRORS
+    type: CLEAR_PHOTO_ERRORS
 })
 
 export const fetchPhotos = () => (dispatch) => {

@@ -1,7 +1,7 @@
 import { 
     RECEIVE_PHOTO, 
-    RECEIVE_ERRORS,
-    CLEAR_ERRORS
+    RECEIVE_PHOTO_ERRORS,
+    CLEAR_PHOTO_ERRORS
 } from '../actions/photo_actions';
 
 
@@ -10,9 +10,9 @@ const photoErrorsReducer = (oldState = [], action) => {
     switch(action.type){
         case RECEIVE_PHOTO:
             return [];
-        case RECEIVE_ERRORS:
+        case RECEIVE_PHOTO_ERRORS:
             return action.errors;
-        case CLEAR_ERRORS:
+        case CLEAR_PHOTO_ERRORS:
             return [];
         default: 
             return oldState;

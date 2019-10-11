@@ -1,4 +1,5 @@
 import React from 'react';
+import { RECEIVE_PHOTO_ERRORS } from '../../actions/photo_actions'
 
 class PhotosForm extends React.Component {
     constructor(props){
@@ -13,7 +14,7 @@ class PhotosForm extends React.Component {
     componentWillUnmount(){
         this.props.clearErrors();
     }
-
+ 
     handleSubmit(e) {
         e.preventDefault();
         const formData = new FormData();
@@ -28,7 +29,7 @@ class PhotosForm extends React.Component {
             contentType: false, 
             processData: false
         }).then((response) => console.log(response.message),
-            (response) => console.log(response.responseJSON)
+            (response) => this.props.receivePhotoErrors(response.responseJSON)
         );
     }
 
