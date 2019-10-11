@@ -3,7 +3,7 @@ import NavbarContainer from "./navbar/navbar_container";
 import { Route } from 'react-router-dom';
 import SignUpFormContainer from './session/signup_form_container';
 import LoginFormContainer from './session/login_form_container';
-import { AuthRoute } from '../util/route_util';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SplashContainer from './splash/splash_container';
 import PhotosIndexContainer from './photos/photos_index_container';
 import CreatePhotosFormContainer from './photos/create_photos_form_container'
@@ -24,9 +24,10 @@ const App = () => (
 
       {/* <Route path="/photos/new" component={CreatePhotosFormContainer} /> */}
       <Route exact path="/photos/:photoId" component={PhotoShowContainer} />
-      <Route exact path="/photos/:photoId/edit" component={PhotoEditFormContainer} />
-      <Route exact path="/manage/upload" component={CreatePhotosFormContainer} />
+      <ProtectedRoute exact path="/photos/:photoId/edit" component={PhotoEditFormContainer} />
+      <ProtectedRoute exact path="/manage/upload" component={CreatePhotosFormContainer} />
       {/* <Route exact path="/manage/:upload" component={CreatePhotosFormContainer} /> */}
+
   </>
 );
 
