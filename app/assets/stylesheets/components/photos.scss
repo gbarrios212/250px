@@ -42,11 +42,18 @@
     left: 0;
     background-color: rgb(34, 34, 34);
     width: 100%;
+    height: calc(100vh - 128px);
+    min-height: 600px;
 }
-//temp
+
 .inner-container a{
     display: block;
     z-index: 100;
     position: relative;
     top: 50px;
 }
+
+
+
+////test///
+

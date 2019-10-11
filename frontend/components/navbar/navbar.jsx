@@ -62,7 +62,9 @@ class Navbar extends React.Component {
                                     <button className="logout" onClick={this.props.logout}>Log Out</button>
                                 </div>
                             </div>
-                            <i className="fas fa-plus"></i>    
+                            <Link to="/manage/upload">
+                                <i className="fas fa-plus"></i>    
+                            </Link>
                         </div>
                     </section>
                             

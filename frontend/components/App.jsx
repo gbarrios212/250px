@@ -19,12 +19,13 @@ const App = () => (
       <AuthRoute path="/login" component={LoginFormContainer}/>
       <Route exact path="/" component={SplashContainer} />
       <Route exact path="/" component={PhotosIndexContainer} />
-      <Route exact path="/" component={CreatePhotosFormContainer} />
-      
+      {/* <Route exact path="/" component={CreatePhotosFormContainer} />
+       */}
 
       {/* <Route path="/photos/new" component={CreatePhotosFormContainer} /> */}
       <Route exact path="/photos/:photoId" component={PhotoShowContainer} />
       <Route exact path="/photos/:photoId/edit" component={PhotoEditFormContainer} />
+      <Route exact path="/manage/:upload" component={CreatePhotosFormContainer} />
   </>
 );
 

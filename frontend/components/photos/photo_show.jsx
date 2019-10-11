@@ -17,7 +17,7 @@ class PhotoShow extends React.Component {
     }
 
   render () {
-      debugger
+      // debugger
       if (!this.props.photo) {
         return <div>Loading...</div>;
       }
