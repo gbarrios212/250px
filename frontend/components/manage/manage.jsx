@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PhotosIndexItem from '../photos/photos_index_item';
+import ManageLibrary from './manage_library'
 
 class Manage extends React.Component {
     constructor(props){
         super(props)
-        debugger;
-
     }
 
     // componentDidMount() {
@@ -28,11 +27,25 @@ class Manage extends React.Component {
         })
         return (
             <div>
-                <span className="library-photos">
-                    {photoList}
+                <span className="manage-grid">
+                    <span>
+                        {this.props.modalSelect}
+                    </span>
+                    <span>
+                        library
+                    </span>
+                    <span>
+                        Editing 
+                    </span>
+                    <span>list of photos</span>
+                    {/* <ul className="library-photos">
+                        {photoList}
+                    </ul> */}
+                        <ManageLibrary />
+                    <span>
+                        editing column 
+                    </span>
                 </span>
-                {this.props.modalSelect}
-
             </div>
         );
     }
