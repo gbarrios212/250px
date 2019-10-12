@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PhotosIndexItem from '../photos/photos_index_item';
 import ManageLibrary from './manage_library'
+import PhotoEditFormContainer from '../photos/photo_edit_form_container';
 
 class Manage extends React.Component {
     constructor(props){
@@ -31,11 +32,11 @@ class Manage extends React.Component {
                     <span className="item-a">
                         {this.props.modalSelect}
                     </span>
-                    <span>
-                        library
+                    <span className="item-b">
+                        Library
                     </span>
-                    <span>
-                        Editing 
+                    <span className="item-c">
+                        Edit
                     </span>
                     <span>list of photos</span>
                     {/* <ul className="library-photos">
@@ -43,7 +44,7 @@ class Manage extends React.Component {
                     </ul> */}
                         <ManageLibrary />
                     <span>
-                        editing column 
+                        <PhotoEditFormContainer />
                     </span>
                 </span>
             </div>

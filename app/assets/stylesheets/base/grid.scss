@@ -43,3 +43,20 @@
     border-right: $sienna-border;
     border-bottom: $sienna-border;
 }
+
+.item-b{
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    background: white;
+    border-right: $sienna-border;
+    border-bottom: $sienna-border; 
+    color: $blue;
+    text-align: center;  
+}
+
+.item-c{
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+    background: white; 
+    color: $gray;  
+}

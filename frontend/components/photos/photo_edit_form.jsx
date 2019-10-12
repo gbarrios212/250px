@@ -35,17 +35,17 @@ class PhotoEditForm extends React.Component {
       }
     }
 
-    componentDidMount() {
-      // debugger;
-      this.props.fetchPhoto(this.props.match.params.photoId);
-    }
+    // componentDidMount() {
+    //   // debugger;
+    //   this.props.fetchPhoto(this.props.match.params.photoId);
+    // }
   
-    componentDidUpdate(prevProps) {
-      // debugger;
-      if (prevProps.photo.id != this.props.match.params.photoId) {
-        this.props.fetchphoto(this.props.match.params.photoId);
-      }
-    }
+    // componentDidUpdate(prevProps) {
+    //   // debugger;
+    //   if (prevProps.photo.id != this.props.match.params.photoId) {
+    //     this.props.fetchphoto(this.props.match.params.photoId);
+    //   }
+    // }
   
     render() {
 

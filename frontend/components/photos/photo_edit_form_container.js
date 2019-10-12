@@ -4,10 +4,21 @@ import { connect } from 'react-redux'
 import { updatePhoto, clearErrors, receiveErrors } from '../../actions/photo_actions';
 import PhotoEditForm from './photo_edit_form';
 
-const msp = (state, ownProps) => ({
-    photo: state.entities.photos[ownProps.match.params.photoId],
-    errors: state.errors.photo
-})
+const msp = (state, ownProps) =>{
+    let photo;
+    debugger;
+    if (ownProps.match){
+        photo = state.entities.photos[ownProps.match.params.photoId]
+    } else {
+        photo = state.entities.photos[5]
+    }
+    // temp note the hard code 
+    
+    return ({
+        photo: photo,
+        errors: state.errors.photo
+    })
+}
 
 const mdp = (dispatch) => ({
     action: (photo) => dispatch(updatePhoto(photo)),
