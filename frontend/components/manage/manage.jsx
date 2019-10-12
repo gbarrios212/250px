@@ -33,12 +33,18 @@ class Manage extends React.Component {
                         {this.props.modalSelect}
                     </span>
                     <span className="item-b">
-                        Library
+                        <p>
+                            Library
+                        </p>
                     </span>
                     <span className="item-c">
                         Edit
                     </span>
-                    <span>list of photos</span>
+                    <span className="item-d">
+                        <p>
+                            PHOTOS
+                        </p>
+                    </span>
                     {/* <ul className="library-photos">
                         {photoList}
                     </ul> */}
