@@ -35,3 +35,11 @@
 //     height: 900px;
 //     width: 900px;
 // }
+
+.item-a{
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    background: white;
+    border-right: $sienna-border;
+    border-bottom: $sienna-border;
+}

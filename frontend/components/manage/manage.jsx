@@ -28,7 +28,7 @@ class Manage extends React.Component {
         return (
             <div>
                 <span className="manage-grid">
-                    <span>
+                    <span className="item-a">
                         {this.props.modalSelect}
                     </span>
                     <span>
