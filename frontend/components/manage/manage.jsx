@@ -33,8 +33,10 @@ class Manage extends React.Component {
                             PHOTOS
                         </p>
                     </span>
+                    <span className="item-e">
                         <ManageLibraryContainer />
-                    <span>
+                    </span>
+                    <span className="item-f">
                         <PhotoEditFormContainer />
                     </span>
                 </span>
