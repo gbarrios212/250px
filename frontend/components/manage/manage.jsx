@@ -14,12 +14,6 @@ class Manage extends React.Component {
     // }
 
     render(){
-        // let splashSignup;
-        // if (!this.props.currentUser){
-        //     splashSignup = <Link to="/signup" className="splash-signup">Sign Up</Link>
-        // } else {
-        //     manageIndex = <div></div>
-        // }
         return (
             <div>
                 <span className="manage-grid">

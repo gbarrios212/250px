@@ -14,7 +14,6 @@ class PhotoShow extends React.Component {
   }
 
   render () {
-      // debugger
       if (!this.props.photo) {
         return <div>Loading...</div>;
       }
@@ -23,7 +22,6 @@ class PhotoShow extends React.Component {
         <div className="outer-container">
           <div className="inner-container">
             <img className="show-img" src={this.props.photo.photoUrl} alt=""></img>
-            <Link to={`/photos/${this.props.photo.id}/edit`}>Edit this Cat!</Link>
           </div>
         </div>
       </div>
