@@ -3,10 +3,12 @@ import ManageLibraryDetail from './manage_library_detail';
 
 class ManageLibrary extends React.Component{
     constructor(props){
+        debugger;
         super(props)
     }
 
     componentDidMount() {
+        debugger;
         this.props.fetchPhotos();
     }
 

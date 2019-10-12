@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PhotosIndexItem from '../photos/photos_index_item';
-import ManageLibrary from './manage_library'
+import ManageLibraryContainer from './manage_library_container'
 import PhotoEditFormContainer from '../photos/photo_edit_form_container';
 
 class Manage extends React.Component {
@@ -20,12 +20,6 @@ class Manage extends React.Component {
         // } else {
         //     manageIndex = <div></div>
         // }
-        // let photosList = this.props.photos.map(photo => {
-        //     return <PhotosIndexItem photo={photo} key={photo.id}/>
-        // })
-        let photoList = this.props.photos.map(photo => {
-            return <PhotosIndexItem photo={photo} key={photo.id}/>
-        })
         return (
             <div>
                 <span className="manage-grid">
@@ -45,10 +39,7 @@ class Manage extends React.Component {
                             PHOTOS
                         </p>
                     </span>
-                    {/* <ul className="library-photos">
-                        {photoList}
-                    </ul> */}
-                        <ManageLibrary />
+                        <ManageLibraryContainer />
                     <span>
                         <PhotoEditFormContainer />
                     </span>
