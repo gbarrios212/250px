@@ -11,7 +11,7 @@ const receiveAllPhotos = (photos) => ({
     photos
 })
 
-const receivePhoto = (photo) => ({
+export const receivePhoto = (photo) => ({
     type: RECEIVE_PHOTO, 
     photo
 })

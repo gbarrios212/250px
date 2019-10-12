@@ -3,13 +3,13 @@ import ManageLibraryDetail from './manage_library_detail';
 
 class ManageLibrary extends React.Component{
     constructor(props){
-        // debugger;
+        debugger;
         super(props)
     }
 
     componentDidMount() {
         // debugger;
-        this.props.fetchPhotos();
+        // this.props.fetchPhotos();
     }
 
     // componentDidUpdate(prevProps) {
@@ -20,7 +20,7 @@ class ManageLibrary extends React.Component{
     //STOP ADDING DIDUPDATE 
 
     render() {
-        // debugger;
+        debugger;
         let photosList = this.props.photos.map(photo => {
             return <ManageLibraryDetail photo={photo} key={photo.id}/>
         })

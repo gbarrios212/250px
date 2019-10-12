@@ -4,7 +4,7 @@ import { fetchPhotos } from '../../actions/photo_actions';
 import { selectUserPhotos } from '../../reducers/selectors';
 
 const msp = (state) => {
-    // debugger; 
+    debugger; 
     let currentUser = state.entities.users[state.session.id]
     return({
         // photos: currentUser.photo_ids.map(id => state.entities.photos[id])
@@ -13,7 +13,7 @@ const msp = (state) => {
 }
 
 const mdp = (dispatch) => ({
-    fetchPhotos: () => dispatch(fetchPhotos())
+    // fetchPhotos: () => dispatch(fetchPhotos())
 })
 
-export default connect(msp, mdp)(ManageLibrary)
+export default connect(msp, null)(ManageLibrary)

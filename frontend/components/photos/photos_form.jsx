@@ -31,16 +31,16 @@ class PhotosForm extends React.Component {
             contentType: false, 
             processData: false
         // }).then((response) => console.log(response.message),
-        }).then((response) => {
-            return this.props.currentUser.photo_ids.push(response["id"])
-        },
+        // }).then((response) => {
+        //     return this.props.currentUser.photo_ids.push(response["id"])
+        // },
+        }).then((response) => this.props.receivePhoto(response),
             (response) => this.props.receivePhotoErrors(response.responseJSON)
         )
         //test here for promise 
             //close modal 
             //fetch photos again
         .then(() => this.props.closeModal())
-        // .then(() => this.props.fetchPost())
         //test here for promise
         ;
         debugger;
