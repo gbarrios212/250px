@@ -1,21 +1,23 @@
 import React from 'react';
+import ManageLibraryDetail from './manage_library_detail';
 
 class ManageLibrary extends React.Component{
+    constructor(props){
+        super(props)
+    }
 
+    componentDidMount() {
+        this.props.fetchPhotos();
+    }
 
     render() {
         debugger;
+        let photosList = this.props.photos.map(photo => {
+            return <ManageLibraryDetail photo={photo} key={photo.id}/>
+        })
         return(
             <div className="library-grid">
-                <h1>hi</h1>
-                <h1>hi 2</h1>
-                <h1>hi 3</h1>
-                <h1>hi 4</h1>
-                <h1>hi 5</h1>
-                <h1>hi 6</h1>
-                <h1>hi 7</h1>
-                <h1>hi 8</h1>
-
+                {photosList}
             </div>
         )
     }

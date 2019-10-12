@@ -6,14 +6,14 @@ import PhotoEditForm from './photo_edit_form';
 
 const msp = (state, ownProps) =>{
     let photo;
-    debugger;
+    // debugger;
     if (ownProps.match){
         photo = state.entities.photos[ownProps.match.params.photoId]
     } else {
         photo = state.entities.photos[5]
     }
     // temp note the hard code 
-    
+
     return ({
         photo: photo,
         errors: state.errors.photo
