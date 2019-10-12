@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { createPhoto, clearErrors, receiveErrors } from '../../actions/photo_actions';
 
 const msp = (state, ownProps) => ({
+    currentUser: state.entities.users[state.session.id],
     photo: 
         { name: "", 
         category: "",

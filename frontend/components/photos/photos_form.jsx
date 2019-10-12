@@ -33,6 +33,7 @@ class PhotosForm extends React.Component {
         }).then((response) => console.log(response.message),
             (response) => this.props.receivePhotoErrors(response.responseJSON)
         );
+        this.props.currentUser.photo_ids.push(this.props.photo.id);
     }
 
     handleFile(e) {
@@ -61,8 +62,6 @@ class PhotosForm extends React.Component {
             <div></div>
         );
 
-        // debugger; 
-        
         const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null;
         return (
             <form className="create_form" onSubmit={this.handleSubmit}>
