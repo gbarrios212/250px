@@ -35,7 +35,14 @@ class PhotosForm extends React.Component {
             return this.props.currentUser.photo_ids.push(response["id"])
         },
             (response) => this.props.receivePhotoErrors(response.responseJSON)
-        );
+        )
+        //test here for promise 
+            //close modal 
+            //fetch photos again
+        .then(() => this.props.closeModal())
+        // .then(() => this.props.fetchPost())
+        //test here for promise
+        ;
         debugger;
         // this.props.currentUser.photo_ids.push(this.props.photo.id);
     }
