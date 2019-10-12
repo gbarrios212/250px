@@ -13,9 +13,9 @@ import Root from './components/root'
 //test store
 //
 
-import { fetchUser } from './util/user_api_util';
+// import { fetchUser } from './util/user_api_util';
 
-window.fetchUser = fetchUser;
+// window.fetchUser = fetchUser;
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");

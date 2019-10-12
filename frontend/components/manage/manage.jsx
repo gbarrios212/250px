@@ -23,9 +23,14 @@ class Manage extends React.Component {
         // let photosList = this.props.photos.map(photo => {
         //     return <PhotosIndexItem photo={photo} key={photo.id}/>
         // })
+        let photoList = this.props.photos.map(photo => {
+            return <PhotosIndexItem photo={photo} key={photo.id}/>
+        })
         return (
             <div>
-                {/* {photosList} */}
+                <span className="library-photos">
+                    {photoList}
+                </span>
                 {this.props.modalSelect}
 
             </div>
