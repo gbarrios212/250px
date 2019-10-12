@@ -12,6 +12,13 @@ class ManageLibrary extends React.Component{
         this.props.fetchPhotos();
     }
 
+    // componentDidUpdate(prevProps) {
+    //     if (this.props.photos !== prevProps.photos){
+    //         this.props.fetchPhotos();
+    //     }
+    // }
+    //STOP ADDING DIDUPDATE 
+
     render() {
         // debugger;
         let photosList = this.props.photos.map(photo => {

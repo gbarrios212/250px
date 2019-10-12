@@ -30,10 +30,14 @@ class PhotosForm extends React.Component {
             data: formData,
             contentType: false, 
             processData: false
-        }).then((response) => console.log(response.message),
+        // }).then((response) => console.log(response.message),
+        }).then((response) => {
+            return this.props.currentUser.photo_ids.push(response["id"])
+        },
             (response) => this.props.receivePhotoErrors(response.responseJSON)
         );
-        this.props.currentUser.photo_ids.push(this.props.photo.id);
+        debugger;
+        // this.props.currentUser.photo_ids.push(this.props.photo.id);
     }
 
     handleFile(e) {
