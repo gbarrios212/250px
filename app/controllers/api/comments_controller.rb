@@ -16,10 +16,25 @@ class Api::CommentsController < ApplicationController
     end
 
     def update
-        # @comment = Comment.find
+        # @comment = Comment.find(params[:comment][:id])
+        @comment = Comment.find(params[:id])
+
+        if @comment.update(comment_params)
+            photo = @comment.photo 
+
+            render json: photo, include: [:comments]
+        else 
+            render json: @comment.errors.full_messages, status: 422
+        end
     end
 
     def destroy
+        # @comment = Comment.find(params[:comment][:id])
+        @comment = Comment.find(params[:id])
+        # photo = @comment.photo
+        @comment.destroy 
+
+        render 'api/photos/show'
     end
 
     private
