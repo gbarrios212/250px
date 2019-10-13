@@ -26,8 +26,13 @@
     text-align: center;
 }
 
-.library-photos{
-    max-width: 250px;
-    max-height: 250px;
-    margin: 15px;
+
+.thumbnail{
+    cursor: pointer;
+}
+
+.selected{
+    outline-style: solid;
+    outline-color: $blue;
+    outline-width: medium;
 }
