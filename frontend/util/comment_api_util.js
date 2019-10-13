@@ -1,8 +1,3 @@
-// export const fetchComments = (id) => {
-//     return $.ajax({
-//         url: `api/photos/${id}/comments`
-//     })
-// }
 
 export const createComment = (comment) => {
     return $.ajax({

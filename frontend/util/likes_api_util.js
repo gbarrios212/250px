@@ -6,7 +6,6 @@ export const createLike = (like) => {
     })
 }
 
-
 export const deleteLike = (id) => {
     return $.ajax({
         method: "DELETE",
