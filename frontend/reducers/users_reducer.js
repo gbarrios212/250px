@@ -1,6 +1,7 @@
 import { 
     RECEIVE_CURRENT_USER
 } from '../actions/session_actions';
+import { RECEIVE_NEW_PHOTO } from '../actions/photo_actions';
 
 
 const usersReducer = (oldState = {}, action) => {

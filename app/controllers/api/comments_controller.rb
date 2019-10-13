@@ -5,27 +5,23 @@ class Api::CommentsController < ApplicationController
     end
     
     def create 
-        @comments = Comment.all 
         @comment = Comment.new(comment_params)
         @comment.author_id = current_user.id
         @comment.photo_id = params[:photo_id]
 
         if @comment.save 
-            render :index
+            photo = @comment.photo 
+            render json: photo, include: [:comments]
         else 
             render json: @comment.errors.full_messages, status: 422
         end
     end
 
     def update
-        # @comment = Comment.find(params[:comment][:id])
         @comment = Comment.find(params[:id])
-        # @comment.author_id = current_user.id
-        # @comment.photo_id = params[:id]
 
         if @comment.update(comment_params)
             photo = @comment.photo 
-
             render json: photo, include: [:comments]
         else 
             render json: @comment.errors.full_messages, status: 422
@@ -33,7 +29,6 @@ class Api::CommentsController < ApplicationController
     end
 
     def destroy
-        # @comment = Comment.find(params[:comment][:id])
         @comment = Comment.find(params[:id])
         photo = @comment.photo
         @comment.destroy 

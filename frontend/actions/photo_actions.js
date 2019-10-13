@@ -6,15 +6,27 @@ export const REMOVE_PHOTO = "REMOVE_PHOTO";
 export const RECEIVE_PHOTO_ERRORS = "RECEIVE_PHOTO_ERRORS";
 export const CLEAR_PHOTO_ERRORS = "CLEAR_PHOTO_ERRORS"; 
 
+///test
+// export const RECEIVE_NEW_PHOTO = "RECEIVE_NEW_PHOTO"
+////test 
+
+
 const receiveAllPhotos = (photos) => ({
     type: RECEIVE_ALL_PHOTOS, 
     photos
 })
 
-export const receivePhoto = (photo) => ({
+export const receivePhoto = (payload) => ({
     type: RECEIVE_PHOTO, 
-    photo
+    payload
 })
+
+///test
+// export const receiveNewPhoto = (photo) => ({
+//     type: RECEIVE_NEW_PHOTO, 
+//     photo
+// })
+///test
 
 const removePhoto = (id) => ({
     type: REMOVE_PHOTO, 
@@ -37,17 +49,17 @@ export const fetchPhotos = () => (dispatch) => {
 
 export const fetchPhoto = (id) => (dispatch) => {
     return photoApiUtil.fetchPhoto(id)
-        .then(photo => dispatch(receivePhoto(photo)));
+        .then(payload => dispatch(receivePhoto(payload)));
 }
 
 export const createPhoto = (photo) => (dispatch) => {
     return photoApiUtil.createPhoto(photo)
-        .then(photo => dispatch(receivePhoto(photo)), err => dispatch(receiveErrors(err.responseJSON)));
+        .then(payload => dispatch(receivePhoto(payload)), err => dispatch(receiveErrors(err.responseJSON)));
 }
 
 export const updatePhoto = (photo) => (dispatch) => {
     return photoApiUtil.updatePhoto(photo)
-        .then(photo => dispatch(receivePhoto(photo)), err => dispatch(receiveErrors(err.responseJSON)));
+        .then(payload => dispatch(receivePhoto(payload)), err => dispatch(receiveErrors(err.responseJSON)));
 }
 
 export const deletePhoto = (id) => (dispatch) => {

@@ -4,12 +4,15 @@ import merge from 'lodash/merge';
 const photosReducer = (state = {}, action) => {
     Object.freeze(state);
     let newState;
+    let photo;
     // debugger;
     switch(action.type){
         case RECEIVE_ALL_PHOTOS:
             return action.photos;
         case RECEIVE_PHOTO:
-            newState = merge({}, state, {[action.photo.id]: action.photo});
+            photo = action.payload.photo; 
+            debugger;
+            newState = merge({}, {[photo.id]: photo});
             return newState;
             // why do I want ID here? seems like that messes with my ability to select photo later 
             // also getting a random id: 5 sent up as a param to photos controller

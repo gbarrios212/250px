@@ -5,7 +5,8 @@ import commentErrorsReducer from './comment_errors_reducer';
 
 export default combineReducers({
     session: sessionErrorsReducer, 
-    photo: photoErrorsReducer
+    photo: photoErrorsReducer, 
+    comment: commentErrorsReducer
 })
 
 //export default errorsReducer;
