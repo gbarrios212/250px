@@ -14,11 +14,15 @@ import Root from './components/root'
 //
 
 import { createComment, updateComment, deleteComment, fetchComments } from './util/comment_api_util';
+import { createLike, deleteLike } from './util/likes_api_util';
 
 window.createComment = createComment;
 window.updateComment = updateComment;
 window.deleteComment = deleteComment;
 window.fetchComments = fetchComments;
+
+window.createLike = createLike; 
+window.deleteLike = deleteLike;
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
