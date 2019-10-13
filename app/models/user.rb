@@ -10,12 +10,12 @@ class User < ApplicationRecord
     has_many :photos,
     foreign_key: :author_id
 
-    # has_many :likes, 
-    #     through: :photos, 
-    #     source: :likes
-    # has_many :comments, 
-    #     through: :photos, 
-    #     source: :comments 
+    has_many :likes, 
+        through: :photos, 
+        source: :likes
+    has_many :comments, 
+        through: :photos, 
+        source: :comments 
 
     # has_many :galleries
     # has_many :followers
