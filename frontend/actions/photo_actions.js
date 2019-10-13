@@ -7,7 +7,7 @@ export const RECEIVE_PHOTO_ERRORS = "RECEIVE_PHOTO_ERRORS";
 export const CLEAR_PHOTO_ERRORS = "CLEAR_PHOTO_ERRORS"; 
 
 ///test
-// export const RECEIVE_NEW_PHOTO = "RECEIVE_NEW_PHOTO"
+export const RECEIVE_NEW_PHOTO = "RECEIVE_NEW_PHOTO"
 ////test 
 
 
@@ -22,10 +22,10 @@ export const receivePhoto = (payload) => ({
 })
 
 ///test
-// export const receiveNewPhoto = (photo) => ({
-//     type: RECEIVE_NEW_PHOTO, 
-//     photo
-// })
+export const receiveNewPhoto = (payload) => ({
+    type: RECEIVE_NEW_PHOTO, 
+    payload
+})
 ///test
 
 const removePhoto = (id) => ({
@@ -54,7 +54,7 @@ export const fetchPhoto = (id) => (dispatch) => {
 
 export const createPhoto = (photo) => (dispatch) => {
     return photoApiUtil.createPhoto(photo)
-        .then(payload => dispatch(receivePhoto(payload)), err => dispatch(receiveErrors(err.responseJSON)));
+        .then(payload => dispatch(receiveNewPhoto(payload)), err => dispatch(receiveErrors(err.responseJSON)));
 }
 
 export const updatePhoto = (photo) => (dispatch) => {

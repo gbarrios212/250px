@@ -34,7 +34,7 @@ class PhotosForm extends React.Component {
         // }).then((response) => {
         //     return this.props.currentUser.photo_ids.push(response["id"])
         // },
-        }).then((response) => this.props.receivePhoto(response),
+        }).then((response) => this.props.receiveNewPhoto(response),
             (response) => this.props.receivePhotoErrors(response.responseJSON)
         )
         //test here for promise 
