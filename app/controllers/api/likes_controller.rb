@@ -6,7 +6,7 @@ class Api::LikesController < ApplicationController
     end
 
     def destroy 
-        @like = like.find(params[:id])
+        @like = Like.find(params[:id])
         photo = @like.photo
         @like.destroy 
 

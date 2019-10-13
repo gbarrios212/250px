@@ -13,9 +13,12 @@ import Root from './components/root'
 //test store
 //
 
-import { fetchUser } from './util/user_api_util';
+import { createComment, updateComment, deleteComment, fetchComments } from './util/comment_api_util';
 
-window.fetchUser = fetchUser;
+window.createComment = createComment;
+window.updateComment = updateComment;
+window.deleteComment = deleteComment;
+window.fetchComments = fetchComments;
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");

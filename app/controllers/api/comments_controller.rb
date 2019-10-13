@@ -5,9 +5,11 @@ class Api::CommentsController < ApplicationController
     end
     
     def create 
+        @comments = Comment.all 
         @comment = Comment.new(comment_params)
         @comment.author_id = current_user.id
-        @comment.photo_id = params[:id]
+        @comment.photo_id = params[:photo_id]
+
         if @comment.save 
             render :index
         else 
@@ -18,6 +20,8 @@ class Api::CommentsController < ApplicationController
     def update
         # @comment = Comment.find(params[:comment][:id])
         @comment = Comment.find(params[:id])
+        # @comment.author_id = current_user.id
+        # @comment.photo_id = params[:id]
 
         if @comment.update(comment_params)
             photo = @comment.photo 
@@ -34,7 +38,7 @@ class Api::CommentsController < ApplicationController
         photo = @comment.photo
         @comment.destroy 
 
-        render json: photo
+        render json: photo, include: [:comments]
     end
 
     private
