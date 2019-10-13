@@ -1,17 +1,33 @@
-.edit_form{
+.edit-form{
     display: block;
     margin: auto;
     background-color: #fff;
     width: 300px;
     margin: auto;
-    padding: 32px 40px 46px;
+    padding: 0px 40px 46px;
     color: #71767a;
     position: relative;
     z-index: 0;
     border-left: $sienna-border;
 }
 
-.edit_form input{
+// .edit-form input{
+//     font-size: 14px;
+//     padding: 8px 10px;
+//     color: #525558;
+//     border: 1px solid rgba(185,193,199,0.5);
+//     -webkit-border-radius: 3px;
+//     border-radius: 3px;
+//     -webkit-transition: border-color 0.2s;
+//     -moz-transition: border-color 0.2s;
+//     transition: border-color 0.2s;
+//     resize: none;
+//     line-height: 1.4em;
+// }
+
+.edit-form input{
+    box-sizing: border-box;
+    margin: 0;
     font-size: 14px;
     padding: 8px 10px;
     color: #525558;
@@ -23,11 +39,53 @@
     transition: border-color 0.2s;
     resize: none;
     line-height: 1.4em;
+    width: 239px;
 }
 
-.edit_form label {
+.edit-form textarea{
+    font-size: 14px;
+    padding: 8px 10px;
+    // width: 279px;
+    // width: 239px;
+    width: 217px;
+    color: #525558;
+    border: 1px solid rgba(185,193,199,0.5);
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    line-height: 1.4em;
+    height: auto;
+    resize: none;
+    -webkit-transition: border-color 0.2s;
+    -moz-transition: border-color 0.2s;
+    transition: border-color 0.2s;
+}
+
+.edit-form input:focus, 
+    .edit-form textarea:focus{
+        border: 1px solid $blue;
+    }
+
+.edit-form label {
     display: block;
     margin-bottom: 10px;
+    color: $blue;
+    margin-top: 30px;
+}
+
+.edit-form select {
+    color: #525558;
+    border: 1px solid rgba(185,193,199,0.5);
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    background-color: #fff;
+    width: 239px;
+    padding: 6px 30px 6px 10px;
+    resize: none;
+    -webkit-transition: border-color 0.1s;
+    -moz-transition: border-color 0.1s;
+    transition: border-color 0.1s;
+    height: 100%;
+    -webkit-appearance: none;
 }
 
 .edit-button{
@@ -39,10 +97,11 @@
     font-size: 14px;
     border-radius: 3px;
     // width: calc(100% - 150px);
-    width: 299px;
-
+    // width: 299px;
+    // width: 259px;
+    width: 239px;
     position: relative;
-    left: -15px;
+    left: -20px;
     margin-left: 20px;
     top: 15px;
     font-weight: bold;
@@ -72,9 +131,10 @@
     font-size: 14px;
     font-weight: bold;
     border-radius: 3px;
-    width: 279px;
+    // width: 279px;
+    width: 219px;
     position: relative;
-    left: -10px;
+    left: -15px;
     top: 15px;
     cursor: pointer;
     transition: background-color 0.1s ease-in-out;
@@ -83,3 +143,25 @@
 .delete-button:hover{
     background-color: #7d8387;
 }
+
+// .cam-info{
+//     display: flex;
+//     justify-content: space-between;
+// }
+
+// .cam-info > label{
+//     align-self: flex-start;
+//     color: #71767a;
+//     display: inline-block
+// }
+
+// .cam-info > input {
+//     align-self: flex-end;
+//     display: inline-block;
+// }
+
+.edit-form p{
+    color: #71767a;
+}
+
+///width: 239px; temp

@@ -51,13 +51,15 @@ class PhotoEditForm extends React.Component {
       
       // debugger;
       return (
-        <form className="edit_form" onSubmit={this.handleSubmit}>
+        <form className="edit-form" onSubmit={this.handleSubmit}>
           <br/>
           {errorsList}
-          <label htmlFor="name">Name:</label>
+          <label htmlFor="name">Name</label>
           <input id="name" type="text" onChange={this.update("name")} value={this.state.name}/>
+          <label htmlFor="description">Description</label>
+          <textarea id="description" type="text" onChange={this.update("description")} value={this.state.description} placeholder="Tell us more about your photo"/>
 
-          <label htmlFor="category">Category:</label>
+          <label htmlFor="category">Category</label>
           <select id="category" name="category" type="text" onChange={this.update("category")} value={this.state.category}>
                     <option value="uncategorized">Uncategorized</option>
                     <option value="abstract">Abstract</option>
@@ -91,28 +93,31 @@ class PhotoEditForm extends React.Component {
                     <option value="wedding">Wedding</option>
                 </select>
 
-          <label htmlFor="location">Location:</label>
+          <label htmlFor="location">Location</label>
           <input id="location" type="text" onChange={this.update("location")} value={this.state.location}/>
-          <label htmlFor="lat">Latitude:</label>
+          {/* <label htmlFor="lat">Latitude</label>
           <input id="lat" type="text" onChange={this.update("lat")} value={this.state.lat}/>
-          <label htmlFor="long">Longitude:</label>
-          <input id="long" type="text" onChange={this.update("long")} value={this.state.long}/>
-          <label htmlFor="date_taken">Date Taken:</label>
-          <input id="date_taken" type="text" onChange={this.update("date_taken")} value={this.state.date_taken}/>
-          <label htmlFor="camera">Camera:</label>
-          <input id="camera" type="text" onChange={this.update("camera")} value={this.state.camera}/>
-          <label htmlFor="lens">Lens:</label>
-          <input id="lens" type="text" onChange={this.update("lens")} value={this.state.lens}/>
-          <label htmlFor="focal_length">Focal Length:</label>
-          <input id="focal_length" type="text" onChange={this.update("focal_length")} value={this.state.focal_length}/>
-          <label htmlFor="aperture">Aperture:</label>
-          <input id="aperture" type="text" onChange={this.update("aperture")} value={this.state.aperture}/>
-          <label htmlFor="shutter_speed">Shutter Speed:</label>
-          <input id="shutter_speed" type="text" onChange={this.update("shutter_speed")} value={this.state.shutter_speed}/>
-          <label htmlFor="iso">ISO:</label>
-          <input id="iso" type="text" onChange={this.update("iso")} value={this.state.iso}/>
-          <label htmlFor="description">Description</label>
-          <input id="description" type="text" onChange={this.update("description")} value={this.state.description}/>
+          <label htmlFor="long">Longitude</label>
+          <input id="long" type="text" onChange={this.update("long")} value={this.state.long}/> */}
+          <label htmlFor="date_taken">Date Taken</label>
+          <input id="date_taken" type="text" onChange={this.update("date_taken")} value={this.state.date_taken} placeholder="(dd/mm/yyyy)"/>
+          
+          <label>Camera Info</label>
+          {/* <span className="cam-info"> */}
+            <label htmlFor="camera"><p>Camera</p></label>
+            <input id="camera" type="text" onChange={this.update("camera")} value={this.state.camera}/>
+            <label htmlFor="lens"><p>Lens</p></label>
+            <input id="lens" type="text" onChange={this.update("lens")} value={this.state.lens}/>
+            <label htmlFor="focal_length"><p>Focal Length</p></label>
+            <input id="focal_length" type="text" onChange={this.update("focal_length")} value={this.state.focal_length}/>
+            <label htmlFor="aperture"><p>Aperture</p></label>
+            <input id="aperture" type="text" onChange={this.update("aperture")} value={this.state.aperture}/>
+            <label htmlFor="shutter_speed"><p>Shutter Speed</p></label>
+            <input id="shutter_speed" type="text" onChange={this.update("shutter_speed")} value={this.state.shutter_speed}/>
+            <label htmlFor="iso"><p>ISO</p></label>
+            <input id="iso" type="text" onChange={this.update("iso")} value={this.state.iso}/>
+          {/* </span> */}
+          
           <button className="edit-button">Change that Cat!</button>
           <button className="delete-button" onClick={this.confirmDelete}>Delete this Cat :(</button>
         </form>
