@@ -4,7 +4,7 @@ class Like < ApplicationRecord
 
     belongs_to :user 
     belongs_to :photo
-    has_one :photo_author, 
+    has_one :liked_photo_author, 
         through: :photo, 
         source: :author
 end

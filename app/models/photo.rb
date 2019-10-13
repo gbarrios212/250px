@@ -9,6 +9,12 @@ class Photo < ApplicationRecord
     has_one_attached :photoConnect
     has_many :likes 
     has_many :comments 
+    has_many :likers, 
+        through: :likes, 
+        source: :user 
+    has_many :commenters, 
+        through: :comments,
+        source: :author
     # has_many :galleries 
     # has_many :folows, 
     #     through: :author, 

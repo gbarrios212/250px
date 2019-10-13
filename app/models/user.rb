@@ -10,12 +10,29 @@ class User < ApplicationRecord
     has_many :photos,
     foreign_key: :author_id
 
-    has_many :likes, 
+    #data user has garnered total from own photos
+    has_many :received_likes, 
         through: :photos, 
         source: :likes
-    has_many :comments, 
+    has_many :received_comments, 
         through: :photos, 
         source: :comments 
+
+    #data user has contributed to other photos 
+    has_many :authored_likes, 
+        foreign_key: :user_id, 
+        class_name: :Like 
+    has_many :authored_comments, 
+        foreign_key: :author_id, 
+        class_name: :Comment
+
+    #user connection to photos through own interactions
+    has_many :liked_photos, 
+        through: :given_likes, 
+        source: :photo 
+    has_many :commented_photos, 
+        through: :given_comments, 
+        source: :photo
 
     # has_many :galleries
     # has_many :followers

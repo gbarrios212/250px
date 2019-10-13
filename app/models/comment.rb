@@ -9,7 +9,7 @@ class Comment < ApplicationRecord
     has_many :replies, 
         class_name: :Comment,
         foreign_key: :parent_comment_id
-    has_one :photo_author, 
+    has_one :commented_photo_author, 
         through: :photo, 
         source: :author
 end
