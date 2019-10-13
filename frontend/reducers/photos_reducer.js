@@ -34,7 +34,7 @@ const photosReducer = (state = {}, action) => {
         // case REMOVE_COMMENT: 
         //     newState = Object.assign({}, state);
         //     delete newState[action.commentId]
-        case RECEILVE_LIKE: 
+        case RECEIVE_LIKE: 
             like = action.like;
             newState = Object.assign({}, state);
             photo = newState[like.photo_id]

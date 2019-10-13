@@ -35,7 +35,7 @@ const usersReducer = (oldState = {}, action) => {
         // case REMOVE_COMMENT: 
 
         //the following correspond to user - liked photo relationship 
-        case RECEILVE_LIKE:
+        case RECEIVE_LIKE:
             like = action.like; 
             newState = Object.assign({}, oldState);
             user = newState[like.user_id]

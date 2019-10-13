@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import CommentsIndexContainer from '../comments/comments_index_container';
 
 class PhotoShow extends React.Component {
 
@@ -18,13 +19,18 @@ class PhotoShow extends React.Component {
         return <div>Loading...</div>;
       }
     return (
-      <div className="matte-box">
-        {/* <div className="outer-container"> */}
-          <div className="inner-container">
-            <img className="show-img" src={this.props.photo.photoUrl} alt=""></img>
-          </div>
-        {/* </div> */}
-      </div>
+      <>
+        <div className="matte-box">
+          {/* <div className="outer-container"> */}
+            <div className="inner-container">
+              <img className="show-img" src={this.props.photo.photoUrl} alt=""></img>
+            </div>
+          {/* </div> */}
+        </div>
+        <div className="comments">
+          <CommentsIndexContainer photoId={this.props.match.params.photoId}/>
+        </div>
+      </>
     );
   }
 }

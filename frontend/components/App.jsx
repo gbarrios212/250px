@@ -9,6 +9,7 @@ import PhotosIndexContainer from './photos/photos_index_container';
 import CreatePhotosFormContainer from './photos/create_photos_form_container'
 import PhotoShowContainer from './photos/photo_show_container';
 import PhotoEditFormContainer from './photos/photo_edit_form_container';
+import CommentsIndexContainer from './comments/comments_index_container';
 
 import Modal from './modal/modal';
 import ManageContainer from "./manage/manage_container";
@@ -29,6 +30,8 @@ const App = () => (
       <ProtectedRoute exact path="/manage/upload" component={ManageContainer} />
       <ProtectedRoute exact path="/manage/all" component={CreatePhotosFormContainer} />
 
+      
+      {/* <Route exact path="/photos/:photoId" component={CommentsIndexContainer} /> */}
 
   </>
 );
