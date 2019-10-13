@@ -28,10 +28,10 @@ class User < ApplicationRecord
 
     #user connection to photos through own interactions
     has_many :liked_photos, 
-        through: :given_likes, 
+        through: :authored_likes, 
         source: :photo 
     has_many :commented_photos, 
-        through: :given_comments, 
+        through: :authored_comments, 
         source: :photo
 
     # has_many :galleries
