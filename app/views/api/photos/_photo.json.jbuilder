@@ -2,3 +2,4 @@ json.extract! photo, :id, :name, :author_id, :category, :location, :lat, :long, 
 json.photoUrl url_for(photo.photoConnect)
 
 # json.set(:liked_user_ids, photo.likers.ids)
+
