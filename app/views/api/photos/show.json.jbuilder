@@ -1,6 +1,6 @@
-json.photo do 
+# json.photo do 
     json.partial! "api/photos/photo", photo: @photo
-end
+# end
 
 json.comments do 
     @photo.comments.each do |comment| 

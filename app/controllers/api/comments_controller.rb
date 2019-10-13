@@ -31,10 +31,10 @@ class Api::CommentsController < ApplicationController
     def destroy
         # @comment = Comment.find(params[:comment][:id])
         @comment = Comment.find(params[:id])
-        # photo = @comment.photo
+        photo = @comment.photo
         @comment.destroy 
 
-        render 'api/photos/show'
+        render json: photo
     end
 
     private
