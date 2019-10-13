@@ -13,7 +13,7 @@ const msp = (state) => {
 }
 
 const mdp = (dispatch) => ({
-    // fetchPhotos: () => dispatch(fetchPhotos())
+    fetchPhotos: () => dispatch(fetchPhotos())
 })
 
-export default connect(msp, null)(ManageLibrary)
+export default connect(msp, mdp)(ManageLibrary)

@@ -7,10 +7,10 @@ class ManageLibrary extends React.Component{
         super(props)
     }
 
-    componentDidMount() {
-        // debugger;
-        // this.props.fetchPhotos();
-    }
+    // componentDidMount() {
+    //     debugger;
+    //     this.props.fetchPhotos();
+    // }
 
     // componentDidUpdate(prevProps) {
     //     if (this.props.photos !== prevProps.photos){
