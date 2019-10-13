@@ -14,4 +14,15 @@ ham = User.create!(username: "ham", email: "ham@ham.com", password_digest: BCryp
 monkey = User.create!(username: "monkey", email: "monkey@monkey.com", password_digest: BCrypt::Password.create("monkeymonkey"))
 
 
-photo = Photo.create!(name: "sweet photo", author_id: 3)
+# photo = Photo.create!(name: "sweet photo", author_id: 3)
+
+
+comment1 = Comment.create!(body: "this photo sucks", author_id: 1, photo_id: 7)
+comment2 = Comment.create!(body: "not nice!", author_id: 2, photo_id: 7, parent_comment_id: 1)
+comment3 = Comment.create!(body: "sweet photo lmao", author_id: 5, photo_id: 7)
+
+
+like1 = Like.create!(user_id: 2, photo_id: 7) 
+like2 = Like.create!(user_id: 3, photo_id: 7)
+like3 = Like.create!(user_id: 4, photo_id: 7)
+like4 = Like.create!(user_id: 5, photo_id: 7)

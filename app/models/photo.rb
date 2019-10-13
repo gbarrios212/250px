@@ -7,8 +7,8 @@ class Photo < ApplicationRecord
     belongs_to :author, 
         class_name: :User 
     has_one_attached :photoConnect
-    # has_many :likes 
-    # has_many :comments 
+    has_many :likes 
+    has_many :comments 
     # has_many :galleries 
     # has_many :folows, 
     #     through: :author, 
