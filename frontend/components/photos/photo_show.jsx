@@ -19,11 +19,11 @@ class PhotoShow extends React.Component {
       }
     return (
       <div className="matte-box">
-        <div className="outer-container">
+        {/* <div className="outer-container"> */}
           <div className="inner-container">
             <img className="show-img" src={this.props.photo.photoUrl} alt=""></img>
           </div>
-        </div>
+        {/* </div> */}
       </div>
     );
   }
