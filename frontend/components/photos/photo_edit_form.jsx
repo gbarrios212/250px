@@ -35,18 +35,6 @@ class PhotoEditForm extends React.Component {
       }
     }
 
-    // componentDidMount() {
-    //   // debugger;
-    //   this.props.fetchPhoto(this.props.match.params.photoId);
-    // }
-  
-    // componentDidUpdate(prevProps) {
-    //   // debugger;
-    //   if (prevProps.photo.id != this.props.match.params.photoId) {
-    //     this.props.fetchphoto(this.props.match.params.photoId);
-    //   }
-    // }
-  
     render() {
 
       const errorsList = (this.props.errors) ? ( 
@@ -55,16 +43,17 @@ class PhotoEditForm extends React.Component {
       ))) : (
         <div></div>
       );
+
+      // const disableStatus = this.props.selectedPhoto ? false : true;
+
+      // }
+      //add disabled={disableStatus} to everything 
       
       // debugger;
       return (
         <form className="edit_form" onSubmit={this.handleSubmit}>
           <br/>
           {errorsList}
-          {/* <label htmlFor="file">Choose File:</label>
-          <input id="file" type="file" onChange={this.handleFile} />
-          <h3>Image Preview</h3>
-          {preview} */}
           <label htmlFor="name">Name:</label>
           <input id="name" type="text" onChange={this.update("name")} value={this.state.name}/>
 

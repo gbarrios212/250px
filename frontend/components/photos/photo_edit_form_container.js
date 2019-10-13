@@ -17,6 +17,7 @@ const msp = (state, ownProps) =>{
     return ({
         photo: photo,
         errors: state.errors.photo
+        // , selectedPhoto: 
     })
 }
 

@@ -29,10 +29,12 @@
 
 .thumbnail{
     cursor: pointer;
+    list-style-type: none;
+
 }
 
 .selected{
-    outline-style: solid;
-    outline-color: $blue;
-    outline-width: medium;
+    border: 3px solid $blue;
+    border-radius: 6px;
+    box-sizing: border-box;
 }

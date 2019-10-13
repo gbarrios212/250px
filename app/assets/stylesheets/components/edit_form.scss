@@ -32,30 +32,54 @@
 
 .edit-button{
     display: block;
-    background: #b5deda;
+    background: #34bf49;
     margin: 15px;
-    padding: 10px;
+    height: 40px;
+    padding: 5px 30px;
     font-size: 14px;
     border-radius: 3px;
-    width: calc(100% - 150px);
+    // width: calc(100% - 150px);
+    width: 299px;
+
     position: relative;
     left: -15px;
+    margin-left: 20px;
     top: 15px;
-    line-height: 1.4em;
+    font-weight: bold;
+    color: white;
+    line-height: 28px;
     cursor: pointer;
+    // width: 60%;
+    box-sizing: border-box;
+    transition: background-color 0.1s ease-in-out;
 }
 
+// .edit-button:hover{
+//     background: #34bf49;
+// }
+
+//need to make opaque when no changes have been registered 
+
 .delete-button{
-    display: block;
-    background: #b5deda;
+    display: inline-block;
+    color: #fff;
+    background: #71767a;
     margin: 15px;
-    padding: 10px;
+    padding: 0 10px;
+    height: 30px;
+    line-height: 28px;
+    text-align: center;
     font-size: 14px;
+    font-weight: bold;
     border-radius: 3px;
-    width: calc(100% - 150px);
+    width: 279px;
     position: relative;
-    left: -15px;
+    left: -10px;
     top: 15px;
-    line-height: 1.4em;
     cursor: pointer;
+    transition: background-color 0.1s ease-in-out;
+}
+
+.delete-button:hover{
+    background-color: #7d8387;
 }
