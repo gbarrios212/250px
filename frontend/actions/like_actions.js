@@ -8,48 +8,19 @@ const receiveLike = (like) => ({
     like
 })
 
-const removeLike = (likeId) => ({
+const removeLike = (payload) => ({
     type: REMOVE_LIKE,
-    likeId
+    payload
 })
 
-// export const createLike = (like) => (dispatch) => {
-//     return LikeApiUtil.createLike(like)
-//         .then(like => dispatch(receiveLike(like)), err => dispatch(receiveErrors(err.responseJSON)));
-// }
-
-
-export const deleteLike = (userId, photoId) => (dispatch) => {
-    return LikeApiUtil.deleteLike(userId, photoId)
-        .then(() => dispatch(removeLike(like))
-            // , err => dispatch(receiveErrors(err.responseJSON))
-            );
-}
-
-// export const createLike = (photoId) => (dispatch) => {
-//     return LikeApiUtil.createLike(photoId)
-//         .then(like => dispatch(receiveLike(like))
-//         // , err => dispatch(receiveErrors(err.responseJSON))
-//         );
-// }
-
-
-
-//working ///////////////
-// to implicitly return like obj 
-// export const createLike = (photoId) => (dispatch) => {
-//     return LikeApiUtil.createLike(photoId)
-//         .then(like => dispatch(receiveLike(like))
-//         // , err => dispatch(receiveErrors(err.responseJSON))
-//         );
-// }
-
-
-//to explicitlyreturn the like object
 export const createLike = (photoId) => (dispatch) => {
     return LikeApiUtil.createLike(photoId)
-        .then(like => {
-            dispatch(receiveLike(like));
-            return like;
-        });
+        .then(like => dispatch(receiveLike(like))
+    );
+} 
+
+export const deleteLike = (photoId) => (dispatch) => {
+    return LikeApiUtil.deleteLike(photoId)
+        .then(response => dispatch(removeLike(response))
+    );
 }

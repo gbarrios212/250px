@@ -8,7 +8,19 @@ class PhotoEditForm extends React.Component {
       debugger;
       this.handleSubmit = this.handleSubmit.bind(this);
       this.confirmDelete = this.confirmDelete.bind(this);
+      // this.toggleEnable = this.toggleEnable.bind(this);
+      // this.enable = this.enable.bind(this);
+      // this.disable = this.disable.bind(this);
     }
+
+    // enable(){
+    //   this.setState({disabled: false})
+    // }
+
+    // disable(){
+    //   this.setState({disabled: true})
+    // }
+
 
     componentWillUnmount(){
       this.props.clearErrors();
@@ -35,6 +47,12 @@ class PhotoEditForm extends React.Component {
     }
 
     render() {
+
+      // if(this.props.activePhoto){
+      //   this.enable();
+      // } else {
+      //   this.disable();
+      // }
 
       const errorsList = (this.props.errors) ? ( 
         this.props.errors.map((error, index) => (

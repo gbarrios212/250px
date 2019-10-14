@@ -4,14 +4,17 @@ import {
 import { RECEIVE_NEW_PHOTO, REMOVE_PHOTO } from '../actions/photo_actions';
 import { RECEIVE_COMMENT, REMOVE_COMMENT } from '../actions/comment_actions';
 import { RECEIVE_LIKE, REMOVE_LIKE } from '../actions/like_actions';
+import merge from 'lodash/merge';
 
 
 const usersReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
     let photo;
     let like;
-    let newState;
     let user;
+    let newState;
+    let userId;
+    let photoId;
     let comment;
     switch(action.type){
         case RECEIVE_CURRENT_USER:
@@ -40,11 +43,17 @@ const usersReducer = (oldState = {}, action) => {
         case RECEIVE_LIKE:
             like = action.like; 
             newState = Object.assign({}, oldState);
+            debugger;
             user = newState[like.user_id]
-            // user.authored_like_ids.push(like.id);
             user.liked_photo_ids.push(like.photo_id);
             return newState;
-        //case REMOVE_LIKE
+        case REMOVE_LIKE:
+            debugger;
+            photoId = action.payload.like.photo_id;
+            userId = action.payload.like.user_id;
+            user = action.payload.users[userId]
+            delete action.payload.users[userId].liked_photo_ids[photoId];
+            newState = merge({}, oldState, action.payload.users);
         default: 
             return oldState;
     }

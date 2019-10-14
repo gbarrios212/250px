@@ -21,6 +21,10 @@ const msp = (state, ownProps) =>{
     })
 }
 
+///active photo prop , grab from state.ui.etcetc
+
+
+
 const mdp = (dispatch) => ({
     action: (photo) => dispatch(updatePhoto(photo)),
     deletePhoto: (id) => dispatch(deletePhoto(id)),

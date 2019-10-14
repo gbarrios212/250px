@@ -7,6 +7,8 @@ import PhotoEditFormContainer from '../photos/photo_edit_form_container';
 class Manage extends React.Component {
     constructor(props){
         super(props)
+
+        this.state = { activePhoto: "" }
     }
 
     // componentDidMount() {
@@ -38,7 +40,7 @@ class Manage extends React.Component {
                         <ManageLibraryContainer />
                     </span>
                     <span className="item-f">
-                        <PhotoEditFormContainer />
+                        <PhotoEditFormContainer activePhoto={this.state.activePhoto} />
                     </span>
                 </span>
             </div>

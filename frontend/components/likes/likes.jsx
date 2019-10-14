@@ -7,14 +7,15 @@ class Likes extends React.Component{
         this.state = ({ liked: false })
         this.toggleLike = this.toggleLike.bind(this);
     }
-
+ 
     //need to dispatch change in receivelikes
 
     toggleLike(){
         let likedStatus = this.state.liked;
         this.setState({liked: !likedStatus});
         if (likedStatus){
-            this.props.deleteLike(this.props.photo.id, this.props.currentUser.id)
+            // this.props.deleteLike(this.props.photo.id, this.props.currentUser.id)
+            this.props.deleteLike(this.props.photo.id)
         } else {
             this.props.createLike(this.props.photo.id)
         }

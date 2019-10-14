@@ -1,4 +1,5 @@
 class Api::LikesController < ApplicationController
+
     def create
         @like = Like.new()
         @like.user_id = current_user.id
@@ -14,10 +15,13 @@ class Api::LikesController < ApplicationController
     end
 
     def destroy 
-        @like = Like.find(params[:id])
-        photo = @like.photo
+        # debugger
+        @like = Like.find_by(user_id: current_user.id, photo_id: params[:photo_id])
+        @photo = @like.photo
+        @user = current_user
         @like.destroy 
 
-        render json: photo, include: [:likes]
+        # render json: photo, include: [:likes]
+        render :show
     end
 end

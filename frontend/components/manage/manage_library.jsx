@@ -21,6 +21,13 @@ class ManageLibrary extends React.Component{
         }
     }
 
+    ///dispatch action to store that active photo reducer responds to 
+        //select photo 
+        //update active photo to id of clicked 
+        
+
+
+
     componentDidMount() {
         // debugger;
         this.props.fetchPhotos();

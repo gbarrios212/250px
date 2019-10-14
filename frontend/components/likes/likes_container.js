@@ -9,9 +9,8 @@ const msp = (state) => {
 } 
 
 const mdp = (dispatch) => ({
-    // createLike: (like) => dispatch(createLike(like)),
     createLike: (photoId) => dispatch(createLike(photoId)),
-    deleteLike: (photoId, userId) => dispatch(deleteLike(photoId, userId))
+    deleteLike: (photoId) => dispatch(deleteLike(photoId))
 })
 
 export default connect(msp, mdp)(Likes);
