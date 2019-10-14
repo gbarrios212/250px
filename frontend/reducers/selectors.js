@@ -3,7 +3,9 @@ export const selectUserPhotos = (state, user) => {
     // if (!state.entities.photos[0]){
     //     return [];
     // }
-    return user ? user.photo_ids.map(id => state.entities.photos[id]) : [];
+    debugger;
+    let photos = user ? user.photo_ids.map(id => state.entities.photos[id]) : [];
+    return photos.filter(photo => photo !== undefined );
 };
   
 export const selectPhotoComments = (state, photo) => {

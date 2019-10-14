@@ -58,3 +58,6 @@ const photosReducer = (state = {}, action) => {
 }
 
 export default photosReducer;
+
+      // photoId = action.id; 
+            // return { photos: state.photos.filter(photo => photo.id !== photoId)};

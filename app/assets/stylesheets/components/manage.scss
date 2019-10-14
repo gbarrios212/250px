@@ -33,6 +33,12 @@
 
 }
 
+.thumbnail:active{
+    border: 3px solid $blue;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
 .selected{
     border: 3px solid $blue;
     border-radius: 6px;

@@ -4,7 +4,7 @@ import React from 'react';
 class PhotoEditForm extends React.Component {
     constructor(props){
       super(props)
-      // debugger;
+      debugger;
       this.state = { photo: this.props.photo, disabled: false }
       this.handleSubmit = this.handleSubmit.bind(this);
       this.confirmDelete = this.confirmDelete.bind(this);
@@ -19,13 +19,18 @@ class PhotoEditForm extends React.Component {
       this.props.clearErrors();
     }
 
+    // componentDidMount(){
+      
+    // }
+
     handleSubmit(e) {
       e.preventDefault();
+      debugger;
       this.props.updatePhoto(this.state.photo);
     }
     
     update(field) {
-      // debugger;
+      debugger;
       return e => {
           this.setState({ photo: {[field]: e.currentTarget.value}})
       }
@@ -58,7 +63,7 @@ class PhotoEditForm extends React.Component {
           {errorsList}
           <label htmlFor="name">Name</label>
           <input id="name" type="text" onChange={this.update("name")} value={this.props.photo.name} disabled={this.state.disabled}/>
-          <label htmlFor="description">Description</label>
+          {/* <label htmlFor="description">Description</label>
           <textarea id="description" type="text" onChange={this.update("description")} value={this.props.photo.description} placeholder="Tell us more about your photo" disabled={this.state.disabled}/>
 
           <label htmlFor="category">Category</label>
@@ -100,9 +105,9 @@ class PhotoEditForm extends React.Component {
           <label htmlFor="date_taken">Date Taken</label>
           <input id="date_taken" type="text" onChange={this.update("date_taken")} value={this.props.photo.date_taken} placeholder="(dd/mm/yyyy)" disabled={this.state.disabled}/>
           
-          <label>Camera Info</label>
+          <label>Camera Info</label> */}
           {/* <span className="cam-info"> */}
-            <label htmlFor="camera"><p>Camera</p></label>
+            {/* <label htmlFor="camera"><p>Camera</p></label>
             <input id="camera" type="text" onChange={this.update("camera")} value={this.props.photo.camera} disabled={this.state.disabled}/>
             <label htmlFor="lens"><p>Lens</p></label>
             <input id="lens" type="text" onChange={this.update("lens")} value={this.props.photo.lens} disabled={this.state.disabled}/>
@@ -113,7 +118,7 @@ class PhotoEditForm extends React.Component {
             <label htmlFor="shutter_speed"><p>Shutter Speed</p></label>
             <input id="shutter_speed" type="text" onChange={this.update("shutter_speed")} value={this.props.photo.shutter_speed} disabled={this.state.disabled}/>
             <label htmlFor="iso"><p>ISO</p></label>
-            <input id="iso" type="text" onChange={this.update("iso")} value={this.props.photo.iso} disabled={this.state.disabled}/>
+            <input id="iso" type="text" onChange={this.update("iso")} value={this.props.photo.iso} disabled={this.state.disabled}/> */}
           {/* </span> */}
           
           <button className="edit-button" disabled={this.state.disabled}>Change that Cat!</button>
