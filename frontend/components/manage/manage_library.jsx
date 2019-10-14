@@ -21,10 +21,10 @@ class ManageLibrary extends React.Component{
         }
     }
 
-    // componentDidMount() {
-    //     debugger;
-    //     this.props.fetchPhotos();
-    // }
+    componentDidMount() {
+        // debugger;
+        this.props.fetchPhotos();
+    }
 
     // componentDidUpdate(prevProps) {
     //     if (this.props.photos !== prevProps.photos){
@@ -34,7 +34,13 @@ class ManageLibrary extends React.Component{
     //STOP ADDING DIDUPDATE 
 
     render() {
-        debugger;
+        // debugger;
+
+        if (!this.props.photos){
+            return <div>Loading</div>
+        }
+
+        // debugger;
         let photosList = this.props.photos.map(photo => {
             return <li key={photo.id} onClick={this.toggleSelect} className="thumbnail">
                 <ManageLibraryDetail photo={photo} key={photo.id}/>

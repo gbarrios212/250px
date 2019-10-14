@@ -10,6 +10,7 @@ class Manage extends React.Component {
     }
 
     // componentDidMount() {
+    //     debugger;
     //     this.props.fetchPhotos();
     // }
 

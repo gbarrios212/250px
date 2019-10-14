@@ -1,5 +1,8 @@
 export const selectUserPhotos = (state, user) => {
-    // debugger;
+    debugger;
+    // if (!state.entities.photos[0]){
+    //     return [];
+    // }
     return user ? user.photo_ids.map(id => state.entities.photos[id]) : [];
 };
   

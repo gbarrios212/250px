@@ -6,7 +6,8 @@ class Api::LikesController < ApplicationController
         photo = @like.photo 
 
         if @like.save 
-            render json: photo, include: [:likes]
+            # render json: photo, include: [:likes]
+            render json: @like
         else 
             render json: @like.errors.full_messages, status: 422 
         end 

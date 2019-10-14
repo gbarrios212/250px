@@ -4,11 +4,15 @@ class ManageLibraryDetail extends React.Component{
     constructor(props) {
         super(props)
 
+        // debugger;
         // this.state={ selected: false };
         // this.toggleSelect = this.toggleSelect.bind(this);
     }
 
 
+    // componentDidMount(){
+    //     debugger;
+    // }
 
 
     render(){

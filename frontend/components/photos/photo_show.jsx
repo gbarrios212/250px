@@ -7,13 +7,13 @@ import LikesContainer from '../likes/likes_container';
 
 class PhotoShow extends React.Component {
   constructor(props){
-    debugger;
+    // debugger;
     super(props)
   }
 
 
   componentDidMount() {
-    debugger;
+    // debugger;
     this.props.fetchPhoto(this.props.match.params.photoId);
   }
 
@@ -24,11 +24,12 @@ class PhotoShow extends React.Component {
   }
 
   render () {
-    debugger;
+    // debugger;
       if (!this.props.photo) {
         return <div>Loading...</div>;
       }
-      debugger;
+      // debugger
+      ;
     return (
       <>
         <span className="image-container">

@@ -26,9 +26,30 @@ export const deleteLike = (userId, photoId) => (dispatch) => {
             );
 }
 
+// export const createLike = (photoId) => (dispatch) => {
+//     return LikeApiUtil.createLike(photoId)
+//         .then(like => dispatch(receiveLike(like))
+//         // , err => dispatch(receiveErrors(err.responseJSON))
+//         );
+// }
+
+
+
+//working ///////////////
+// to implicitly return like obj 
+// export const createLike = (photoId) => (dispatch) => {
+//     return LikeApiUtil.createLike(photoId)
+//         .then(like => dispatch(receiveLike(like))
+//         // , err => dispatch(receiveErrors(err.responseJSON))
+//         );
+// }
+
+
+//to explicitlyreturn the like object
 export const createLike = (photoId) => (dispatch) => {
     return LikeApiUtil.createLike(photoId)
-        .then(like => dispatch(receiveLike(like))
-        // , err => dispatch(receiveErrors(err.responseJSON))
-        );
+        .then(like => {
+            dispatch(receiveLike(like));
+            return like;
+        });
 }

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { fetchPhoto } from '../../actions/photo_actions';
 
 const msp = (state, ownProps) => {
-    debugger;
+    // debugger;
     return({ 
         photo: state.entities.photos[ownProps.match.params.photoId]
     });
