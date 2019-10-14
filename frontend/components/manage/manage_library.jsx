@@ -23,7 +23,7 @@ class ManageLibrary extends React.Component{
     }
 
     updateActivePhotoId(e) {
-        debugger;
+        // debugger;
         this.props.receiveActivePhotoId(e.currentTarget.value);
     }
 

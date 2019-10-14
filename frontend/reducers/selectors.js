@@ -1,5 +1,5 @@
 export const selectUserPhotos = (state, user) => {
-    debugger;
+    // debugger;
     // if (!state.entities.photos[0]){
     //     return [];
     // }
