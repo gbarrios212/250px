@@ -27,9 +27,9 @@ export const clearErrors = () => ({
 
 
 
-export const createComment = (comment) => (dispatch) => {
-    return CommentApiUtil.createComment(comment)
-        .then(comment => dispatch(receiveComment(comment)), err => dispatch(receiveErrors(err.responseJSON)));
+export const createComment = (photoId, comment) => (dispatch) => {
+    return CommentApiUtil.createComment(photoId, comment)
+        .then(response => dispatch(receiveComment(response.comments[response.comments.length - 1])), err => dispatch(receiveErrors(err.responseJSON)));
 }
 
 export const updateComment = (comment) => (dispatch) => {

@@ -8,6 +8,7 @@ const photosReducer = (state = {}, action) => {
     let newState;
     let photo;
     let like;
+    let comment; 
     // debugger;
     switch(action.type){
         case RECEIVE_ALL_PHOTOS:

@@ -12,7 +12,7 @@ class ManageLibraryDetail extends React.Component{
 
 
     render(){
-        debugger;
+        // debugger;
         return(
             // <div>
                 <img 

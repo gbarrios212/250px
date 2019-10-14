@@ -6,6 +6,7 @@ class Api::CommentsController < ApplicationController
     
     def create 
         @comment = Comment.new(comment_params)
+        # debugger
         @comment.author_id = current_user.id
         @comment.photo_id = params[:photo_id]
 

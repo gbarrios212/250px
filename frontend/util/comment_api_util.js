@@ -1,8 +1,8 @@
 
-export const createComment = (comment) => {
+export const createComment = (photoId, comment) => {
     return $.ajax({
         method: "POST",
-        url: `api/photos/${comment.photo_id}/comments`,
+        url: `api/photos/${photoId}/comments`,
         data: { comment }
     })
 }

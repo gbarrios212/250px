@@ -25,7 +25,8 @@ const App = () => (
       <Route exact path="/" component={SplashContainer} />
       <Route exact path="/" component={PhotosIndexContainer} />
 
-      <Route exact path="/photos/:photoId" component={PhotoShowContainer} />
+      {/* <Route path="/photos/:photoId/comments" component={CommentsIndexContainer} /> */}
+      <Route path="/photos/:photoId" component={PhotoShowContainer} />
       <ProtectedRoute exact path="/photos/:photoId/edit" component={PhotoEditFormContainer} />
       <ProtectedRoute exact path="/manage/upload" component={ManageContainer} />
       <ProtectedRoute exact path="/manage/all" component={CreatePhotosFormContainer} />
