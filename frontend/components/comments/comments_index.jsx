@@ -13,7 +13,7 @@ class CommentsIndex extends React.Component{
             return <CommentsIndexItem comment={comment} key={comment.id}/>
         })
         return(
-            <div>
+            <div className="comment-list">
                 {commentsList}
             </div>
         )

@@ -72,3 +72,44 @@
 // .outer-container{
     
 // }
+
+.info-section{
+    display: flex;
+    position: absolute;
+    background: transparent;
+    top: 800px;
+    left: 225px;
+    width: 600px;
+    height: 1000px;
+    // border: 4px solid red;
+}
+
+.comments-section{
+    display: flex;
+    position: absolute;
+    background: transparent;
+    top: 800px;
+    left: 900px;
+    width: 600px;
+    height: 1000px;
+    // border: 4px solid red;
+    overflow: scroll;
+}
+
+.comment-list{
+    position: absolute;
+    top: 180px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.like-button{
+    color: $gray;
+    cursor: pointer;
+}
+
+.active{
+    color:red;
+}

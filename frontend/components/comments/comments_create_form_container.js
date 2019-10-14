@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { createComment } from '../../actions/comment_actions';
 
 const msp = (state, ownProps) => {
-    debugger;
+    // debugger;
     return $.ajax({
         photoId: ownProps.photoId
     })
