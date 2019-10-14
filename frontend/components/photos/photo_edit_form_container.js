@@ -1,31 +1,17 @@
-import { deletePhoto, receivePhoto } from '../../actions/photo_actions';
-import { fetchPhoto } from '../../actions/photo_actions';
+import { deletePhoto, receivePhoto, fetchPhoto } from '../../actions/photo_actions';
 import { connect } from 'react-redux'
 import { updatePhoto, clearErrors, receiveErrors } from '../../actions/photo_actions';
 import PhotoEditForm from './photo_edit_form';
-import { receiveActivePhoto } from '../../actions/active_photo_actions';
+import { receiveActivePhotoId, clearActivePhotoId } from '../../actions/active_photo_actions';
 
 const msp = (state, ownProps) =>{
-    // let photo;
     // debugger;
-    // if (ownProps.match){
-    //     photo = state.entities.photos[ownProps.match.params.photoId]
-    // } else {
-    //     photo = state.entities.photos[5]
-    // }
-    // temp note the hard code 
-
-    // return ({
-    //     photo: photo,
-    //     errors: state.errors.photo
-    //     // , selectedPhoto: 
-    // })
-
+    let photoId = state.ui.activePhotoId;
+    let photo = state.entities.photos[photoId];
     return ({
-        photo: state.ui.activePhoto
+        photo: photo
     })
 }
-
 
 
 const mdp = (dispatch) => ({
@@ -34,7 +20,8 @@ const mdp = (dispatch) => ({
     fetchPhoto: (id) => dispatch(fetchPhoto(id)),
     clearErrors: () => dispatch(clearErrors()),
     receivePhotoErrors: (errors) => dispatch(receiveErrors(errors)), 
-    receiveActivePhoto: (photo) => dispatch(receiveActivePhoto(photo))
+    receiveActivePhotoId: (photo) => dispatch(receiveActivePhotoId(photo)),
+    clearActivePhotoId: () => dispatch(clearActivePhotoId())
 })
 
   export default connect(msp, mdp)(PhotoEditForm);

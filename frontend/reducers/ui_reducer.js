@@ -5,5 +5,5 @@ import activePhotoReducer from './active_photo_reducer';
 
 export default combineReducers({
   modal: modalReducer,
-  activePhoto: activePhotoReducer
+  activePhotoId: activePhotoReducer
 });

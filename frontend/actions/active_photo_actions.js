@@ -1,12 +1,12 @@
-export const RECEIVE_ACTIVE_PHOTO= "RECEIVE_ACTIVE_PHOTO";
-export const CLEAR_ACTIVE_PHOTO= "CLEAR_ACTIVE_PHOTO"
+export const RECEIVE_ACTIVE_PHOTO_ID= "RECEIVE_ACTIVE_PHOTO_ID";
+export const CLEAR_ACTIVE_PHOTO_ID= "CLEAR_ACTIVE_PHOTO_ID"
 
-export const receiveActivePhoto = (photo) => ({
-    type: RECEIVE_ACTIVE_PHOTO,
-    photo
+export const receiveActivePhotoId = (photoId) => ({
+    type: RECEIVE_ACTIVE_PHOTO_ID,
+    photoId
 })
 
-export const clearActivePhoto = () => ({
-    type: CLEAR_ACTIVE_PHOTO
+export const clearActivePhotoId = () => ({
+    type: CLEAR_ACTIVE_PHOTO_ID
 })
 

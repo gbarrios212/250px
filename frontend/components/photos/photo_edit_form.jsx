@@ -4,23 +4,11 @@ import React from 'react';
 class PhotoEditForm extends React.Component {
     constructor(props){
       super(props)
+      // debugger;
       this.state = { photo: this.props.photo, disabled: true }
-      debugger;
       this.handleSubmit = this.handleSubmit.bind(this);
       this.confirmDelete = this.confirmDelete.bind(this);
-      // this.toggleEnable = this.toggleEnable.bind(this);
-      // this.enable = this.enable.bind(this);
-      // this.disable = this.disable.bind(this);
     }
-
-    // enable(){
-    //   this.setState({disabled: false})
-    // }
-
-    // disable(){
-    //   this.setState({disabled: true})
-    // }
-
 
     componentWillUnmount(){
       this.props.clearErrors();
@@ -32,7 +20,7 @@ class PhotoEditForm extends React.Component {
     }
     
     update(field) {
-      debugger;
+      // debugger;
       return e => {
           this.setState({ photo: {[field]: e.currentTarget.value}})
       }
@@ -47,13 +35,7 @@ class PhotoEditForm extends React.Component {
     }
 
     render() {
-
-      // if(this.props.activePhoto){
-      //   this.enable();
-      // } else {
-      //   this.disable();
-      // }
-
+      // debugger;
       const errorsList = (this.props.errors) ? ( 
         this.props.errors.map((error, index) => (
         <li className="errors" key={index}>{error}</li>
@@ -61,12 +43,6 @@ class PhotoEditForm extends React.Component {
         <div></div>
       );
 
-      // const disableStatus = this.props.selectedPhoto ? false : true;
-
-      // }
-      //add disabled={disableStatus} to everything 
-      
-      // debugger;
       return (
         <form className="edit-form" onSubmit={this.handleSubmit}>
           <br/>

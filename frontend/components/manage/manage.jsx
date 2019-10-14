@@ -7,16 +7,17 @@ import PhotoEditFormContainer from '../photos/photo_edit_form_container';
 class Manage extends React.Component {
     constructor(props){
         super(props)
-
-        this.state = { activePhoto: "" }
+        debugger;
+        // this.state = { activePhoto: "" }
     }
 
-    // componentDidMount() {
-    //     debugger;
-    //     this.props.fetchPhotos();
-    // }
+    componentDidMount() {
+        debugger;
+        this.props.fetchPhotos();
+    }
 
     render(){
+        debugger;
         return (
             <div>
                 <span className="manage-grid">
@@ -40,7 +41,7 @@ class Manage extends React.Component {
                         <ManageLibraryContainer />
                     </span>
                     <span className="item-f">
-                        <PhotoEditFormContainer activePhoto={this.state.activePhoto} />
+                        <PhotoEditFormContainer />
                     </span>
                 </span>
             </div>
