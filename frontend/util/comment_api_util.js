@@ -7,6 +7,8 @@ export const createComment = (photoId, comment) => {
     })
 }
 
+//could be source of confusion
+
 export const updateComment = (comment) => {
     return $.ajax({
         method: "PATCH",

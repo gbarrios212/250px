@@ -41,7 +41,7 @@ const usersReducer = (oldState = {}, action) => {
             like = action.like; 
             newState = Object.assign({}, oldState);
             user = newState[like.user_id]
-            user.authored_like_ids.push(like.id);
+            // user.authored_like_ids.push(like.id);
             user.liked_photo_ids.push(like.photo_id);
             return newState;
         //case REMOVE_LIKE

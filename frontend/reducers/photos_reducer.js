@@ -39,9 +39,10 @@ const photosReducer = (state = {}, action) => {
             like = action.like;
             newState = Object.assign({}, state);
             photo = newState[like.photo_id]
-            photo.like_ids.push(like.id);
+            // photo.like_ids.push(like.id);
             photo.liker_ids.push(like.user_id);
         //case REMOVE_LIKE
+        //removing as simple as deleting liker_id from photos
         default: 
             return state;
     }

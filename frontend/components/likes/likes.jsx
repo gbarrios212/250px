@@ -14,7 +14,7 @@ class Likes extends React.Component{
         let likedStatus = this.state.liked;
         this.setState({liked: !likedStatus});
         if (likedStatus){
-            this.props.deleteLike()
+            this.props.deleteLike(this.props.photo.id, this.props.currentUser.id)
         } else {
             this.props.createLike(this.props.photo.id)
         }
@@ -24,7 +24,7 @@ class Likes extends React.Component{
         return(
             <div className={this.state.liked ? "like-button active" : "like-button"} onClick={this.toggleLike}>
                 <i className="far fa-heart"></i>
-                {this.props.photo.like_ids.length}
+                {this.props.photo.liker_ids.length}
             </div>
         )
 

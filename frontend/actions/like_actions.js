@@ -19,8 +19,8 @@ const removeLike = (likeId) => ({
 // }
 
 
-export const deleteLike = (likeId) => (dispatch) => {
-    return LikeApiUtil.deleteLike(likeId)
+export const deleteLike = (userId, photoId) => (dispatch) => {
+    return LikeApiUtil.deleteLike(userId, photoId)
         .then(() => dispatch(removeLike(like))
             // , err => dispatch(receiveErrors(err.responseJSON))
             );
