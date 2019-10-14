@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import CommentsIndexContainer from '../comments/comments_index_container';
 import CommentsCreateFormContainer from '../comments/comments_create_form_container';
 import LikesContainer from '../likes/likes_container';
-import Likes from '../likes/likes';
+// import Likes from '../likes/likes';
 
 class PhotoShow extends React.Component {
 
@@ -35,8 +35,8 @@ class PhotoShow extends React.Component {
           </div>
         </span>
         <span className="info-section">
-          <Likes photo={this.props.photo}/>
-          {/* <LikesContainer photo={this.props.photo}/> */}
+          {/* <Likes photo={this.props.photo}/> */}
+          <LikesContainer photo={this.props.photo}/>
           <h1>{this.props.photo.name}</h1>
           <br/>
           <p>{this.props.photo.location}</p>

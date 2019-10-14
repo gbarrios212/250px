@@ -13,12 +13,17 @@ class Likes extends React.Component{
     toggleLike(){
         let likedStatus = this.state.liked;
         this.setState({liked: !likedStatus});
+        if (likedStatus){
+            this.props.deleteLike()
+        } else {
+            this.props.createLike(this.props.photo.id)
+        }
     }
 
     render(){
         return(
             <div className={this.state.liked ? "like-button active" : "like-button"} onClick={this.toggleLike}>
-                <i class="far fa-heart"></i>
+                <i className="far fa-heart"></i>
                 {this.props.photo.like_ids.length}
             </div>
         )

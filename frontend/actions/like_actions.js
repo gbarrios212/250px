@@ -13,13 +13,22 @@ const removeLike = (likeId) => ({
     likeId
 })
 
-export const createLike = (like) => (dispatch) => {
-    return LikeApiUtil.createLike(like)
-        .then(like => dispatch(receiveLike(like)), err => dispatch(receiveErrors(err.responseJSON)));
-}
+// export const createLike = (like) => (dispatch) => {
+//     return LikeApiUtil.createLike(like)
+//         .then(like => dispatch(receiveLike(like)), err => dispatch(receiveErrors(err.responseJSON)));
+// }
 
 
 export const deleteLike = (likeId) => (dispatch) => {
     return LikeApiUtil.deleteLike(likeId)
-        .then(() => dispatch(removeLike(like)), err => dispatch(receiveErrors(err.responseJSON)));
+        .then(() => dispatch(removeLike(like))
+            // , err => dispatch(receiveErrors(err.responseJSON))
+            );
+}
+
+export const createLike = (photoId) => (dispatch) => {
+    return LikeApiUtil.createLike(photoId)
+        .then(like => dispatch(receiveLike(like))
+        // , err => dispatch(receiveErrors(err.responseJSON))
+        );
 }
