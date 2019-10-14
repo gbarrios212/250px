@@ -24,6 +24,14 @@ import Root from './components/root'
 // window.createLike = createLike; 
 // window.deleteLike = deleteLike;
 
+// import { receiveActivePhoto, clearActivePhoto } from './actions/active_photo_actions';
+
+// window.receiveActivePhoto = receiveActivePhoto;
+// window.clearActivePhoto = clearActivePhoto;
+// window.configureStore = configureStore;
+// window.getState = store.getState;
+// window.getState = getState;
+
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
     let store;
@@ -39,5 +47,8 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         store = configureStore();
     }
+    // window.getState = store.getState;
+    // window.dispatch = store.dispatch;
+
     ReactDOM.render(<Root store={store} />, root)
 });
