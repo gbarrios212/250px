@@ -10,10 +10,17 @@ export const CLEAR_PHOTO_ERRORS = "CLEAR_PHOTO_ERRORS";
 export const RECEIVE_NEW_PHOTO = "RECEIVE_NEW_PHOTO"
 ////test 
 
+export const CHANGE_PHOTO = "CHANGE_PHOTO"
+
 
 const receiveAllPhotos = (photos) => ({
     type: RECEIVE_ALL_PHOTOS, 
     photos
+})
+
+const changePhoto = (payload) => ({
+    type: CHANGE_PHOTO,
+    payload
 })
 
 export const receivePhoto = (payload) => ({
@@ -59,7 +66,7 @@ export const createPhoto = (photo) => (dispatch) => {
 
 export const updatePhoto = (photo) => (dispatch) => {
     return photoApiUtil.updatePhoto(photo)
-        .then(payload => dispatch(receivePhoto(payload)), err => dispatch(receiveErrors(err.responseJSON)));
+        .then(payload => dispatch(changePhoto(payload)), err => dispatch(receiveErrors(err.responseJSON)));
 }
 
 export const deletePhoto = (id) => (dispatch) => {

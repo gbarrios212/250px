@@ -1,4 +1,4 @@
-import { RECEIVE_ALL_PHOTOS, RECEIVE_PHOTO, REMOVE_PHOTO, RECEIVE_NEW_PHOTO } from "../actions/photo_actions";
+import { RECEIVE_ALL_PHOTOS, RECEIVE_PHOTO, REMOVE_PHOTO, RECEIVE_NEW_PHOTO, CHANGE_PHOTO } from "../actions/photo_actions";
 import { RECEIVE_COMMENT } from "../actions/comment_actions";
 import { RECEIVE_LIKE, REMOVE_LIKE } from '../actions/like_actions';
 import merge from 'lodash/merge';
@@ -22,6 +22,9 @@ const photosReducer = (state = {}, action) => {
             photo = action.payload.photo; 
             // debugger;
             newState = merge({}, {[photo.id]: photo});
+            return newState;
+        case CHANGE_PHOTO:
+            newState = merge({}, state, {[action.payload.photo.id]: action.payload.photo});
             return newState;
         case RECEIVE_COMMENT:
             comment = action.comment;

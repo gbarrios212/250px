@@ -5,9 +5,14 @@ class PhotoEditForm extends React.Component {
     constructor(props){
       super(props)
       // debugger;
-      this.state = { photo: this.props.photo, disabled: true }
+      this.state = { photo: this.props.photo, disabled: false }
       this.handleSubmit = this.handleSubmit.bind(this);
       this.confirmDelete = this.confirmDelete.bind(this);
+      this.toggleDisable = this.toggleDisable.bind(this);
+    }
+
+    toggleDisable(){
+      
     }
 
     componentWillUnmount(){
@@ -16,7 +21,7 @@ class PhotoEditForm extends React.Component {
 
     handleSubmit(e) {
       e.preventDefault();
-      this.props.action(this.state.photo);
+      this.props.updatePhoto(this.state.photo);
     }
     
     update(field) {
@@ -88,10 +93,6 @@ class PhotoEditForm extends React.Component {
 
           <label htmlFor="location">Location</label>
           <input id="location" type="text" onChange={this.update("location")} value={this.state.location} disabled={this.state.disabled}/>
-          {/* <label htmlFor="lat">Latitude</label>
-          <input id="lat" type="text" onChange={this.update("lat")} value={this.state.lat}/>
-          <label htmlFor="long">Longitude</label>
-          <input id="long" type="text" onChange={this.update("long")} value={this.state.long}/> */}
           <label htmlFor="date_taken">Date Taken</label>
           <input id="date_taken" type="text" onChange={this.update("date_taken")} value={this.state.date_taken} placeholder="(dd/mm/yyyy)" disabled={this.state.disabled}/>
           

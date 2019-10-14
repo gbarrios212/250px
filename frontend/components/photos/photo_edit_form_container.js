@@ -15,7 +15,7 @@ const msp = (state, ownProps) =>{
 
 
 const mdp = (dispatch) => ({
-    action: (photo) => dispatch(updatePhoto(photo)),
+    updatePhoto: (photo) => dispatch(updatePhoto(photo)),
     deletePhoto: (id) => dispatch(deletePhoto(id)),
     fetchPhoto: (id) => dispatch(fetchPhoto(id)),
     clearErrors: () => dispatch(clearErrors()),

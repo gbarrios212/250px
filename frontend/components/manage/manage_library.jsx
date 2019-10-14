@@ -5,7 +5,7 @@ class ManageLibrary extends React.Component{
     constructor(props){
         // debugger;
         super(props)
-        this.state = { selected: false };
+        // this.state = { selected: false };
         this.toggleSelect = this.toggleSelect.bind(this);
         this.updateActivePhotoId = this.updateActivePhotoId.bind(this);
     }
