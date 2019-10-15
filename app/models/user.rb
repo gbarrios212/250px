@@ -7,6 +7,8 @@ class User < ApplicationRecord
     
     attr_reader :password
 
+    has_one_attached :profile_picture
+
     has_many :photos,
     foreign_key: :author_id
 
