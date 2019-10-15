@@ -19,6 +19,9 @@ class ProfilePage extends React.Component{
                 <div className="cover-photo-container">
                     <img className="cover-photo" src="" alt=""/>
                 </div>
+                <div className="avatar-container">
+                    
+                </div>
             </div>
                 {/* <div>Hi, welcome to the profile page!</div> */}
                 {/* <CoverPhoto />
