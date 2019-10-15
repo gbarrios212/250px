@@ -140,4 +140,18 @@
 
 .photo-header{
     display: flex;
+    border-bottom: $sienna-border;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.like-button{
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}
+.fa-heart{
+    margin-right: 20px;
+    font-size: 30px;
 }
