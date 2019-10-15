@@ -1,5 +1,5 @@
 import React from 'react';
-import ProfilePhotos from './profile_photos';
+import ProfilePhotosContainer from './profile_photos_container';
 import UserInfo from './user_info';
 import CoverPhoto from './cover_photo';
 
@@ -14,7 +14,12 @@ class ProfilePage extends React.Component{
 
     render() {
         return(
-            <div>Hi, welcome to the profile page!</div>
+            <>
+                <div>Hi, welcome to the profile page!</div>
+                <CoverPhoto />
+                <UserInfo />
+                <ProfilePhotosContainer />
+            </>
         )
     }
 }
