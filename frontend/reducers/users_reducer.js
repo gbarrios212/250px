@@ -34,7 +34,7 @@ const usersReducer = (oldState = {}, action) => {
             return newState
         case RECEIVE_LIKE:
             like = action.like; 
-            newState = Object.assign({}, oldState);
+            newState = merge({}, oldState);
             user = newState[like.user_id]
             user.liked_photo_ids.push(like.photo_id);
             return newState;

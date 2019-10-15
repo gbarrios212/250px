@@ -11,9 +11,10 @@ class Api::CommentsController < ApplicationController
         
         if @comment.save 
             @photo = @comment.photo 
-            render json: @photo, include: [:comments]
+            # render json: @photo, include: [:comments]
             # debugger
             # render 'api/photos/show'
+            render :show
         else 
             render json: @comment.errors.full_messages, status: 422
         end
@@ -23,8 +24,9 @@ class Api::CommentsController < ApplicationController
         @comment = Comment.find(params[:id])
 
         if @comment.update(comment_params)
-            photo = @comment.photo 
-            render json: photo, include: [:comments]
+            @photo = @comment.photo 
+            # render json: photo, include: [:comments]
+            render 'api/photos/show'
         else 
             render json: @comment.errors.full_messages, status: 422
         end
@@ -32,10 +34,13 @@ class Api::CommentsController < ApplicationController
 
     def destroy
         @comment = Comment.find(params[:id])
-        photo = @comment.photo
+        @photo = @comment.photo
+        @user = current_user
         @comment.destroy 
 
-        render json: photo, include: [:comments]
+        # render json: @photo, include: [:comments]
+        # render 'api/photos/show'
+        render :show
     end
 
     private

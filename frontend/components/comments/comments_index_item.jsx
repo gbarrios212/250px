@@ -20,7 +20,7 @@ class CommentsIndexItem extends React.Component{
         let editOptions;
         if(this.props.currentUser){
             editOptions = this.props.currentUser.id === this.props.comment.author_id ? (
-                <button onClick={this.confirmDelete}>Delete</button>
+                <button className="delete" onClick={this.confirmDelete}>Delete</button>
                     ) : <div></div>
             
         }
@@ -46,8 +46,8 @@ class CommentsIndexItem extends React.Component{
                     <div className="comment-details-footer">
                         <p>REPLY HERE</p>
                         <p>...</p>
+                        {editOptions}
                         <ul className="comment-dropdown">
-                            {editOptions}
                         </ul>
                     </div>
                 </div>

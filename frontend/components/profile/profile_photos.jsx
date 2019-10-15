@@ -12,6 +12,7 @@ class ProfilePhotos extends React.Component{
     }
 
     render() {
+       
         if (this.props.photos.length === 0){
             return (
                 <div className="new-upload-button">

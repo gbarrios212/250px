@@ -4,7 +4,8 @@ export const selectUserPhotos = (state, user) => {
 };
   
 export const selectPhotoComments = (state, photo) => {
-    // debugger;
+    debugger;
     let comments = photo ? photo.comment_ids.map(id => state.entities.comments[id]) : [];
-    return comments.filter(comment => comment !== undefined );
+    let filtered = comments.filter(comment => comment !== undefined );
+    return filtered.sort((a, b) => (a.created_at > b.created_at) ? 1 : -1)
 }

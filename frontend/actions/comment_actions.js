@@ -6,14 +6,17 @@ export const RECEIVE_COMMENT_ERRORS = 'RECEIVE_COMMENT_ERRORS';
 export const CLEAR_COMMENT_ERRORS = 'CLEAR_COMMENT_ERRORS';
 export const CHANGE_COMMENT = "CHANGE_COMMENT";
 
-const receiveComment = (comment) => ({
+const receiveComment = (comment, photos, users) => ({
     type: RECEIVE_COMMENT,
-    comment
+    comment, 
+    photos, 
+    users,
 })
 
-const removeComment = (commentId) => ({
+const removeComment = (comment, photo) => ({
     type: REMOVE_COMMENT,
-    commentId
+    comment,
+    photo
 })
 
 const changeComment = (comment) => ({
@@ -36,7 +39,9 @@ export const createComment = (photoId, comment) => (dispatch) => {
     return CommentApiUtil.createComment(photoId, comment)
         .then(response => {
             debugger;
-            return dispatch(receiveComment(response.comments[response.comments.length - 1])), err => dispatch(receiveErrors(err.responseJSON))
+            // return dispatch(receiveComment(response.comments[response.comments.length - 1], response.photo)), err => dispatch(receiveErrors(err.responseJSON))
+            // return dispatch(receiveComment(response.comment, response.photo)), err => dispatch(receiveErrors(err.responseJSON))
+            return dispatch(receiveComment(response.comment, response.photos, response.users)), err => dispatch(receiveErrors(err.responseJSON))
         });
 }
 //is the above ok
@@ -48,5 +53,5 @@ export const updateComment = (comment) => (dispatch) => {
 
 export const deleteComment = (commentId) => (dispatch) => {
     return CommentApiUtil.deleteComment(commentId)
-        .then(() => dispatch(removeComment(commentId)));
+        .then((response) => dispatch(removeComment(response.comment, response.photo)));
 }
