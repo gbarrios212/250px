@@ -17,8 +17,8 @@ class ProfilePage extends React.Component{
             <>
                 {/* <div>Hi, welcome to the profile page!</div> */}
                 {/* <CoverPhoto />
-                <UserInfo /> */}
-                {/* <ProfilePhotosContainer /> */}
+                <UserInfo /> */} 
+                <ProfilePhotosContainer />
             </>
         )
     }

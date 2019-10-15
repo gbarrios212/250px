@@ -32,8 +32,10 @@ class ProfilePhotos extends React.Component{
             </li>
         })
         return(
-            <div className="profile-grid">
-                {photosList}
+            <div className="outer-profile-container">
+                <div className="profile-grid">
+                    {photosList}
+                </div>
             </div>
         )
     }
