@@ -10,6 +10,7 @@ import CreatePhotosFormContainer from './photos/create_photos_form_container'
 import PhotoShowContainer from './photos/photo_show_container';
 import PhotoEditFormContainer from './photos/photo_edit_form_container';
 import CommentsIndexContainer from './comments/comments_index_container';
+import ProfilePageContainer from './profile/profile_page_container';
 
 import Modal from './modal/modal';
 import ManageContainer from "./manage/manage_container";
@@ -30,6 +31,8 @@ const App = () => (
       <ProtectedRoute exact path="/photos/:photoId/edit" component={PhotoEditFormContainer} />
       <ProtectedRoute exact path="/manage/upload" component={ManageContainer} />
       <ProtectedRoute exact path="/manage/all" component={CreatePhotosFormContainer} />
+      <ProtectedRoute exact path="/:userId/" component={ProfilePageContainer} />
+
 
       
       {/* <Route exact path="/photos/:photoId" component={CommentsIndexContainer} /> */}
