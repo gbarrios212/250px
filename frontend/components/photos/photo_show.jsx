@@ -66,18 +66,18 @@ class PhotoShow extends React.Component {
             <div className="like-info">
               {like}
             </div>
-            <div className="header">
-              <div className="header-info">
+            <div className="photo-header">
+              <div className="photo-header-info">
                 <h1>{this.props.photo.name}</h1>
                 <br/>
                 <p> by AUTHOR NAME HERE {this.props.photo.author_id} • FOLLOWING OR NOT HERE </p>
               </div>
-              <div className="header-avatar">
+              <div className="photo-header-avatar">
                 <p>AVATAR HERE </p>
               </div>
             </div>
             <div className="location-date">
-              <p>{this.props.photo.date_taken}</p>
+              <p><i className="far fa-clock"></i>{this.props.photo.created_at}</p>
               <br/>
               <p>{this.props.photo.location}</p>
               <br/>
@@ -86,7 +86,7 @@ class PhotoShow extends React.Component {
             </div>
             <div className="details">
               <div className="camera-info">
-                <p>{this.props.photo.camera}</p>
+                <p><i class="fas fa-camera"></i>{this.props.photo.camera}</p>
                 <br/>
               </div>
               <div className="lens-info">
@@ -94,6 +94,7 @@ class PhotoShow extends React.Component {
                 <br/>
               </div>
               <div className="shot-info">
+                <i class="fas fa-sliders-h"></i>
                 <p>{this.props.photo.focal_length}</p>
                 <br/>
                 <p>{this.props.photo.aperture}</p>
@@ -105,7 +106,7 @@ class PhotoShow extends React.Component {
               </div>
             </div>
             <div className="category">
-              <p>{this.props.photo.category}</p>
+              <p>Category {this.props.photo.category}</p>
               <br/>
             </div>
             <div className="keywords">
