@@ -28,6 +28,7 @@ class ManageLibrary extends React.Component{
         this.setState({ selected: true });
         //logic to get rid of selected everywhere else 
         e.currentTarget.classList.toggle("selected")
+        // this.setState({selected: false});
 
     }
 
@@ -59,7 +60,11 @@ class ManageLibrary extends React.Component{
         }
 
         let photosList = this.props.photos.map(photo => {
-            return <li key={photo.id} onClick={this.updateActivePhotoId} className="thumbnail" value={photo.id}>
+            return <li key={photo.id} onClick={this.updateActivePhotoId} 
+                className={
+                    photo.id === this.props.activePhotoId ? "thumbnail selected" : "thumbnail"
+                } 
+                value={photo.id}>
                 <ManageLibraryDetail photo={photo} key={photo.id}/>
             </li>
         })

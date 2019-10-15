@@ -8,10 +8,12 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 
 const msp = (state) => {
     // debugger; 
-    let currentUser = state.entities.users[state.session.id]
+    let activePhotoId = state.ui.activePhotoId;
+    let currentUser = state.entities.users[state.session.id];
     return({
         // photos: currentUser.photo_ids.map(id => state.entities.photos[id])
-        photos: selectUserPhotos(state, currentUser)
+        photos: selectUserPhotos(state, currentUser),
+        activePhotoId
     })
 }
 

@@ -9,12 +9,6 @@ class ManageLibraryDetail extends React.Component{
         // this.toggleSelect = this.toggleSelect.bind(this);
     }
 
-
-    // componentDidMount(){
-    //     debugger;
-    // }
-
-
     render(){
         // debugger;
         return(
