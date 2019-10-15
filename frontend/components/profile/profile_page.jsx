@@ -30,7 +30,9 @@ class ProfilePage extends React.Component{
                 </div>
                 <div className="profile-buttons">
                     <div className="buttons-wrapper">
-                        <button className="more-button"></button>
+                        <Link to="/settings">
+                            <button className="more-button"></button>
+                        </Link>
                     </div>
                 </div>
                 <div className="user-details">
