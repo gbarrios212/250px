@@ -7,4 +7,4 @@ json.extract! user,
     :authored_comment_ids, 
     :liked_photo_ids, 
     :commented_photo_ids
-
+json.profileUrl url_for(user.profile_picture)
