@@ -44,11 +44,19 @@ class ManageLibrary extends React.Component{
     }
 
     render() {
-        // debugger;
+        if (this.props.photos.length === 0){
+            return (
+                <div className="library-grid">
+                    <button className="upload-button" onClick={this.props.modalSelect}>
+                        Upload something lol.
+                    </button>{this.props.modalSelect}
+                </div>
+            );
+        }
+
         if (!this.props.photos[0]){
             return <div>Loading</div>
         }
-        debugger;
 
         let photosList = this.props.photos.map(photo => {
             return <li key={photo.id} onClick={this.updateActivePhotoId} className="thumbnail" value={photo.id}>
