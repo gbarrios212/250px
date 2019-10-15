@@ -45,18 +45,20 @@ class PhotoShow extends React.Component {
 
         // debugger;
     return (
-      <>
-        <span className="image-container">
-          <div className="matte-box">
-            <Link to="/" className="close-button">x
-            </Link>
-            {/* <div className="outer-container"> */}
-              <div className="inner-container">
-                <img className="show-img" src={this.props.photo.photoUrl} alt=""></img>
-              </div>
-            {/* </div> */}
-          </div>
-        </span>
+      <div className="show-page">
+        <div className="outer-image-container">
+          <span className="image-container">
+            <div className="matte-box">
+              <Link to="/" className="close-button">x
+              </Link>
+              {/* <div className="outer-container"> */}
+                <div className="inner-container">
+                  <img className="show-img" src={this.props.photo.photoUrl} alt=""></img>
+                </div>
+              {/* </div> */}
+            </div>
+          </span>
+        </div>
         <span className="info-and-comments-section">
           <span className="info-section">
             {/* <Likes photo={this.props.photo}/> */}
@@ -94,7 +96,7 @@ class PhotoShow extends React.Component {
               <CommentsIndexContainer photoId={this.props.match.params.photoId}/>
           </span>
         </span>
-      </>
+      </div>
     );
   }
 }

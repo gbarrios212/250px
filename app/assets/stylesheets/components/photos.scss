@@ -77,25 +77,25 @@
 
 .info-section{
     display: flex;
-    position: absolute;
+    position: relative;
     background: transparent;
-    top: 800px;
-    left: 225px;
+    top: 0;
+    left: 0;
     width: 600px;
-    height: 1000px;
-    // border: 4px solid red;
+    max-height: 800px;
 }
 
 .comments-section{
     display: flex;
-    position: absolute;
     background: transparent;
-    top: 800px;
-    left: 900px;
+    left: 0;
     width: 600px;
-    height: 1000px;
+    height: auto;
     // border: 4px solid red;
     overflow: scroll;
+    position: relative;
+    top: 0;
+    max-height: 700px;
 }
 
 .comment-list{
@@ -118,5 +118,18 @@
 
 .info-and-comments-section{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    width: 100%;
+    min-height: 400px;
+}
+
+.show-page{
+    display: flex;
+    flex-direction: column;
+}
+
+.outer-image-container{
+    display: block;
+    height: 800px;
+    width: 100%;
 }
