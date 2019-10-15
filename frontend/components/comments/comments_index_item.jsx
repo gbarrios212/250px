@@ -14,7 +14,7 @@ class CommentsIndexItem extends React.Component{
           this.props.deleteComment(this.props.comment.id);
         }
     }
-
+ 
     render(){
 
         let editOptions;

@@ -10,8 +10,9 @@ class Api::CommentsController < ApplicationController
         @comment.photo_id = params[:photo_id]
         
         if @comment.save 
-            photo = @comment.photo 
-            render json: photo, include: [:comments]
+            @photo = @comment.photo 
+            render json: @photo, include: [:comments]
+            # debugger
             # render 'api/photos/show'
         else 
             render json: @comment.errors.full_messages, status: 422

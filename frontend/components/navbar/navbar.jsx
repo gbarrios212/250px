@@ -67,7 +67,7 @@ class Navbar extends React.Component {
                                 <div id="myDropdown" className={this.state.show ? 'dropdown-content show' : 'dropdown-content'}>
                                     {/* <button className="logout" onClick={this.props.logout}>Log Out</button> */}
                                     <button className="logout" onClick={this.handleLogout}>Log Out</button>
-                                    <Link to={`/${this.props.currentUser.id}`}><button className="profile">Profile</button></Link>
+                                    <Link to={`/users/${this.props.currentUser.id}`}><button className="profile">Profile</button></Link>
                                 </div>
                             </div>
                             <Link to="/manage/upload">
