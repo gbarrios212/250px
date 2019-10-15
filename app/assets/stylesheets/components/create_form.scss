@@ -1,4 +1,4 @@
-.create_form{
+.create-form{
     display: block;
     margin: auto;
     border: 1px solid #eeeff2;
@@ -18,9 +18,10 @@
     top: 0px;
     right: 0px;
     margin-right: 0;
+    display: inline-block;
 }
 
-.create_form input{
+.create-form input{
     font-size: 14px;
     padding: 8px 10px;
     color: #525558;
@@ -34,7 +35,24 @@
     line-height: 1.4em;
 }
 
-.create_form label {
+.create-form select {
+    color: #525558;
+    border: 1px solid rgba(185,193,199,0.5);
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    background-color: #fff;
+    width: 169px;
+    padding: 6px 30px 6px 10px;
+    resize: none;
+    -webkit-transition: border-color 0.1s;
+    -moz-transition: border-color 0.1s;
+    transition: border-color 0.1s;
+    height: 30px;
+    -webkit-appearance: none;
+}
+
+
+.create-form label {
     display: block;
     margin-bottom: 10px;
 }
@@ -62,9 +80,9 @@
     left: 0;
     background: rgba(0, 0, 0, 0.7);
     z-index: 10;
-  }
+}
  
-  .modal-child {
+.modal-child {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -74,4 +92,40 @@
     max-width: 80%;
     min-width: 600px;
     max-height: 80%;
-  }
+}
+
+  
+#file{
+    width: 180px;
+}
+
+.modal-container{
+    display: flex;
+    width: 900px;
+    background: #fff;
+    justify-items: flex-end;
+}
+
+.preview{
+    position: relative;
+    margin: 0;
+    display: flex;
+    /* width: 40%; */
+    max-width: 40%;
+    height: auto;
+    display: inline-block;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.image-preview-header{
+    margin-bottom: 40px;
+    margin-top: 40px;
+    padding-left: 100px;
+}
+
+.image-preview-area{
+    display: flex; 
+    flex-direction: column;
+    padding-left: 20px;
+}
