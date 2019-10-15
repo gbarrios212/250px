@@ -72,7 +72,7 @@ class PhotosForm extends React.Component {
         ))) : (
             <div></div>
         );
-
+        
         const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null;
         return (
             <form className="create_form" onSubmit={this.handleSubmit}>
@@ -84,6 +84,8 @@ class PhotosForm extends React.Component {
                 {preview}
                 <label htmlFor="name">Name:</label>
                 <input id="name" type="text" onChange={this.update("name")} value={this.state.name}/>
+                <label htmlFor="description">Description</label>
+                <input id="description" type="text" onChange={this.update("description")} value={this.state.description}/>
                 
                 <label htmlFor="category">Category:</label>
                 <select id="category" name="category" type="text" onChange={this.update("category")} value={this.state.category}>
@@ -121,10 +123,6 @@ class PhotosForm extends React.Component {
 
                 <label htmlFor="location">Location:</label>
                 <input id="location" type="text" onChange={this.update("location")} value={this.state.location}/>
-                <label htmlFor="lat">Latitude:</label>
-                <input id="lat" type="text" onChange={this.update("lat")} value={this.state.lat}/>
-                <label htmlFor="long">Longitude:</label>
-                <input id="long" type="text" onChange={this.update("long")} value={this.state.long}/>
                 <label htmlFor="date_taken">Date Taken:</label>
                 <input id="date_taken" type="text" onChange={this.update("date_taken")} value={this.state.date_taken}/>
                 <label htmlFor="camera">Camera:</label>
@@ -139,8 +137,6 @@ class PhotosForm extends React.Component {
                 <input id="shutter_speed" type="text" onChange={this.update("shutter_speed")} value={this.state.shutter_speed}/>
                 <label htmlFor="iso">ISO:</label>
                 <input id="iso" type="text" onChange={this.update("iso")} value={this.state.iso}/>
-                <label htmlFor="description">Description</label>
-                <input id="description" type="text" onChange={this.update("description")} value={this.state.description}/>
                 <button className="create-button">Create that Cat!</button>
             </form>
         );
