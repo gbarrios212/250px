@@ -4,7 +4,7 @@ export const RECEIVE_COMMENT = 'RECEIVE_COMMENT';
 export const REMOVE_COMMENT = 'REMOVE_COMMENT';
 export const RECEIVE_COMMENT_ERRORS = 'RECEIVE_COMMENT_ERRORS';
 export const CLEAR_COMMENT_ERRORS = 'CLEAR_COMMENT_ERRORS';
-
+export const CHANGE_COMMENT = "CHANGE_COMMENT";
 
 const receiveComment = (comment) => ({
     type: RECEIVE_COMMENT,
@@ -14,6 +14,11 @@ const receiveComment = (comment) => ({
 const removeComment = (commentId) => ({
     type: REMOVE_COMMENT,
     commentId
+})
+
+const changeComment = (comment) => ({
+    type: CHANGE_COMMENT,
+    comment
 })
 
 export const receiveErrors = (errors) => ({
@@ -34,7 +39,7 @@ export const createComment = (photoId, comment) => (dispatch) => {
 
 export const updateComment = (comment) => (dispatch) => {
     return CommentApiUtil.updateComment(comment)
-        .then(comment => dispatch(receiveComment(comment)), err => dispatch(receiveErrors(err.responseJSON)));
+        .then(comment => dispatch(changeComment(comment)), err => dispatch(receiveErrors(err.responseJSON)));
 }
 
 export const deleteComment = (commentId) => (dispatch) => {

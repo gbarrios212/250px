@@ -5,7 +5,8 @@ import { createComment } from '../../actions/comment_actions';
 const msp = (state, ownProps) => {
     // debugger;
     return $.ajax({
-        photoId: ownProps.photoId
+        photoId: ownProps.photoId, 
+        currentUser: state.entities.users[state.session.id]
     })
 }
 

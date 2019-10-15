@@ -49,7 +49,11 @@ const photosReducer = (state = {}, action) => {
         case REMOVE_LIKE:
             photoId = action.payload.like.photo_id;
             userId = action.payload.like.user_id;
-            delete action.payload.photos[photoId].liker_ids[userId];
+            photo = action.payload.photos[photoId]
+            photo.liker_ids = photo.liker_ids.filter(id => id !== userId);
+            // delete action.payload.photos[photoId].liker_ids[userId];
+            //filter || remove lodash 
+
             newState = merge({}, state, action.payload.photos);
             return newState;
         default: 

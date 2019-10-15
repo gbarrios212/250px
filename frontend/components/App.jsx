@@ -18,7 +18,7 @@ const App = () => (
   <>
   <Modal/>
     <header>
-      <NavbarContainer />
+      <Route path="/" component={NavbarContainer} />
     </header>
       <AuthRoute path="/signup" component={SignUpFormContainer}/>
       <AuthRoute path="/login" component={LoginFormContainer}/>

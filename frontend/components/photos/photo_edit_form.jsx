@@ -1,5 +1,6 @@
 import PhotosForm from './photos_form';
 import React from 'react';
+import merge from 'lodash/merge';
 
 class PhotoEditForm extends React.Component {
     constructor(props){
@@ -13,6 +14,12 @@ class PhotoEditForm extends React.Component {
 
     toggleDisable(){
       
+    }
+
+    componentDidUpdate(prevProps){
+      if(this.props.photo !== prevProps.photo){
+        this.setState({photo: this.props.photo})
+      }
     }
 
     componentWillUnmount(){
@@ -32,7 +39,7 @@ class PhotoEditForm extends React.Component {
     update(field) {
       debugger;
       return e => {
-          this.setState({ photo: {[field]: e.currentTarget.value}})
+          this.setState(merge({}, this.state, { photo: {[field]: e.currentTarget.value}}))
       }
     }
 
@@ -62,7 +69,7 @@ class PhotoEditForm extends React.Component {
           <br/>
           {errorsList}
           <label htmlFor="name">Name</label>
-          <input id="name" type="text" onChange={this.update("name")} value={this.props.photo.name} disabled={this.state.disabled}/>
+          <input id="name" type="text" onChange={this.update("name")} value={this.state.photo.name} disabled={this.state.disabled}/>
           {/* <label htmlFor="description">Description</label>
           <textarea id="description" type="text" onChange={this.update("description")} value={this.props.photo.description} placeholder="Tell us more about your photo" disabled={this.state.disabled}/>
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import CommentEditContainer from './comment_edit_container';
 
 class CommentsCreateForm extends React.Component{
     constructor(props){

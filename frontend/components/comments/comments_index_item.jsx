@@ -1,13 +1,34 @@
 import React from 'react';
 
-const CommentsIndexItem = ({comment}) => {
-    // debugger;
-    return(
-        <li className="comment-item">
-            {comment.author_id}
-            {comment.body}
-        </li>
-    );
+class CommentsIndexItem extends React.Component{
+    constructor(props){
+        super(props);
+
+        this.confirmDelete = this.confirmDelete.bind(this);
+    }
+
+    confirmDelete(e){
+        e.preventDefault();
+        let result = confirm("Are you certain?");
+        if (result){
+          this.props.deleteComment(this.props.comment.id);
+        }
+    }
+
+    render(){
+        let editOptions = this.props.currentUser.id === this.props.comment.author_id ? (
+            <button onClick={this.confirmDelete}>Delete me hahahah</button>
+                ) : <div></div>
+            
+        return(
+            <li className="comment-item">
+                {this.props.comment.author_id}
+                {this.props.comment.body}
+                {editOptions}
+            </li>
+        );
+    }
 }
 
 export default CommentsIndexItem;
+

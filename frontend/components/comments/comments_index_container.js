@@ -10,8 +10,10 @@ import { selectPhotoComments } from '../../reducers/selectors';
 
 const msp = (state, ownProps) => {
     // debugger;
-    let currentPhoto = state.entities.photos[ownProps.photoId]
+    let currentUser = state.entities.users[state.session.id];
+    let currentPhoto = state.entities.photos[ownProps.photoId];
     return({
+        currentUser,
         comments: selectPhotoComments(state, currentPhoto)
     })
 }

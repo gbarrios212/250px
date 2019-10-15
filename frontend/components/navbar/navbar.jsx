@@ -8,6 +8,7 @@ class Navbar extends React.Component {
             show: false,
         };
         this.toggleClass = this.toggleClass.bind(this);
+        this.handleLogout = this.handleLogout.bind(this);
     }
 
     componentDidMount(){
@@ -18,6 +19,11 @@ class Navbar extends React.Component {
         e.preventDefault();
         const currentState = this.state.show;
         this.setState({ show: !currentState });
+    }
+
+    handleLogout(){
+        this.props.logout()
+        .then(this.props.history.push("/"))
     }
 
     render(){
@@ -59,7 +65,8 @@ class Navbar extends React.Component {
                                     <i className="fas fa-user-circle"></i>
                                 </button>
                                 <div id="myDropdown" className={this.state.show ? 'dropdown-content show' : 'dropdown-content'}>
-                                    <button className="logout" onClick={this.props.logout}>Log Out</button>
+                                    {/* <button className="logout" onClick={this.props.logout}>Log Out</button> */}
+                                    <button className="logout" onClick={this.handleLogout}>Log Out</button>
                                 </div>
                             </div>
                             <Link to="/manage/upload">

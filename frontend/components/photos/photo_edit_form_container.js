@@ -7,7 +7,19 @@ import { receiveActivePhotoId, clearActivePhotoId } from '../../actions/active_p
 const msp = (state, ownProps) =>{
     // debugger;
     let photoId = state.ui.activePhotoId;
-    let photo = state.entities.photos[photoId];
+    let photo = state.entities.photos[photoId] || { name: "", 
+        category: "",
+        location: "",
+        lat: "",
+        long: "",
+        date_taken: "",
+        camera: "",
+        lens: "",
+        focal_length: "",
+        aperture: "",
+        shutter_speed: "",
+        iso: "",
+        description: ""}
     return ({
         photo: photo
     })

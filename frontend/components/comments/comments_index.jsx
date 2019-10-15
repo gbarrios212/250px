@@ -1,5 +1,5 @@
 import React from 'react';
-import CommentsIndexItem from './comments_index_item';
+import CommentsIndexItemContainer from './comments_index_item_container';
 
 class CommentsIndex extends React.Component{
     constructor(props){
@@ -10,7 +10,11 @@ class CommentsIndex extends React.Component{
     render(){
         // debugger;
         let commentsList = this.props.comments.map(comment => {
-            return <CommentsIndexItem comment={comment} key={comment.id}/>
+            return <CommentsIndexItemContainer
+                comment={comment} 
+                key={comment.id} 
+                // currentUser={this.props.currentUser}
+            />
         })
         return(
             <div className="comment-list">
@@ -21,3 +25,4 @@ class CommentsIndex extends React.Component{
 }
 
 export default CommentsIndex;
+
