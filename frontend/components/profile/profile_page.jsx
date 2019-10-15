@@ -37,13 +37,13 @@ class ProfilePage extends React.Component{
                         {this.props.currentUser.username}
                     </h1>
                     <ul className="stat-details">
-                        <li>
-                            {this.props.currentUser.photo_ids.length} Photos
+                        <li className="details-list-photo">
+                            {this.props.currentUser.photo_ids.length}
                         </li>
-                        <li>
+                        <li className="details-list-followers">
                             FOLLOWERS HERE 
                         </li>
-                        <li>
+                        <li className="details-list-following">
                             FOLLOWING HERE
                         </li>
                     </ul>

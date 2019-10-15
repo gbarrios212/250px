@@ -181,8 +181,49 @@
 }
 
 .stat-details{
-  
+  text-align: center;
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
 }
+
+.stat-details li {
+  display: inline-block;
+  color: #b9c1c7;
+  margin: 0 10px;
+  line-height: 1.4em;
+  list-style: none;
+}
+
+.stat-details li > p{
+  font-weight: bold;
+}
+
+.details-list-photo:after{
+  content: " Photos";
+  font-weight: lighter;
+}
+
+// for when i have followers set up 
+
+// .details-list-followers:after{
+//   content: " Followers";
+//   font-weight: lighter;
+// }
+
+// .details-list-following:after{
+//   content: " Following";
+//   font-weight: lighter;
+// }
+
+
+
+
+
 
 // .profile_header * {
 //   text-align: center;
