@@ -1,0 +1,22 @@
+.new-upload-button{
+    position: relative;
+    top: 40px;
+}
+
+.profile-grid{
+    //temp
+    position: relative;
+    top: 400px;
+    //temp
+    display: grid;
+    grid-template-rows: 20%, 20%, 20%, 20%, 20%;
+    grid-template-columns: repeat(5, 20%);
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+    z-index: -1;
+}
+
+.profile-thumbnail{
+    cursor: pointer;
+    list-style-type: none;
+}

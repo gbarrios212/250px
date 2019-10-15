@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class ProfilePhotosDetail extends React.Component{
     constructor(props) {
@@ -7,9 +8,9 @@ class ProfilePhotosDetail extends React.Component{
 
     render(){
         return(
-                <img 
-                    src={this.props.photo.photoUrl} alt=""> 
-                </img>
+            <Link to={`/photos/${this.props.photo.id}`}>
+                <img src={this.props.photo.photoUrl} alt=""></img>
+            </Link>
         )
     }
 }

@@ -14,7 +14,7 @@ class ProfilePhotos extends React.Component{
     render() {
         if (this.props.photos.length === 0){
             return (
-                <div className="profile-grid">
+                <div className="new-upload-button">
                     <Link to="/manage/upload"> 
                         Upload something lol.
                     </Link>
@@ -27,7 +27,7 @@ class ProfilePhotos extends React.Component{
         }
 
         let photosList = this.props.photos.map(photo => {
-            return <li key={photo.id} onClick={this.updateActivePhotoId} className="thumbnail" value={photo.id}>
+            return <li key={photo.id} className="profile-thumbnail" value={photo.id}>
                 <ProfilePhotosDetail photo={photo} key={photo.id}/>
             </li>
         })
