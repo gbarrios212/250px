@@ -84,7 +84,8 @@
   .profile-header{
     display: block;
     position: relative;
-    top: 76px;
+    // top: 76px; not sure why giving me issues all of a sudden 
+    top: 57px;
     margin-bottom: 20px;
     box-sizing: border-box;
     font-size: 14px;
@@ -100,7 +101,36 @@
     margin-bottom: -104px;
 }
 
+.avatar-container{
+    
+}
 
+.user-avatar{
+    margin: 0 auto;
+    width: 104px;
+    height: 104px;
+    position: relative;
+    z-index: 100;
+    top: 52px;
+}
+
+.user-avatar-container{
+    background-color: #fff;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    width: 104px;
+    height: 104px;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+}
+
+.profile-avatar{
+  font-size: 100px;
+  left: -21px;
+  color: $gray;
+}
 
 // .outer-profile-container{
 //     display: block;

@@ -17,10 +17,16 @@ class ProfilePage extends React.Component{
             <>
             <div className="profile-header">
                 <div className="cover-photo-container">
-                    <img className="cover-photo" src="" alt=""/>
+                    <img className="cover-photo" alt=""/>
                 </div>
                 <div className="avatar-container">
-                    
+                    <div className="user-avatar">
+                        <div className="user-avatar-container">
+
+                            <i className="fas fa-user-circle profile-avatar"></i>
+                        </div>
+                    </div>
+
                 </div>
             </div>
                 {/* <div>Hi, welcome to the profile page!</div> */}
