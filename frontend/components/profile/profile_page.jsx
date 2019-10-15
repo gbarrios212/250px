@@ -48,7 +48,12 @@ class ProfilePage extends React.Component{
                         </li>
                     </ul>
                 </div>
-
+            </div>
+            <div className="tabs-container">
+                <ul className="tabs">
+                    <li>PHOTOS</li>
+                    <li>ABOUT</li>
+                </ul>
             </div>
                 {/* <div>Hi, welcome to the profile page!</div> */}
                 {/* <CoverPhoto />

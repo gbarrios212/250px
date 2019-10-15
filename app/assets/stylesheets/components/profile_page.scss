@@ -6,7 +6,7 @@
 .profile-grid{
     //temp
     position: relative;
-    top: 400px;
+    top: 100px;
     //temp
     display: grid;
     grid-template-rows: 20%, 20%, 20%, 20%, 20%;
@@ -104,6 +104,10 @@
 
 .avatar-container{
     
+}
+
+.user-details{
+  padding-bottom: 10px;
 }
 
 .user-avatar{
@@ -221,7 +225,36 @@
 // }
 
 
+.tabs-container{
+  position: relative;
+  // z-index: 100;
+  display: block;
+  top: 35px;
+}
 
+.tabs{
+  border-top: 1px solid #eeeff2;
+  position: relative;
+  // z-index: 101;
+  border-bottom: 1px solid #eeeff2;
+  background-color: #fff;
+  list-style-type: none;
+  text-align: center;
+  white-space: nowrap;
+  overflow-x: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.tabs > li{
+  display: inline;
+  margin: 0 10px;
+  white-space: nowrap;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #525558;
+  cursor: pointer;
+}
 
 
 
