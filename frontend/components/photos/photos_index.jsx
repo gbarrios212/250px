@@ -17,9 +17,11 @@ class PhotosIndex extends React.Component{
             return <PhotosIndexItem photo={photo} key={photo.id}/>
         })
         return (
-            <ul className="photos-index">
-                {photosList}
-            </ul>
+            <div className="photos-index-container">
+                <ul className="photos-index">
+                    {photosList}
+                </ul>
+            </div>
         )
     }
 }
