@@ -26,8 +26,13 @@ class ProfilePage extends React.Component{
                             <i className="fas fa-user-circle profile-avatar"></i>
                         </div>
                     </div>
-
                 </div>
+                <div className="profile-buttons">
+                    <div className="buttons-wrapper">
+                        <button className="more-button"></button>
+                    </div>
+                </div>
+
             </div>
                 {/* <div>Hi, welcome to the profile page!</div> */}
                 {/* <CoverPhoto />

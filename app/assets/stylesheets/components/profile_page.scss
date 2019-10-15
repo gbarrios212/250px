@@ -81,15 +81,16 @@
     }
   }
 
-  .profile-header{
-    display: block;
-    position: relative;
-    // top: 76px; not sure why giving me issues all of a sudden 
-    top: 57px;
-    margin-bottom: 20px;
-    box-sizing: border-box;
-    font-size: 14px;
-  }
+.profile-header{
+  display: block;
+  position: relative;
+  // top: 76px; not sure why giving me issues all of a sudden 
+  top: 57px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  font-size: 14px;
+  background: #fff;
+}
 
 .cover-photo-container{
     display: block;
@@ -130,6 +131,43 @@
   font-size: 100px;
   left: -21px;
   color: $gray;
+}
+
+.profile-buttons{
+  position: relative;
+  overflow: hidden;
+  padding: 10px 50px 0 0;
+  margin-bottom: 30px;
+  text-align: right;
+}
+
+.more-button{
+  width: 40px;
+  font-size: 14px;
+  background-color: #f7f8fa;
+  border-color: rgba(185,193,199,0.5);
+  text-shadow: none;
+  color: #71767a;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0 10px;
+  height: 30px;
+  line-height: 28px;
+  border-radius: 3px;
+  font-weight: bold;
+  text-align: center;
+  // transition: background-color 0.1s ease-in-out;
+}
+
+.buttons-wrapper{
+  display: inline-block;
+}
+.more-button::after{
+  content: "...";
+}
+
+.more-button:active{
+  background: red;
 }
 
 // .outer-profile-container{
