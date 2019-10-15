@@ -13,6 +13,7 @@ class Api::CommentsController < ApplicationController
         if @comment.save 
             photo = @comment.photo 
             render json: photo, include: [:comments]
+            # render 'api/photos/show'
         else 
             render json: @comment.errors.full_messages, status: 422
         end

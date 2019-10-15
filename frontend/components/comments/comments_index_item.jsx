@@ -24,6 +24,8 @@ class CommentsIndexItem extends React.Component{
                     ) : <div></div>
             
         }
+
+        debugger;
             
         return(
             <li className="comment-item">

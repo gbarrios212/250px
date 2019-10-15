@@ -53,7 +53,14 @@ const usersReducer = (oldState = {}, action) => {
             // debugger;
             user.liked_photo_ids = user.liked_photo_ids.filter(id => id !== photoId);
             // delete action.payload.users[userId].liked_photo_ids[photoId];
+            debugger;
+            window.merge = merge;
             newState = merge({}, oldState, action.payload.users);
+            debugger;
+            // test below 
+            newState[userId].liked_photo_ids = user.liked_photo_ids
+            // test above
+            return newState;
         default: 
             return oldState;
     }

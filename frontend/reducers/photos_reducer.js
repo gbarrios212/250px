@@ -55,6 +55,10 @@ const photosReducer = (state = {}, action) => {
             //filter || remove lodash 
 
             newState = merge({}, state, action.payload.photos);
+            // test below 
+            newState[photoId].liker_ids = photo.liker_ids;
+            // test above
+            debugger;
             return newState;
         default: 
             return state;
