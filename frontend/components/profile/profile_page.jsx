@@ -2,6 +2,7 @@ import React from 'react';
 import ProfilePhotosContainer from './profile_photos_container';
 import UserInfo from './user_info';
 import CoverPhoto from './cover_photo';
+import { Link } from 'react-router-dom';
 
 class ProfilePage extends React.Component{
     constructor(props){
@@ -51,7 +52,10 @@ class ProfilePage extends React.Component{
             </div>
             <div className="tabs-container">
                 <ul className="tabs">
-                    <li>PHOTOS</li>
+                <li>
+                    <Link to={`/users/${this.props.currentUser.id}`}>PHOTOS</Link>
+                </li>
+                    
                     <li>ABOUT</li>
                 </ul>
             </div>
