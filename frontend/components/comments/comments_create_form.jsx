@@ -5,12 +5,13 @@ class CommentsCreateForm extends React.Component{
     constructor(props){
         super(props)
         this.state = ({body: ""})
-
+        // debugger;
         this.handleSubmit = this.handleSubmit.bind(this);
-    }
+    } 
 
     handleSubmit(e) {
         e.preventDefault();
+        // debugger;
         this.props.createComment(this.props.photoId, this.state);
     }
 

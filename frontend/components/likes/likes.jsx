@@ -3,7 +3,7 @@ import React from 'react';
 class Likes extends React.Component{
     constructor(props){
         super(props);
-
+        // debugger;
         this.state = ({ liked: this.props.likedStatus })
         // debugger
         this.toggleLike = this.toggleLike.bind(this);
@@ -23,6 +23,7 @@ class Likes extends React.Component{
     }
 
     render(){
+        // debugger;
         return(
             <div className={this.state.liked ? "like-button active" : "like-button"} onClick={this.toggleLike}>
                 <i className="far fa-heart"></i>

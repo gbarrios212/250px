@@ -29,7 +29,8 @@ class CommentsIndexItem extends React.Component{
             
         return(
             <li className="comment-item">
-                {this.props.comment.author.username}
+                {/* {this.props.comment.author.username} */}
+                {this.props.comment.author_id}
                 {this.props.comment.body}
                 {editOptions}
             </li>

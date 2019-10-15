@@ -10,10 +10,12 @@
 
 .photos-index{
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     flex-direction: row;
     position: relative;
     top: 275px;
+    margin: 0 auto;
 }
 
 
@@ -112,4 +114,9 @@
 
 .active{
     color:red;
+}
+
+.info-and-comments-section{
+    display: flex;
+    justify-content: space-between;
 }

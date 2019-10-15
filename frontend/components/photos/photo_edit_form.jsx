@@ -5,7 +5,6 @@ import merge from 'lodash/merge';
 class PhotoEditForm extends React.Component {
     constructor(props){
       super(props)
-      debugger;
       this.state = { photo: this.props.photo, disabled: false }
       this.handleSubmit = this.handleSubmit.bind(this);
       this.confirmDelete = this.confirmDelete.bind(this);
@@ -32,12 +31,10 @@ class PhotoEditForm extends React.Component {
 
     handleSubmit(e) {
       e.preventDefault();
-      debugger;
       this.props.updatePhoto(this.state.photo);
     }
     
     update(field) {
-      debugger;
       return e => {
           this.setState(merge({}, this.state, { photo: {[field]: e.currentTarget.value}}))
       }

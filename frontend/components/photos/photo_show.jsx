@@ -43,6 +43,7 @@ class PhotoShow extends React.Component {
       comment = this.props.currentUser ? <CommentsCreateFormContainer photoId={this.props.match.params.photoId}/> 
         : <div></div>;
 
+        // debugger;
     return (
       <>
         <span className="image-container">
@@ -56,40 +57,42 @@ class PhotoShow extends React.Component {
             {/* </div> */}
           </div>
         </span>
-        <span className="info-section">
-          {/* <Likes photo={this.props.photo}/> */}
-          {/* <LikesContainer photo={this.props.photo}/> */}
-          {like}
-          <h1>{this.props.photo.name}</h1>
-          <br/>
-          <p>{this.props.photo.location}</p>
-          <br/>
-          <p>{this.props.photo.date_taken}</p>
-          <br/>
-          <p>{this.props.photo.camera}</p>
-          <br/>
-          <p>{this.props.photo.lens}</p>
-          <br/>
-          <p>{this.props.photo.focal_length}</p>
-          <br/>
-          <p>{this.props.photo.aperture}</p>
-          <br/>
-          <p>{this.props.photo.shutter_speed}</p>
-          <br/>
-          <p>{this.props.photo.iso}</p>
-          <br/>
-          <p>{this.props.photo.description}</p>
-          <br/>
-          <p>{this.props.photo.created_at}</p>
-          <br/>
-          <p>{this.props.photo.category}</p>
-          <br/>
-          <p>{this.props.photo.author_id}</p>
-        </span>
-        <span className="comments-section">
-            {/* <CommentsCreateFormContainer photoId={this.props.match.params.photoId}/> */}
-            {comment}
-            <CommentsIndexContainer photoId={this.props.match.params.photoId}/>
+        <span className="info-and-comments-section">
+          <span className="info-section">
+            {/* <Likes photo={this.props.photo}/> */}
+            {/* <LikesContainer photo={this.props.photo}/> */}
+            {like}
+            <h1>{this.props.photo.name}</h1>
+            <br/>
+            <p>{this.props.photo.location}</p>
+            <br/>
+            <p>{this.props.photo.date_taken}</p>
+            <br/>
+            <p>{this.props.photo.camera}</p>
+            <br/>
+            <p>{this.props.photo.lens}</p>
+            <br/>
+            <p>{this.props.photo.focal_length}</p>
+            <br/>
+            <p>{this.props.photo.aperture}</p>
+            <br/>
+            <p>{this.props.photo.shutter_speed}</p>
+            <br/>
+            <p>{this.props.photo.iso}</p>
+            <br/>
+            <p>{this.props.photo.description}</p>
+            <br/>
+            <p>{this.props.photo.created_at}</p>
+            <br/>
+            <p>{this.props.photo.category}</p>
+            <br/>
+            <p>{this.props.photo.author_id}</p>
+          </span>
+          <span className="comments-section">
+              {/* <CommentsCreateFormContainer photoId={this.props.match.params.photoId}/> */}
+              {comment}
+              <CommentsIndexContainer photoId={this.props.match.params.photoId}/>
+          </span>
         </span>
       </>
     );
