@@ -29,10 +29,28 @@ class CommentsIndexItem extends React.Component{
             
         return(
             <li className="comment-item">
-                {/* {this.props.comment.author.username} */}
-                {this.props.comment.author_id}
-                {this.props.comment.body}
-                {editOptions}
+                <div className="avatar">
+                    AVA-
+                    HERE
+                </div>
+                <div className="comment-details">
+                    {/* {this.props.comment.author.username} */}
+                    <div className="comment-details-header">
+                        <h2>
+                            {this.props.comment.author_id} LINK TO USER PROFILE HERE
+                        </h2>
+                        <p>TIME HERE</p>
+                    </div>
+
+                    {this.props.comment.body}
+                    <div className="comment-details-footer">
+                        <p>REPLY HERE</p>
+                        <p>...</p>
+                        <ul className="comment-dropdown">
+                            {editOptions}
+                        </ul>
+                    </div>
+                </div>
             </li>
         );
     }

@@ -115,6 +115,9 @@ class PhotoShow extends React.Component {
           
           </span>
           <span className="comments-section">
+              <h1>
+                {this.props.photo.comment_ids.length} Comments
+              </h1>
               {/* <CommentsCreateFormContainer photoId={this.props.match.params.photoId}/> */}
               {comment}
               <CommentsIndexContainer photoId={this.props.match.params.photoId}/>
