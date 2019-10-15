@@ -63,32 +63,55 @@ class PhotoShow extends React.Component {
           <span className="info-section">
             {/* <Likes photo={this.props.photo}/> */}
             {/* <LikesContainer photo={this.props.photo}/> */}
-            {like}
-            <h1>{this.props.photo.name}</h1>
-            <br/>
-            <p>{this.props.photo.location}</p>
-            <br/>
-            <p>{this.props.photo.date_taken}</p>
-            <br/>
-            <p>{this.props.photo.camera}</p>
-            <br/>
-            <p>{this.props.photo.lens}</p>
-            <br/>
-            <p>{this.props.photo.focal_length}</p>
-            <br/>
-            <p>{this.props.photo.aperture}</p>
-            <br/>
-            <p>{this.props.photo.shutter_speed}</p>
-            <br/>
-            <p>{this.props.photo.iso}</p>
-            <br/>
-            <p>{this.props.photo.description}</p>
-            <br/>
-            <p>{this.props.photo.created_at}</p>
-            <br/>
-            <p>{this.props.photo.category}</p>
-            <br/>
-            <p>{this.props.photo.author_id}</p>
+            <div className="like-info">
+              {like}
+            </div>
+            <div className="header">
+              <div className="header-info">
+                <h1>{this.props.photo.name}</h1>
+                <br/>
+                <p> by AUTHOR NAME HERE {this.props.photo.author_id} • FOLLOWING OR NOT HERE </p>
+              </div>
+              <div className="header-avatar">
+                <p>AVATAR HERE </p>
+              </div>
+            </div>
+            <div className="location-date">
+              <p>{this.props.photo.date_taken}</p>
+              <br/>
+              <p>{this.props.photo.location}</p>
+              <br/>
+              <p>{this.props.photo.description}</p>
+              <br/>
+            </div>
+            <div className="details">
+              <div className="camera-info">
+                <p>{this.props.photo.camera}</p>
+                <br/>
+              </div>
+              <div className="lens-info">
+                <p>{this.props.photo.lens}</p>
+                <br/>
+              </div>
+              <div className="shot-info">
+                <p>{this.props.photo.focal_length}</p>
+                <br/>
+                <p>{this.props.photo.aperture}</p>
+                <br/>
+                <p>{this.props.photo.shutter_speed}</p>
+                <br/>
+                <p>{this.props.photo.iso}</p>
+                <br/>
+              </div>
+            </div>
+            <div className="category">
+              <p>{this.props.photo.category}</p>
+              <br/>
+            </div>
+            <div className="keywords">
+              <p>KEYWORDS HERE</p>
+            </div>
+          
           </span>
           <span className="comments-section">
               {/* <CommentsCreateFormContainer photoId={this.props.match.params.photoId}/> */}
