@@ -30,6 +30,19 @@ class PhotoShow extends React.Component {
       }
       // debugger
       ;
+
+      let like;
+      let comment;
+
+      like = this.props.currentUser ? <LikesContainer photo={this.props.photo}/> 
+        : <div>
+            <i className="far fa-heart"></i>
+            {this.props.photo.liker_ids.length}
+          </div>;
+      
+      comment = this.props.currentUser ? <CommentsCreateFormContainer photoId={this.props.match.params.photoId}/> 
+        : <div></div>;
+
     return (
       <>
         <span className="image-container">
@@ -45,7 +58,8 @@ class PhotoShow extends React.Component {
         </span>
         <span className="info-section">
           {/* <Likes photo={this.props.photo}/> */}
-          <LikesContainer photo={this.props.photo}/>
+          {/* <LikesContainer photo={this.props.photo}/> */}
+          {like}
           <h1>{this.props.photo.name}</h1>
           <br/>
           <p>{this.props.photo.location}</p>
@@ -73,7 +87,8 @@ class PhotoShow extends React.Component {
           <p>{this.props.photo.author_id}</p>
         </span>
         <span className="comments-section">
-            <CommentsCreateFormContainer photoId={this.props.match.params.photoId}/>
+            {/* <CommentsCreateFormContainer photoId={this.props.match.params.photoId}/> */}
+            {comment}
             <CommentsIndexContainer photoId={this.props.match.params.photoId}/>
         </span>
       </>

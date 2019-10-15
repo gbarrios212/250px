@@ -16,13 +16,18 @@ class CommentsIndexItem extends React.Component{
     }
 
     render(){
-        let editOptions = this.props.currentUser.id === this.props.comment.author_id ? (
-            <button onClick={this.confirmDelete}>Delete me hahahah</button>
-                ) : <div></div>
+
+        let editOptions;
+        if(this.props.currentUser){
+            editOptions = this.props.currentUser.id === this.props.comment.author_id ? (
+                <button onClick={this.confirmDelete}>Delete</button>
+                    ) : <div></div>
+            
+        }
             
         return(
             <li className="comment-item">
-                {this.props.comment.author_id}
+                {this.props.comment.author.username}
                 {this.props.comment.body}
                 {editOptions}
             </li>

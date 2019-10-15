@@ -5,6 +5,7 @@ import { fetchPhoto } from '../../actions/photo_actions';
 const msp = (state, ownProps) => {
     // debugger;
     return({ 
+        currentUser: state.entities.users[state.session.id],
         photo: state.entities.photos[ownProps.match.params.photoId]
     });
 }
