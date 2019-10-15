@@ -142,7 +142,8 @@
 }
 
 .more-button{
-  width: 40px;
+  // width: 40px;
+  width: 80px; //TEMP
   font-size: 14px;
   background-color: #f7f8fa;
   border-color: rgba(185,193,199,0.5);
@@ -163,12 +164,29 @@
   display: inline-block;
 }
 .more-button::after{
-  content: "...";
+  // content: "...";
+  content: "Settings"; //TEMP
 }
 
 .more-button:active{
   background: red;
 }
+
+.profile-header h1{
+  font-size: 30px;
+  margin: 0 0 10px 0;
+  font-weight: normal;
+  color: #525558;
+  text-align: center;
+}
+
+.stat-details{
+  
+}
+
+// .profile_header * {
+//   text-align: center;
+// }
 
 // .outer-profile-container{
 //     display: block;

@@ -32,6 +32,22 @@ class ProfilePage extends React.Component{
                         <button className="more-button"></button>
                     </div>
                 </div>
+                <div className="user-details">
+                    <h1>
+                        {this.props.currentUser.username}
+                    </h1>
+                    <ul className="stat-details">
+                        <li>
+                            {this.props.currentUser.photo_ids.length} Photos
+                        </li>
+                        <li>
+                            FOLLOWERS HERE 
+                        </li>
+                        <li>
+                            FOLLOWING HERE
+                        </li>
+                    </ul>
+                </div>
 
             </div>
                 {/* <div>Hi, welcome to the profile page!</div> */}
