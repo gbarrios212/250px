@@ -6,6 +6,7 @@ import { selectUserPhotos } from '../../reducers/selectors';
 const msp = (state) => {
     let currentUser = state.entities.users[state.session.id]
     return({
+        currentUser,
         photos: selectUserPhotos(state, currentUser)
     })
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import ProfilePhotosDetail from './profile_photos_detail';
+import { Link } from 'react-router-dom';
 
 class ProfilePhotos extends React.Component{
     constructor(props){
@@ -11,6 +12,16 @@ class ProfilePhotos extends React.Component{
     }
 
     render() {
+        if (this.props.photos.length === 0){
+            return (
+                <div className="profile-grid">
+                    <Link to="/manage/upload"> 
+                        Upload something lol.
+                    </Link>
+                </div>
+            );
+        }
+
         if (!this.props.photos[0]){
             return <div>Loading</div>
         }
@@ -21,7 +32,7 @@ class ProfilePhotos extends React.Component{
             </li>
         })
         return(
-            <div className="library-grid">
+            <div className="profile-grid">
                 {photosList}
             </div>
         )
