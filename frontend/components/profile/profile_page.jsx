@@ -13,7 +13,9 @@ class ProfilePage extends React.Component{
     }
 
     render() {
-        
+        return(
+            <div>Hi, welcome to the profile page!</div>
+        )
     }
 }
 
