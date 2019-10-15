@@ -15,8 +15,10 @@ const removeLike = (payload) => ({
 
 export const createLike = (photoId) => (dispatch) => {
     return LikeApiUtil.createLike(photoId)
-        .then(like => dispatch(receiveLike(like))
-    );
+        .then(like => {
+            // debugger;
+            dispatch(receiveLike(like))
+        });
 } 
 
 export const deleteLike = (photoId) => (dispatch) => {

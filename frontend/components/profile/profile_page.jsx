@@ -15,6 +15,11 @@ class ProfilePage extends React.Component{
     render() {
         return(
             <>
+            <div className="profile-header">
+                <div className="cover-photo-container">
+                    <img className="cover-photo" src="" alt=""/>
+                </div>
+            </div>
                 {/* <div>Hi, welcome to the profile page!</div> */}
                 {/* <CoverPhoto />
                 <UserInfo /> */} 

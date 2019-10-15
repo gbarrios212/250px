@@ -13,6 +13,7 @@ const photosReducer = (state = {}, action) => {
     let comment; 
     let commentId;
     // debugger;
+    debugger;
     switch(action.type){
         case RECEIVE_ALL_PHOTOS:
             return action.photos;
@@ -60,7 +61,7 @@ const photosReducer = (state = {}, action) => {
             newState = merge({}, state, {photo});
             // photo = newState[comment.photo_id];
             // photo.comment_ids.push(comment.id);
-            // debugger;
+            debugger;
             return newState;
         case REMOVE_COMMENT:
             comment = action.comment;

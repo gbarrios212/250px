@@ -10,7 +10,7 @@ end
 
 json.photos do 
     json.set! @comment.photo_id do 
-        json.extract! @comment.photo, :comment_ids
+        json.extract! @comment.photo, :comment_ids, :commenter_ids
     end 
 end 
 

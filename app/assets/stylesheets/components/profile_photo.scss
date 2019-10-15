@@ -81,7 +81,24 @@
     }
   }
 
+  .profile-header{
+    display: block;
+    position: relative;
+    top: 76px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
 
+.cover-photo-container{
+    display: block;
+    position: relative;
+    top: 0px;
+    min-height: 130px;
+    border-bottom: 1px solid #eeeff2;
+    background: #fff;
+    margin-bottom: -104px;
+}
 
 
 
