@@ -16,5 +16,5 @@ json.extract! user,
     :lenses, 
     :first_name, 
     :last_name, 
-    :birthday, 
+    :birthday
 json.profilePictureUrl url_for(user.profilePicture)
