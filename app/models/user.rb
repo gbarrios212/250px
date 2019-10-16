@@ -40,8 +40,19 @@ class User < ApplicationRecord
         source: :photo
 
     # has_many :galleries
-    # has_many :followers
-    # has_many :followings 
+    has_many :follower_connections,
+        foreign_key: :following_id, 
+        class_name: :Follow
+    has_many :following_connections, 
+        foreign_key: :follower_id,
+        class_name: :Follow
+    has_many :followers, 
+        through: :follower_connections,
+        source: :follower
+    has_many :followings,
+        through: :following_connections, 
+        source: :following
+
 
     def self.find_by_credentials(username, password)
         user = User.find_by(username: username)
