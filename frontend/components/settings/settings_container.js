@@ -1,9 +1,11 @@
 import Settings from './settings';
 import { connect } from 'react-redux';
 
-const msp = (state) => ({
-    currentUser: state.entities.users[state.session.id]
-})
+const msp = (state) => {
+    return({
+        currentUser: state.entities.users[state.session.id]
+    })
+}
 
 const mdp = (dispatch) => ({
     

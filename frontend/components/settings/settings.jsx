@@ -3,9 +3,11 @@ import React from 'react';
 class Settings extends React.Component{
     constructor(props){
         super(props)
+        debugger;
         let newUserProps = Object.assign({}, this.props.currentUser, {profilePicture: null, profilePictureUrl: null});
-        this.state= newUserProps;
+        this.state = newUserProps;
         this.handleFile = this.handleFile.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     //fetch user?
@@ -14,6 +16,7 @@ class Settings extends React.Component{
         e.preventDefault();
         const formData = new FormData();
         let keys = Object.keys(this.state)
+        debugger;
         keys.forEach(key => {
             if (this.state[key]){
                 formData.append(`user[${key}]`, this.state[key])
@@ -35,6 +38,7 @@ class Settings extends React.Component{
     }
 
     handleFile(e) {
+        debugger;
         const file = e.currentTarget.files[0];
         const fileReader = new FileReader();
         fileReader.onloadend = () => {
@@ -60,6 +64,7 @@ class Settings extends React.Component{
                     />
                     <h3>Image Preview</h3>
                     {preview}
+                    <button>Submit</button>
                 </form>
             </div>
         )

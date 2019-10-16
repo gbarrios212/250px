@@ -10,7 +10,7 @@ class User < ApplicationRecord
 
     attr_reader :password
 
-    has_one_attached :profile_picture
+    has_one_attached :profilePicture
 
     has_many :photos,
     foreign_key: :author_id
@@ -79,8 +79,8 @@ class User < ApplicationRecord
     end
 
     def profile_picture_nil
-        if !self.profile_picture.attached?
-            self.profile_picture.attach(io: File.open('/Users/gabrielbarrios/desktop/bigbird.png'), filename: 'bigbird.png')
+        if !self.profilePicture.attached?
+            self.profilePicture.attach(io: File.open('/Users/gabrielbarrios/desktop/bigbird.png'), filename: 'bigbird.png')
         end
    end
 end
