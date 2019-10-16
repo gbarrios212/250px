@@ -2,9 +2,12 @@ class User < ApplicationRecord
     validates :username, :email, :password_digest, :session_token, presence: true
     validates :username, :email, uniqueness: true
     validates :password, length: { minimum: 6 }, allow_nil: true
+
+    # validate :ensure_photo
     
     after_initialize :ensure_session_token
-    
+    after_initialize :profile_picture_nil
+
     attr_reader :password
 
     has_one_attached :profile_picture
@@ -68,4 +71,16 @@ class User < ApplicationRecord
     def ensure_session_token
         self.session_token ||= SecureRandom::urlsafe_base64
     end
+
+    def ensure_photo
+        unless self.photoConnect.attached?
+            errors[:photo] << "must be attached"
+        end
+    end
+
+    def profile_picture_nil
+        if !self.profile_picture.attached?
+            self.profile_picture.attach(io: File.open('/Users/gabrielbarrios/desktop/bigbird.png'), filename: 'bigbird.png')
+        end
+   end
 end

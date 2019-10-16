@@ -47,6 +47,7 @@ class Settings extends React.Component{
 
 
     render (){
+        const preview = this.state.profilePictureUrl ? <img className="preview" src={this.state.profilePictureUrl} /> : null;
         return(
             <div className="settings-container">Settings
                 <div className="personal-info">
@@ -58,6 +59,8 @@ class Settings extends React.Component{
                     name="" id=""
                     onSubmit={this.handleSubmit}
                     />
+                    <h3>Image Preview</h3>
+                    {preview}
                 </form>
             </div>
         )
