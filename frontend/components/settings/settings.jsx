@@ -48,13 +48,27 @@ class Settings extends React.Component{
         }
     }
 
+    update(field) {
+        return e => {
+            this.setState({[field]: e.currentTarget.value})
+        }
+    }
+
 
     render (){
+        const errorsList = (this.props.errors) ? ( 
+            this.props.errors.map((error, index) => (
+            <li className="errors" key={index}>{error}</li>
+        ))) : (
+            <div></div>
+        );
+
         const preview = this.state.profilePictureUrl ? <img className="preview" src={this.state.profilePictureUrl} /> : null;
         return(
             <div className="settings-container">Settings
                 
                 <form className="user-update-form"  onSubmit={this.handleSubmit} >
+                    {errorsList}
                     <div className="profile-info">
 
                         <input type="file" 
