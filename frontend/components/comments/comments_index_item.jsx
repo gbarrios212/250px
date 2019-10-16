@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class CommentsIndexItem extends React.Component{
     constructor(props){
@@ -37,7 +38,9 @@ class CommentsIndexItem extends React.Component{
                     {/* {this.props.comment.author.username} */}
                     <div className="comment-details-header">
                         <h2>
-                            {this.props.comment.author_id} LINK TO USER PROFILE HERE
+                            <Link to={`/users/${this.props.comment.author_id}`}>
+                                {this.props.comment.author.username}
+                            </Link>
                         </h2>
                         <p>TIME HERE</p>
                     </div>

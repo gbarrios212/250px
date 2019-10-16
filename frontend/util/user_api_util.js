@@ -4,3 +4,8 @@ export const fetchUser = (id) => {
     })
 }
 
+export const fetchAllUsers = () => {
+    return $.ajax({
+        url: `api/users`
+    })
+}

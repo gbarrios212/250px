@@ -13,7 +13,7 @@ const photosReducer = (state = {}, action) => {
     let comment; 
     let commentId;
     // debugger;
-    debugger;
+    // debugger;
     switch(action.type){
         case RECEIVE_ALL_PHOTOS:
             return action.photos;

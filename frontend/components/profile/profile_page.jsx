@@ -11,6 +11,7 @@ class ProfilePage extends React.Component{
 
     componentDidMount() {
         this.props.fetchPhotos();
+        this.props.fetchUser(this.props.profileId);
     }
 
     render() {
