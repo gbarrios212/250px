@@ -13,8 +13,9 @@ class PhotosIndex extends React.Component{
     }
 
     render() {
-        // debugger;
-        let photosList = this.props.photos.map(photo => {
+        debugger;
+        let sorted = this.props.photos.sort((a, b) => (a.like_ids.length < b.like_ids.length) ? 1 : -1);
+        let photosList = sorted.map(photo => {
             return <PhotosIndexItem photo={photo} key={photo.id}/>
         })
         return (
