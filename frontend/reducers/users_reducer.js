@@ -6,6 +6,7 @@ import { RECEIVE_COMMENT, REMOVE_COMMENT } from '../actions/comment_actions';
 import { RECEIVE_LIKE, REMOVE_LIKE } from '../actions/like_actions';
 import merge from 'lodash/merge';
 import { CHANGE_USER, RECEIVE_USER, RECEIVE_ALL_USERS } from '../actions/user_actions';
+import { RECEIVE_FOLLOW, REMOVE_FOLLOW } from '../actions/follow_actions';
 
 
 const usersReducer = (oldState = {}, action) => {
@@ -17,6 +18,9 @@ const usersReducer = (oldState = {}, action) => {
     let userId;
     let photoId;
     let comment;
+    let follow;
+    let followerId;
+    let followingId;
     switch(action.type){
         case RECEIVE_CURRENT_USER:
             // debugger;
@@ -55,9 +59,30 @@ const usersReducer = (oldState = {}, action) => {
             newState = merge({}, oldState, action.payload.users);
             newState[userId].liked_photo_ids = user.liked_photo_ids
             return newState;
+        case RECEIVE_FOLLOW:
+            follow = action.follow; 
+            newState = merge({}, oldState);
+            follower = newState[follow.follower_id]
+            following = newState[follow.following_id]
+            follower.following_ids.push(follow.following_id)
+            following.follower_ids.push(follow.follower_id)
+            return newState;
+        case REMOVE_FOLLOW:
+            follow = action.payload.follow; 
+            followerId = follow.follower_id;
+            followingId = follow.following_id;
+            follower = action.payload.users[followerId]
+            following = action.payload.users[followingId]
+            follower.following_ids = follower.following_ids.filter(id => id !== followingId);
+            following.follower_ids = following.follower_ids.filter(id => id !== followerId);
+            newState = merge({}, oldState, action.payload.users);
+            newState[followerId].following_ids = follower.following_ids;
+            newState[followingId].follower_ids = following.follower_ids;
+            return newState;
         default: 
             return oldState;
     }
 }
 
 export default usersReducer;
+
