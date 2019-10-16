@@ -77,7 +77,7 @@ class Settings extends React.Component{
                                 <div className="avatar-preview">
                                     {preview}
                                 </div>
-                                <label for="files">Upload</label>
+                                <label className="upload-avatar-button" id="upload-avatar-button" HTMLfor="files">Upload</label>
                                 <input 
                                     className="hidden"
                                     type="file" 
@@ -89,10 +89,7 @@ class Settings extends React.Component{
                             </div>
 
 
-                            <label htmlFor="bio">Bio</label>
-                            <input id="bio" type="text" onChange={this.update("bio")} value={this.state.bio}/>
-                            <label htmlFor="gender">Gender</label>
-                            <input id="gender" type="text" onChange={this.update("gender")} value={this.state.gender}/>                   
+                                        
                             <label htmlFor="city">City</label>
                             <input id="city" type="text" onChange={this.update("city")} value={this.state.city}/>
                             <label htmlFor="state">State</label>
@@ -114,8 +111,12 @@ class Settings extends React.Component{
                             <input id="first_name" type="text" onChange={this.update("first_name")} value={this.state.first_name}/>
                             <label htmlFor="last_name">Last_Name</label>
                             <input id="last_name" type="text" onChange={this.update("last_name")} value={this.state.last_name}/>
+                            <label htmlFor="bio">Bio</label>
+                            <textarea id="bio" type="text" onChange={this.update("bio")} value={this.state.bio} placeholder="Tell the community about yourself..."/>  
                             <label htmlFor="birthday">Birthday</label>
                             <input id="birthday" type="text" onChange={this.update("birthday")} value={this.state.birthday}/>
+                            <label htmlFor="gender">Gender</label>
+                            <input id="gender" type="text" onChange={this.update("gender")} value={this.state.gender}/>    
                         </div>
 
                     </div>
