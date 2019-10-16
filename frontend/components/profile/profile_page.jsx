@@ -28,9 +28,9 @@ class ProfilePage extends React.Component{
     render() {
 
         let follow;
-
-        follow = this.props.currentUser && this.props.currentUser.id !== this.props.match.params.userId ? 
-            <FollowsContainer /> : <div>Neat!</div>;
+debugger;
+        follow = this.props.currentUser && this.props.currentUser.id != this.props.match.params.userId ? 
+            <FollowsContainer otherUser={this.props.profileUser} /> : <div>Neat!</div>;
 
         return(
             <>
