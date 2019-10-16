@@ -53,11 +53,10 @@ class Settings extends React.Component{
                 <div className="personal-info">
 
                 </div>
-                <form className="profile-info">
+                <form className="profile-info"  onSubmit={this.handleSubmit} >
                     <input type="file" 
                     onChange={this.handleFile}
                     name="" id=""
-                    onSubmit={this.handleSubmit}
                     />
                     <h3>Image Preview</h3>
                     {preview}
