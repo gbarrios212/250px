@@ -7,6 +7,8 @@ json.extract! user,
     :authored_comment_ids, 
     :liked_photo_ids, 
     :commented_photo_ids,
+    :follower_ids,
+    :following_ids
     :bio, 
     :gender, 
     :city, 

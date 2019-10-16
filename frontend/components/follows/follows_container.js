@@ -4,7 +4,8 @@ import { createFollow, deleteFollow } from '../../actions/follow_actions'
 
 const msp = (state, ownProps) => {
     let currentUser = state.entities.users[state.session.id];
-    let otherUser = state.entities.users[ownProps.match.params.userId]
+    debugger;
+    let otherUser = state.entities.users[ownProps.match.params.userId];
     let followedStatus = currentUser.following_ids.includes(otherUser.id)
     return({
         currentUser,
