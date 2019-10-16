@@ -9,7 +9,7 @@ const receiveFollow = (follow) => ({
 })
 
 const removeFollow = (payload) => ({
-    type: FOLLOW,
+    type: REMOVE_FOLLOW,
     payload
 })
 

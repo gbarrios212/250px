@@ -1,4 +1,4 @@
-class FollowsController < ApplicationController
+class Api::FollowsController < ApplicationController
 
     def create
         @follow = Follow.new()

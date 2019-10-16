@@ -1,13 +1,13 @@
-export const createLike = (userId) => {
+export const createFollow = (userId) => {
     return $.ajax({
         method: "POST",
-        url: `api/users/${userId}/likes`
+        url: `api/users/${userId}/follows`
     })
 }
 
-export const deleteLike = (userId) => {
+export const deleteFollow = (userId) => {
     return $.ajax({
         method: "DELETE",
-        url: `api/likes/${userId}`
+        url: `api/follows/${userId}`
     })
 }

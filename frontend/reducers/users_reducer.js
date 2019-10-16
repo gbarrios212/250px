@@ -19,6 +19,8 @@ const usersReducer = (oldState = {}, action) => {
     let photoId;
     let comment;
     let follow;
+    let follower;
+    let following;
     let followerId;
     let followingId;
     switch(action.type){
@@ -62,8 +64,11 @@ const usersReducer = (oldState = {}, action) => {
         case RECEIVE_FOLLOW:
             follow = action.follow; 
             newState = merge({}, oldState);
-            follower = newState[follow.follower_id]
-            following = newState[follow.following_id]
+            follower = newState.otherUsers.users[follow.follower_id]
+            following = newState.otherUsers.users[follow.following_id]
+            debugger;
+            newState[follower.id].following_ids.push(follow.following_id)
+            debugger;
             follower.following_ids.push(follow.following_id)
             following.follower_ids.push(follow.follower_id)
             return newState;
@@ -71,13 +76,15 @@ const usersReducer = (oldState = {}, action) => {
             follow = action.payload.follow; 
             followerId = follow.follower_id;
             followingId = follow.following_id;
+            debugger;
             follower = action.payload.users[followerId]
             following = action.payload.users[followingId]
             follower.following_ids = follower.following_ids.filter(id => id !== followingId);
             following.follower_ids = following.follower_ids.filter(id => id !== followerId);
             newState = merge({}, oldState, action.payload.users);
-            newState[followerId].following_ids = follower.following_ids;
-            newState[followingId].follower_ids = following.follower_ids;
+            newState[followerId].follower_ids = follower.following_ids;
+            newState.otherUsers.users[followerId].following_ids = follower.following_ids;
+            newState.otherUsers.users[followingId].follower_ids = following.follower_ids;
             return newState;
         default: 
             return oldState;
