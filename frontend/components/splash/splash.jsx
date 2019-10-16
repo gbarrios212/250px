@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PhotosIndexContainer from '../photos/photos_index_container';
 
 class Splash extends React.Component {
     constructor(props){
@@ -31,7 +32,9 @@ class Splash extends React.Component {
                 </div>
             </div>
         } else {
-            splashSignup = <div></div>
+            splashSignup = <div>
+                <PhotosIndexContainer/>
+            </div>
         }
         return (
             <div>

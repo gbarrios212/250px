@@ -30,9 +30,8 @@ class CommentsIndexItem extends React.Component{
             
         return(
             <li className="comment-item">
-                <div className="avatar">
-                    AVA-
-                    HERE
+                <div className="commenter-avatar-container">
+                    <img className="commenter-avatar" src={this.props.comment.author.profilePictureUrl}/>
                 </div>
                 <div className="comment-details">
                     {/* {this.props.comment.author.username} */}
@@ -47,8 +46,6 @@ class CommentsIndexItem extends React.Component{
 
                     {this.props.comment.body}
                     <div className="comment-details-footer">
-                        <p>REPLY HERE</p>
-                        <p>...</p>
                         {editOptions}
                         <ul className="comment-dropdown">
                         </ul>
