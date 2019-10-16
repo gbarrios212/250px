@@ -4,6 +4,7 @@ export const CHANGE_USER = "CHANGE_USER";
 export const RECEIVE_USER_ERRORS = "RECEIVE_USER_ERRORS";
 export const CLEAR_USER_ERRORS = "CLEAR_USER_ERRORS";
 export const RECEIVE_USER = "RECEIVE_USER";
+export const RECEIVE_ALL_USERS = "RECEIVE_ALL_USERS";
 
 
 export const updateUser = (user) => ({
@@ -12,9 +13,14 @@ export const updateUser = (user) => ({
 })
 
 //user and own photos nested
-export const receiveUser = (user) => ({
+const receiveUser = (user) => ({
     type: RECEIVE_USER,
     user
+})
+
+const receiveAllUsers = (users) => ({
+    type: RECEIVE_ALL_USERS,
+    users
 })
 
 
@@ -27,7 +33,14 @@ export const clearUserErrors = () => ({
     type: CLEAR_USER_ERRORS
 })
 
+
+
 export const fetchUser = (id) => (dispatch) => {
     return UserApiUtil.fetchUser(id)
         .then(payload => (dispatch(receiveUser(payload))))
+}
+
+export const fetchAllUsers = () => (dispatch) => {
+    return UserApiUtil.fetchAllUsers()
+        .then(users => (dispatch(ReceiveAllUsers(users))))
 }
