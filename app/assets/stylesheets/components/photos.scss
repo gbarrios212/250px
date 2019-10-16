@@ -195,3 +195,22 @@
     font-weight: bold;
     font-size: 24px;
 }
+
+.photo-header-avatar-container{
+    font-size: 30px;
+    position: relative;
+    // left: -9px;
+    // margin-left: 23px;
+    color: #71767a;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    overflow: hidden;
+    border-radius: 50%;
+    justify-content: center;
+}
+
+.photo-header-avatar{
+    width: 100%;
+    height: 30px;
+}

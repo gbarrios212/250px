@@ -42,5 +42,5 @@ export const fetchUser = (id) => (dispatch) => {
 
 export const fetchAllUsers = () => (dispatch) => {
     return UserApiUtil.fetchAllUsers()
-        .then(users => (dispatch(ReceiveAllUsers(users))))
+        .then(users => (dispatch(receiveAllUsers(users))))
 }

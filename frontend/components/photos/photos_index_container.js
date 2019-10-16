@@ -1,6 +1,7 @@
 import PhotosIndex from './photos_index';
 import { connect } from 'react-redux';
 import { fetchPhotos } from '../../actions/photo_actions';
+import { fetchAllUsers } from '../../actions/user_actions';
 
 const msp = (state) => {
     // debugger;
@@ -10,7 +11,8 @@ const msp = (state) => {
 }
 
 const mdp = (dispatch) => ({
-    fetchPhotos: () => dispatch(fetchPhotos())
+    fetchPhotos: () => dispatch(fetchPhotos()),
+    fetchAllUsers: () => dispatch(fetchAllUsers())
 })
 
 export default connect(msp, mdp)(PhotosIndex)

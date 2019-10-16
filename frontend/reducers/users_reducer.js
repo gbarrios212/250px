@@ -19,12 +19,14 @@ const usersReducer = (oldState = {}, action) => {
     let comment;
     switch(action.type){
         case RECEIVE_CURRENT_USER:
-            debugger;
+            // debugger;
             return Object.assign({}, oldState, { [action.user.id]: action.user });
         case CHANGE_USER:
             return Object.assign({}, oldState, { [action.user.id]: action.user });
+            //add a key with other user when on another one's page 
         case RECEIVE_USER:
-            return action.user;
+            return Object.assign({}, oldState, { otherUsers: { users: {[action.user.id]: action.user }}});
+            //add a key with all other users on log in, must be filtered in same way all photos are when in another place
         case RECEIVE_ALL_USERS:
             return Object.assign({}, oldState, { otherUsers: action.users });
         case RECEIVE_NEW_PHOTO:

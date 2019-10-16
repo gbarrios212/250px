@@ -15,11 +15,13 @@ class PhotoShow extends React.Component {
   componentDidMount() {
     // debugger;
     this.props.fetchPhoto(this.props.match.params.photoId);
+    this.props.fetchAllUsers();
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps.match.params.photoId !== this.props.match.params.photoId){
       this.props.fetchPhoto(this.props.match.params.photoId);
+      this.props.fetchAllUsers();
     }
   }
 
@@ -70,10 +72,10 @@ class PhotoShow extends React.Component {
               <div className="photo-header-info">
                 <h1>{this.props.photo.name}</h1>
                 <br/>
-                <p> by AUTHOR NAME HERE {this.props.photo.author_id} • FOLLOWING OR NOT HERE </p>
+                <p> by {this.props.photoAuthor.username} • FOLLOWING OR NOT HERE </p>
               </div>
-              <div className="photo-header-avatar">
-                <p>AVATAR HERE </p>
+              <div className="photo-header-avatar-container">
+                <img className="photo-header-avatar" src={this.props.photoAuthor.profilePictureUrl}/>
               </div>
             </div>
             <div className="location-date">

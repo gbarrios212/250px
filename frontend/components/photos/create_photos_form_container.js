@@ -3,9 +3,12 @@ import { connect } from 'react-redux'
 import { createPhoto, clearErrors, receiveErrors, fetchPhotos, receiveNewPhoto } from '../../actions/photo_actions';
 import { closeModal } from '../../actions/modal_actions';
 
-const msp = (state, ownProps) => ({
-    currentUser: state.entities.users[state.session.id],
-    photo: 
+const msp = (state, ownProps) => {
+    debugger;
+    return ({
+
+        currentUser: state.entities.users[state.session.id],
+        photo: 
         { name: "", 
         category: "",
         location: "",
@@ -19,8 +22,9 @@ const msp = (state, ownProps) => ({
         shutter_speed: "",
         iso: "",
         description: ""},
-    errors: state.errors.photo
-})
+        errors: state.errors.photo
+    })
+}
 
 const mdp = (dispatch) => ({
     action: (photo) => dispatch(createPhoto(photo)), 

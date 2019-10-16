@@ -7,12 +7,13 @@ const msp = (state) => {
     let currentUser = state.entities.users[state.session.id]
     return({
         currentUser,
-        photos: selectUserPhotos(state, currentUser)
+        // photos: selectUserPhotos(state, currentUser)
     })
 }
 
 const mdp = (dispatch) => ({
     fetchPhotos: () => dispatch(fetchPhotos())
+    
 })
 
 export default connect(msp, mdp)(ProfilePhotos)

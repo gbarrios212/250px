@@ -11,8 +11,18 @@ class ProfilePage extends React.Component{
 
     componentDidMount() {
         this.props.fetchPhotos();
-        this.props.fetchUser(this.props.profileId);
+        this.props.fetchAllUsers();
+        this.props.fetchUser(this.props.match.params.userId);
+        // this.props.fetchAllUsers();
     }
+
+    componentDidUpdate(prevProps) {
+        if (prevProps.match.params.userId !== this.props.match.params.userId){
+          this.props.fetchUser(this.props.match.params.userId);
+          this.props.fetchAllUsers();
+          this.props.fetchPhotos();
+        }
+      }
 
     render() {
         return(
@@ -24,7 +34,7 @@ class ProfilePage extends React.Component{
                 <div className="avatar-container">
                     <div className="user-avatar">
                         <div className="user-avatar-container">
-                            <img className="avatar" src={this.props.currentUser.profilePictureUrl} alt=""/>
+                            <img className="avatar" src={this.props.profileUser.profilePictureUrl} alt=""/>
                             {/* <i className="fas fa-user-circle profile-avatar"></i> */}
                         </div>
                     </div>
@@ -38,11 +48,12 @@ class ProfilePage extends React.Component{
                 </div>
                 <div className="user-details">
                     <h1>
-                        {this.props.currentUser.username}
+                        {/* {this.props.profileUser.username} */}
+                        {this.props.profileUser.username}
                     </h1>
                     <ul className="stat-details">
                         <li className="details-list-photo">
-                            {this.props.currentUser.photo_ids.length}
+                            {this.props.profileUser.photo_ids.length}
                         </li>
                         <li className="details-list-followers">
                             FOLLOWERS HERE 
@@ -56,13 +67,13 @@ class ProfilePage extends React.Component{
             <div className="tabs-container">
                 <ul className="tabs">
                 <li>
-                    <Link to={`/users/${this.props.currentUser.id}`}>PHOTOS</Link>
+                    <Link to={`/users/${this.props.profileUser.id}`}>PHOTOS</Link>
                 </li>
                     
                     <li>ABOUT</li>
                 </ul>
             </div>
-                <ProfilePhotosContainer />
+                <ProfilePhotosContainer photos={this.props.photos} />
             </>
         )
     }

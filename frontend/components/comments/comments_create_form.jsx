@@ -11,8 +11,9 @@ class CommentsCreateForm extends React.Component{
 
     handleSubmit(e) {
         e.preventDefault();
-        // debugger;
+        debugger;
         this.props.createComment(this.props.photoId, this.state);
+        this.setState({body: ""});
     }
 
     update() {
