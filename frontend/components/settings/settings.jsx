@@ -28,12 +28,7 @@ class Settings extends React.Component{
             contentType: false, 
             processData: false
         }).then((response) => this.props.updateUser(response),
-            (response) => this.props.receiveUserErrors(response.responseJSON))
-        // }).then(
-        //     (response) => console.log(response.message),
-        //     (response) => console.log(response.responseJSON)
-        // )
-        ;
+            (response) => this.props.receiveUserErrors(response.responseJSON));
     }
 
     handleFile(e) {
@@ -65,52 +60,55 @@ class Settings extends React.Component{
 
         const preview = this.state.profilePictureUrl ? <img className="preview" src={this.state.profilePictureUrl} /> : null;
         return(
-            <div className="settings-container">Settings
+            <div className="settings-container">
                 
                 <form className="user-update-form"  onSubmit={this.handleSubmit} >
                     {errorsList}
-                    <div className="profile-info">
+                    
+                    <div className="inputs">
 
-                        <input type="file" 
-                            onChange={this.handleFile}
-                            name="" 
-                            id=""
-                            />
-                        <h3>Image Preview</h3>
-                        {preview}
+                        <div className="profile-info">
+
+                            <input type="file" 
+                                onChange={this.handleFile}
+                                name="" 
+                                id=""
+                                />
+                            <h3>Image Preview</h3>
+                            {preview}
 
 
-                        <label htmlFor="bio">Bio</label>
-                        <input id="bio" type="text" onChange={this.update("bio")} value={this.state.bio}/>
-                        <label htmlFor="gender">Gender</label>
-                        <input id="gender" type="text" onChange={this.update("gender")} value={this.state.gender}/>                   
-                        <label htmlFor="city">City</label>
-                        <input id="city" type="text" onChange={this.update("city")} value={this.state.city}/>
-                        <label htmlFor="state">State</label>
-                        <input id="state" type="text" onChange={this.update("state")} value={this.state.state}/>
-                        <label htmlFor="country">Country</label>
-                        <input id="country" type="text" onChange={this.update("country")} value={this.state.country}/>
-                        <label htmlFor="cameras">Cameras</label>
-                        <input id="cameras" type="text" onChange={this.update("cameras")} value={this.state.cameras}/>
-                        <label htmlFor="lenses">Lenses</label>
-                        <input id="lenses" type="text" onChange={this.update("lenses")} value={this.state.lenses}/>
+                            <label htmlFor="bio">Bio</label>
+                            <input id="bio" type="text" onChange={this.update("bio")} value={this.state.bio}/>
+                            <label htmlFor="gender">Gender</label>
+                            <input id="gender" type="text" onChange={this.update("gender")} value={this.state.gender}/>                   
+                            <label htmlFor="city">City</label>
+                            <input id="city" type="text" onChange={this.update("city")} value={this.state.city}/>
+                            <label htmlFor="state">State</label>
+                            <input id="state" type="text" onChange={this.update("state")} value={this.state.state}/>
+                            <label htmlFor="country">Country</label>
+                            <input id="country" type="text" onChange={this.update("country")} value={this.state.country}/>
+                            <label htmlFor="cameras">Cameras</label>
+                            <input id="cameras" type="text" onChange={this.update("cameras")} value={this.state.cameras}/>
+                            <label htmlFor="lenses">Lenses</label>
+                            <input id="lenses" type="text" onChange={this.update("lenses")} value={this.state.lenses}/>
+                        </div>
+
+                        <div className="personal-info">
+                            <label htmlFor="username">Username</label>
+                            <input id="username" type="text" onChange={this.update("username")} value={this.state.username}/>
+                            <label htmlFor="email">Email</label>
+                            <input id="email" type="text" onChange={this.update("email")} value={this.state.email}/>
+                            <label htmlFor="first_name">First Name</label>
+                            <input id="first_name" type="text" onChange={this.update("first_name")} value={this.state.first_name}/>
+                            <label htmlFor="last_name">Last_Name</label>
+                            <input id="last_name" type="text" onChange={this.update("last_name")} value={this.state.last_name}/>
+                            <label htmlFor="birthday">Birthday</label>
+                            <input id="birthday" type="text" onChange={this.update("birthday")} value={this.state.birthday}/>
+                        </div>
+
                     </div>
-
-                    <div className="personal-info">
-                        <label htmlFor="username">Username</label>
-                        <input id="username" type="text" onChange={this.update("username")} value={this.state.username}/>
-                        <label htmlFor="email">Email</label>
-                        <input id="email" type="text" onChange={this.update("email")} value={this.state.email}/>
-                        <label htmlFor="first_name">First Name</label>
-                        <input id="first_name" type="text" onChange={this.update("first_name")} value={this.state.first_name}/>
-                        <label htmlFor="last_name">Last_Name</label>
-                        <input id="last_name" type="text" onChange={this.update("last_name")} value={this.state.last_name}/>
-                        <label htmlFor="birthday">Birthday</label>
-                        <input id="birthday" type="text" onChange={this.update("birthday")} value={this.state.birthday}/>
-                    </div>
-
-
-                    <button>Save Changes</button>
+                    <button className="save-user-changes-button">Save Changes</button>
                 </form>
             </div>
         )
