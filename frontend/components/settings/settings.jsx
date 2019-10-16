@@ -68,14 +68,25 @@ class Settings extends React.Component{
                     <div className="inputs">
 
                         <div className="profile-info">
-
-                            <input type="file" 
-                                onChange={this.handleFile}
-                                name="" 
-                                id=""
-                                />
-                            <h3>Image Preview</h3>
-                            {preview}
+                            <div className="profile-title">
+                                <span>
+                                    Profile
+                                </span>
+                            </div>
+                            <div className="avatar-container">
+                                <div className="avatar-preview">
+                                    {preview}
+                                </div>
+                                <label for="files">Upload</label>
+                                <input 
+                                    className="hidden"
+                                    type="file" 
+                                    onChange={this.handleFile}
+                                    name="" 
+                                    id="file"
+                                    />
+                                <h3>Image Preview</h3>
+                            </div>
 
 
                             <label htmlFor="bio">Bio</label>
