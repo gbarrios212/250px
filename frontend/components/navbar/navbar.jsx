@@ -61,10 +61,13 @@ class Navbar extends React.Component {
                             <i className="fas fa-search"></i>
                             <input className="search" type="text" placeholder="Search 250px"/>
                             <div className="dropdown">
-                                <button onClick={this.toggleClass} className="dropbtn">
-                                    {/* <img src={this.props.currentUser.profilePictureUrl} alt=""/> */}
-                                    <i className="fas fa-user-circle"></i>
-                                </button>
+                                <div className="avatar-navbar-container">
+                                    <button onClick={this.toggleClass} className="dropbtn">
+                                        <img className="avatar-navbar" src={this.props.currentUser.profilePictureUrl} alt=""/>
+                                            {/* <img src={this.props.currentUser.profilePictureUrl} alt=""/> */}
+                                            {/* <i className="fas fa-user-circle"></i> */}
+                                    </button>
+                                </div>
                                 <div id="myDropdown" className={this.state.show ? 'dropdown-content show' : 'dropdown-content'}>
                                     {/* <button className="logout" onClick={this.props.logout}>Log Out</button> */}
                                     <button className="logout" onClick={this.handleLogout}>Log Out</button>
