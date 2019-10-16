@@ -3,14 +3,13 @@ import React from 'react';
 class Settings extends React.Component{
     constructor(props){
         super(props)
-        debugger;
+
         let newUserProps = Object.assign({}, this.props.currentUser, {profilePicture: null, profilePictureUrl: null});
         this.state = newUserProps;
+        
         this.handleFile = this.handleFile.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-
-    //fetch user?
 
     handleSubmit(e) {
         e.preventDefault();
@@ -54,8 +53,6 @@ class Settings extends React.Component{
         const preview = this.state.profilePictureUrl ? <img className="preview" src={this.state.profilePictureUrl} /> : null;
         return(
             <div className="settings-container">Settings
-                
-
                 
                 <form className="user-update-form"  onSubmit={this.handleSubmit} >
                     <div className="profile-info">

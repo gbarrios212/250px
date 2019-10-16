@@ -5,6 +5,7 @@ import { RECEIVE_NEW_PHOTO, REMOVE_PHOTO } from '../actions/photo_actions';
 import { RECEIVE_COMMENT, REMOVE_COMMENT } from '../actions/comment_actions';
 import { RECEIVE_LIKE, REMOVE_LIKE } from '../actions/like_actions';
 import merge from 'lodash/merge';
+import { CHANGE_USER } from '../actions/user_actions';
 
 
 const usersReducer = (oldState = {}, action) => {
@@ -18,6 +19,9 @@ const usersReducer = (oldState = {}, action) => {
     let comment;
     switch(action.type){
         case RECEIVE_CURRENT_USER:
+            debugger;
+            return Object.assign({}, oldState, { [action.user.id]: action.user });
+        case CHANGE_USER:
             return Object.assign({}, oldState, { [action.user.id]: action.user });
         case RECEIVE_NEW_PHOTO:
             photo = action.payload.photo;
