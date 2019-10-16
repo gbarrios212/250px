@@ -7,9 +7,4 @@ class Follow < ApplicationRecord
     belongs_to :follower, 
         class_name: :User
 
-    # belongs_to :user 
-    # belongs_to :photo
-    # has_one :liked_photo_author, 
-    #     through: :photo, 
-    #     source: :author
 end
