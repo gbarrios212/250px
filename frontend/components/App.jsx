@@ -32,7 +32,7 @@ const App = () => (
       <ProtectedRoute exact path="/photos/:photoId/edit" component={PhotoEditFormContainer} />
       <ProtectedRoute exact path="/manage/upload" component={ManageContainer} />
       <ProtectedRoute exact path="/manage/all" component={CreatePhotosFormContainer} />
-      <ProtectedRoute exact path="/users/:userId/" component={ProfilePageContainer} />
+      <Route exact path="/users/:userId/" component={ProfilePageContainer} />
       <ProtectedRoute exact path="/settings" component={SettingsContainer} />
 
 
