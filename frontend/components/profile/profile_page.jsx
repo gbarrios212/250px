@@ -3,6 +3,7 @@ import ProfilePhotosContainer from './profile_photos_container';
 import UserInfo from './user_info';
 import CoverPhoto from './cover_photo';
 import { Link } from 'react-router-dom';
+import FollowsContainer from '../follows/follows_container';
 
 class ProfilePage extends React.Component{
     constructor(props){
@@ -25,6 +26,12 @@ class ProfilePage extends React.Component{
       }
 
     render() {
+
+        let follow;
+
+        follow = this.props.currentUser && this.props.currentUser.id !== this.props.match.params.userId ? 
+            <FollowsContainer /> : <div>Neat!</div>;
+
         return(
             <>
             <div className="profile-header">
@@ -60,6 +67,9 @@ class ProfilePage extends React.Component{
                         </li>
                         <li className="details-list-following">
                             FOLLOWING HERE
+                        </li>
+                        <li>
+                            {follow}
                         </li>
                     </ul>
                 </div>
