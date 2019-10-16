@@ -23,8 +23,8 @@ class ProfilePage extends React.Component{
                 <div className="avatar-container">
                     <div className="user-avatar">
                         <div className="user-avatar-container">
-                            <img src={this.props.currentUser.profilePictureUrl} alt=""/>
-                            <i className="fas fa-user-circle profile-avatar"></i>
+                            <img className="avatar" src={this.props.currentUser.profilePictureUrl} alt=""/>
+                            {/* <i className="fas fa-user-circle profile-avatar"></i> */}
                         </div>
                     </div>
                 </div>
@@ -61,9 +61,6 @@ class ProfilePage extends React.Component{
                     <li>ABOUT</li>
                 </ul>
             </div>
-                {/* <div>Hi, welcome to the profile page!</div> */}
-                {/* <CoverPhoto />
-                <UserInfo /> */} 
                 <ProfilePhotosContainer />
             </>
         )

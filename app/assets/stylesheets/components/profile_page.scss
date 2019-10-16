@@ -177,7 +177,7 @@
 }
 
 .more-button:active{
-  background: red;
+  background: #494c4e;
 }
 
 .profile-header h1{
@@ -264,6 +264,16 @@
   color: $blue;
 }
 
+.avatar-container{
+  display: flex; 
+  justify-content: center;
+  //seems like it stretches photo, how to get around
+}
+
+.avatar{
+  height: 100px;
+  width: auto;
+}
 
 
 // .profile_header * {
