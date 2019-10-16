@@ -17,7 +17,7 @@ class Api::UsersController < ApplicationController
 
     def update
         @user = User.find(params[:id])
-        debugger
+        @user.profilePicture.purge
         if @user.update(user_params) 
             # render json: {message: "Neat!"}
             render :show
@@ -28,6 +28,22 @@ class Api::UsersController < ApplicationController
     end
 
     def user_params
-        params.require(:user).permit(:username, :email, :password, :profilePicture, :profilePictureUrl)
+        params.require(:user).permit(
+            :username,
+            :email,
+            :password,
+            :profilePicture,
+            :profilePictureUrl,
+            :bio,
+            :gender,
+            :city,
+            :state,
+            :country,
+            :cameras,
+            :lenses,
+            :first_name,
+            :last_name,
+            :birthday
+        )
     end
 end
