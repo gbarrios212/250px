@@ -20,6 +20,7 @@ class PhotosIndex extends React.Component{
         })
         return (
             <div className="photos-index-container">
+                <div className="home-feed-text">Home Feed</div>
                 <ul className="photos-index">
                     {photosList}
                 </ul>
