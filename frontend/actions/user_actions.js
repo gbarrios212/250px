@@ -7,11 +7,11 @@ export const updateUser = (user) => ({
     user
 })
 
-export const receiveErrors = (errors) => ({
+export const receiveUserErrors = (errors) => ({
     type: RECEIVE_USER_ERRORS,
     errors
 })
 
-export const clearErrors = () => ({
+export const clearUserErrors = () => ({
     type: CLEAR_USER_ERRORS
 })

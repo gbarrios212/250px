@@ -27,12 +27,12 @@ class Settings extends React.Component{
             data: formData,
             contentType: false, 
             processData: false
-        // }).then((response) => this.props.receiveNewPhoto(response),
-        //     (response) => this.props.receivePhotoErrors(response.responseJSON))
-        }).then(
-            (response) => console.log(response.message),
-            (response) => console.log(response.responseJSON)
-        )
+        }).then((response) => this.props.updateUser(response),
+            (response) => this.props.receiveUserErrors(response.responseJSON))
+        // }).then(
+        //     (response) => console.log(response.message),
+        //     (response) => console.log(response.responseJSON)
+        // )
         ;
     }
 
