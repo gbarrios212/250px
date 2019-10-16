@@ -62,6 +62,7 @@ class Navbar extends React.Component {
                             <input className="search" type="text" placeholder="Search 250px"/>
                             <div className="dropdown">
                                 <button onClick={this.toggleClass} className="dropbtn">
+                                    {/* <img src={this.props.currentUser.profilePictureUrl} alt=""/> */}
                                     <i className="fas fa-user-circle"></i>
                                 </button>
                                 <div id="myDropdown" className={this.state.show ? 'dropdown-content show' : 'dropdown-content'}>
