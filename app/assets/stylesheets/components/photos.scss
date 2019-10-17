@@ -220,3 +220,34 @@
 .author-link:hover{
     color: $light-blue;
 }
+
+.circle{
+    font-size: 26px;
+    font-weight: normal;
+    color: rgb(238, 239, 242);
+    position: relative;
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    line-height: 35px;
+    text-align: center;
+    transition: background-color 0.1s ease 0s;
+    border-radius: 40px;
+    cursor: pointer;
+  }
+  
+  .circle:hover{
+    font-size: 26px;
+    font-weight: normal;
+    color: rgb(238, 239, 242);
+    position: relative;
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    line-height: 35px;
+    text-align: center;
+    transition: background-color 0.1s ease 0s;
+    border-radius: 40px;
+    background-color: rgba(255, 255, 255, 0.15);
+    cursor: pointer;
+  }

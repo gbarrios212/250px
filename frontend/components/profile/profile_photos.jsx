@@ -29,12 +29,14 @@ class ProfilePhotos extends React.Component{
 
         let photosList = this.props.photos.map(photo => {
             return <li key={photo.id} className="profile-thumbnail" value={photo.id}>
+            {/* return <li key={photo.id} className="profile-thumbnail" value={photo.id}> */}
                 <ProfilePhotosDetail photo={photo} key={photo.id}/>
             </li>
         })
         return(
             <div className="outer-profile-container">
                 <div className="profile-grid">
+                {/* <div className="profile-grid"> */}
                     {photosList}
                 </div>
             </div>
