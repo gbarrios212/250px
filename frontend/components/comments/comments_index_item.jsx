@@ -21,7 +21,7 @@ class CommentsIndexItem extends React.Component{
         let editOptions;
         if(this.props.currentUser){
             editOptions = this.props.currentUser.id === this.props.comment.author_id ? (
-                <button className="delete" onClick={this.confirmDelete}>Delete</button>
+                <button className="delete-comment" onClick={this.confirmDelete}>Delete</button>
                     ) : <div></div>
             
         }
@@ -31,24 +31,27 @@ class CommentsIndexItem extends React.Component{
         return(
             <li className="comment-item">
                 <div className="commenter-avatar-container">
-                    <img className="commenter-avatar" src={this.props.comment.author.profilePictureUrl}/>
+                    <Link to={`/users/${this.props.comment.author_id}`}>
+                        <img className="commenter-avatar" src={this.props.comment.author.profilePictureUrl}/>
+                    </Link>
                 </div>
                 <div className="comment-details">
                     {/* {this.props.comment.author.username} */}
                     <div className="comment-details-header">
                         <h2>
-                            <Link to={`/users/${this.props.comment.author_id}`}>
+                            <Link to={`/users/${this.props.comment.author_id}`} className="comment-author-name">
                                 {this.props.comment.author.username}
                             </Link>
                         </h2>
-                        <p>TIME HERE</p>
+                        {/* <p>TIME HERE</p>
+                        {this.props.comment.created_at} */}
                     </div>
 
-                    {this.props.comment.body}
+                    <div className="comment-body">
+                        {this.props.comment.body}
+                    </div>
                     <div className="comment-details-footer">
                         {editOptions}
-                        <ul className="comment-dropdown">
-                        </ul>
                     </div>
                 </div>
             </li>

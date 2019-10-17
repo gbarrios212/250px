@@ -164,6 +164,7 @@
     display: flex;
     padding-left: 10px;
     padding-right: 10px;
+    margin-bottom: 15px;
 }
 
 .comment-details{
@@ -173,12 +174,14 @@
 
 .comment-details-header{
     display: flex;
-    justify-content: space-between;  
+    justify-content: space-between; 
+    margin-bottom: 10px; 
 }
 
 .comment-details-footer{
     display: flex;
     justify-content: space-between;
+    margin-top: 10px;
 }
 
 .comment-dropdown{
@@ -251,3 +254,28 @@
     background-color: rgba(255, 255, 255, 0.15);
     cursor: pointer;
   }
+
+.comment-author-name{
+      font-size: 18px;
+      font-weight: bold;
+      color: rgb(34, 34, 34);
+}
+
+.comment-author-name:hover{
+    color: $light-blue;
+}
+
+.comment-body{
+    font-size: 18px;
+    color: rgb(34, 34, 34);
+}
+
+.comment-details-footer{
+    font-size: 16px;
+    position: relative;
+    right: -180px;
+}
+
+.delete{
+
+}

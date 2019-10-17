@@ -7,7 +7,7 @@ json.comments do
         json.set! comment.id do 
             json.partial! 'api/comments/comment', comment: comment
             json.author do 
-                json.extract! comment.author, :id, :username, :profilePictureUrl
+                json.extract! comment.author, :id, :username, :profilePictureUrl, :created_at
             end
         end 
     end 
