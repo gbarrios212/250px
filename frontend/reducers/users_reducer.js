@@ -43,13 +43,17 @@ const usersReducer = (oldState = {}, action) => {
         case RECEIVE_COMMENT:
             comment = action.comment;
             newState = merge({}, oldState);
-            debugger;
             user = newState[comment.author_id];
             user.authored_comment_ids.push(comment.id);
             user.commented_photo_ids.push(comment.photo_id);
             return newState;
-        // case REMOVE_COMMENT:
-
+        case REMOVE_COMMENT:
+            comment = action.comment; 
+            newState = merge({}. oldState);
+            user = newState[comment.author_id];
+            user.authored_comment_ids = user.authored_comment_ids.filter(id => id !== commentId);
+            user.authored_comment_ids = user.commented_photo_ids.filter(id => id !== comment.photo_id);
+            return newState;
         case RECEIVE_LIKE:
             like = action.like; 
             newState = merge({}, oldState);
