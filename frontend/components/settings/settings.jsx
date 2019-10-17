@@ -5,8 +5,13 @@ class Settings extends React.Component{
         super(props)
 
         // let newUserProps = Object.assign({}, this.props.currentUser, {profilePicture: null, profilePictureUrl: null});
-        let newUserProps = Object.assign({}, this.props.currentUser, {profilePicture: this.props.currentUser.profilePicture, profilePictureUrl: this.props.currentUser.profilePictureUrl});
-        this.state = newUserProps;
+        // now that i have default pic, don't need this to start as null.
+
+        // let newUserProps = Object.assign({}, this.props.currentUser, {profilePicture: this.props.currentUser.profilePicture, profilePictureUrl: this.props.currentUser.profilePictureUrl});
+        // this.state = newUserProps;
+        // but this is essentially the same as line 13 
+        
+        this.state = this.props.currentUser
         
         this.handleFile = this.handleFile.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
