@@ -9,11 +9,11 @@ import { fetchUser, fetchAllUsers } from '../../actions/user_actions';
 const msp = (state, ownProps) => {
   let currentUser = state.entities.users[state.session.id]
   // let profileId = ownProps.match.params.userId
-  // debugger;
+  // //debugger;
   let profileUser = state.entities.users.otherUsers.users[ownProps.match.params.userId]
-  // debugger;
+  // //debugger;
   let photos = selectUserPhotos(state, profileUser)
-  // debugger
+  // //debugger
   return ({
     currentUser: currentUser,
     photos: photos,

@@ -43,7 +43,7 @@ class PhotosForm extends React.Component {
         .then(() => this.props.closeModal())
         //test here for promise
         ;
-        // debugger;
+        // //debugger;
         // this.props.currentUser.photo_ids.push(this.props.photo.id);
     }
 
@@ -59,7 +59,7 @@ class PhotosForm extends React.Component {
     }
 
     update(field) {
-        debugger;
+        //debugger;
         return e => {
             this.setState({[field]: e.currentTarget.value})
         }

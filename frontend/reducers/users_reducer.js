@@ -25,7 +25,7 @@ const usersReducer = (oldState = {}, action) => {
     let followingId;
     switch(action.type){
         case RECEIVE_CURRENT_USER:
-            // debugger;
+            // //debugger;
             return Object.assign({}, oldState, { [action.user.id]: action.user });
         case CHANGE_USER:
             return Object.assign({}, oldState, { [action.user.id]: action.user });
@@ -41,25 +41,25 @@ const usersReducer = (oldState = {}, action) => {
             newState[photo.author_id].photo_ids.push(photo.id);
             return newState;
         case RECEIVE_COMMENT:
-            // debugger
+            //debugger
             comment = action.comment;
-            // debugger
+            //debugger
             newState = merge({}, oldState);
-            // debugger;
+            //debugger;
             user = newState[comment.author_id]
-            // debugger
+            //debugger
             user.authored_comment_ids.push(comment.id);
-            // debugger;
+            //debugger;
             user.commented_photo_ids.push(comment.photo_id);
-            // debugger
+            //debugger
             return newState;
         case RECEIVE_LIKE:
-            debugger;
+            //debugger;
             like = action.like; 
             newState = merge({}, oldState);
             user = newState[like.user_id]
             user.liked_photo_ids.push(like.photo_id);
-            debugger;
+            //debugger;
             return newState;
         case REMOVE_LIKE:
             photoId = action.payload.like.photo_id;
@@ -74,9 +74,9 @@ const usersReducer = (oldState = {}, action) => {
             newState = merge({}, oldState);
             follower = newState.otherUsers.users[follow.follower_id]
             following = newState.otherUsers.users[follow.following_id]
-            debugger;
+            //debugger;
             newState[follower.id].following_ids.push(follow.following_id)
-            debugger;
+            //debugger;
             follower.following_ids.push(follow.following_id)
             following.follower_ids.push(follow.follower_id)
             return newState;
@@ -85,7 +85,7 @@ const usersReducer = (oldState = {}, action) => {
             followerId = follow.follower_id;
             followingId = follow.following_id;
             follower = action.payload.users[followerId]
-            debugger;
+            //debugger;
             following = action.payload.users[followingId]
             follower.following_ids = follower.following_ids.filter(id => id !== followingId);
             following.follower_ids = following.follower_ids.filter(id => id !== followerId);

@@ -4,7 +4,7 @@ import { createLike, deleteLike } from '../../actions/like_actions'
 
 const msp = (state, ownProps) => {
     let currentUser = state.entities.users[state.session.id];
-    // debugger;
+    // //debugger;
     let photo = ownProps.photo;
     let likedStatus = currentUser.liked_photo_ids.includes(ownProps.photo.id)
     return({

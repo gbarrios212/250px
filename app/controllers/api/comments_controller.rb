@@ -12,7 +12,7 @@ class Api::CommentsController < ApplicationController
         if @comment.save 
             @photo = @comment.photo 
             # render json: @photo, include: [:comments]
-            # debugger
+            # //debugger
             # render 'api/photos/show'
             render :show
         else 

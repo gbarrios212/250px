@@ -3,7 +3,7 @@ import PhotosIndexItem from './photos_index_item';
 
 class PhotosIndex extends React.Component{
     constructor(props){
-        // debugger;
+        // //debugger;
         super(props)
     }
 
@@ -13,7 +13,7 @@ class PhotosIndex extends React.Component{
     }
 
     render() {
-        debugger;
+        //debugger;
         let sorted = this.props.photos.sort((a, b) => (a.like_ids.length < b.like_ids.length) ? 1 : -1);
         let photosList = sorted.map(photo => {
             return <PhotosIndexItem photo={photo} key={photo.id}/>

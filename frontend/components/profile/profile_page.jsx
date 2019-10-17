@@ -28,7 +28,7 @@ class ProfilePage extends React.Component{
 
         
         let follow;
-debugger;
+//debugger;
         follow = this.props.currentUser && this.props.currentUser.id != this.props.match.params.userId ? 
             <FollowsContainer otherUser={this.props.profileUser} /> : <div></div>;
             
@@ -39,7 +39,7 @@ debugger;
                 <button className="more-button"></button>
             </Link> : <div className="more-button-hidden"></div>;
 
-        debugger;
+        //debugger;
         return(
             <>
             <div className="profile-header">

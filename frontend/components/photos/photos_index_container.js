@@ -4,7 +4,7 @@ import { fetchPhotos } from '../../actions/photo_actions';
 import { fetchAllUsers } from '../../actions/user_actions';
 
 const msp = (state) => {
-    // debugger;
+    // //debugger;
         return ({
         photos: Object.values(state.entities.photos)
     })

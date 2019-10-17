@@ -4,32 +4,31 @@ import CommentEditContainer from './comment_edit_container';
 class CommentsCreateForm extends React.Component{
     constructor(props){
         super(props)
-        debugger;
+        //////////debugger;
         this.state = ({body: ""})
-        debugger;
+        ////debugger;
         this.handleSubmit = this.handleSubmit.bind(this);
     } 
 
     handleSubmit(e) {
         e.preventDefault();
-        debugger;
+        ////debugger;
         let comment = this.state 
-        debugger
-        this.setState({body: ""})
-        debugger
+        ////debugger
+        //debugger
         this.props.createComment(this.props.photoId, comment);
-        debugger
-        // this.setState({body: ""});
+        //debugger
+        this.setState({body: ""});
     }
 
     update() {
-        debugger;
+        //debugger;
         return e => {
             this.setState({body: e.currentTarget.value})
         }
     }
     render() {
-        debugger;
+        //debugger;
         return(  
             <form className="comment-form" onSubmit={this.handleSubmit}>
                 <textarea className="comment-input" onChange={this.update()} placeholder="Add a comment"></textarea>

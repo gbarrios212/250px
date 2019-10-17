@@ -12,8 +12,8 @@ const photosReducer = (state = {}, action) => {
     let photoId;
     let comment; 
     let commentId;
-    // debugger;
-    // debugger;
+    // //debugger;
+    // //debugger;
     switch(action.type){
         case RECEIVE_ALL_PHOTOS:
             return action.photos;
@@ -22,7 +22,7 @@ const photosReducer = (state = {}, action) => {
             return newState;
         case RECEIVE_PHOTO:
             photo = action.payload.photo; 
-            // debugger;
+            // //debugger;
             newState = merge({}, {[photo.id]: photo});
             return newState;
         case CHANGE_PHOTO:
@@ -33,7 +33,7 @@ const photosReducer = (state = {}, action) => {
             newState = Object.assign({}, state);
             photo = newState[comment.photo_id]
             photo.comment_ids.push(comment.id);
-            // debugger;
+            // //debugger;
             photo.commenter_ids.push(comment.author_id);
             return newState
         case REMOVE_PHOTO:
@@ -41,12 +41,12 @@ const photosReducer = (state = {}, action) => {
             delete newState[action.id];
             return newState;
         case RECEIVE_LIKE: 
-        debugger;
+        //debugger;
             like = action.like;
             newState = merge({}, state);
             photo = newState[like.photo_id]
             photo.liker_ids.push(like.user_id);
-        debugger;
+        //debugger;
             return newState;
         case REMOVE_LIKE:
             photoId = action.payload.like.photo_id;
@@ -57,25 +57,25 @@ const photosReducer = (state = {}, action) => {
             newState[photoId].liker_ids = photo.liker_ids;
             return newState;
         case RECEIVE_COMMENT:
-            debugger;
+            //debugger;
             comment = action.comment;
             photo = action.photo[comment.id]
             photo.comment_ids.concat([comment.id]);
             newState = merge({}, state, {photo});
             // photo = newState[comment.photo_id];
             // photo.comment_ids.push(comment.id);
-            debugger;
+            //debugger;
             return newState;
         case REMOVE_COMMENT:
             comment = action.comment;
             commentId = action.comment.id;
             photo = action.photo[comment.photo_id];
             photoId = photo.id;
-            // debugger;
+            // //debugger;
             photo.comment_ids = photo.comment_ids.filter(id => id !== commentId);
             newState = merge({}, state, {[photo.id]: photo })
             newState[photoId].comment_ids = photo.comment_ids;
-            // debugger;
+            // //debugger;
             return newState;
         default: 
             return state;
