@@ -12,7 +12,7 @@ const PhotosIndexItem = ({photo}) => {
                 </Link>
                 <div className="index-icons">
                     <div className="index-icons-likes">
-                        <i className="far fa-heart" id="index-heart"></i>{photo.liker_ids.length}
+                        <i className="far fa-heart" id="index-heart"></i>{photo.like_ids.length}
                         {/* <div className="index-likes">
                             {photo.liker_ids.length}
                         </div> */}

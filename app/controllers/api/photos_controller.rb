@@ -1,6 +1,6 @@
 class Api::PhotosController < ApplicationController
     def show 
-        @photo = Photo.includes(:comments).find(params[:id])
+        @photo = Photo.includes(comments: :author).find(params[:id])
         render :show
     end
 

@@ -11,7 +11,7 @@ class Api::UsersController < ApplicationController
     end
 
     def show 
-        @user = User.find(params[:id])
+        @user = User.find(params[:id]).includes(:photos)
         render 'api/users/show'
     end
 
@@ -21,11 +21,8 @@ class Api::UsersController < ApplicationController
     end
 
     def update
-        @user = User.find(params[:id])
-        # @user.profilePicture.purge
-            #cause issues with regular update, always left attachment nil 
+        @user = User.find(params[:id]).includes(:photos)
         if @user.update(user_params) 
-            # render json: {message: "Neat!"}
             render :show
         else 
             render json: @user.errors.full_messages, status: 422
