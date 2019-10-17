@@ -21,6 +21,7 @@ class CommentsIndexItem extends React.Component{
         let editOptions;
         if(this.props.currentUser){
             editOptions = this.props.currentUser.id === this.props.comment.author_id ? (
+            // editOptions = this.props.currentUser.id === this.props.photo.author_id ? ( this makes comments die for some reason
                 <button className="delete-comment" onClick={this.confirmDelete}>Delete</button>
                     ) : <div></div>
             

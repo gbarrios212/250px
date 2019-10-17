@@ -13,6 +13,7 @@ const msp = (state, ownProps) => {
     let currentUser = state.entities.users[state.session.id];
     let currentPhoto = state.entities.photos[ownProps.photoId];
     return({
+        // currentPhoto,
         currentUser,
         comments: selectPhotoComments(state, currentPhoto)
     })

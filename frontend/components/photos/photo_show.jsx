@@ -117,7 +117,7 @@ class PhotoShow extends React.Component {
               <br/>
             </div>
             <div className="keywords">
-              <p>KEYWORDS HERE</p>
+              {/* <p>KEYWORDS HERE</p> */}
             </div>
           
           </span>

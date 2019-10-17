@@ -8,16 +8,27 @@
     z-index: 20;
 }
 
+// .photos-index{
+//     display: flex;
+//     justify-content: center;
+//     flex-wrap: wrap;
+//     flex-direction: row;
+//     position: relative;
+//     top: 205px;
+//     margin: 0 auto;
+// }
+
 .photos-index{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    flex-direction: row;
-    position: relative;
+    display: grid;
+    // justify-content: center;
+    // flex-wrap: wrap;
+    // flex-direction: row;
+    margin: 0 auto;
+    grid-template-columns: repeat(2, minmax(400px, 600px));
+    position: relative; 
     top: 205px;
     margin: 0 auto;
 }
-
 
 .photos-index img{
     max-width: 250px;
@@ -156,15 +167,72 @@
 .fa-heart{
     margin-right: 20px;
     font-size: 30px;
+    margin-right: 6px;
 }
 
+#index-heart{
+    font-size: 24px;
+    color: $gray;
+}
 
+.index-likes{
+    font-size: 18px;
+    // margin-left: 8px;
+    color: $gray;
+}
+
+.index-icons-comments{
+    font-size: 18px;
+    color: $gray;
+    margin-left: 24px;
+}
+
+.index-icons-likes{
+    font-size: 18px;
+    color: $gray;
+    margin-left: 16px;
+}
+
+.fa-comment{
+    font-size: 24px;
+    color: $gray;    
+    margin-right: 6px;
+}
+
+.index-coments{
+    font-size: 18px;
+    // margin-left: 8px;
+    color: $gray;
+}
+
+.index-icons{
+    display: flex;
+    font-weight: lighter;
+    margin-top: 5px;
+}
+
+.index-photo-title{
+    font-weight: bold;
+    font-size: 24px;
+    color: rgb(34, 34, 34);
+    text-align: left;
+    margin-top: 15px;
+}
+
+// .index-icons-comments{
+//     display: flex;
+
+// }
 
 .comment-item{
     display: flex;
     padding-left: 10px;
     padding-right: 10px;
     margin-bottom: 15px;
+}
+
+.index-items-list-items{
+    text-align: center;
 }
 
 .comment-details{
@@ -250,7 +318,7 @@
     font-size: 26px;
     font-weight: normal;
     color: rgb(238, 239, 242);
-    position: relative;
+    // position: relative;
     display: inline-block;
     height: 40px;
     width: 40px;
@@ -259,7 +327,7 @@
     transition: background-color 0.1s ease 0s;
     border-radius: 40px;
     background-color: rgba(255, 255, 255, 0.15);
-    cursor: pointer;
+    // cursor: pointer;
 
     position: absolute;
     right: 100px;

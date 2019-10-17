@@ -13,6 +13,7 @@ class CommentsIndex extends React.Component{
             return <CommentsIndexItemContainer
                 comment={comment} 
                 key={comment.id} 
+                // photo={this.props.currentPhoto}
                 // currentUser={this.props.currentUser}
             />
         })
