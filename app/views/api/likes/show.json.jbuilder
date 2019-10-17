@@ -1,12 +1,12 @@
 json.users do 
     json.set! @user.id do 
-        json.extract! @user, :liked_photo_ids
+        json.extract! @user, :liked_photo_ids, :authored_likes
     end 
 end
 
 json.photos do 
     json.set! @photo.id do 
-        json.extract! @photo, :liker_ids
+        json.extract! @photo, :liker_ids, :like_ids
     end
 end
 

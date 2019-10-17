@@ -46,6 +46,7 @@ const photosReducer = (state = {}, action) => {
             newState = merge({}, state);
             photo = newState[like.photo_id]
             photo.liker_ids.push(like.user_id);
+            photo.like_ids.push(like.id);
         //debugger;
             return newState;
         case REMOVE_LIKE:
@@ -53,8 +54,11 @@ const photosReducer = (state = {}, action) => {
             userId = action.payload.like.user_id;
             photo = action.payload.photos[photoId]
             photo.liker_ids = photo.liker_ids.filter(id => id !== userId);
+            photo.like_ids = photo.like_ids.filter(id => id !== action.payload.like.id);
             newState = merge({}, state, action.payload.photos);
             newState[photoId].liker_ids = photo.liker_ids;
+            newState[photoId].like_ids = photo.like_ids;
+            
             return newState;
         case RECEIVE_COMMENT:
             //debugger;
@@ -67,13 +71,14 @@ const photosReducer = (state = {}, action) => {
             //debugger;
             return newState;
         case REMOVE_COMMENT:
-            comment = action.comments;
+            comment = action.comment;
             commentId = action.comment.id;
             photo = action.photo[comment.photo_id];
             photoId = photo.id;
             // //debugger;
             photo.comment_ids = photo.comment_ids.filter(id => id !== commentId);
-            newState = merge({}, state, {[photo.id]: photo })
+            // newState = merge({}, state, {[photo.id]: photo })
+            newState = merge({}, state, action.photo )
             newState[photoId].comment_ids = photo.comment_ids;
             // //debugger;
             return newState;

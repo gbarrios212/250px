@@ -17,10 +17,11 @@ const receiveComment = (comment, photos, users) => {
     })
 }
 
-const removeComment = (comment, photo) => ({
+const removeComment = (comment, photo, user) => ({
     type: REMOVE_COMMENT,
     comment,
-    photo
+    photo, 
+    user
 })
 
 const changeComment = (comment) => ({
@@ -59,5 +60,8 @@ export const updateComment = (comment) => (dispatch) => {
 
 export const deleteComment = (commentId) => (dispatch) => {
     return CommentApiUtil.deleteComment(commentId)
-        .then((response) => dispatch(removeComment(response.comment, response.photo)));
+        .then((response) => {
+            debugger;
+            dispatch(removeComment(response.comments, response.photos, response.users))}
+            );
 }
