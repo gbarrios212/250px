@@ -52,7 +52,8 @@ class PhotoShow extends React.Component {
         <div className="outer-image-container">
           <span className="image-container">
             <div className="matte-box">
-              <Link to="/" className="close-button">x
+              <Link to="/" className="close-button">
+                <span className="circle">x</span>
               </Link>
               {/* <div className="outer-container"> */}
                 <div className="inner-container">
@@ -73,10 +74,12 @@ class PhotoShow extends React.Component {
               <div className="photo-header-info">
                 <h1>{this.props.photo.name}</h1>
                 <br/>
-                <p> by {this.props.photoAuthor.username} • FOLLOWING OR NOT HERE </p>
+                <p> by <Link to={`/users/${this.props.photoAuthor.id}`} className="author-link">{this.props.photoAuthor.username}</Link> • FOLLOWING OR NOT HERE </p>
               </div>
               <div className="photo-header-avatar-container">
-                <img className="photo-header-avatar" src={this.props.photoAuthor.profilePictureUrl}/>
+                <Link to={`/users/${this.props.photoAuthor.id}`}>
+                  <img className="photo-header-avatar" src={this.props.photoAuthor.profilePictureUrl}/>
+                </Link>
               </div>
             </div>
             <div className="location-date">
