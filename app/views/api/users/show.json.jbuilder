@@ -1,3 +1,4 @@
+
 json.partial! "api/users/user", user: @user
 
 
@@ -8,7 +9,3 @@ json.photos do
         end 
     end 
 end 
-
-
-#when we get, we only get the photos associated with this one user! 
-#great for our profile. 
