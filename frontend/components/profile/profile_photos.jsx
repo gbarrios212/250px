@@ -28,18 +28,21 @@ class ProfilePhotos extends React.Component{
         }
 
         let photosList = this.props.photos.map(photo => {
-            return <li key={photo.id} className="profile-thumbnail" value={photo.id}>
+                return (
+            <Link to={`/photos/${photo.id}`}>
+                <li key={photo.id} className="profile-thumbnail" value={photo.id}>
             {/* return <li key={photo.id} className="profile-thumbnail" value={photo.id}> */}
-                <ProfilePhotosDetail photo={photo} key={photo.id}/>
+                    <ProfilePhotosDetail photo={photo} key={photo.id}/>
             </li>
+                </Link>)
         })
         return(
-            <div className="outer-profile-container">
+            // <div className="outer-profile-container">
                 <div className="profile-grid">
                 {/* <div className="profile-grid"> */}
                     {photosList}
                 </div>
-            </div>
+            // </div>
         )
     }
 }

@@ -8,9 +8,12 @@ class ProfilePhotosDetail extends React.Component{
 
     render(){
         return(
-            <Link className="profile-show-page-button" to={`/photos/${this.props.photo.id}`}>
+            <div>
+
+            {/* <Link className="profile-show-page-button" to={`/photos/${this.props.photo.id}`}> */}
                 <img src={this.props.photo.photoUrl} alt=""></img>
-            </Link>
+            {/* </Link> */}
+            </div>
         )
     }
 }

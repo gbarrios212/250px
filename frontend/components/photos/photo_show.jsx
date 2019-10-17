@@ -52,9 +52,9 @@ class PhotoShow extends React.Component {
         <div className="outer-image-container">
           <span className="image-container">
             <div className="matte-box">
-              <Link to="/" className="close-button">
-                <span className="circle">x</span>
-              </Link>
+              {/* <Link to="/" className="close-button"> */}
+                <span onClick={() => this.props.history.go(-1)} className="circle">x</span>
+              {/* </Link> */}
               {/* <div className="outer-container"> */}
                 <div className="inner-container">
                   <img className="show-img" src={this.props.photo.photoUrl} alt=""></img>
@@ -74,7 +74,8 @@ class PhotoShow extends React.Component {
               <div className="photo-header-info">
                 <h1>{this.props.photo.name}</h1>
                 <br/>
-                <p> by <Link to={`/users/${this.props.photoAuthor.id}`} className="author-link">{this.props.photoAuthor.username}</Link> • FOLLOWING OR NOT HERE </p>
+                <p> by <Link to={`/users/${this.props.photoAuthor.id}`} className="author-link">{this.props.photoAuthor.username}</Link> • {this.props.currentUser.following_ids.includes(this.props.photoAuthor.id) ? " Following " : " "} </p>
+            
               </div>
               <div className="photo-header-avatar-container">
                 <Link to={`/users/${this.props.photoAuthor.id}`}>

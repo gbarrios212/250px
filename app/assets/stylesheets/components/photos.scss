@@ -228,7 +228,7 @@
     font-size: 26px;
     font-weight: normal;
     color: rgb(238, 239, 242);
-    position: relative;
+
     display: inline-block;
     height: 40px;
     width: 40px;
@@ -236,7 +236,14 @@
     text-align: center;
     transition: background-color 0.1s ease 0s;
     border-radius: 40px;
+
+
+    
+    position: absolute;
+    right: 100px;
+    top: 110px;
     cursor: pointer;
+    z-index: 20;
   }
   
   .circle:hover{
@@ -253,6 +260,12 @@
     border-radius: 40px;
     background-color: rgba(255, 255, 255, 0.15);
     cursor: pointer;
+
+    position: absolute;
+    right: 100px;
+    top: 110px;
+    cursor: pointer;
+    z-index: 20;
   }
 
 .comment-author-name{
