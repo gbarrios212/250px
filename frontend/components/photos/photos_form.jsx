@@ -74,12 +74,14 @@ class PhotosForm extends React.Component {
             <div></div>
         );
         
-        const preview = this.state.photoUrl ? <img className="preview" src={this.state.photoUrl} /> : null;
+        const preview = this.state.photoUrl ? <img className="create-photo-preview" src={this.state.photoUrl} /> : null;
         return (
             <div className="modal-container">
                 <div className="image-preview-area">
-                <h3 className="image-preview-header">Image Preview</h3>
-                    {preview}
+                    <h3 className="image-preview-header">Image Preview</h3>
+                    <div className="create-photo-preview-container">
+                        {preview}
+                    </div>
                 </div>
                 <form className="create-form" onSubmit={this.handleSubmit}>
                     {errorsList}

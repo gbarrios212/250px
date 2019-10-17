@@ -19,6 +19,9 @@
     right: 0px;
     margin-right: 0;
     display: inline-block;
+    height: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .create-form input{
@@ -118,6 +121,7 @@
     margin-top: 40px;
 }
 
+
 .image-preview-header{
     margin-bottom: 40px;
     margin-top: 40px;
@@ -128,4 +132,17 @@
     display: flex; 
     flex-direction: column;
     padding-left: 20px;
+}
+
+.create-photo-preview-container{
+    display: flex;
+    padding: 100px;
+    box-sizing: border-box;
+    height: 400px;
+    width: auto;
+}
+
+.create-photo-preview{
+    height: 300px;
+    width: auto;
 }

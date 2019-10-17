@@ -10,7 +10,7 @@ class Settings extends React.Component{
         // let newUserProps = Object.assign({}, this.props.currentUser, {profilePicture: this.props.currentUser.profilePicture, profilePictureUrl: this.props.currentUser.profilePictureUrl});
         // this.state = newUserProps;
         // but this is essentially the same as line 13 
-        
+
         this.state = this.props.currentUser
         
         this.handleFile = this.handleFile.bind(this);
@@ -91,7 +91,7 @@ class Settings extends React.Component{
                                     name="" 
                                     id="file"
                                     />
-                                <h3>Image Preview</h3>
+                                <h3 className="avatar-preview-header">Image Preview</h3>
                             </div>
 
 
@@ -109,20 +109,25 @@ class Settings extends React.Component{
                         </div>
 
                         <div className="personal-info">
+                            <div className="personal-title">
+                                <span>
+                                    Personal
+                                </span>
+                            </div>
                             <label htmlFor="username">Username</label>
                             <input id="username" type="text" onChange={this.update("username")} value={this.state.username}/>
                             <label htmlFor="email">Email</label>
                             <input id="email" type="text" onChange={this.update("email")} value={this.state.email}/>
                             <label htmlFor="first_name">First Name</label>
                             <input id="first_name" type="text" onChange={this.update("first_name")} value={this.state.first_name}/>
-                            <label htmlFor="last_name">Last_Name</label>
+                            <label htmlFor="last_name">Last Name</label>
                             <input id="last_name" type="text" onChange={this.update("last_name")} value={this.state.last_name}/>
-                            <label htmlFor="bio">Bio</label>
-                            <textarea id="bio" type="text" onChange={this.update("bio")} value={this.state.bio} placeholder="Tell the community about yourself..."/>  
                             <label htmlFor="birthday">Birthday</label>
                             <input id="birthday" type="text" onChange={this.update("birthday")} value={this.state.birthday}/>
                             <label htmlFor="gender">Gender</label>
                             <input id="gender" type="text" onChange={this.update("gender")} value={this.state.gender}/>    
+                            <label htmlFor="bio">Bio</label>
+                            <textarea id="bio" type="text" onChange={this.update("bio")} value={this.state.bio} placeholder="Tell the community about yourself..."/>  
                         </div>
 
                     </div>

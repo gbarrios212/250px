@@ -75,11 +75,16 @@
     margin-bottom: 60px;
 }
 
+.save-user-changes-button:hover{
+    background: $light-blue;
+}
+
 .profile-title{
     font-size: 18px;
     font-weight: 700;
     color: #222;
     line-height: 24px;
+    margin-bottom: 20px;
 }
 
 .avatar-container{
@@ -89,6 +94,8 @@
     align-items: center;
     justify-content: flex-start;
     position: relative;
+    position: relative;
+    top: 30;
     
 }
 
@@ -103,6 +110,7 @@
     color: transparent;
     font-size: 0;
     overflow: hidden;
+    
 }
 
 .avatar-preview{
@@ -126,26 +134,31 @@
     text-align: center;
     color: #0870d1;
     border: 1px solid #d7d8db;
-    margin-bottom: 16px;
+    // margin-bottom: 16px;
     // cursor: pointer;
+    z-index: 0;
+    
 }
+
+// #upload-avatar-button:hover{
+//     color: #0099e5;
+// }
 
 .hidden{
     opacity: 0;
-    top: -55px;
+    top: -35px;
     position: relative;
-    cursor: pointer;
-    z-index: 1;
+    // cursor: pointer;
+    z-index: 100;
 }
 
 .inputs label{
+    display: block;
+    color: #6d7378;
     font-size: 12px;
     font-weight: 400;
     line-height: 16px;
     letter-spacing: -.2px;
-    color: #6d7378;
-    margin-bottom: 10px;
-    display: block;
 }
 
 .inputs textarea{
@@ -165,10 +178,11 @@
     padding: 16px;
     margin: 0;
     resize: none;
+    height: 155px;
 }
 
 .inputs input{
-    flex: 1 1;
+    // flex: 1 1;
     background: none;
     outline: none;
     border: 0;
@@ -181,4 +195,22 @@
     text-align: left;
     padding: 0;
     margin: 0;
+
+    margin-bottom: 30px;
+
+}
+
+
+.avatar-preview-header{
+    margin-top: 0;
+    position: relative;
+    top: -45px;
+}
+
+.personal-title{
+    font-size: 18px;
+    font-weight: 700;
+    color: #222;
+    line-height: 24px;
+    margin-bottom: 85px;
 }
