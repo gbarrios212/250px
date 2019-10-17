@@ -60,12 +60,14 @@ const usersReducer = (oldState = {}, action) => {
             newState = merge({}, oldState);
             user = newState[like.user_id]
             user.liked_photo_ids.push(like.photo_id);
+            user.authored_like_ids.push(like.photo_id);
             return newState;
         case REMOVE_LIKE:
             photoId = action.payload.like.photo_id;
             userId = action.payload.like.user_id;
             user = action.payload.users[userId];
             user.liked_photo_ids = user.liked_photo_ids.filter(id => id !== photoId);
+            user.authored_like_ids = user.authored_like_ids.filter(id => id !== action.payload.like.id);
             newState = merge({}, oldState, action.payload.users);
             newState[userId].liked_photo_ids = user.liked_photo_ids
             return newState;
