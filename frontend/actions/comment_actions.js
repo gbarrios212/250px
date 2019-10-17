@@ -43,10 +43,10 @@ export const createComment = (photoId, comment) => (dispatch) => {
     return CommentApiUtil.createComment(photoId, comment)
         .then(response => {
 
-            //debugger;
+            debugger;
             // return dispatch(receiveComment(response.comments[response.comments.length - 1], response.photo)), err => dispatch(receiveErrors(err.responseJSON))
             // return dispatch(receiveComment(response.comment, response.photo)), err => dispatch(receiveErrors(err.responseJSON))
-            dispatch(receiveComment(response.comment, response.photos, response.users)), err => dispatch(receiveErrors(err.responseJSON))
+            dispatch(receiveComment(response.comments, response.photos, response.users)), err => dispatch(receiveErrors(err.responseJSON))
         }
         );
 }

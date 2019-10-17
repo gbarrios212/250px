@@ -67,7 +67,7 @@ const photosReducer = (state = {}, action) => {
             //debugger;
             return newState;
         case REMOVE_COMMENT:
-            comment = action.comment;
+            comment = action.comments;
             commentId = action.comment.id;
             photo = action.photo[comment.photo_id];
             photoId = photo.id;
