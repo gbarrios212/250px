@@ -13,10 +13,13 @@ export const RECEIVE_NEW_PHOTO = "RECEIVE_NEW_PHOTO"
 export const CHANGE_PHOTO = "CHANGE_PHOTO"
 
 
-const receiveAllPhotos = (photos) => ({
-    type: RECEIVE_ALL_PHOTOS, 
-    photos
-})
+const receiveAllPhotos = (photos) => {
+    debugger;
+    return({
+        type: RECEIVE_ALL_PHOTOS, 
+        photos
+    })
+}
 
 const changePhoto = (payload) => ({
     type: CHANGE_PHOTO,
@@ -51,7 +54,10 @@ export const clearErrors = () => ({
 
 export const fetchPhotos = () => (dispatch) => {
     return photoApiUtil.fetchPhotos()
-        .then(photos => dispatch(receiveAllPhotos(photos)));
+        .then(photos => {
+            debugger;
+            dispatch(receiveAllPhotos(photos))}
+            );
 }
 
 export const fetchPhoto = (id) => (dispatch) => {

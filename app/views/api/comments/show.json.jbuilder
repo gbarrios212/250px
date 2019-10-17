@@ -1,4 +1,4 @@
-json.comment do 
+json.comments do 
     json.partial! "api/comments/comment", comment: @comment
 end
 
@@ -17,6 +17,6 @@ end
 
 json.users do 
     json.set! @comment.author_id do 
-        json.extract! @comment.author, :commented_photo_ids
+        json.extract! @comment.author, :commented_photo_ids, :authored_comment_ids
     end 
 end

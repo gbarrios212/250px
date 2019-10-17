@@ -11,9 +11,6 @@ class Api::CommentsController < ApplicationController
         
         if @comment.save 
             @photo = @comment.photo 
-            # render json: @photo, include: [:comments]
-            # //debugger
-            # render 'api/photos/show'
             render :show
         else 
             render json: @comment.errors.full_messages, status: 422
@@ -25,7 +22,6 @@ class Api::CommentsController < ApplicationController
 
         if @comment.update(comment_params)
             @photo = @comment.photo 
-            # render json: photo, include: [:comments]
             render 'api/photos/show'
         else 
             render json: @comment.errors.full_messages, status: 422

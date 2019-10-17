@@ -31,35 +31,27 @@ const usersReducer = (oldState = {}, action) => {
             return Object.assign({}, oldState, { [action.user.id]: action.user });
             //add a key with other user when on another one's page 
         case RECEIVE_USER:
-            return Object.assign({}, oldState, { otherUsers: { users: {[action.user.id]: action.user }}});
+            return Object.assign({}, oldState, {[action.user.id]: action.user});
             //add a key with all other users on log in, must be filtered in same way all photos are when in another place
         case RECEIVE_ALL_USERS:
-            return Object.assign({}, oldState, { otherUsers: action.users });
+            return Object.assign({}, oldState, action.users);
         case RECEIVE_NEW_PHOTO:
             photo = action.payload.photo;
             newState = Object.assign({}, oldState);         
             newState[photo.author_id].photo_ids.push(photo.id);
             return newState;
         case RECEIVE_COMMENT:
-            //debugger
             comment = action.comment;
-            //debugger
-            newState = merge({}, oldState);
-            //debugger;
+            newState = merge({}, oldState);;
             user = newState[comment.author_id]
-            //debugger
-            user.authored_comment_ids.push(comment.id);
-            //debugger;
+            user.authored_comment_ids.push(comment.id);;
             user.commented_photo_ids.push(comment.photo_id);
-            //debugger
             return newState;
         case RECEIVE_LIKE:
-            //debugger;
             like = action.like; 
             newState = merge({}, oldState);
             user = newState[like.user_id]
             user.liked_photo_ids.push(like.photo_id);
-            //debugger;
             return newState;
         case REMOVE_LIKE:
             photoId = action.payload.like.photo_id;
@@ -74,9 +66,7 @@ const usersReducer = (oldState = {}, action) => {
             newState = merge({}, oldState);
             follower = newState.otherUsers.users[follow.follower_id]
             following = newState.otherUsers.users[follow.following_id]
-            //debugger;
             newState[follower.id].following_ids.push(follow.following_id)
-            //debugger;
             follower.following_ids.push(follow.following_id)
             following.follower_ids.push(follow.follower_id)
             return newState;
@@ -85,7 +75,6 @@ const usersReducer = (oldState = {}, action) => {
             followerId = follow.follower_id;
             followingId = follow.following_id;
             follower = action.payload.users[followerId]
-            //debugger;
             following = action.payload.users[followingId]
             follower.following_ids = follower.following_ids.filter(id => id !== followingId);
             following.follower_ids = following.follower_ids.filter(id => id !== followerId);
