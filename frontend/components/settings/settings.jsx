@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Settings extends React.Component{
     constructor(props){
@@ -64,6 +65,10 @@ class Settings extends React.Component{
             <div></div>
         );
 
+        const inputStyle = {
+            padding: '20px',
+          };
+
         const preview = this.state.profilePictureUrl ? <img className="avatar-preview" src={this.state.profilePictureUrl} /> : null;
         return(
             <div className="settings-container">
@@ -79,13 +84,13 @@ class Settings extends React.Component{
                                     Profile
                                 </span>
                             </div>
-                            <div className="avatar-container">
-                                <div className="avatar-preview-container">
+                            <div className="settings-avatar-container">
+                                <div className="settings-avatar-preview-container">
                                     {preview}
                                 </div>
                                 <label className="upload-avatar-button" id="upload-avatar-button" HTMLfor="files">Upload</label>
-                                <input 
-                                    className="hidden"
+                                <input style={inputStyle}
+                                    className="hidden-photo-upload"
                                     type="file" 
                                     onChange={this.handleFile}
                                     name="" 
@@ -132,6 +137,7 @@ class Settings extends React.Component{
 
                     </div>
                     <button className="save-user-changes-button">Save Changes</button>
+                    <Link to={`/users/${this.props.currentUser.id}`} className="return-button">Return to Profile</Link>
                 </form>
             </div>
         )

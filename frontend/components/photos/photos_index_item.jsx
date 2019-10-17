@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 const PhotosIndexItem = ({photo}) => {
     // debugger;
     return (
-        <div>
+        
             <li className="index-items-list-items">
                 <Link to={`/photos/${photo.id}`}>
-                    <img src={photo.photoUrl} alt=""></img>
+                    <img id="index-thumbnail" src={photo.photoUrl} alt=""></img>
                     {/* {photo.author.username} */}
                 </Link>
                 <div className="index-icons">
@@ -25,7 +25,7 @@ const PhotosIndexItem = ({photo}) => {
                     {photo.name}
                 </p>
             </li>
-        </div>
+        
     )
 }
 

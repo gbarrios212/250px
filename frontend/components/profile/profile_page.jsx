@@ -14,12 +14,11 @@ class ProfilePage extends React.Component{
         this.props.fetchPhotos();
         this.props.fetchAllUsers();
         this.props.fetchUser(this.props.match.params.userId);
-        // this.props.fetchAllUsers();
     }
 
     componentDidUpdate(prevProps) {
         if (prevProps.match.params.userId !== this.props.match.params.userId){
-          this.props.fetchUser(this.props.match.params.userId);
+        //   this.props.fetchUser(this.props.match.params.userId);
           this.props.fetchAllUsers();
           this.props.fetchPhotos();
         }
@@ -27,11 +26,20 @@ class ProfilePage extends React.Component{
 
     render() {
 
+        
         let follow;
 debugger;
         follow = this.props.currentUser && this.props.currentUser.id != this.props.match.params.userId ? 
-            <FollowsContainer otherUser={this.props.profileUser} /> : <div>Neat!</div>;
+            <FollowsContainer otherUser={this.props.profileUser} /> : <div></div>;
+            
+        let settings; 
+        
+        settings = this.props.currentUser.id == this.props.match.params.userId ? 
+            <Link to="/settings">
+                <button className="more-button"></button>
+            </Link> : <div className="more-button-hidden"></div>;
 
+        debugger;
         return(
             <>
             <div className="profile-header">
@@ -48,9 +56,7 @@ debugger;
                 </div>
                 <div className="profile-buttons">
                     <div className="buttons-wrapper">
-                        <Link to="/settings">
-                            <button className="more-button"></button>
-                        </Link>
+                        {settings}
                     </div>
                 </div>
                 <div className="user-details">
@@ -63,10 +69,10 @@ debugger;
                             {this.props.profileUser.photo_ids.length}
                         </li>
                         <li className="details-list-followers">
-                            FOLLOWERS HERE 
+                            {this.props.profileUser.follower_ids.length} Followers
                         </li>
                         <li className="details-list-following">
-                            FOLLOWING HERE
+                            {this.props.profileUser.following_ids.length} Following
                         </li>
                         <li>
                             {follow}
