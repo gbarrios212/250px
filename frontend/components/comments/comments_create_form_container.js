@@ -10,8 +10,11 @@ const msp = (state, ownProps) => {
     })
 }
 
-const mdp = (dispatch) => ({
-    createComment: (photoId, comment) => dispatch(createComment(photoId, comment))
-})
+const mdp = (dispatch) => {
+    debugger;
+    return ({
+        createComment: (photoId, comment) => dispatch(createComment(photoId, comment))
+    })
+}
 
 export default connect(msp, mdp)(CommentsCreateForm);

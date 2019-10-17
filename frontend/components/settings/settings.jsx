@@ -4,7 +4,8 @@ class Settings extends React.Component{
     constructor(props){
         super(props)
 
-        let newUserProps = Object.assign({}, this.props.currentUser, {profilePicture: null, profilePictureUrl: null});
+        // let newUserProps = Object.assign({}, this.props.currentUser, {profilePicture: null, profilePictureUrl: null});
+        let newUserProps = Object.assign({}, this.props.currentUser, {profilePicture: this.props.currentUser.profilePicture, profilePictureUrl: this.props.currentUser.profilePictureUrl});
         this.state = newUserProps;
         
         this.handleFile = this.handleFile.bind(this);
@@ -58,7 +59,7 @@ class Settings extends React.Component{
             <div></div>
         );
 
-        const preview = this.state.profilePictureUrl ? <img className="preview" src={this.state.profilePictureUrl} /> : null;
+        const preview = this.state.profilePictureUrl ? <img className="avatar-preview" src={this.state.profilePictureUrl} /> : null;
         return(
             <div className="settings-container">
                 
@@ -74,7 +75,7 @@ class Settings extends React.Component{
                                 </span>
                             </div>
                             <div className="avatar-container">
-                                <div className="avatar-preview">
+                                <div className="avatar-preview-container">
                                     {preview}
                                 </div>
                                 <label className="upload-avatar-button" id="upload-avatar-button" HTMLfor="files">Upload</label>

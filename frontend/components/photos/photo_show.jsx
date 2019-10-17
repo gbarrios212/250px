@@ -7,18 +7,19 @@ import LikesContainer from '../likes/likes_container';
 
 class PhotoShow extends React.Component {
   constructor(props){
-    // debugger;
+    debugger;
     super(props)
   }
 
 
   componentDidMount() {
-    // debugger;
+    debugger;
     this.props.fetchPhoto(this.props.match.params.photoId);
     this.props.fetchAllUsers();
   }
 
   componentDidUpdate(prevProps) {
+    debugger;
     if (prevProps.match.params.photoId !== this.props.match.params.photoId){
       this.props.fetchPhoto(this.props.match.params.photoId);
       this.props.fetchAllUsers();
@@ -26,7 +27,7 @@ class PhotoShow extends React.Component {
   }
 
   render () {
-    // debugger;
+    debugger;
       if (!this.props.photo) {
         return <div>Loading...</div>;
       }

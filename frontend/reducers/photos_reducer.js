@@ -33,6 +33,7 @@ const photosReducer = (state = {}, action) => {
             newState = Object.assign({}, state);
             photo = newState[comment.photo_id]
             photo.comment_ids.push(comment.id);
+            // debugger;
             photo.commenter_ids.push(comment.author_id);
             return newState
         case REMOVE_PHOTO:
@@ -40,10 +41,12 @@ const photosReducer = (state = {}, action) => {
             delete newState[action.id];
             return newState;
         case RECEIVE_LIKE: 
+        debugger;
             like = action.like;
             newState = merge({}, state);
             photo = newState[like.photo_id]
             photo.liker_ids.push(like.user_id);
+        debugger;
             return newState;
         case REMOVE_LIKE:
             photoId = action.payload.like.photo_id;
