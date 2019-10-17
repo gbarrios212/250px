@@ -55,7 +55,6 @@ export const clearErrors = () => ({
 export const fetchPhotos = () => (dispatch) => {
     return photoApiUtil.fetchPhotos()
         .then(photos => {
-            debugger;
             dispatch(receiveAllPhotos(photos))}
             );
 }

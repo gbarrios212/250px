@@ -7,6 +7,7 @@ const photosReducer = (state = {}, action) => {
     Object.freeze(state);
     let newState;
     let photo;
+    let photos;
     let like;
     let userId;
     let photoId;
@@ -20,9 +21,9 @@ const photosReducer = (state = {}, action) => {
             newState = merge({}, state, {[action.payload.photo.id]: action.payload.photo});
             return newState;
         case RECEIVE_PHOTO:
-            photo = action.payload.photo; 
+            photos = action.payload.photo; 
             // //debugger;
-            newState = merge({}, state, {[photo.id]: photo});
+            newState = merge({}, state, photos);
             return newState;
         case CHANGE_PHOTO:
             newState = merge({}, state, {[action.payload.photo.id]: action.payload.photo});

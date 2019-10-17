@@ -13,9 +13,9 @@ export const updateUser = (user) => ({
 })
 
 //user and own photos nested
-const receiveUser = (user) => ({
+const receiveUser = (payload) => ({
     type: RECEIVE_USER,
-    user
+    payload
 })
 
 const receiveAllUsers = (users) => ({

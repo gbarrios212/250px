@@ -20,11 +20,11 @@
 
 
 #alt 
-json.users do 
+# json.users do 
     @users.each do |user| 
         json.set! user.id do 
-            json.extract! user, :id, :username
+            json.extract! user, :id, :username, :photo_ids, :follower_ids, :following_ids, :liked_photo_ids
             json.profilePictureUrl url_for(user.profilePicture)
-        end 
+        # end 
     end 
 end 

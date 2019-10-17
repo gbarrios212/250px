@@ -1,4 +1,5 @@
 export const selectUserPhotos = (state, user) => {
+    debugger;
     let photos = user ? user.photo_ids.map(id => state.entities.photos[id]) : [];
     return photos.filter(photo => photo !== undefined );
 };

@@ -13,33 +13,36 @@ class ProfilePage extends React.Component{
     componentDidMount() {
         this.props.fetchPhotos();
         this.props.fetchAllUsers();
+        debugger;
         this.props.fetchUser(this.props.match.params.userId);
     }
 
     componentDidUpdate(prevProps) {
         if (prevProps.match.params.userId !== this.props.match.params.userId){
-        //   this.props.fetchUser(this.props.match.params.userId);
-          this.props.fetchAllUsers();
-          this.props.fetchPhotos();
+            this.props.fetchAllUsers();
+            this.props.fetchPhotos();
+            debugger;
+            this.props.fetchUser(this.props.match.params.userId);
         }
       }
 
     render() {
-
-        
         let follow;
-//debugger;
         follow = this.props.currentUser && this.props.currentUser.id != this.props.match.params.userId ? 
             <FollowsContainer otherUser={this.props.profileUser} /> : <div></div>;
             
         let settings; 
-        
         settings = this.props.currentUser.id == this.props.match.params.userId ? 
             <Link to="/settings">
                 <button className="more-button"></button>
             </Link> : <div className="more-button-hidden"></div>;
 
-        //debugger;
+        if (!this.props.profileUser){
+            return (
+                <div>Loading...</div>
+            )
+        }
+        debugger;
         return(
             <>
             <div className="profile-header">

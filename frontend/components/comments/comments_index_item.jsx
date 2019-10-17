@@ -20,20 +20,20 @@ class CommentsIndexItem extends React.Component{
 
         let editOptions;
         if(this.props.currentUser){
-            editOptions = this.props.currentUser.id === this.props.comment.author_id ? (
+            editOptions = this.props.currentUser.id === this.props.author_id ? (
             // editOptions = this.props.currentUser.id === this.props.photo.author_id ? ( this makes comments die for some reason
                 <button className="delete-comment" onClick={this.confirmDelete}>Delete</button>
                     ) : <div></div>
             
         }
 
-        debugger;
+        // debugger;
             
         return(
             <li className="comment-item">
                 <div className="commenter-avatar-container">
-                    <Link to={`/users/${this.props.comment.author_id}`}>
-                        <img className="commenter-avatar" src={this.props.comment.author.profilePictureUrl}/>
+                    <Link to={`/users/${this.props.author_id}`}>
+                        <img className="commenter-avatar" src={this.props.author.profilePictureUrl}/>
                     </Link>
                 </div>
                 <div className="comment-details">
@@ -41,7 +41,7 @@ class CommentsIndexItem extends React.Component{
                     <div className="comment-details-header">
                         <h2>
                             <Link to={`/users/${this.props.comment.author_id}`} className="comment-author-name">
-                                {this.props.comment.author.username}
+                                {this.props.author.username}
                             </Link>
                         </h2>
                         {/* <p>TIME HERE</p>

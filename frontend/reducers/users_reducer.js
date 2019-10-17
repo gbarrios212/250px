@@ -31,7 +31,7 @@ const usersReducer = (oldState = {}, action) => {
             return Object.assign({}, oldState, { [action.user.id]: action.user });
             //add a key with other user when on another one's page 
         case RECEIVE_USER:
-            return Object.assign({}, oldState, {[action.user.id]: action.user});
+            return Object.assign({}, oldState, action.payload.users);
             //add a key with all other users on log in, must be filtered in same way all photos are when in another place
         case RECEIVE_ALL_USERS:
             return Object.assign({}, oldState, action.users);
@@ -64,8 +64,8 @@ const usersReducer = (oldState = {}, action) => {
         case RECEIVE_FOLLOW:
             follow = action.follow; 
             newState = merge({}, oldState);
-            follower = newState.otherUsers.users[follow.follower_id]
-            following = newState.otherUsers.users[follow.following_id]
+            follower = newState[follow.follower_id]
+            following = newState[follow.following_id]
             newState[follower.id].following_ids.push(follow.following_id)
             follower.following_ids.push(follow.following_id)
             following.follower_ids.push(follow.follower_id)
@@ -80,8 +80,8 @@ const usersReducer = (oldState = {}, action) => {
             following.follower_ids = following.follower_ids.filter(id => id !== followerId);
             newState = merge({}, oldState, action.payload.users);
             newState[followerId].follower_ids = follower.following_ids;
-            newState.otherUsers.users[followerId].following_ids = follower.following_ids;
-            newState.otherUsers.users[followingId].follower_ids = following.follower_ids;
+            newState[followerId].following_ids = follower.following_ids;
+            newState[followingId].follower_ids = following.follower_ids;
             return newState;
         default: 
             return oldState;

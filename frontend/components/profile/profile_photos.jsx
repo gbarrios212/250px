@@ -17,7 +17,7 @@ class ProfilePhotos extends React.Component{
             return (
                 <div className="new-upload-button">
                     <Link to="/manage/upload"> 
-                        Upload a photo.
+                        Upload a Photo
                     </Link>
                 </div>
             );

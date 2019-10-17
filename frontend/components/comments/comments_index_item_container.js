@@ -3,18 +3,16 @@ import { connect } from 'react-redux';
 import { selectPhotoComments } from '../../reducers/selectors';
 import { deleteComment } from '../../actions/comment_actions';
 
-// const msp = (state) => {
-//     return ({
-//         comments: Object.values(state.entities.comments)
-//     })
-// }
 
 const msp = (state, ownProps) => {
-    // //debugger;
+    debugger;
     let currentUser = state.entities.users[state.session.id];
     // let currentPhoto = state.entities.photos[ownProps.photoId];
+    let commentAuthorId = ownProps.comment.author_id;
+    let author = state.entities.users[commentAuthorId];
     return({
-        currentUser
+        currentUser,
+        author
     })
 }
 

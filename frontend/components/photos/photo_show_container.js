@@ -1,13 +1,16 @@
 import PhotoShow from './photo_show';
 import { connect } from 'react-redux';
-import { fetchPhoto } from '../../actions/photo_actions';
+import { fetchPhoto, fetchPhotos } from '../../actions/photo_actions';
 import { fetchAllUsers } from '../../actions/user_actions';
 
 const msp = (state, ownProps) => {
 
     let photo = state.entities.photos[ownProps.match.params.photoId];
     debugger
-    let photoAuthor = state.entities.users[photo.author_id];
+    let photoAuthor;
+    if (photo){
+        photoAuthor = state.entities.users[photo.author_id];
+    }
     debugger;
     return({ 
         currentUser: state.entities.users[state.session.id],
@@ -18,7 +21,8 @@ const msp = (state, ownProps) => {
 
 const mdp = (dispatch) => ({
     fetchPhoto: (id) => dispatch(fetchPhoto(id)),
-    fetchAllUsers: () => dispatch(fetchAllUsers()) 
+    fetchAllUsers: () => dispatch(fetchAllUsers()),
+    fetchPhotos: () => dispatch(fetchPhotos())
 })
 
 export default connect(msp, mdp)(PhotoShow)
