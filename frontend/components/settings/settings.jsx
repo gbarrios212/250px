@@ -88,7 +88,7 @@ class Settings extends React.Component{
                                 <div className="settings-avatar-preview-container">
                                     {preview}
                                 </div>
-                                <label className="upload-avatar-button" id="upload-avatar-button" HTMLfor="files">Upload</label>
+                                <label className="upload-avatar-button" id="upload-avatar-button" htmlfor="files">Upload</label>
                                 <input style={inputStyle}
                                     className="hidden-photo-upload"
                                     type="file" 
