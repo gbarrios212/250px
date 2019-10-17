@@ -10,12 +10,12 @@
 # end 
 
 # alt 
-
-json.users do 
-    json.set! @user.id do 
+# causing session problems 
+# json.users do 
+    # json.set! @user.id do 
         json.partial! "api/users/user", user: @user
-    end
-end 
+    # end
+# end 
 
 json.photos do 
     @user.photos.each do |photo| 

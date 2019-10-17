@@ -49,7 +49,7 @@ class ManageLibrary extends React.Component{
             return (
                 <div className="library-grid">
                     <button className="upload-button" onClick={this.props.modalSelect}>
-                        Upload something lol.
+                        Upload a Photo
                     </button>{this.props.modalSelect}
                 </div>
             );

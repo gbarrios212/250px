@@ -32,10 +32,13 @@ export const receivePhoto = (payload) => ({
 })
 
 ///test
-export const receiveNewPhoto = (payload) => ({
-    type: RECEIVE_NEW_PHOTO, 
-    payload
-})
+export const receiveNewPhoto = (payload) => {
+    debugger;
+    return({
+        type: RECEIVE_NEW_PHOTO, 
+        payload
+    });
+}
 ///test
 
 const removePhoto = (id) => ({
@@ -66,12 +69,18 @@ export const fetchPhoto = (id) => (dispatch) => {
 
 export const createPhoto = (photo) => (dispatch) => {
     return photoApiUtil.createPhoto(photo)
-        .then(payload => dispatch(receiveNewPhoto(payload)), err => dispatch(receiveErrors(err.responseJSON)));
+        .then(payload => {
+            debugger;
+            dispatch(receiveNewPhoto(payload)), err => dispatch(receiveErrors(err.responseJSON))
+        });
 }
 
 export const updatePhoto = (photo) => (dispatch) => {
     return photoApiUtil.updatePhoto(photo)
-        .then(payload => dispatch(changePhoto(payload)), err => dispatch(receiveErrors(err.responseJSON)));
+        .then(payload => {
+            debugger;
+            dispatch(changePhoto(payload)), err => dispatch(receiveErrors(err.responseJSON))
+        });
 }
 
 export const deletePhoto = (id) => (dispatch) => {

@@ -74,11 +74,11 @@ const photosReducer = (state = {}, action) => {
             comment = action.comment;
             commentId = action.comment.id;
             photo = action.photo[comment.photo_id];
-            photoId = photo.id;
-            // //debugger;
+            photoId = comment.photo_id;
             photo.comment_ids = photo.comment_ids.filter(id => id !== commentId);
             // newState = merge({}, state, {[photo.id]: photo })
             newState = merge({}, state, action.photo )
+            debugger;
             newState[photoId].comment_ids = photo.comment_ids;
             // //debugger;
             return newState;

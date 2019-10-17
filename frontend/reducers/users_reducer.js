@@ -37,7 +37,8 @@ const usersReducer = (oldState = {}, action) => {
             return Object.assign({}, oldState, action.users);
         case RECEIVE_NEW_PHOTO:
             photo = action.payload.photo;
-            newState = Object.assign({}, oldState);         
+            newState = Object.assign({}, oldState);     
+            debugger;    
             newState[photo.author_id].photo_ids.push(photo.id);
             return newState;
         case RECEIVE_COMMENT:
@@ -60,6 +61,7 @@ const usersReducer = (oldState = {}, action) => {
             newState = merge({}, oldState);
             user = newState[like.user_id]
             user.liked_photo_ids.push(like.photo_id);
+            debugger;
             user.authored_like_ids.push(like.photo_id);
             return newState;
         case REMOVE_LIKE:
