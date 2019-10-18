@@ -1,4 +1,4 @@
-require 'open-uri'
+# require 'open-uri'
 
 class User < ApplicationRecord
     validates :username, :email, :password_digest, :session_token, presence: true
@@ -94,13 +94,9 @@ class User < ApplicationRecord
 #commented out for heroku
     def profile_picture_nil
         if !self.profilePicture.attached?
-            file = open('https://250px-seeds.s3.us-east-2.amazonaws.com/bigbird.png')
-            # self.profilePicture.attach(io: File.open('/Users/gabrielbarrios/desktop/bigbird.png'), filename: 'bigbird.png')
-            self.profilePicture.attach(io: file, filename: 'bigbird.png')
+            # file = open('https://250px-seeds.s3.us-east-2.amazonaws.com/bigbird.png')
+            self.profilePicture.attach(io: File.open('/Users/gabrielbarrios/desktop/bigbird.png'), filename: 'bigbird.png')
+            # self.profilePicture.attach(io: file, filename: 'bigbird.png')
         end
     end
-
-
-
-    def profile_picture_nil
 end
