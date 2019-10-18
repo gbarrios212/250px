@@ -30,6 +30,7 @@ class PhotoEditForm extends React.Component {
     handleSubmit(e) {
       e.preventDefault();
       this.props.updatePhoto(this.state.photo);
+      window.scrollTo(0, 0);
     }
     
     update(field) {
