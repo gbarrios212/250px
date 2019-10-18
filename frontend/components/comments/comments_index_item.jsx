@@ -18,7 +18,7 @@ class CommentsIndexItem extends React.Component{
  
     render(){
 
-        debugger;
+        // debugger;
         let editOptions;
         if(this.props.currentUser){
             editOptions = this.props.currentUser.id === this.props.author.id ? (

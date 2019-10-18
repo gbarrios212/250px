@@ -56,8 +56,8 @@ class PhotoShow extends React.Component {
 
       category = this.props.photo.category ? <p>{this.props.photo.category[0].toUpperCase() + this.props.photo.category.slice(1)}</p> : <div></div>
 
-      debugger;
-        // // ;
+      // debugger;
+
     return (
       <div className="show-page">
         <div className="outer-image-container">
