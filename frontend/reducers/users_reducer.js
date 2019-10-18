@@ -31,7 +31,7 @@ const usersReducer = (oldState = {}, action) => {
             return Object.assign({}, oldState, { [action.user.id]: action.user });
             //add a key with other user when on another one's page 
         case RECEIVE_USER:
-            return Object.assign({}, oldState, action.payload.users);
+            return Object.assign({}, oldState, {[action.payload.id]: action.payload});
             //add a key with all other users on log in, must be filtered in same way all photos are when in another place
         case RECEIVE_ALL_USERS:
             return Object.assign({}, oldState, action.users);

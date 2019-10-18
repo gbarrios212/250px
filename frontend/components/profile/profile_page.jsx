@@ -27,6 +27,10 @@ class ProfilePage extends React.Component{
       }
 
     render() {
+
+        let bio;
+        bio = this.props.profileUser.bio ? <p className="bio">{this.props.profileUser.bio}</p> : <div></div>
+
         let follow;
         follow = this.props.currentUser && this.props.currentUser.id != this.props.match.params.userId ? 
             <FollowsContainer otherUser={this.props.profileUser} /> : <div></div>;
@@ -67,6 +71,7 @@ class ProfilePage extends React.Component{
                         {/* {this.props.profileUser.username} */}
                         {this.props.profileUser.username}
                     </h1>
+                    {bio}
                     <ul className="stat-details">
                         <li className="details-list-photo">
                             {this.props.profileUser.photo_ids.length}

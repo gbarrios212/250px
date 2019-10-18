@@ -38,6 +38,8 @@ class PhotoShow extends React.Component {
       let like;
       let comment;
       let commentHeader;
+      let category; 
+
 
       like = this.props.currentUser ? <LikesContainer photo={this.props.photo}/> 
         : <div>
@@ -49,6 +51,8 @@ class PhotoShow extends React.Component {
         : <div></div>;
 
       commentHeader = this.props.photo.comment_ids.length === 1 ? " Comment" : " Comments"
+
+      category = this.props.photo.category ? <p>{this.props.photo.category[0].toUpperCase() + this.props.photo.category.slice(1)}</p> : <div></div>
 
         // // ;
     return (
@@ -119,7 +123,7 @@ class PhotoShow extends React.Component {
             </div>
             <div className="category">
               <p className="category-text">Category</p>
-              <p>{this.props.photo.category[0].toUpperCase() + this.props.photo.category.slice(1)}</p>
+                {category}
               <br/>
             </div>
             <div className="keywords">
