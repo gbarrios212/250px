@@ -11,6 +11,10 @@ class PhotosForm extends React.Component {
         this.handleFile = this.handleFile.bind(this);
     }
 
+    componentDidMount(){
+        this.props.clearErrors();
+    }
+
     componentWillUnmount(){
         this.props.clearErrors();
     }
@@ -30,23 +34,9 @@ class PhotosForm extends React.Component {
             data: formData,
             contentType: false, 
             processData: false
-        // }).then((response) => console.log(response.message),
-        // }).then((response) => {
-        //     return this.props.currentUser.photo_ids.push(response["id"])
-        // },
-        }).then((response) => {
-             ;
-            return this.props.receiveNewPhoto(response),
-            (response) => this.props.receivePhotoErrors(response.responseJSON)
-        })
-        //test here for promise 
-            //close modal 
-            //fetch photos again
-        .then(() => this.props.closeModal())
-        //test here for promise
-        ;
-        // // ;
-        // this.props.currentUser.photo_ids.push(this.props.photo.id);
+        }).then((response) => this.props.receiveNewPhoto(response),
+            (response) => this.props.receivePhotoErrors(response.responseJSON))
+                .then(() => this.props.closeModal());
     }
 
     handleFile(e) {

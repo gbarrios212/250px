@@ -69,18 +69,12 @@ export const fetchPhoto = (id) => (dispatch) => {
 
 export const createPhoto = (photo) => (dispatch) => {
     return photoApiUtil.createPhoto(photo)
-        .then(payload => {
-             ;
-            dispatch(receiveNewPhoto(payload)), err => dispatch(receiveErrors(err.responseJSON))
-        });
+        .then(payload => dispatch(receiveNewPhoto(payload)), err => dispatch(receiveErrors(err.responseJSON)));
 }
 
 export const updatePhoto = (photo) => (dispatch) => {
     return photoApiUtil.updatePhoto(photo)
-        .then(payload => {
-             ;
-            dispatch(changePhoto(payload)), err => dispatch(receiveErrors(err.responseJSON))
-        });
+        .then(payload => dispatch(changePhoto(payload)), err => dispatch(receiveErrors(err.responseJSON)));
 }
 
 export const deletePhoto = (id) => (dispatch) => {
