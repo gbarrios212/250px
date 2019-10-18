@@ -78,7 +78,7 @@ const usersReducer = (oldState = {}, action) => {
             newState = merge({}, oldState);
             follower = newState[follow.follower_id]
             following = newState[follow.following_id]
-            newState[follower.id].following_ids.push(follow.following_id)
+            // newState[follower.id].following_ids.push(follow.following_id)
             follower.following_ids.push(follow.following_id)
             following.follower_ids.push(follow.follower_id)
             return newState;
