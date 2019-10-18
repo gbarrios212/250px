@@ -138,7 +138,6 @@
 .image-preview-area{
     display: flex; 
     flex-direction: column;
-    padding-left: 20px;
     width: 600px;
     align-items: center;
 }
@@ -153,6 +152,9 @@
 // }
 
 .create-photo-preview{
-    height: 300px;
+    // height: 300px;
     width: auto;
+    margin-top: 150px;
+    max-width: 600px;
+    max-height: 450px;
 }
