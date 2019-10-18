@@ -18,9 +18,13 @@ class Follows extends React.Component{
     }
 
     render(){
+
+        let followed;
+        followed = this.props.otherUser.follower_ids.includes(this.props.currentUser.id) ? 
+            "Unfollow" : "Follow";
         return(
             <button className={this.state.followed ? "follow-button active" : "follow-button"} onClick={this.toggleFollow}>
-                Follow
+                {followed}
             </button>
         )
 
