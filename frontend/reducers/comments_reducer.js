@@ -21,7 +21,8 @@ const commentsReducer = (state = {}, action) => {
             delete newState[action.commentId];
             return newState;
         case RECEIVE_ALL_PHOTOS:
-            return {};
+            // return {};
+            return state;
         default: 
             return state;
     }

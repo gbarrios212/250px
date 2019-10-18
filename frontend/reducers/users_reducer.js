@@ -36,7 +36,7 @@ const usersReducer = (oldState = {}, action) => {
         case RECEIVE_ALL_USERS:
             return Object.assign({}, oldState, action.users);
         case RECEIVE_NEW_PHOTO:
-            photo = action.payload.photo;
+            photo = action.payload;
             newState = Object.assign({}, oldState);     
             debugger;    
             newState[photo.author_id].photo_ids.push(photo.id);
@@ -62,7 +62,7 @@ const usersReducer = (oldState = {}, action) => {
             user = newState[like.user_id]
             user.liked_photo_ids.push(like.photo_id);
             debugger;
-            user.authored_like_ids.push(like.photo_id);
+            // user.authored_like_ids.push(like.photo_id);
             return newState;
         case REMOVE_LIKE:
             photoId = action.payload.like.photo_id;

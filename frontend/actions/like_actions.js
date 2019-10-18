@@ -16,7 +16,7 @@ const removeLike = (payload) => ({
 export const createLike = (photoId) => (dispatch) => {
     return LikeApiUtil.createLike(photoId)
         .then(like => {
-            // //debugger;
+            // debugger;
             dispatch(receiveLike(like))
         });
 } 

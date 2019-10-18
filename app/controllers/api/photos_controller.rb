@@ -8,7 +8,7 @@ class Api::PhotosController < ApplicationController
         @photos = Photo.includes(:comments).all 
         render :index
     end
-
+ 
     def create 
         @photo = Photo.new(photo_params)
         @photo.author_id = current_user.id

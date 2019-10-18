@@ -18,7 +18,7 @@ const photosReducer = (state = {}, action) => {
             debugger;
             return action.photos;
         case RECEIVE_NEW_PHOTO:
-            newState = merge({}, state, {[action.payload.photo.id]: action.payload.photo});
+            newState = merge({}, state, {[action.payload.id]: action.payload});
             return newState;
         case RECEIVE_PHOTO:
             photos = action.payload.photo; 
@@ -26,7 +26,7 @@ const photosReducer = (state = {}, action) => {
             newState = merge({}, state, photos);
             return newState;
         case CHANGE_PHOTO:
-            newState = merge({}, state, {[action.payload.photo.id]: action.payload.photo});
+            newState = merge({}, state, {[action.payload.id]: action.payload});
             return newState;
         case RECEIVE_COMMENT:
             comment = action.comment;

@@ -9,6 +9,7 @@ class Api::LikesController < ApplicationController
         if @like.save 
             # render json: photo, include: [:likes]
             render json: @like
+            # render :show
         else 
             render json: @like.errors.full_messages, status: 422 
         end 
@@ -17,6 +18,7 @@ class Api::LikesController < ApplicationController
     def destroy 
         # //debugger
         @like = Like.find_by(user_id: current_user.id, photo_id: params[:photo_id])
+        # debugger
         @photo = @like.photo
         @user = current_user
         @like.destroy 
