@@ -15,10 +15,12 @@ class ProfilePhotos extends React.Component{
        
         if (this.props.photos.length === 0){
             return (
-                <div className="new-upload-button">
-                    <Link to="/manage/upload"> 
-                        Upload a Photo
-                    </Link>
+                <div className="outer-new-upload-container">
+                    <div className="new-upload-button">
+                        <Link to="/manage/upload"> 
+                            Upload a Photo
+                        </Link>
+                    </div>
                 </div>
             );
         }

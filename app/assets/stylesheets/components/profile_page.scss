@@ -27,10 +27,14 @@
   position: relative;
   text-align: center;
   padding-top: 5px;
-  margin-left: 420px;
-  margin-top: 300px;
+  top: 300px;
+}
 
-
+.outer-new-upload-container{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
 }
 
 .profile-grid{

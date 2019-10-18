@@ -137,3 +137,41 @@
     background-size: 100%;
     background-position: right;
 }
+
+.photos-index-2{
+    padding: 0 64px;
+    display: flex;
+    flex-wrap: wrap;
+    top: 180px;
+    position: relative;
+    max-width: 100%;
+    align-items: center;
+}
+
+.index-items-list-items-2{
+    flex: 1 2 400px;
+    padding: 32px;
+    // flex-grow: 1;
+}
+
+@media (min-width: 1024px){
+
+    .index-items-list-items-2 {
+        padding: 32px;
+    }
+}
+
+@media (min-width: 768px){
+
+    .index-items-list-items-2 {
+        margin: 0px;
+        padding: 16px;
+    }
+}
+
+@media (min-width: 1440px){
+
+    .index-items-list-items-2 {
+        width: 50%;
+    }
+}

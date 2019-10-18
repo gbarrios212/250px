@@ -73,6 +73,11 @@
     top: 15px;
     line-height: 1.4em;
     cursor: pointer;
+    text-align: center;
+}
+
+.create-button:hover{
+    background: #6adfd4;
 }
 
 .modal-background {
@@ -99,7 +104,8 @@
 
   
 #file{
-    width: 180px;
+    width: 80px;
+    border: none;
 }
 
 .modal-container{

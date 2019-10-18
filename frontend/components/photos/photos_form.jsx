@@ -146,7 +146,7 @@ class PhotosForm extends React.Component {
                     <input id="shutter_speed" type="text" onChange={this.update("shutter_speed")} value={this.state.shutter_speed}/>
                     <label htmlFor="iso">ISO:</label>
                     <input id="iso" type="text" onChange={this.update("iso")} value={this.state.iso}/>
-                    <button className="create-button">Create that Cat!</button>
+                    <button className="create-button">Save that Swan!</button>
                 </form>
             </div>
         );

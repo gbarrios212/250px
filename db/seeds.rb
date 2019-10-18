@@ -19,7 +19,7 @@ file = open('https://250px-seeds.s3.us-east-2.amazonaws.com/bigbird.png')
 
 
 #for heroku
-# guest.profilePicture.attach(io: file, filename: 'bigbird.jpg')
+guest.profilePicture.attach(io: file, filename: 'bigbird.jpg')
 
 comment1 = Comment.create!(body: "this photo sucks", author_id: 1, photo_id: 7)
 comment2 = Comment.create!(body: "not nice!", author_id: 2, photo_id: 7, parent_comment_id: 1)

@@ -5,7 +5,7 @@ const PhotosIndexItem = ({photo}) => {
     // // ;
     return (
         
-            <li className="index-items-list-items">
+            <li className="index-items-list-items-2">
                 <Link to={`/photos/${photo.id}`}>
                     <img id="index-thumbnail" src={photo.photoUrl} alt=""></img>
                     {/* {photo.author.username} */}
