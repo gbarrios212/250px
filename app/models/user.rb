@@ -6,7 +6,7 @@ class User < ApplicationRecord
     # validate :ensure_photo
     
     after_initialize :ensure_session_token
-    # after_initialize :profile_picture_nil
+    after_initialize :profile_picture_nil
     #commented out for heroku
 
     attr_reader :password
@@ -90,10 +90,10 @@ class User < ApplicationRecord
         end
     end
 #commented out for heroku
-#     def profile_picture_nil
-#         if !self.profilePicture.attached?
-#             self.profilePicture.attach(io: File.open('/Users/gabrielbarrios/desktop/bigbird.png'), filename: 'bigbird.png')
-#             # self.profilePicture.attach(io: File.open('app/assets/images/toucan.jpg'), filename: 'toucan.jpg')
-#         end
-#    end
+    def profile_picture_nil
+        if !self.profilePicture.attached?
+            self.profilePicture.attach(io: File.open('/Users/gabrielbarrios/desktop/bigbird.png'), filename: 'bigbird.png')
+            # self.profilePicture.attach(io: File.open('app/assets/images/toucan.jpg'), filename: 'toucan.jpg')
+        end
+   end
 end
