@@ -6,7 +6,7 @@ import React from 'react';
 import { selectUserPhotos } from '../../reducers/selectors';
 
 const msp = (state) => {
-  // //debugger;
+  // // ;
   let currentUser = state.entities.users[state.session.id]
   let photos = selectUserPhotos(state, currentUser)
   return ({

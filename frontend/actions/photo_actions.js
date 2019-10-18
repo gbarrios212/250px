@@ -14,7 +14,7 @@ export const CHANGE_PHOTO = "CHANGE_PHOTO"
 
 
 const receiveAllPhotos = (photos) => {
-    debugger;
+     ;
     return({
         type: RECEIVE_ALL_PHOTOS, 
         photos
@@ -33,7 +33,7 @@ export const receivePhoto = (payload) => ({
 
 ///test
 export const receiveNewPhoto = (payload) => {
-    debugger;
+     ;
     return({
         type: RECEIVE_NEW_PHOTO, 
         payload
@@ -70,7 +70,7 @@ export const fetchPhoto = (id) => (dispatch) => {
 export const createPhoto = (photo) => (dispatch) => {
     return photoApiUtil.createPhoto(photo)
         .then(payload => {
-            debugger;
+             ;
             dispatch(receiveNewPhoto(payload)), err => dispatch(receiveErrors(err.responseJSON))
         });
 }
@@ -78,7 +78,7 @@ export const createPhoto = (photo) => (dispatch) => {
 export const updatePhoto = (photo) => (dispatch) => {
     return photoApiUtil.updatePhoto(photo)
         .then(payload => {
-            debugger;
+             ;
             dispatch(changePhoto(payload)), err => dispatch(receiveErrors(err.responseJSON))
         });
 }

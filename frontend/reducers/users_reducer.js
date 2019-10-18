@@ -25,7 +25,7 @@ const usersReducer = (oldState = {}, action) => {
     let followingId;
     switch(action.type){
         case RECEIVE_CURRENT_USER:
-            // //debugger;
+            // // ;
             return Object.assign({}, oldState, { [action.user.id]: action.user });
         case CHANGE_USER:
             return Object.assign({}, oldState, { [action.user.id]: action.user });
@@ -38,7 +38,7 @@ const usersReducer = (oldState = {}, action) => {
         case RECEIVE_NEW_PHOTO:
             photo = action.payload;
             newState = Object.assign({}, oldState);     
-            debugger;    
+             ;    
             newState[photo.author_id].photo_ids.push(photo.id);
             return newState;
         case RECEIVE_COMMENT:
@@ -51,7 +51,7 @@ const usersReducer = (oldState = {}, action) => {
         case REMOVE_COMMENT:
             comment = action.comment; 
             newState = merge({}, oldState);
-            // debugger;
+            //  ;
             user = newState[comment.author_id];
             user.authored_comment_ids = user.authored_comment_ids.filter(id => id !== comment.id);
             user.authored_comment_ids = user.commented_photo_ids.filter(id => id !== comment.photo_id);
@@ -61,7 +61,7 @@ const usersReducer = (oldState = {}, action) => {
             newState = merge({}, oldState);
             user = newState[like.user_id]
             user.liked_photo_ids.push(like.photo_id);
-            debugger;
+             ;
             // user.authored_like_ids.push(like.photo_id);
             return newState;
         case REMOVE_LIKE:

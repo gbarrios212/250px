@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { createComment } from '../../actions/comment_actions';
 
 const msp = (state, ownProps) => {
-    // //debugger;
+    // // ;
     return $.ajax({
         photoId: ownProps.photoId, 
         currentUser: state.entities.users[state.session.id]
@@ -11,7 +11,7 @@ const msp = (state, ownProps) => {
 }
 
 const mdp = (dispatch) => {
-    //debugger;
+    // ;
     return ({
         createComment: (photoId, comment) => dispatch(createComment(photoId, comment))
     })

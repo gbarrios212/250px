@@ -7,17 +7,17 @@ import PhotoEditFormContainer from '../photos/photo_edit_form_container';
 class Manage extends React.Component {
     constructor(props){
         super(props)
-        // //debugger;
+        // // ;
         // this.state = { activePhoto: "" }
     }
 
     componentDidMount() {
-        // //debugger;
+        // // ;
         this.props.fetchPhotos();
     }
 
     render(){
-        // //debugger;
+        // // ;
         return (
             <div>
                 <span className="manage-grid">

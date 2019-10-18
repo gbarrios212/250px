@@ -13,7 +13,7 @@ class ProfilePage extends React.Component{
     componentDidMount() {
         this.props.fetchPhotos();
         this.props.fetchAllUsers();
-        debugger;
+         ;
         this.props.fetchUser(this.props.match.params.userId);
     }
 
@@ -21,7 +21,7 @@ class ProfilePage extends React.Component{
         if (prevProps.match.params.userId !== this.props.match.params.userId){
             this.props.fetchAllUsers();
             this.props.fetchPhotos();
-            debugger;
+             ;
             this.props.fetchUser(this.props.match.params.userId);
         }
       }
@@ -42,7 +42,7 @@ class ProfilePage extends React.Component{
                 <div>Loading...</div>
             )
         }
-        debugger;
+         ;
         return(
             <>
             <div className="profile-header">

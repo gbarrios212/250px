@@ -4,11 +4,11 @@ import CommentsIndexItemContainer from './comments_index_item_container';
 class CommentsIndex extends React.Component{
     constructor(props){
         super(props)
-        //debugger;
+        // ;
     }
 
     render(){
-        // //debugger;
+        // // ;
         let commentsList = this.props.comments.map(comment => {
             return <CommentsIndexItemContainer
                 comment={comment} 

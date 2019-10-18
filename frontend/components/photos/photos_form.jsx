@@ -35,7 +35,7 @@ class PhotosForm extends React.Component {
         //     return this.props.currentUser.photo_ids.push(response["id"])
         // },
         }).then((response) => {
-            debugger;
+             ;
             return this.props.receiveNewPhoto(response),
             (response) => this.props.receivePhotoErrors(response.responseJSON)
         })
@@ -45,7 +45,7 @@ class PhotosForm extends React.Component {
         .then(() => this.props.closeModal())
         //test here for promise
         ;
-        // //debugger;
+        // // ;
         // this.props.currentUser.photo_ids.push(this.props.photo.id);
     }
 
@@ -61,7 +61,7 @@ class PhotosForm extends React.Component {
     }
 
     update(field) {
-        //debugger;
+        // ;
         return e => {
             this.setState({[field]: e.currentTarget.value})
         }

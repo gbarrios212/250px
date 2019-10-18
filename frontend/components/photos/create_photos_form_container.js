@@ -4,7 +4,7 @@ import { createPhoto, clearErrors, receiveErrors, fetchPhotos, receiveNewPhoto }
 import { closeModal } from '../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
-    //debugger;
+    // ;
     return ({
 
         currentUser: state.entities.users[state.session.id],

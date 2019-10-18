@@ -5,7 +5,7 @@ import PhotoEditForm from './photo_edit_form';
 import { receiveActivePhotoId, clearActivePhotoId } from '../../actions/active_photo_actions';
 
 const msp = (state, ownProps) =>{
-    // //debugger;
+    // // ;
     let photoId = state.ui.activePhotoId;
     let photo = state.entities.photos[photoId] || { name: "", 
         category: "",

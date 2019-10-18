@@ -22,7 +22,7 @@ class Settings extends React.Component{
         e.preventDefault();
         const formData = new FormData();
         let keys = Object.keys(this.state)
-        //debugger;
+        // ;
         keys.forEach(key => {
             if (this.state[key]){
                 formData.append(`user[${key}]`, this.state[key])
@@ -39,7 +39,7 @@ class Settings extends React.Component{
     }
 
     handleFile(e) {
-        //debugger;
+        // ;
         const file = e.currentTarget.files[0];
         const fileReader = new FileReader();
         fileReader.onloadend = () => {

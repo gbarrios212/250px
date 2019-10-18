@@ -3,7 +3,7 @@ import ManageLibraryDetail from './manage_library_detail';
 
 class ManageLibrary extends React.Component{
     constructor(props){
-        // //debugger;
+        // // ;
         super(props)
         this.state = { selected: false };
         this.toggleSelect = this.toggleSelect.bind(this);
@@ -23,7 +23,7 @@ class ManageLibrary extends React.Component{
     }
 
     updateActivePhotoId(e) {
-        // //debugger;
+        // // ;
         this.props.receiveActivePhotoId(e.currentTarget.value);
         this.setState({ selected: true });
         //logic to get rid of selected everywhere else 
@@ -40,7 +40,7 @@ class ManageLibrary extends React.Component{
 
 
     componentDidMount() {
-        // //debugger;
+        // // ;
         this.props.fetchPhotos();
     }
 

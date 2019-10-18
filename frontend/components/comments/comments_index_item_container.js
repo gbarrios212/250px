@@ -5,7 +5,7 @@ import { deleteComment } from '../../actions/comment_actions';
 
 
 const msp = (state, ownProps) => {
-    debugger;
+     ;
     let currentUser = state.entities.users[state.session.id];
     // let currentPhoto = state.entities.photos[ownProps.photoId];
     let commentAuthorId = ownProps.comment.author_id;

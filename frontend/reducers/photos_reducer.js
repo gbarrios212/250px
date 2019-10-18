@@ -15,14 +15,14 @@ const photosReducer = (state = {}, action) => {
     let commentId;
     switch(action.type){
         case RECEIVE_ALL_PHOTOS:
-            debugger;
+             ;
             return action.photos;
         case RECEIVE_NEW_PHOTO:
             newState = merge({}, state, {[action.payload.id]: action.payload});
             return newState;
         case RECEIVE_PHOTO:
             photos = action.payload.photo; 
-            // //debugger;
+            // // ;
             newState = merge({}, state, photos);
             return newState;
         case CHANGE_PHOTO:
@@ -33,7 +33,7 @@ const photosReducer = (state = {}, action) => {
             newState = Object.assign({}, state);
             photo = newState[comment.photo_id]
             photo.comment_ids.push(comment.id);
-            // //debugger;
+            // // ;
             photo.commenter_ids.push(comment.author_id);
             return newState
         case REMOVE_PHOTO:
@@ -41,13 +41,13 @@ const photosReducer = (state = {}, action) => {
             delete newState[action.id];
             return newState;
         case RECEIVE_LIKE: 
-        //debugger;
+        // ;
             like = action.like;
             newState = merge({}, state);
             photo = newState[like.photo_id]
             photo.liker_ids.push(like.user_id);
             photo.like_ids.push(like.id);
-        //debugger;
+        // ;
             return newState;
         case REMOVE_LIKE:
             photoId = action.payload.like.photo_id;
@@ -61,14 +61,14 @@ const photosReducer = (state = {}, action) => {
             
             return newState;
         case RECEIVE_COMMENT:
-            //debugger;
+            // ;
             comment = action.comment;
             photo = action.photo[comment.id]
             photo.comment_ids.concat([comment.id]);
             newState = merge({}, state, {photo});
             // photo = newState[comment.photo_id];
             // photo.comment_ids.push(comment.id);
-            //debugger;
+            // ;
             return newState;
         case REMOVE_COMMENT:
             comment = action.comment;
@@ -78,9 +78,9 @@ const photosReducer = (state = {}, action) => {
             photo.comment_ids = photo.comment_ids.filter(id => id !== commentId);
             // newState = merge({}, state, {[photo.id]: photo })
             newState = merge({}, state, action.photo )
-            debugger;
+             ;
             newState[photoId].comment_ids = photo.comment_ids;
-            // //debugger;
+            // // ;
             return newState;
         default: 
             return state;

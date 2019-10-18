@@ -7,7 +7,7 @@ import { receiveActivePhotoId, clearActivePhotoId } from '../../actions/active_p
 import { openModal, closeModal } from '../../actions/modal_actions';
 
 const msp = (state) => {
-    // //debugger; 
+    // // ; 
     let activePhotoId = state.ui.activePhotoId;
     let currentUser = state.entities.users[state.session.id];
     return({
