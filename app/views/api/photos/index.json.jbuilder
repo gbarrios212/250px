@@ -17,10 +17,20 @@
                 :comment_ids, 
                 :like_ids,
                 :commenter_ids, 
-                :liker_ids
+                :liker_ids,
+
+                :category,
+                :description, 
+                :location, 
+                :date_taken, 
+                :camera,
+                :lens,
+                :focal_length, 
+                :aperture, 
+                :shutter_speed,
+                :iso
             json.photoUrl url_for(photo.photoConnect)
         end
     # end
 end
 
-# note weirdness here, photos gets nested under photos somewhere. 

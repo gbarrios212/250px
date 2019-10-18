@@ -48,6 +48,7 @@ class PhotoEditForm extends React.Component {
 
     render() {
       // // ;
+      debugger;
       const errorsList = (this.props.errors) ? ( 
         this.props.errors.map((error, index) => (
         <li className="errors" key={index}>{error}</li>
