@@ -14,7 +14,7 @@ class ManageLibraryDetail extends React.Component{
         // // ;
         return(
             <div className="photo-icon-container">
-                <Link to={`/photos/${this.props.photo.id}`}>
+                <Link to={`/photos/${this.props.photo.id}`} className="external-link-container">
                     <i class="fas fa-external-link-alt"></i>
                 </Link>
                 {/* <i class="fas fa-search-plus"></i> */}

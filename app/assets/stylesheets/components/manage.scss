@@ -47,10 +47,21 @@
 
 .fa-external-link-alt{
     font-size: 6px;
-    color: white;
     z-index: 1;
     position: relative;
-    top: 15px;
-    left: 92px;
+    // top: 15px;
+    // left: 92px;
     cursor: pointer;
+    color: #aaaaaa;
+    font-size: 10px;
+}
+
+.external-link-container{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10px;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    z-index: 60;
+    background: #dedbdb;
 }
