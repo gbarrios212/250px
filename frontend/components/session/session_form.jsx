@@ -39,6 +39,7 @@ class SessionForm extends React.Component {
     }
     
     render() {
+        
         const header = this.props.formType === "Sign Up" ? (
             <h3>Sign Up</h3>) : ( <h3>Log In</h3> );
         const sessionLink = this.props.formType === "Sign Up" ? (
@@ -51,6 +52,8 @@ class SessionForm extends React.Component {
         ))) : (
             <div></div>
         );
+
+        debugger;
 
         const emailField = this.props.formType === "Sign Up" ? (
             <div>
