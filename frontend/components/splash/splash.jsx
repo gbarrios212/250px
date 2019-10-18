@@ -10,10 +10,13 @@ class Splash extends React.Component {
 
     render(){
         let splashSignup;
+        const splashStyle = {
+            height: '60%',
+        };
         if (!this.props.currentUser){
             
             splashSignup = 
-            <div className="outer-splash-container">
+            <div style={splashStyle} className="outer-splash-container">
                 <div className="splash-welcome">
                     <h1>
                         <span className="splash-welcome-header">
