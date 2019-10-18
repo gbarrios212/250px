@@ -98,5 +98,5 @@ class User < ApplicationRecord
     #         self.profilePicture.attach(io: File.open('/Users/gabrielbarrios/desktop/bigbird.png'), filename: 'bigbird.png')
     #         # self.profilePicture.attach(io: file, filename: 'bigbird.png')
     #     end
-    # end
+    
 end
