@@ -35,10 +35,9 @@ json.users do
             json.extract! commenter, 
                 :id, 
                 :username, 
-                :profilePictureUrl, 
                 :authored_comment_ids,
-                :commented_photo_ids,
-                :profilePictureUrl
+                :commented_photo_ids
+            json.profilePictureUrl url_for(commenter.profilePicture)
         end
     end
 end
