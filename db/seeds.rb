@@ -54,6 +54,10 @@ comment3 = Comment.create!(body: "sweet photo lmao jk", author_id: 5, photo_id: 
 # ICONIC
 # queen of being perfect omg
 # ужасный педикюр
+#wife
+#wife
+#wiiiiiiife
+#WIIIIIFE 
 
 # 20 photos 
 # 10 users 

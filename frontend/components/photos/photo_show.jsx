@@ -37,6 +37,7 @@ class PhotoShow extends React.Component {
 
       let like;
       let comment;
+      let commentHeader;
 
       like = this.props.currentUser ? <LikesContainer photo={this.props.photo}/> 
         : <div>
@@ -46,6 +47,8 @@ class PhotoShow extends React.Component {
       
       comment = this.props.currentUser ? <CommentsCreateFormContainer photoId={this.props.match.params.photoId}/> 
         : <div></div>;
+
+      commentHeader = this.props.photo.comment_ids.length === 1 ? " Comment" : " Comments"
 
         // // ;
     return (
@@ -124,7 +127,7 @@ class PhotoShow extends React.Component {
           </span>
           <span className="comments-section">
               <h1>
-                {this.props.photo.comment_ids.length} Comments
+                {this.props.photo.comment_ids.length}{commentHeader}
               </h1>
               {/* <CommentsCreateFormContainer photoId={this.props.match.params.photoId}/> */}
               {comment}
