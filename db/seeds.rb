@@ -49,16 +49,16 @@ file = open('https://250px-seeds.s3.us-east-2.amazonaws.com/bigbird.png')
 
 
 #for heroku
-u1.profilePicture.attach(io: file, filename: 'bigbird.jpg')
-u2.profilePicture.attach(io: file, filename: 'bigbird.jpg')
-u3.profilePicture.attach(io: file, filename: 'bigbird.jpg')
-u4.profilePicture.attach(io: file, filename: 'bigbird.jpg')
-u5.profilePicture.attach(io: file, filename: 'bigbird.jpg')
-u6.profilePicture.attach(io: file, filename: 'bigbird.jpg')
-u7.profilePicture.attach(io: file, filename: 'bigbird.jpg')
-u8.profilePicture.attach(io: file, filename: 'bigbird.jpg')
-u9.profilePicture.attach(io: file, filename: 'bigbird.jpg')
-u10.profilePicture.attach(io: file, filename: 'bigbird.jpg')
+u1.profilePicture.attach(io: file, filename: 'bigbird.png')
+u2.profilePicture.attach(io: file, filename: 'bigbird.png')
+u3.profilePicture.attach(io: file, filename: 'bigbird.png')
+u4.profilePicture.attach(io: file, filename: 'bigbird.png')
+u5.profilePicture.attach(io: file, filename: 'bigbird.png')
+u6.profilePicture.attach(io: file, filename: 'bigbird.png')
+u7.profilePicture.attach(io: file, filename: 'bigbird.png')
+u8.profilePicture.attach(io: file, filename: 'bigbird.png')
+u9.profilePicture.attach(io: file, filename: 'bigbird.png')
+u10.profilePicture.attach(io: file, filename: 'bigbird.png')
 
 
 # comment1 = Comment.create!(body: "this photo sucks", author_id: 1, photo_id: 7)
