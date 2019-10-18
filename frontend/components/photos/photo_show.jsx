@@ -15,8 +15,9 @@ class PhotoShow extends React.Component {
   componentDidMount() {
     // ;
     this.props.fetchPhotos();
-    this.props.fetchAllUsers();
-    this.props.fetchPhoto(this.props.match.params.photoId);
+    this.props.fetchAllUsers().then(() => 
+      this.props.fetchPhoto(this.props.match.params.photoId)
+    );
   }
 
   componentDidUpdate(prevProps) {
@@ -54,6 +55,7 @@ class PhotoShow extends React.Component {
 
       category = this.props.photo.category ? <p>{this.props.photo.category[0].toUpperCase() + this.props.photo.category.slice(1)}</p> : <div></div>
 
+      debugger;
         // // ;
     return (
       <div className="show-page">
