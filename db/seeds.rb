@@ -48,6 +48,9 @@ comment3 = Comment.create!(body: "sweet photo lmao jk", author_id: 5, photo_id: 
 # queen of being perfect omg
 # ужасный педикюр
 
+# 20 photos 
+# 10 users 
+# likes, comments, follows. 
 
 like1 = Like.create!(user_id: 2, photo_id: 7) 
 like2 = Like.create!(user_id: 3, photo_id: 7)

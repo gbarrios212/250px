@@ -61,6 +61,10 @@ class PhotoEditForm extends React.Component {
         return <div className="disabled">Select a photo to start editing</div>
       }
 
+      if (this.props.currentUser.photo_ids.length === 0){
+        return <div className="empty"></div>
+      }
+
       return (
         <form className="edit-form" onSubmit={this.handleSubmit}>
           <br/>

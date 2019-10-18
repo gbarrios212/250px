@@ -6,6 +6,7 @@ import { receiveActivePhotoId, clearActivePhotoId } from '../../actions/active_p
 
 const msp = (state, ownProps) =>{
     // // ;
+    let currentUser = state.entities.users[state.session.id];
     let photoId = state.ui.activePhotoId;
     let photo = state.entities.photos[photoId] || { name: "", 
         category: "",
@@ -21,7 +22,8 @@ const msp = (state, ownProps) =>{
         iso: "",
         description: ""}
     return ({
-        photo: photo
+        photo: photo,
+        currentUser
     })
 }
 
