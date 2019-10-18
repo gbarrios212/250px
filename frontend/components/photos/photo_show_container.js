@@ -6,7 +6,7 @@ import { fetchAllUsers } from '../../actions/user_actions';
 const msp = (state, ownProps) => {
 
     let photo = state.entities.photos[ownProps.match.params.photoId];
-     debugger;
+    //  debugger;
     let photoAuthor;
     if (photo){
         photoAuthor = state.entities.users[photo.author_id];
