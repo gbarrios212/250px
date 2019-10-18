@@ -37,6 +37,8 @@ class PhotosForm extends React.Component {
         }).then((response) => this.props.receiveNewPhoto(response),
             (response) => this.props.receivePhotoErrors(response.responseJSON))
                 .then(() => this.props.closeModal());
+                // window.scrollTo(0, 0)
+                // $('modal-child').scrollTop(0);
     }
 
     handleFile(e) {
