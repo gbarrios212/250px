@@ -23,7 +23,8 @@ const msp = (state, ownProps) =>{
         description: ""}
     return ({
         photo: photo,
-        currentUser
+        currentUser,
+        photoId
     })
 }
 

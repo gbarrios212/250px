@@ -10,14 +10,21 @@ require 'open-uri'
 
 u1 = User.create!(username: "Guest", email: "guest@guest.com", password_digest: BCrypt::Password.create("guestguest"))
 u2 = User.create!(username: "Daisy", email: "bird@bird.com", password_digest: BCrypt::Password.create("birdbird"))
+    #nice, grad student
 u3 = User.create!(username: "Chimp", email: "chimp@chimp.com", password_digest: BCrypt::Password.create("chimpchimp"))
 u4 = User.create!(username: "Ham", email: "ham@ham.com", password_digest: BCrypt::Password.create("hamham"))
+    #ham just posts about his sound cloud 
+            #hey guys im here to talk about my new single coming out this week its called b
 u5 = User.create!(username: "Monkey", email: "monkey@monkey.com", password_digest: BCrypt::Password.create("monkeymonkey"))
+    #trolls and thirsts
 # u6 = User.create!(username: "Karl Barx", email: "karl@karl.net", password_digest: BCrypt::Password.create("karlkarl"))
-# u7 = User.create!(username: "Penelope Cruz", email: "pen@pen.net", password_digest: BCrypt::Password.create("penpen"))
-# u8 = User.create!(username: "penelopecruz", email: "pen@pen.net", password_digest: BCrypt::Password.create("penpen"))
-# u9 = User.create!(username: "penelopecruz", email: "pen@pen.net", password_digest: BCrypt::Password.create("penpen"))
-# u10 = User.create!(username: "penelopecruz", email: "pen@pen.net", password_digest: BCrypt::Password.create("penpen"))
+    # he sucks, nobody knows why here, just to be pretentious 
+# u7 = User.create!(username: "Henelope Cruz", email: "pen@pen.net", password_digest: BCrypt::Password.create("penpen"))
+    # just posts pics of herself as a hen
+# u8 = User.create!(username: "Henelopecruz", email: "pen@pen.net", password_digest: BCrypt::Password.create("penpen"))
+    #comes here to speak different languages 
+# u9 = User.create!(username: "Henelopecruz", email: "pen@pen.net", password_digest: BCrypt::Password.create("penpen"))
+# u10 = User.create!(username: "Henelopecruz", email: "pen@pen.net", password_digest: BCrypt::Password.create("penpen"))
 
 file = open('https://250px-seeds.s3.us-east-2.amazonaws.com/bigbird.png')
 
@@ -52,8 +59,11 @@ comment3 = Comment.create!(body: "sweet photo lmao jk", author_id: 5, photo_id: 
 # 10 users 
 # likes, comments, follows. 
 
+
 like1 = Like.create!(user_id: 2, photo_id: 7) 
 like2 = Like.create!(user_id: 3, photo_id: 7)
 like3 = Like.create!(user_id: 4, photo_id: 7)
 like4 = Like.create!(user_id: 5, photo_id: 7)
 
+#photos 
+#a nice day to repost this cat
