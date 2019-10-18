@@ -26,7 +26,7 @@ file3 = open('https://250px-seeds.s3.us-east-2.amazonaws.com/good-parrot.jpg')
 #for heroku
 u1.profilePicture.attach(io: file, filename: 'bigbird.png')
 u7.profilePicture.attach(io: file2, filename: 'chicken-11.png')
-u5.profilePicture.attach(io: file3, filename: 'good-parrot')
+u5.profilePicture.attach(io: file3, filename: 'good-parrot.jpg')
 
 # u2.profilePicture.attach(io: file, filename: 'bigbird.png')
 # u3.profilePicture.attach(io: file, filename: 'bigbird.png')
