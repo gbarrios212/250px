@@ -247,6 +247,67 @@
 }
 
 
+.follow-button{
+  width: 80px; //TEMP
+  font-size: 14px;
+  background-color: #f7f8fa;
+  border-color: rgba(185,193,199,0.5);
+  text-shadow: none;
+  color: #71767a;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0 10px;
+  height: 30px;
+  line-height: 28px;
+  border-radius: 3px;
+  font-weight: bold;
+  text-align: center;
+  // transition: background-color 0.1s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0 10px;
+  height: 30px;
+  line-height: 28px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  outline: none;
+  background-color: #0099e5;
+  border: 1px solid #0099e5;
+}
+
+.unfollow-button{
+  width: 80px; //TEMP
+  font-size: 14px;
+  background-color: #f7f8fa;
+  border-color: rgba(185,193,199,0.5);
+  text-shadow: none;
+  color: #71767a;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0 10px;
+  height: 30px;
+  line-height: 28px;
+  border-radius: 3px;
+  font-weight: bold;
+  text-align: center;
+  // transition: background-color 0.1s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0 10px;
+  height: 30px;
+  line-height: 28px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  outline: none;
+  background-color: #b5bdc3;
+  border: 1px solid #b5bdc3;
+}
 
 
 .buttons-wrapper{

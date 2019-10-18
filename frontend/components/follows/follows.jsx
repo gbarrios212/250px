@@ -21,9 +21,16 @@ class Follows extends React.Component{
 
         let followed;
         followed = this.props.otherUser.follower_ids.includes(this.props.currentUser.id) ? 
-            "Unfollow" : "Follow";
+            <div className="unfollow-button">
+                Unfollow
+            </div> : 
+            <div className="follow-button">
+                Follow
+            </div>
+                
         return(
-            <button className={this.state.followed ? "follow-button active" : "follow-button"} onClick={this.toggleFollow}>
+            // <button className={this.state.followed ? "follow-button active" : "follow-button"} onClick={this.toggleFollow}>
+            <button onClick={this.toggleFollow}>
                 {followed}
             </button>
         )
