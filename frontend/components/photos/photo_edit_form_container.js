@@ -24,7 +24,8 @@ const msp = (state, ownProps) =>{
     return ({
         photo: photo,
         currentUser,
-        photoId
+        photoId,
+        errors: state.errors.photo
     })
 }
 
