@@ -91,7 +91,7 @@
     font-weight: bold;
     text-transform: none;
     color: rgb(34, 34, 34);
-   
+    color: white;
 }
 
 .splash-welcome > h1{
@@ -110,7 +110,9 @@
     line-height: 24px;
     letter-spacing: 0px;
     text-transform: none;
-    color: rgb(34, 34, 34);
+    // color: rgb(34, 34, 34);
+    color: #c3bebe;
+
 }
 
 .home-feed-text{
@@ -127,4 +129,11 @@
     width: 100%;
     display: inline-block;
     height: auto;
+}
+
+.outer-splash-container{
+    background-image: image-url('little-one.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: right;
 }
