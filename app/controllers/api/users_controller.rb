@@ -11,12 +11,12 @@ class Api::UsersController < ApplicationController
     end
 
     def show 
-        @user = User.includes(:photos).find(params[:id])
+        @user = User.includes(:photos).with_attached_profilePicture.find(params[:id])
         render 'api/users/show'
     end
 
     def index 
-        @users = User.all
+        @users = User.all.with_attached_profilePicture
         render :index
     end
 

@@ -1,11 +1,11 @@
 class Api::PhotosController < ApplicationController
     def show 
-        @photo = Photo.includes(comments: :author).find(params[:id])
+        @photo = Photo.with_attached_photoConnect.includes(comments: :author).find(params[:id])
         render :show
     end
 
     def index 
-        @photos = Photo.includes(:comments).all 
+        @photos = Photo.with_attached_photoConnect.includes(:comments).all 
         render :index
     end
  
