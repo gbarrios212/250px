@@ -6,26 +6,30 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'open-uri'
 
 guest = User.create!(username: "guest", email: "guest@guest.com", password_digest: BCrypt::Password.create("guestguest"))
-bird = User.create!(username: "bird", email: "bird@bird.com", password_digest: BCrypt::Password.create("birdbird"))
-chimp = User.create!(username: "chimp", email: "chimp@chimp.com", password_digest: BCrypt::Password.create("chimpchimp"))
-ham = User.create!(username: "ham", email: "ham@ham.com", password_digest: BCrypt::Password.create("hamham"))
-monkey = User.create!(username: "monkey", email: "monkey@monkey.com", password_digest: BCrypt::Password.create("monkeymonkey"))
+# bird = User.create!(username: "bird", email: "bird@bird.com", password_digest: BCrypt::Password.create("birdbird"))
+# chimp = User.create!(username: "chimp", email: "chimp@chimp.com", password_digest: BCrypt::Password.create("chimpchimp"))
+# ham = User.create!(username: "ham", email: "ham@ham.com", password_digest: BCrypt::Password.create("hamham"))
+# monkey = User.create!(username: "monkey", email: "monkey@monkey.com", password_digest: BCrypt::Password.create("monkeymonkey"))
 
 
 # photo = Photo.create!(name: "sweet photo", author_id: 3)
 # splashPhoto =Photo.create!(name: "splash", author_id: 2)
 # splashPhoto.attach(io: File.open("User/gabrielbarrios/Desktop/maybe250pics/bird.jpg"), filename: "bird.jpg")
 
+file = open('https://250px-seeds.s3.us-east-2.amazonaws.com/bigbird.png')
 
-comment1 = Comment.create!(body: "this photo sucks", author_id: 1, photo_id: 7)
-comment2 = Comment.create!(body: "not nice!", author_id: 2, photo_id: 7, parent_comment_id: 1)
-comment3 = Comment.create!(body: "sweet photo lmao", author_id: 5, photo_id: 7)
+guest.profilePicture.attach(io: file, filename: 'bigbird.jpg')
+
+# comment1 = Comment.create!(body: "this photo sucks", author_id: 1, photo_id: 7)
+# comment2 = Comment.create!(body: "not nice!", author_id: 2, photo_id: 7, parent_comment_id: 1)
+# comment3 = Comment.create!(body: "sweet photo lmao", author_id: 5, photo_id: 7)
 
 
-like1 = Like.create!(user_id: 2, photo_id: 7) 
-like2 = Like.create!(user_id: 3, photo_id: 7)
-like3 = Like.create!(user_id: 4, photo_id: 7)
-like4 = Like.create!(user_id: 5, photo_id: 7)
+# like1 = Like.create!(user_id: 2, photo_id: 7) 
+# like2 = Like.create!(user_id: 3, photo_id: 7)
+# like3 = Like.create!(user_id: 4, photo_id: 7)
+# like4 = Like.create!(user_id: 5, photo_id: 7)
 
