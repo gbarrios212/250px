@@ -40,12 +40,10 @@ u10 = User.create!(username: "blkswan", email: "swan@pen.net", password_digest: 
 
 guest = open('https://250px-seeds.s3.us-east-2.amazonaws.com/bigbird.png')
 daisy = open('https://250px-seeds.s3.us-east-2.amazonaws.com/a-female-resplendent-quetzal-pharomachrus-mocinno-at-the-dallas-world-aquarium_u-l-q11u4q40.jpg')
-chimp = open()
 ham = open('https://250px-seeds.s3.us-east-2.amazonaws.com/Screen+Shot+2019-10-15+at+10.50.41+AM.png')
 monkey = open('https://250px-seeds.s3.us-east-2.amazonaws.com/Screen+Shot+2019-10-16+at+11.46.43+AM.png')
 karlbarx = open('https://250px-seeds.s3.us-east-2.amazonaws.com/karlbaxx.jpg')
 hen = open('https://250px-seeds.s3.us-east-2.amazonaws.com/621b1098a9478c05494dbf99f2a96709--fancy-chicken-coop-chicken-coops.jpg')
-goldfinch = open()
 loony = open('https://250px-seeds.s3.us-east-2.amazonaws.com/martin-pescador-dorsirrufo.jpg')
 # swan = open()
 
