@@ -48,9 +48,9 @@ class ManageLibrary extends React.Component{
         if (this.props.photos.length === 0){
             return (
                 <div className="library-grid">
-                    <button className="upload-button" onClick={this.props.modalSelect}>
+                    {/* <button className="upload-button" onClick={this.props.modalSelect}>
                         Upload a Photo
-                    </button>{this.props.modalSelect}
+                    </button>{this.props.modalSelect} */}
                 </div>
             );
         }
