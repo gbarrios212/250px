@@ -91,7 +91,8 @@ class User < ApplicationRecord
 
     def profile_picture_nil
         if !self.profilePicture.attached?
-            self.profilePicture.attach(io: File.open('/Users/gabrielbarrios/desktop/bigbird.png'), filename: 'bigbird.png')
+            # self.profilePicture.attach(io: File.open('/Users/gabrielbarrios/desktop/bigbird.png'), filename: 'bigbird.png')
+            self.profilePicture.attach(io: File.open('app/assets/images/bigbird.png'), filename: 'bigbird.png')
         end
    end
 end

@@ -59,7 +59,7 @@ class Navbar extends React.Component {
                         {logo}
                         <div className="nav">
                             <i className="fas fa-search"></i>
-                            <input className="search" type="text" placeholder="Search 250px"/>
+                            <input className="search" type="text" placeholder="Search 500chix"/>
                             <div className="dropdown">
                                 <div className="avatar-navbar-container">
                                     <button onClick={this.toggleClass} className="dropbtn">
