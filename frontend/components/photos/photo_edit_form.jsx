@@ -130,8 +130,8 @@ class PhotoEditForm extends React.Component {
             <input id="iso" type="text" onChange={this.update("iso")} value={this.state.photo.iso} disabled={this.state.disabled}/>
           {/* </span> */}
           
-          <button className="edit-button" disabled={this.props.photoId ? true : false}>Change that Chick!</button>
-          <button className="delete-button" onClick={this.confirmDelete} disabled={this.props.photoId ? true : false }>Delete that Duck!</button>
+          <button className="edit-button" >Change that Chick!</button>
+          <button className="delete-button" onClick={this.confirmDelete} >Delete that Duck!</button>
         </form>
       );
     }

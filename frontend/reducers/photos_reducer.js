@@ -15,15 +15,17 @@ const photosReducer = (state = {}, action) => {
     let commentId;
     switch(action.type){
         case RECEIVE_ALL_PHOTOS:
-             ;
-            return action.photos;
+            newState = merge({}, state, action.photos);
+            return newState;
         case RECEIVE_NEW_PHOTO:
             newState = merge({}, state, {[action.payload.id]: action.payload});
             return newState;
         case RECEIVE_PHOTO:
-            photos = action.payload.photo; 
+            photo = action.payload; 
             // // ;
-            newState = merge({}, state, photos);
+            // debugger;
+            // newState = merge({}, state, photos);
+            newState = merge({}, state, {[photo.id]: photo});
             return newState;
         case CHANGE_PHOTO:
             newState = merge({}, state, {[action.payload.id]: action.payload});

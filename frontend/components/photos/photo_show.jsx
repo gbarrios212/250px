@@ -97,27 +97,29 @@ class PhotoShow extends React.Component {
             </div>
             <div className="details">
               <div className="camera-info">
-                <p><i class="fas fa-camera"></i>{this.props.photo.camera}</p>
+                <p><i className="fas fa-camera"></i>{this.props.photo.camera}</p>
                 <br/>
               </div>
               <div className="lens-info">
+                <i className="far fa-circle"></i>
                 <p>{this.props.photo.lens}</p>
                 <br/>
               </div>
               <div className="shot-info">
-                <i class="fas fa-sliders-h"></i>
+                <i className="fas fa-sliders-h"></i>
                 <p>{this.props.photo.focal_length}</p>
-                <br/>
+                {/* <br/> */}
                 <p>{this.props.photo.aperture}</p>
-                <br/>
+                {/* <br/> */}
                 <p>{this.props.photo.shutter_speed}</p>
-                <br/>
+                {/* <br/> */}
                 <p>{this.props.photo.iso}</p>
-                <br/>
+                {/* <br/> */}
               </div>
             </div>
             <div className="category">
-              <p>Category {this.props.photo.category}</p>
+              <p className="category-text">Category</p>
+              <p>{this.props.photo.category[0].toUpperCase() + this.props.photo.category.slice(1)}</p>
               <br/>
             </div>
             <div className="keywords">
