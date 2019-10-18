@@ -21,10 +21,10 @@ u6 = User.create!(username: "Karl Barx", email: "karl@karl.net", password_digest
     # he sucks, nobody knows why here, just to be pretentious 
 u7 = User.create!(username: "Henelope Cruz", email: "pen@pen.net", password_digest: BCrypt::Password.create("penpen"))
     # just posts pics of herself as a hen
-u8 = User.create!(username: "theg0ldfinch", email: "pen@pen.net", password_digest: BCrypt::Password.create("penpen"))
+u8 = User.create!(username: "theg0ldfinch", email: "finchyfonchy", password_digest: BCrypt::Password.create("penpen"))
     #comes here to speak different languages 
 u9 = User.create!(username: "loony4loonz", email: "loon@loon.net", password_digest: BCrypt::Password.create("loonloon"))
-u10 = User.create!(username: "blkswan", email: "pen@pen.net", password_digest: BCrypt::Password.create("loonloon"))
+u10 = User.create!(username: "blkswan", email: "swan@pen.net", password_digest: BCrypt::Password.create("loonloon"))
 
 # file2 = open('https://250px-seeds.s3.us-east-2.amazonaws.com/bigbird.png')
 # file3 = open('https://250px-seeds.s3.us-east-2.amazonaws.com/bigbird.png')
