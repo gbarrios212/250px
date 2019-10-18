@@ -26,9 +26,6 @@ class PhotoEditForm extends React.Component {
       this.props.clearErrors();
     }
 
-    // componentDidMount(){
-      
-    // }
 
     handleSubmit(e) {
       e.preventDefault();
@@ -43,7 +40,7 @@ class PhotoEditForm extends React.Component {
 
     confirmDelete(e){
       e.preventDefault();
-      let result = confirm("Are you furr real?");
+      let result = confirm("This photo will be deleted permanently.");
       if (result){
         this.props.deletePhoto(this.props.photo.id);
       }
