@@ -53,8 +53,6 @@ class SessionForm extends React.Component {
             <div></div>
         );
 
-        debugger;
-
         const emailField = this.props.formType === "Sign Up" ? (
             <div>
             <label htmlFor="email"> Email:</label>

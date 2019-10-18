@@ -23,8 +23,8 @@ u5 = User.create!(username: "Monkey", email: "monkey@monkey.com", password_diges
     # just posts pics of herself as a hen
 # u8 = User.create!(username: "Henelopecruz", email: "pen@pen.net", password_digest: BCrypt::Password.create("penpen"))
     #comes here to speak different languages 
-# u9 = User.create!(username: "Henelopecruz", email: "pen@pen.net", password_digest: BCrypt::Password.create("penpen"))
-# u10 = User.create!(username: "Henelopecruz", email: "pen@pen.net", password_digest: BCrypt::Password.create("penpen"))
+# u9 = User.create!(username: "loony4loonz", email: "loon@loon.net", password_digest: BCrypt::Password.create("loonloon"))
+# u10 = User.create!(username: "Henelopecruz", email: "pen@pen.net", password_digest: BCrypt::Password.create("loonloon"))
 
 file = open('https://250px-seeds.s3.us-east-2.amazonaws.com/bigbird.png')
 

@@ -5,7 +5,6 @@ import merge from 'lodash/merge';
 class PhotoEditForm extends React.Component {
     constructor(props){
       super(props)
-      debugger;
       this.state = { photo: this.props.photo, disabled: false }
       this.handleSubmit = this.handleSubmit.bind(this);
       this.confirmDelete = this.confirmDelete.bind(this);
@@ -48,8 +47,6 @@ class PhotoEditForm extends React.Component {
     }
 
     render() {
-      // // ;
-      debugger;
       const errorsList = (this.props.errors) ? ( 
         this.props.errors.map((error, index) => (
         <li className="errors" key={index}>{error}</li>

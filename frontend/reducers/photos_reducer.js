@@ -23,7 +23,6 @@ const photosReducer = (state = {}, action) => {
         case RECEIVE_PHOTO:
             photo = action.payload; 
             // // ;
-            // debugger;
             // newState = merge({}, state, photos);
             newState = merge({}, state, {[photo.id]: photo});
             return newState;
