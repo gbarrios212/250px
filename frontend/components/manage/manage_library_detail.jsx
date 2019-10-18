@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class ManageLibraryDetail extends React.Component{
     constructor(props) {
@@ -12,13 +13,14 @@ class ManageLibraryDetail extends React.Component{
     render(){
         // //debugger;
         return(
-            // <div>
-                <img 
-                    // onClick={this.toggleSelect} 
-                    // className={this.state.selected ? 'thumbnail selected' : 'thumbnail'} 
-                    src={this.props.photo.photoUrl} alt=""> 
+            <div className="photo-icon-container">
+                <Link to={`/photos/${this.props.photo.id}`}>
+                    <i class="fas fa-external-link-alt"></i>
+                </Link>
+                {/* <i class="fas fa-search-plus"></i> */}
+                <img src={this.props.photo.photoUrl} alt=""> 
                 </img>
-            // </div>
+            </div>
         )
     }
     
