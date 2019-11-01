@@ -8,7 +8,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: gbbg123/250chix
+    image: gbbg123/500chix
     volumes:
       - .:/my_app
     ports:
