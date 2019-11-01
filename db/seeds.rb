@@ -8,6 +8,9 @@
 
 require 'open-uri'
 
+User.destroy_all
+
+
 u1 = User.create!(username: "guest", email: "guest@guest.com", password_digest: BCrypt::Password.create("guestguest"))
 u2 = User.create!(username: "Daisy", email: "bird@bird.com", password_digest: BCrypt::Password.create("birdbird"))
 # u3 = User.create!(username: "Chimp", email: "chimp@chimp.com", password_digest: BCrypt::Password.create("chimpchimp"))
