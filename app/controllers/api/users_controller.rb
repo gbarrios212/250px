@@ -16,7 +16,7 @@ class Api::UsersController < ApplicationController
     end
 
     def index 
-        @users = User.all.with_attached_profilePicture
+        @users = User.all
         render :index
     end
 
