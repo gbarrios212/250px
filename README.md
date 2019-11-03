@@ -103,5 +103,5 @@ Created by
 ![alt text](https://i.imgur.com/0jfaoIK.png)
 ![alt text](https://i.imgur.com/8BSQv4z.png)
 
-* In order to provide the user with easy navigation through the different components of our app, React and Redux proved Essential.  The edit form is a great example of this.  In order to implement its responsiveness, a slice of state dedicated toward keeping track of a currently selected photo was added to our state.  On click, a photo's ID was passed to this slice, which was then accessed by our edit form container in order to properly render the information related to this image.  Changes were reflected in realtime, and upon inspection of the photo, one could see the changes had indeed been saved. 
+* In order to provide the user with easy navigation through the different components of our app, React and Redux proved essential.  The edit form is a great example of this.  In order to implement its responsiveness, a slice of state dedicated toward keeping track of a currently selected photo was added to our state.  On click, a photo's ID was passed to this slice, which was then accessed by our edit form container in order to properly render the information related to this image.  Changes were reflected in realtime, and upon inspection of the photo, one could see the changes had indeed been saved. 
 
