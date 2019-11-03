@@ -26,7 +26,7 @@ Created by
 * User profile picture, bio, follows, followers, and total photos are displayed
 * If on a different user's page, options to follow and unfollow are available
 
-## User settings
+### User settings
 
 * Users can upload profile pictures 
 * Users can provide additional information to display in their bio
@@ -60,7 +60,7 @@ Created by
 
 * Users can follow their favorite photographers 
 
-## The Roost
+### The Roost
 
 * Users can view a collection of photos organized by popularity (total likes, descending)
 * Users can easily navigate to specific photo show page by clicking on photos
