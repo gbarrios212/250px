@@ -134,7 +134,8 @@
 .outer-splash-container{
     background-image: image-url('little-one.jpg');
     background-repeat: no-repeat;
-    background-size: 100%;
+    // background-size: 100%;
+    background-size: cover;
     background-position: right;
 }
 

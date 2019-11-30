@@ -12,6 +12,7 @@ import PhotoEditFormContainer from './photos/photo_edit_form_container';
 import CommentsIndexContainer from './comments/comments_index_container';
 import ProfilePageContainer from './profile/profile_page_container';
 import SettingsContainer from './settings/settings_container';
+import Footer from "./footer/footer";
 
 import Modal from './modal/modal';
 import ManageContainer from "./manage/manage_container";
@@ -24,6 +25,7 @@ const App = () => (
     </header>
       <AuthRoute path="/signup" component={SignUpFormContainer}/>
       <AuthRoute path="/login" component={LoginFormContainer}/>
+      
       <Route exact path="/" component={SplashContainer} />
       {/* <Route exact path="/" component={PhotosIndexContainer} /> */}
 
@@ -34,9 +36,9 @@ const App = () => (
       <ProtectedRoute exact path="/manage/all" component={CreatePhotosFormContainer} />
       <Route exact path="/users/:userId/" component={ProfilePageContainer} />
       <ProtectedRoute exact path="/settings" component={SettingsContainer} />
-
-
-      
+      <footer>
+        <Route path="/footer" component={Footer} />
+      </footer>
       {/* <Route exact path="/photos/:photoId" component={CommentsIndexContainer} /> */}
 
   </>
