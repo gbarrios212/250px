@@ -239,10 +239,13 @@
 .dropdown-modal{
     position: absolute; 
     top: 0;  
+    right: 0;
+    left: 0;
     // position: fixed;
     background: transparent;
     min-height: 100vh;
     min-width: 100vh;
-    z-index: 100;
+    z-index: 40;
+    margin: 0;
 }
 
