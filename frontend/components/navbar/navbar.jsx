@@ -9,10 +9,15 @@ class Navbar extends React.Component {
         };
         this.toggleClass = this.toggleClass.bind(this);
         this.handleLogout = this.handleLogout.bind(this);
+        this.closeDropdown = this.closeDropdown.bind(this);
     }
 
     componentDidMount(){
         this.setState({ show: false });
+    }
+
+    closeDropdown(){
+        this.setState({show: false})
     }
 
     toggleClass(e) {
@@ -22,8 +27,10 @@ class Navbar extends React.Component {
     }
 
     handleLogout(){
+        this.setState({show: false})
         this.props.logout()
         .then(this.props.history.push("/"))
+        // .then(this.setState({show: false}))
     }
 
     render(){
@@ -58,6 +65,9 @@ class Navbar extends React.Component {
                     <section className="header">
                         {logo}
                         <div className="nav">
+
+                            <div className={this.state.show ? "dropdown-modal" : ""} onClick={this.closeDropdown}></div>
+
                             <i className="fas fa-search"></i>
                             <input className="search" type="text" placeholder="Search 500chix"/>
                             <div className="dropdown">
@@ -71,7 +81,7 @@ class Navbar extends React.Component {
                                 <div id="myDropdown" className={this.state.show ? 'dropdown-content show' : 'dropdown-content'}>
                                     {/* <button className="logout" onClick={this.props.logout}>Log Out</button> */}
                                     <button className="logout" onClick={this.handleLogout}>Log Out</button>
-                                    <Link to={`/users/${this.props.currentUser.id}`}><button className="profile">Profile</button></Link>
+                                    <Link to={`/users/${this.props.currentUser.id}`}><button className="profile" onClick={this.closeDropdown}>Profile</button></Link>
                                 </div>
                             </div>
                             <Link to="/manage/upload">
