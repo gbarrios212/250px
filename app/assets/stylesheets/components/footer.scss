@@ -1,7 +1,19 @@
-.footer-container{
-    display: flex;
+.footer-container-outer{
+    display: block;
     align-items: center;
     width: 100%;
     height: 90px;
     background: FFFFFF;
+    position: fixed;
+    bottom: 0;
+    // background: #A9BBBA;
+    background: white;
+    border-top: $sienna-border;
+}
+
+.footer-container-inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 40px;
 }

@@ -36,9 +36,9 @@ const App = () => (
       <ProtectedRoute exact path="/manage/all" component={CreatePhotosFormContainer} />
       <Route exact path="/users/:userId/" component={ProfilePageContainer} />
       <ProtectedRoute exact path="/settings" component={SettingsContainer} />
-      <footer>
-        <Route path="/footer" component={Footer} />
-      </footer>
+    <footer>
+      <Route path="/" component={Footer} />
+    </footer>
       {/* <Route exact path="/photos/:photoId" component={CommentsIndexContainer} /> */}
 
   </>
