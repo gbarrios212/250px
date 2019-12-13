@@ -35,7 +35,8 @@ class Settings extends React.Component{
             contentType: false, 
             processData: false
         }).then((response) => this.props.updateUser(response),
-            (response) => this.props.receiveUserErrors(response.responseJSON));
+            (response) => this.props.receiveUserErrors(response.responseJSON))
+            .then((response) => this.props.history.push("/"));
     }
 
     handleFile(e) {
