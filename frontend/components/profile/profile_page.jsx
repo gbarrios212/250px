@@ -38,7 +38,7 @@ class ProfilePage extends React.Component{
 
         let follow;
         follow = this.props.currentUser && this.props.currentUser.id != this.props.match.params.userId ? 
-            <FollowsContainer otherUser={this.props.profileUser} /> : <div></div>;
+            <FollowsContainer key={this.props.profileUser.id} otherUser={this.props.profileUser} /> : <div></div>;
             
         let settings; 
         settings = this.props.currentUser.id == this.props.match.params.userId ? 
