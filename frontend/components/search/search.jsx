@@ -7,7 +7,8 @@ class Search extends React.Component{
 
         this.state = {
             term: '',
-            autoCompleteResults: [],
+            Users: [],
+            Photos: [],
             userselected: {},
             showuserselected: false
         };
@@ -19,17 +20,20 @@ class Search extends React.Component{
         this.setState({
             term: e.target.value
         }, () => {
-            $.getJSON('/search?q=' + this.state.term)
+            if (this.state.term.length > 0) {
+                $.getJSON('/search?q=' + this.state.term)
                 .then(response => this.setState({ Users: response.users, Photos: response.photos }))
+            } else {
+                this.clearSearch();
+            }
         });
     }
 
     clearSearch() {
         this.setState({
             term: '',
-            autoCompleteResults: [],
-            userselected: {},
-            showuserselected: false
+            Users: [], 
+            Photos: []
         })
     }
 
