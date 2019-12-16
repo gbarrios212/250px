@@ -142,9 +142,10 @@
 }
 
 .avatar-preview{
-    width: auto;
+    // width: auto;
     // width: 100%;
     height: 128px;
+    object-fit: cover;
 }
 
 #upload-avatar-button{
