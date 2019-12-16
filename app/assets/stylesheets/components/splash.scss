@@ -119,8 +119,18 @@
     font-size: 36px;
     line-height: 40px;
     letter-spacing: -0.32px;
-    position: absolute;
+    position: relative;
     top: 125px;
+    left: 40px;
+    font-weight: bold;
+    margin-bottom: 100px;
+}
+
+.follow-section-header, .photo-section-header{
+    font-size: 30px;
+    line-height: 40px;
+    letter-spacing: -0.32px;
+    position: relative;
     left: 40px;
     font-weight: bold;
 }
@@ -139,7 +149,7 @@
     background-position: right;
 }
 
-.photos-index-2{
+.photos-index-2, .photos-index-3{
     padding: 0 64px;
     display: flex;
     flex-wrap: wrap;
@@ -149,10 +159,21 @@
     align-items: center;
 }
 
+.photos-index-3{
+    position: static;
+}
+
 .index-items-list-items-2{
     flex: 1 2 400px;
     padding: 32px;
     // flex-grow: 1;
+}
+
+.follow-section {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 100px;
 }
 
 @media (min-width: 1024px){

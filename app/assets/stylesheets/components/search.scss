@@ -1,0 +1,33 @@
+.search-results{
+    position: absolute;
+    width: 250px;
+    margin-top: 10px;
+}
+
+.search-results-photos{
+    // border-top: $sienna-border;
+}
+
+.search-index-user, .search-index-photo{
+    position: relative;
+    background: #F7F8FA;
+    padding: 5px 10px;
+}
+
+.search-index-photo{
+    color: $gray;
+}
+
+.search-index-user:hover, .search-index-photo:hover{
+    background: #2986f7;
+    cursor: pointer;
+}
+
+.search-modal{
+    display: block;
+    position: absolute;
+    top: 100px;
+    width: 500px;
+    height: 500px;
+    background: red;
+}

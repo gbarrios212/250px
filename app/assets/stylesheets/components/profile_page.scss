@@ -172,9 +172,8 @@
     background-color: #fff;
     -webkit-border-radius: 50%;
     border-radius: 50%;
-    border: 2px solid #fff;
     width: 104px;
-    height: 104px;
+    // height: 104px;
     overflow: hidden;
     margin: 0 auto;
     position: relative;
@@ -415,7 +414,8 @@
 
 .avatar{
   height: 100px;
-  width: auto;
+  // width: auto;
+  object-fit: cover;
 }
 
 .profile-show-page-button{
@@ -429,6 +429,13 @@
   text-align: center;
 }
 
+.no-photo-message{
+  display: block;
+  position: relative;
+  text-align: center;
+  color: #b9c1c7;
+  top: 150px;
+}
 
 
 // .profile-thumbnail-2{
@@ -494,3 +501,61 @@
 // transform:matrix(1, 0, 0, 1, 0, 0);
 // width:950px;
 // -webkit-font-smoothing:antialiased;
+
+
+.react-tabs {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.tab-list {
+  border-bottom: 1px solid #aaa;
+  margin: 0 0 10px;
+  padding: 0;
+}
+
+.tab {
+  display: inline-block;
+  border: 1px solid transparent;
+  border-bottom: none;
+  bottom: -1px;
+  position: relative;
+  list-style: none;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.tab--selected {
+  background: #fff;
+  border-color: #aaa;
+  color: black;
+  border-radius: 5px 5px 0 0;
+}
+
+.react-tabs__tab--disabled {
+  color: GrayText;
+  cursor: default;
+}
+
+.react-tabs__tab:focus {
+  box-shadow: 0 0 5px hsl(208, 99%, 50%);
+  border-color: hsl(208, 99%, 50%);
+  outline: none;
+}
+
+.react-tabs__tab:focus:after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  left: -4px;
+  right: -4px;
+  bottom: -5px;
+  background: #fff;
+}
+
+.react-tabs__tab-panel {
+  display: none;
+}
+
+.react-tabs__tab-panel--selected {
+  display: block;
+}

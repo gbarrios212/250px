@@ -23,6 +23,8 @@ class Api::UsersController < ApplicationController
     def update
         @user = User.includes(:photos).find(params[:id])
         if @user.update(user_params) 
+            # flash[:success] = "Cool"
+            # console.log("cool")
             render :show
         else 
             render json: @user.errors.full_messages, status: 422

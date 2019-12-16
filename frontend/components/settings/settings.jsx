@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import merge from 'lodash/merge'
 
 class Settings extends React.Component{
     constructor(props){
@@ -13,9 +14,15 @@ class Settings extends React.Component{
         // but this is essentially the same as line 13 
 
         this.state = this.props.currentUser
-        
         this.handleFile = this.handleFile.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    componentDidMount() {
+        this.props.fetchUser(this.props.currentUser.id)
+        .then(user => {
+            this.setState(user.payload)
+        })
     }
 
     handleSubmit(e) {
@@ -29,13 +36,19 @@ class Settings extends React.Component{
             }
         })
         $.ajax({
-            url: `api/users/${this.props.currentUser.id}`,
-            method: 'PATCH',
-            data: formData,
-            contentType: false, 
-            processData: false
-        }).then((response) => this.props.updateUser(response),
-            (response) => this.props.receiveUserErrors(response.responseJSON));
+          url: `api/users/${this.props.currentUser.id}`,
+          method: "PATCH",
+          data: formData,
+          contentType: false,
+          processData: false
+        })
+          .then(
+            response => this.props.updateUser(response),
+            response => this.props.receiveUserErrors(response.responseJSON)
+          )
+          .then(response =>
+            this.props.history.push(`/users/${this.props.currentUser.id}`)
+          );
     }
 
     handleFile(e) {

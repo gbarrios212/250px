@@ -1,6 +1,10 @@
 # require 'open-uri'
 
+
 class User < ApplicationRecord
+    # include PgSearch 
+    # pg_search_scope :search_by_username, against: [:username]
+
     validates :username, :email, :password_digest, :session_token, presence: true
     validates :username, :email, uniqueness: true
     validates :password, length: { minimum: 6 }, allow_nil: true
@@ -8,7 +12,7 @@ class User < ApplicationRecord
     # validate :ensure_photo
     
     after_initialize :ensure_session_token
-    # after_initialize :profile_picture_nil
+    after_initialize :profile_picture_nil
     #commented out for heroku
 
     attr_reader :password
@@ -86,17 +90,18 @@ class User < ApplicationRecord
         self.session_token ||= SecureRandom::urlsafe_base64
     end
 
-    def ensure_photo
-        unless self.photoConnect.attached?
-            errors[:photo] << "must be attached"
+    # def ensure_photo
+    #     unless self.photoConnect.attached?
+    #         errors[:photo] << "must be attached"
+    #     end
+    # end
+#commented out for heroku
+    def profile_picture_nil
+        if !self.profilePicture.attached?
+            # file = open('https://250px-seeds.s3.us-east-2.amazonaws.com/bigbird.png')
+            self.profilePicture.attach(io: File.open('app/assets/images/bigbird.png'), filename: 'bigbird.png')
+            # self.profilePicture.attach(io: file, filename: 'bigbird.png')
         end
     end
-#commented out for heroku
-    # def profile_picture_nil
-    #     if !self.profilePicture.attached?
-    #         # file = open('https://250px-seeds.s3.us-east-2.amazonaws.com/bigbird.png')
-    #         self.profilePicture.attach(io: File.open('/Users/gabrielbarrios/desktop/bigbird.png'), filename: 'bigbird.png')
-    #         # self.profilePicture.attach(io: file, filename: 'bigbird.png')
-    #     end
     
 end

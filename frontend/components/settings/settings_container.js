@@ -2,7 +2,8 @@ import Settings from './settings';
 import { connect } from 'react-redux';
 import { clearUserErrors, 
         receiveUserErrors,
-        updateUser
+        updateUser,
+        fetchUser
     } from '../../actions/user_actions';
 
 const msp = (state) => {
@@ -15,7 +16,8 @@ const msp = (state) => {
 const mdp = (dispatch) => ({
     clearUserErrors: () => dispatch(clearUserErrors()),
     receiveUserErrors: (errors) => dispatch(receiveUserErrors(errors)),
-    updateUser: (user) => dispatch(updateUser(user))
+    updateUser: (user) => dispatch(updateUser(user)),
+    fetchUser: (id) => dispatch(fetchUser(id)),
 })
 
 export default connect(msp, mdp)(Settings);

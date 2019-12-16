@@ -287,8 +287,8 @@
 }
 
 .photo-header-avatar{
-    width: 100%;
     height: 64px;
+    object-fit: cover;
 }
 
 .author-link:hover{

@@ -10,7 +10,7 @@ Created by
 [Gabriel Barrios](https://github.com/gbarrios212)
 
 
-500chix is a social networking website that allows bird enthusiasts to share their favorite pictures of birds and discover new talent in the bird photography world. 
+500chix is a social networking website that allows bird enthusiasts to share their favorite pictures of birds and discover new talent in the world of nature photography. 
 
 ## Functionality
 
@@ -91,6 +91,8 @@ Created by
 
 
 ### Photo Edit
+leverage state management to create session information that maintained the current selected photo to be edited 
+    Coordination between frontend and backend to create an experience that caters toward the visually oriented followers of birding and art. 
 
 * Each user is given their own manage page.  This is the heart of 500chix, where users can upload, edit, and delete their own photographs.  
 
