@@ -9,12 +9,15 @@ class Follows extends React.Component{
 
     toggleFollow(e){
         e.preventDefault();
+        debugger;
         if (this.state.followed){
-            this.props.deleteFollow(this.props.otherUser.id)
+            this.props.deleteFollow(this.props.otherUser.id);
+            // this.setState({followed: false});
         } else {
-            this.props.createFollow(this.props.otherUser.id)
+            this.props.createFollow(this.props.otherUser.id);
+            // this.setState({ followed: true });
         }
-        this.setState({followed: !this.props.followedStatus});
+        this.setState({followed: !this.state.followed});
     }
 
     render(){

@@ -115,7 +115,7 @@ class ProfilePage extends React.Component{
               <TabPanel>{publishedArticles}</TabPanel>
               <TabPanel>{recentlyLikedTab}</TabPanel> */}
               <TabPanel>
-                <ProfilePhotosContainer photos={this.props.photos} />
+                <ProfilePhotosContainer photos={this.props.photos} id={this.props.profileUser.id}/>
               </TabPanel>
               <TabPanel>hi2</TabPanel>
             </Tabs>

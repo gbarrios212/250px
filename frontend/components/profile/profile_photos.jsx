@@ -15,7 +15,7 @@ class ProfilePhotos extends React.Component{
 
     render() {
        
-        if (this.props.photos.length === 0){
+        if (this.props.photos.length === 0 && this.props.currentUser.id === this.props.currentId){
             return (
                 <div className="outer-new-upload-container">
                     <div className="new-upload-button">
@@ -28,7 +28,7 @@ class ProfilePhotos extends React.Component{
         }
 
         if (!this.props.photos[0]){
-            return <div>Loading</div>
+            return <div className="no-photo-message">This user does not have any photos.</div>
         }
 
         let photosList = this.props.photos.map(photo => {
