@@ -21,7 +21,7 @@ class ProfilePage extends React.Component{
 
     componentDidUpdate(prevProps) {
         if (prevProps.match.params.userId !== this.props.match.params.userId){
-            this.props.fetchAllUsers();
+            // this.props.fetchAllUsers();
             this.props.fetchPhotos();
              ;
             this.props.fetchUser(this.props.match.params.userId);
@@ -29,6 +29,9 @@ class ProfilePage extends React.Component{
       }
 
     render() {
+      if (!this.props.profileUser) {
+        return "loading";
+      }
 
         let bio;
         bio = this.props.profileUser.bio ? <p className="bio">{this.props.profileUser.bio}</p> : <div></div>
