@@ -7,6 +7,7 @@ class MainController < ApplicationController
     def search
         # debugger
         @users = User.ransack(username_cont: params[:q]).result(distinct: true).limit(5)
+        @photos = Photo.ransack(name_cont: params[:q]).result(distinct: true).limit(5)
     end
 
     private
