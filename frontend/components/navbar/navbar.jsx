@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, Route } from 'react-router-dom';
+import Search from '../search/search';
 
 class Navbar extends React.Component {
     constructor(props){
@@ -48,7 +49,8 @@ class Navbar extends React.Component {
                     {logo}
                     <div className="nav">
                         <i className="fas fa-search" ></i>
-                            <input className="search" type="text" placeholder="Search 500chix"/> 
+                            <Search/>
+                            {/* <input className="search" type="text" placeholder="Search 500chix"/>  */}
                         <span className="login-styling">
                             <Link to="/login">Log In</Link>
                         </span>
@@ -69,7 +71,8 @@ class Navbar extends React.Component {
 
 
                             <i className="fas fa-search" ></i>
-                            <input className="search" type="text" placeholder="Search 500chix" onClick={this.closeDropdown}/>
+                            <Search />
+                            {/* <input className="search" type="text" placeholder="Search 500chix" onClick={this.closeDropdown}/> */}
                             <div className="dropdown">
                                 <div className="avatar-navbar-container">
                                     <button onClick={this.toggleClass} className="dropbtn">
