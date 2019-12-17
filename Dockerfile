@@ -20,7 +20,7 @@ ARG RAILS_ENV=production
 WORKDIR /my_app
 COPY Gemfile /my_app/Gemfile
 COPY Gemfile.lock /my_app/Gemfile.lock
-RUN gem install bundler && bundle install
+RUN gem install bundler -v 2.0.2 && bundle install
 COPY . /my_app
 COPY --from=build /usr/src/node_app/app/assets/javascripts/bundle.js ./app/assets/javascripts/
 COPY --from=build /usr/src/node_app/app/assets/javascripts/bundle.js.map ./app/assets/javascripts/
