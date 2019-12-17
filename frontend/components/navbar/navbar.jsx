@@ -67,8 +67,8 @@ class Navbar extends React.Component {
         } else {
             return(
                 <div>
-                    <div className={this.state.show ? "dropdown-modal" : ""} onClick={this.closeDropdown}></div>
                     <section className="header" >
+                    
                         {logo}
                         <div className="nav">
 
@@ -77,6 +77,7 @@ class Navbar extends React.Component {
                             <Search />
                             {/* <input className="search" type="text" placeholder="Search 500chix" onClick={this.closeDropdown}/> */}
                             <div className="dropdown">
+                                <div className={this.state.show ? "dropdown-modal" : ""} onClick={this.closeDropdown}></div>
                                 <div className="avatar-navbar-container">
                                     <button onClick={this.toggleClass} className="dropbtn">
                                         <img className="avatar-navbar" src={this.props.currentUser.profilePictureUrl} alt=""/>
