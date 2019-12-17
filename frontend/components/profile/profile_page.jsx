@@ -12,10 +12,9 @@ class ProfilePage extends React.Component{
     }
 
     componentDidMount() {
-        this.props.fetchPhotos();
-        this.props.fetchAllUsers();
-         ;
-        this.props.fetchUser(this.props.match.params.userId);
+        this.props.fetchPhotos()
+        .then(() => this.props.fetchAllUsers())
+        .then(() => this.props.fetchUser(this.props.match.params.userId));
     }
 
     componentDidUpdate(prevProps) {
@@ -28,12 +27,48 @@ class ProfilePage extends React.Component{
       }
 
     render() {
+
+
+
       if (!this.props.profileUser) {
         return "loading";
       }
 
         let bio;
         bio = this.props.profileUser.bio ? <p className="bio">{this.props.profileUser.bio}</p> : <div></div>
+
+        let city;
+        city = this.props.profileUser.city ? <p className="city">{this.props.profileUser.city}</p> : <div></div>
+
+        let state;
+        state = this.props.profileUser.state ? <p className="state">{this.props.profileUser.state}</p> : <div></div>
+
+        let country;
+        country = this.props.profileUser.country ? <p className="country">{this.props.profileUser.country}</p> : <div></div>
+
+        let cameras;
+        cameras = this.props.profileUser.cameras ? <p className="cameras">{this.props.profileUser.cameras}</p> : <div></div>
+
+        let lenses;
+        lenses = this.props.profileUser.lenses ? <p className="lenses">{this.props.profileUser.lenses}</p> : <div></div>
+
+        let email;
+        email = this.props.profileUser.email ? <p className="email">{this.props.profileUser.email}</p> : <div></div>
+
+        let firstName;
+        firstName = this.props.profileUser.first_name ? <p className="firstName">{this.props.profileUser.first_name}</p> : <div></div>
+
+        let lastName;
+        lastName = this.props.profileUser.last_name ? <p className="lastName">{this.props.profileUser.last_name}</p> : <div></div>
+
+        let birthday;
+        birthday = this.props.profileUser.birthday ? <p className="birthday">{this.props.profileUser.birthday}</p> : <div></div>
+
+        let gender;
+        gender = this.props.profileUser.gender ? <p className="gender">{this.props.profileUser.gender}</p> : <div></div>
+
+
+
 
         let follow;
         follow = this.props.currentUser && this.props.currentUser.id != this.props.match.params.userId ? 
@@ -117,7 +152,18 @@ class ProfilePage extends React.Component{
                 <ProfilePhotosContainer photos={this.props.photos} id={this.props.profileUser.id}/>
               </TabPanel>
               <TabPanel>
-                "User info"
+                <div className="about-tab">
+                  {city}
+                  {state}
+                  {country}
+                  {cameras}
+                  {lenses}
+                  {email}
+                  {firstName}
+                  {lastName}
+                  {birthday}
+                  {gender}
+                </div>
               </TabPanel>
             </Tabs>
           </>
