@@ -2,6 +2,8 @@ import PhotosForm from './photos_form';
 import { connect } from 'react-redux'
 import { createPhoto, clearErrors, receiveErrors, fetchPhotos, receiveNewPhoto } from '../../actions/photo_actions';
 import { closeModal } from '../../actions/modal_actions';
+import { fireSuccess, clearSuccess } from "../../actions/alert_actions";
+
 
 const msp = (state, ownProps) => {
     // ;
@@ -33,8 +35,8 @@ const mdp = (dispatch) => ({
     //test here
     // fetchPhotos: () => dispatch(fetchPhotos()),
     closeModal: () => dispatch(closeModal()),
-    receiveNewPhoto: (photo) => dispatch(receiveNewPhoto(photo))
-
+    receiveNewPhoto: (photo) => dispatch(receiveNewPhoto(photo)),
+    fireSuccess: (message) => dispatch(fireSuccess(message))
 })
 
 export default connect(msp, mdp)(PhotosForm);

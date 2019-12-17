@@ -30,6 +30,7 @@ class PhotoEditForm extends React.Component {
       e.preventDefault();
       this.props.updatePhoto(this.state.photo);
       window.scrollTo(0, 0);
+      this.props.fireSuccess("Photo edited successfully.");
     }
     
     update(field) {

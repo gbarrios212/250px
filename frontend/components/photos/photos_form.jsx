@@ -37,7 +37,10 @@ class PhotosForm extends React.Component {
             contentType: false, 
             processData: false
         })
-        .then((response) => this.props.receiveNewPhoto(response),
+        .then((response) => {
+            this.props.receiveNewPhoto(response)
+            this.props.fireSuccess("Photo created successfully.");
+        },
             (response) => {
                 this.props.receivePhotoErrors(response.responseJSON);
                 createButton.disabled = false;
