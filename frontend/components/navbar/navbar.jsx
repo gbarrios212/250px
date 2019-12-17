@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, Route } from 'react-router-dom';
 import Search from '../search/search';
-import Flash from './alerts';
+import AlertsContainer from './alerts_container';
 
 class Navbar extends React.Component {
     constructor(props){
@@ -41,6 +41,8 @@ class Navbar extends React.Component {
                 <Link to="/" onClick={this.closeDropdown}>500chix</Link>
             </div>
         )
+
+        let alerts = this.props.message ? <AlertsContainer message={this.props.message} /> : <div></div>;
 
         if (!this.props.currentUser){
             return(
@@ -93,10 +95,7 @@ class Navbar extends React.Component {
                             </Link>
                         </div>
                     </section>
-                    <Flash/>
-                    {/* <div className="greeting">
-                        <h1>Well check you out, {this.props.currentUser.username}!</h1>  
-                    </div> */}
+                    {alerts}
                 </div>
             )
         }

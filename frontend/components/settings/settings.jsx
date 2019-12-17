@@ -43,7 +43,10 @@ class Settings extends React.Component{
           processData: false
         })
           .then(
-            response => this.props.updateUser(response),
+            response => {
+                this.props.updateUser(response);
+                this.props.fireSuccess("Profile updated successfully");
+            },
             response => this.props.receiveUserErrors(response.responseJSON)
           )
           .then(response => this.props.history.push(`/users/${this.props.currentUser.id}`)

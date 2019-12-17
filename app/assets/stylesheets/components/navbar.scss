@@ -261,11 +261,15 @@
     padding: 7.5px;
     border: 1px solid green;
     width: 100%;
-    // animation: errorDropdown .5s;
-    // animation-fill-mode: backwards;
+    animation: errorDropdown .2s;
+    animation-fill-mode: backwards;
+    animation-timing-function: ease-in-out;
+    animation-duration: 4s;
 }
 
 @keyframes errorDropdown{
    0% { top: 40px; }
-   100% { top: 76px; } 
+   15% { top: 76px; } 
+   85% { top: 76px; }
+   100% { top: 40px; }
 }

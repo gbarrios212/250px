@@ -1,18 +1,26 @@
 import React from "react";
 
-class Flash extends React.Component{
+class Alerts extends React.Component{
     constructor(props) {
         super(props)
-        this.state = { success: "" };
+        this.state = { message: this.props.message }
+    }
+
+    componentDidMount() {
+        setTimeout(() => this.props.clearSuccess(), 4000);
     }
 
     render() {
-        return (
-            <div className="alert">
-                {this.state.success}
-            </div>
-        )
+        if (this.state.message) {
+            return (
+                <div className="alert">
+                    {this.state.message}
+                </div>
+            )
+        } else {
+            return <div></div>;
+        }
     }
 }
 
-export default Flash;
+export default Alerts;

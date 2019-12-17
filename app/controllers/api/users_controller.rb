@@ -24,8 +24,7 @@ class Api::UsersController < ApplicationController
         @user = User.includes(:photos).find(params[:id])
         if @user.update(user_params) 
             render :show
-            flash.now[:success] = "Profile updated successfully."
-            debugger
+            # flash = {messages: "Profile updated successfully."}
         else 
             render json: @user.errors.full_messages, status: 422
         end
