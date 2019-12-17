@@ -21,6 +21,8 @@ class PhotosForm extends React.Component {
  
     handleSubmit(e) {
         e.preventDefault();
+        let createButton = document.getElementById("create-button");
+        createButton.disabled = true;
         const formData = new FormData();
         let keys = Object.keys(this.state)
         keys.forEach(key => {
@@ -34,9 +36,17 @@ class PhotosForm extends React.Component {
             data: formData,
             contentType: false, 
             processData: false
-        }).then((response) => this.props.receiveNewPhoto(response),
-            (response) => this.props.receivePhotoErrors(response.responseJSON))
-                .then(() => this.props.closeModal());
+        })
+        .then((response) => this.props.receiveNewPhoto(response),
+            (response) => {
+                this.props.receivePhotoErrors(response.responseJSON);
+                createButton.disabled = false;
+            }
+        )
+        .then(() => {
+            this.props.closeModal();
+            createButton.disabled = false;
+        });
                 // window.scrollTo(0, 0)
                 // $('modal-child').scrollTop(0);
     }
@@ -138,7 +148,7 @@ class PhotosForm extends React.Component {
                     <input id="shutter_speed" type="text" onChange={this.update("shutter_speed")} value={this.state.shutter_speed}/>
                     <label htmlFor="iso">ISO:</label>
                     <input id="iso" type="text" onChange={this.update("iso")} value={this.state.iso}/>
-                    <button className="create-button">Save that Swan!</button>
+                    <button className="create-button" id="create-button">Save that Swan!</button>
                 </form>
             </div>
         );
