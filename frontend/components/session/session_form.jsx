@@ -30,8 +30,14 @@ class SessionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user);
-        this.props.fireSuccess(this.state.username);
+        let submit = document.getElementById("form-submit");
+        submit.disabled = true;
+        this.props.processForm(user)
+            .then(() => {
+                this.props.fireSuccess(this.state.username);
+                submit.disabled = false;
+            }
+        );
     }
 
     demoLogin(e){
@@ -92,7 +98,7 @@ class SessionForm extends React.Component {
                         id="password"
                         />
                 
-                <button className="form-submit" onClick={this.handleSubmit}>{this.props.formType}</button>
+                <button className="form-submit" id="form-submit" onClick={this.handleSubmit}>{this.props.formType}</button>
                 <div className="guest-login">
                     <button className="guest-button" 
                         onClick={this.demoLogin}>guest</button>
