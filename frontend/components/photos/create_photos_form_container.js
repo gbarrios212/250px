@@ -2,7 +2,7 @@ import PhotosForm from './photos_form';
 import { connect } from 'react-redux'
 import { createPhoto, clearErrors, receiveErrors, fetchPhotos, receiveNewPhoto } from '../../actions/photo_actions';
 import { closeModal } from '../../actions/modal_actions';
-import { fireSuccess, clearSuccess } from "../../actions/alert_actions";
+import { fireSuccess } from "../../actions/alert_actions";
 
 
 const msp = (state, ownProps) => {

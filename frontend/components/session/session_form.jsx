@@ -31,11 +31,13 @@ class SessionForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
+        this.props.fireSuccess(this.state.username);
     }
 
     demoLogin(e){
         e.preventDefault();
         this.props.demoLogin();
+        this.props.fireSuccess("guest");
     }
     
     render() {
