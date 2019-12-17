@@ -3,7 +3,6 @@ import ProfilePhotosContainer from './profile_photos_container';
 import UserInfo from './user_info';
 import CoverPhoto from './cover_photo';
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-// import "react-tabs/style/react-tabs.scss";
 import { Link } from 'react-router-dom';
 import FollowsContainer from '../follows/follows_container';
 
@@ -103,12 +102,12 @@ class ProfilePage extends React.Component{
                 </ul>
             </div> */}
             <Tabs
-              className="profile-tabs"
-              selectedTabClassName="profile-tab-single-selected"
+              className="react-tabs"
+              selectedTabClassName="tab-single-selected"
             >
               <TabList>
-                <Tab className="profile-tab-single">PHOTOS</Tab>
-                <Tab className="profile-tab-single">ABOUT</Tab>
+                <Tab className="tab-single">PHOTOS</Tab>
+                <Tab className="tab-single">ABOUT</Tab>
               </TabList>
 
               {/* <TabPanel>{publishedArt}</TabPanel>
@@ -117,7 +116,9 @@ class ProfilePage extends React.Component{
               <TabPanel>
                 <ProfilePhotosContainer photos={this.props.photos} id={this.props.profileUser.id}/>
               </TabPanel>
-              <TabPanel>hi2</TabPanel>
+              <TabPanel>
+                "User info"
+              </TabPanel>
             </Tabs>
           </>
         );
