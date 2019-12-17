@@ -26,3 +26,29 @@
     color: #0099e5; 
     cursor: pointer;
 }
+
+.portfolio-logo{
+    height: 15px;
+    width: 15px;
+    background-image: url('G.svg');
+    background-size: cover;
+    margin-right: 4px;
+}
+
+// .portfolio-logo:hover{
+//     background-image: url('G-blue.svg');
+// }
+
+.devLink2 {
+    display: flex;
+    align-items: center;
+}
+
+.devLink2:hover{
+    color: #0099e5; 
+    cursor: pointer;
+}
+
+.devLink2:hover > .portfolio-logo{
+    background-image: url('G-blue.svg');
+}
