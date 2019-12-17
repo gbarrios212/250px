@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { updatePhoto, clearErrors, receiveErrors } from '../../actions/photo_actions';
 import PhotoEditForm from './photo_edit_form';
 import { receiveActivePhotoId, clearActivePhotoId } from '../../actions/active_photo_actions';
+import { fireSuccess, clearSuccess } from '../../actions/alert_actions';
 
 const msp = (state, ownProps) =>{
     // // ;
@@ -37,7 +38,8 @@ const mdp = (dispatch) => ({
     clearErrors: () => dispatch(clearErrors()),
     receivePhotoErrors: (errors) => dispatch(receiveErrors(errors)), 
     receiveActivePhotoId: (photo) => dispatch(receiveActivePhotoId(photo)),
-    clearActivePhotoId: () => dispatch(clearActivePhotoId())
+    clearActivePhotoId: () => dispatch(clearActivePhotoId()),
+    fireSuccess: (message) => dispatch(fireSuccess(message))
 })
 
   export default connect(msp, mdp)(PhotoEditForm);

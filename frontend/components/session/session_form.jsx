@@ -7,7 +7,8 @@ class SessionForm extends React.Component {
       this.state = {
           username: "",
           email: "",
-          password: ""
+          password: "",
+          loading: false
         };
 
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -29,17 +30,30 @@ class SessionForm extends React.Component {
   
     handleSubmit(e) {
         e.preventDefault();
+        this.setState({loading: true});
         const user = Object.assign({}, this.state);
-        this.props.processForm(user);
+        let submit = document.getElementById("form-submit");
+        submit.disabled = true;
+        this.props.processForm(user)
+            .then(() => {
+                this.props.fireSuccess(this.state.username);
+                submit.disabled = false;
+                this.setState({loading: false});
+            }
+        );
     }
 
     demoLogin(e){
         e.preventDefault();
         this.props.demoLogin();
+        this.props.fireSuccess("guest");
     }
     
     render() {
-        
+        let submit = this.state.loading ? 
+            <div className="loading-container"><div className="lds-ring"><div></div><div></div><div></div><div></div></div></div>
+            : <button className="form-submit" id="form-submit" onClick={this.handleSubmit}>{this.props.formType}</button>
+
         const header = this.props.formType === "Sign Up" ? (
             <h3>Sign Up</h3>) : ( <h3>Log In</h3> );
         const sessionLink = this.props.formType === "Sign Up" ? (
@@ -66,6 +80,15 @@ class SessionForm extends React.Component {
             </div>
                 ) : (<div></div>)
 
+        let options = this.state.loading ? 
+            <div></div> 
+            : <><div className="guest-login">
+                    <button className="guest-button" 
+                        onClick={this.demoLogin}>guest</button>
+                    </div>
+                <div className="alt-form-link">{sessionLink}
+            </div></>
+
         return (<div className="session-form"> 
             <form className="form">
             {header}
@@ -90,12 +113,8 @@ class SessionForm extends React.Component {
                         id="password"
                         />
                 
-                <button className="form-submit" onClick={this.handleSubmit}>{this.props.formType}</button>
-                <div className="guest-login">
-                    <button className="guest-button" 
-                        onClick={this.demoLogin}>guest</button>
-                    </div>
-                <div className="alt-form-link">{sessionLink}</div>
+                {submit}
+                {options}
             </form>
         </div>)
     }

@@ -14,17 +14,18 @@ class ProfilePhotos extends React.Component{
     }
 
     render() {
-       
-        if (this.props.photos.length === 0 && this.props.currentUser.id === this.props.currentId){
-            return (
-                <div className="outer-new-upload-container">
+
+        if (this.props.currentUser){       
+            if (this.props.photos.length === 0 && this.props.currentUser.id === this.props.currentId){
+                return (
+                    <div className="outer-new-upload-container">
                     <div className="new-upload-button">
                         <Link to="/manage/upload"> 
                             Upload a Photo
                         </Link>
                     </div>
                 </div>
-            );
+            );}
         }
 
         if (!this.props.photos[0]){

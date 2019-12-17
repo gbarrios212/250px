@@ -70,15 +70,19 @@ class ProfilePage extends React.Component{
 
 
 
-        let follow;
-        follow = this.props.currentUser && this.props.currentUser.id != this.props.match.params.userId ? 
-            <FollowsContainer key={this.props.profileUser.id} otherUser={this.props.profileUser} /> : <div></div>;
+        let follow = <div></div>;
+        if (this.props.currentUser) {
+          follow = this.props.currentUser && this.props.currentUser.id != this.props.match.params.userId ? 
+          <FollowsContainer key={this.props.profileUser.id} otherUser={this.props.profileUser} /> : <div></div>;
+        }
             
-        let settings; 
-        settings = this.props.currentUser.id == this.props.match.params.userId ? 
-            <Link to="/settings">
+        let settings = <div></div>;
+        if (this.props.currentUser) {
+          settings = this.props.currentUser.id == this.props.match.params.userId ? 
+          <Link to="/settings">
                 <button className="more-button"></button>
             </Link> : <div className="more-button-hidden"></div>;
+        }
 
         if (!this.props.profileUser){
             return (

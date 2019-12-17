@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, Route } from 'react-router-dom';
 import Search from '../search/search';
+import AlertsContainer from './alerts_container';
 
 class Navbar extends React.Component {
     constructor(props){
@@ -41,6 +42,8 @@ class Navbar extends React.Component {
             </div>
         )
 
+        let alerts = this.props.message ? <AlertsContainer message={this.props.message} /> : <div></div>;
+
         if (!this.props.currentUser){
             return(
             <div>
@@ -64,8 +67,8 @@ class Navbar extends React.Component {
         } else {
             return(
                 <div>
-                    <div className={this.state.show ? "dropdown-modal" : ""} onClick={this.closeDropdown}></div>
                     <section className="header" >
+                    
                         {logo}
                         <div className="nav">
 
@@ -74,6 +77,7 @@ class Navbar extends React.Component {
                             <Search />
                             {/* <input className="search" type="text" placeholder="Search 500chix" onClick={this.closeDropdown}/> */}
                             <div className="dropdown">
+                                <div className={this.state.show ? "dropdown-modal" : ""} onClick={this.closeDropdown}></div>
                                 <div className="avatar-navbar-container">
                                     <button onClick={this.toggleClass} className="dropbtn">
                                         <img className="avatar-navbar" src={this.props.currentUser.profilePictureUrl} alt=""/>
@@ -92,10 +96,7 @@ class Navbar extends React.Component {
                             </Link>
                         </div>
                     </section>
-                            
-                    {/* <div className="greeting">
-                        <h1>Well check you out, {this.props.currentUser.username}!</h1>  
-                    </div> */}
+                    {alerts}
                 </div>
             )
         }

@@ -68,6 +68,7 @@
 }
 
 .search{
+    position: relative;
     // background: #e4dfdf;
     background: rgb(247, 248, 250);
     // background: #e6e3e3;
@@ -87,8 +88,9 @@
 
 .fa-search:before {
     content: "\f002";
-    left: 75px;
     position: relative;
+    left: 75px;
+    z-index: 40;
 }
 
 .logo{
@@ -238,15 +240,38 @@
 }
 
 .dropdown-modal{
-    position: absolute; 
-    top: 0;  
-    right: 0;
-    left: 0;
-    // position: fixed;
+    display: block;
+    position: absolute;
+    top: -40px;
+    right: -180px;
+    /* left: 0; */
     background: transparent;
-    min-height: 100vh;
-    min-width: 100vh;
+    min-height: 3000px;
+    min-width: 3000px;
     z-index: 40;
     margin: 0;
 }
 
+.alert{
+    display: block;
+    position: absolute;
+    top: 76px;
+    z-index: 20;
+    text-align: center;
+    background: #d4e1d4;
+    color: green;
+    padding: 7.5px;
+    border: 1px solid green;
+    width: 100%;
+    animation: errorDropdown .2s;
+    animation-fill-mode: backwards;
+    animation-timing-function: ease-in-out;
+    animation-duration: 4s;
+}
+
+@keyframes errorDropdown{
+   0% { top: 40px; }
+   15% { top: 76px; } 
+   85% { top: 76px; }
+   100% { top: 40px; }
+}

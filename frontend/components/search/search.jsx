@@ -9,8 +9,7 @@ class Search extends React.Component{
             term: '',
             Users: [],
             Photos: [],
-            userselected: {},
-            showuserselected: false
+            modal: false
         };
         
         this.clearSearch = this.clearSearch.bind(this);
@@ -18,7 +17,8 @@ class Search extends React.Component{
 
     getAutoCompleteResults(e) {
         this.setState({
-            term: e.target.value
+            term: e.target.value,
+            modal: true
         }, () => {
             if (this.state.term.length > 0) {
                 $.getJSON('/search?q=' + this.state.term)
@@ -33,37 +33,51 @@ class Search extends React.Component{
         this.setState({
             term: '',
             Users: [], 
-            Photos: []
+            Photos: [],
+            modal: false
         })
     }
 
     render() {
+        let modal = this.state.modal ? <div className="seach-modal" id="search-modal" onClick={() => this.clearSearch()}></div>
+            : <div></div>
+
         let usersList;
-        if (this.state.Users) {
+        if (this.state.Users.length > 0) {
             usersList = this.state.Users.map((response, index) => {
                 return <div key={index} className="search-index-user">
-                    <Link to={`/users/${response.id}`}>
+                    <Link to={`/users/${response.id}`} onClick={() => this.clearSearch()}>
                         <h2>{response.username}</h2>
                     </Link>
                     </div>
-        });
-    } 
+                }
+            );
+        } else {
+            usersList = <div></div>;
+        }
 
         let photoList; 
-        if (this.state.Photos) {
+        if (this.state.Photos.length > 0) {
             photoList = this.state.Photos.map((response, index) => {
-                return <div key={index} className="search-index-photo">
-                    <Link to={`/photos/${response.id}`}>
-                        <h2>{response.name}</h2>
+                return (
+                  <div key={index} className="search-index-photo">
+                    <Link to={`/photos/${response.id}`} onClick={() => this.clearSearch()}>
+                      <h2>{response.name}</h2>
                     </Link>
-                </div>
+                  </div>
+                );
             })
+        } else {
+            photoList = <div></div>;
         }
+
+        // if (!this.state.open) {
+        //     return <div></div>
+        // }
+
         return (
             <div>
-                <div className="seach-modal" onClick={() => this.clearSearch}>
-                    
-                </div>
+                {modal}
                 <input className="search"
                     ref={(input) => { this.searchBar = input }} 
                     value={this.state.term} 

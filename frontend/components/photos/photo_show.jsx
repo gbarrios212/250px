@@ -14,9 +14,9 @@ class PhotoShow extends React.Component {
 
   componentDidMount() {
     // ;
-    this.props.fetchPhotos();
-    this.props.fetchAllUsers().then(() => 
-      this.props.fetchPhoto(this.props.match.params.photoId)
+    this.props.fetchPhotos()
+      .then(() => this.props.fetchAllUsers())
+      .then(() => this.props.fetchPhoto(this.props.match.params.photoId)
     );
   }
 
@@ -31,7 +31,7 @@ class PhotoShow extends React.Component {
 
   render () {
     // ;
-      if (!this.props.photo) {
+      if (!this.props.photo || !this.props.photoAuthor) {
         return <div>Loading...</div>;
       }
       // // 
@@ -41,6 +41,12 @@ class PhotoShow extends React.Component {
       let comment;
       let commentHeader;
       let category; 
+
+      let followStatus = " ";
+
+      if (this.props.currentUser) {
+        followStatus = this.props.currentUser.following_ids.includes(this.props.photoAuthor.id) ? " Following " : " "
+      }
 
 
       like = this.props.currentUser ? <LikesContainer photo={this.props.photo}/> 
@@ -83,7 +89,7 @@ class PhotoShow extends React.Component {
               <div className="photo-header-info">
                 <h1>{this.props.photo.name}</h1>
                 <br/>
-                <p> by <Link to={`/users/${this.props.photoAuthor.id}`} className="author-link">{this.props.photoAuthor.username}</Link> • {this.props.currentUser.following_ids.includes(this.props.photoAuthor.id) ? " Following " : " "} </p>
+                <p> by <Link to={`/users/${this.props.photoAuthor.id}`} className="author-link">{this.props.photoAuthor.username}</Link> • {followStatus} </p>
             
               </div>
               <div className="photo-header-avatar-container">
