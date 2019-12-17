@@ -250,3 +250,22 @@
     margin: 0;
 }
 
+.alert{
+    display: block;
+    position: absolute;
+    top: 76px;
+    z-index: 20;
+    text-align: center;
+    background: #d4e1d4;
+    color: green;
+    padding: 7.5px;
+    border: 1px solid green;
+    width: 100%;
+    // animation: errorDropdown .5s;
+    // animation-fill-mode: backwards;
+}
+
+@keyframes errorDropdown{
+   0% { top: 40px; }
+   100% { top: 76px; } 
+}

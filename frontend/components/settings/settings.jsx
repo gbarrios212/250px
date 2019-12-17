@@ -46,8 +46,7 @@ class Settings extends React.Component{
             response => this.props.updateUser(response),
             response => this.props.receiveUserErrors(response.responseJSON)
           )
-          .then(response =>
-            this.props.history.push(`/users/${this.props.currentUser.id}`)
+          .then(response => this.props.history.push(`/users/${this.props.currentUser.id}`)
           );
     }
 

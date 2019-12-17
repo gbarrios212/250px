@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, Route } from 'react-router-dom';
 import Search from '../search/search';
+import Flash from './alerts';
 
 class Navbar extends React.Component {
     constructor(props){
@@ -92,7 +93,7 @@ class Navbar extends React.Component {
                             </Link>
                         </div>
                     </section>
-                            
+                    <Flash/>
                     {/* <div className="greeting">
                         <h1>Well check you out, {this.props.currentUser.username}!</h1>  
                     </div> */}
