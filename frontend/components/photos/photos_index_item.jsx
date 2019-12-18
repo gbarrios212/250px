@@ -14,28 +14,28 @@ const PhotosIndexItem = (props) => {
                 <div className="follow-modal">
                     <Link to={`/users/${props.authorId}`}>
                         <div className="follow-author-info">
-                            <div>{props.author}</div>
                             <div className="follow-avatar-container">
                                 <img src={props.authorPic} className="follow-avatar"/>
                             </div>
+                            <div className="follow-name">{props.author}</div>
                         </div>
                     </Link>
-                </div>
-                {/* 
-                <div className="follow-info">
-                    <div className="index-icons">
-                        <div className="index-icons-likes">
-                            <i className="far fa-heart" id="index-heart"></i>{photo.like_ids.length}
+                    <div className="follow-info">
+                        <div className="index-icons">
+                            <div className="index-icons-likes">
+                                <i className="far fa-heart" id="index-heart"></i>{props.photo.like_ids.length}
+                            </div>
+                            <div className="index-icons-comments">
+                                <i class="far fa-comment"></i>{props.photo.comment_ids.length}
+                            </div>
                         </div>
-                        <div className="index-icons-comments">
-                            <i class="far fa-comment"></i>{photo.comment_ids.length}
-                        </div>
+                        <p className="index-photo-title">
+                            {props.photo.name}
+                        </p>
                     </div>
-                    <p className="index-photo-title">
-                        {photo.name}
-                    </p>
                 </div>
-                 */}
+              
+                 
                 
             </div>
         

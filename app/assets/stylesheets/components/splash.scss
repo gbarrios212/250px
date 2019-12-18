@@ -199,9 +199,9 @@
     display: flex;
     align-items: center;
     position: absolute;
-    top: 40%;
-    left: 40%;
-    background: white;
+    top: 30%;
+    left: 35%;
+    background: transparent;
 }
 
 .follow-avatar-container{
@@ -209,6 +209,7 @@
     overflow: hidden;
     height: 40px;
     width: 40px;
+    margin-right: 20px;
 }
 
 .follow-avatar{
@@ -221,13 +222,40 @@
     bottom: 0;
     height: 24%;
     width: 100%;
-    background: white;
+    background: rgba(255, 255, 255, 0.5098039215686274);
+    transition: ease-in .3s;
+    cursor: pointer;
 }
 
-.follow-modal:hover{
+.follow-name{
+    font-size: 25px;
+}
+
+.follow-items-list-items:hover > .follow-modal{
     height: 100%;
     transition: ease-in .3s;
 }
+
+.follow-items-list-items:hover .follow-info{
+    top: 46%;
+    animation: fadeIn .8s;
+    animation-fill-mode: forwards;
+}
+
+.follow-info{
+    display: flex;
+    opacity: 0;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 106%;
+}
+
+@keyframes fadeIn{
+    0% { opacity: 0;}
+    100% { opacity: 1;}
+}
+
 
 body::-webkit-scrollbar-track {
   box-shadow: inset 0 0 6px black;

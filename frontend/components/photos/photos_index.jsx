@@ -55,7 +55,7 @@ class PhotosIndex extends React.Component{
             {/* <div className="home-feed-text">Home Feed</div> */}
             <div className="home-feed-text">The Roost</div>
             <ul className="photos-index-3">
-              <h1 className="follow-section-header"> Users you like </h1>
+              <h1 className="follow-section-header"> Users you follow </h1>
               {followSection}
             </ul>
             <div className="featured-photos-index">
