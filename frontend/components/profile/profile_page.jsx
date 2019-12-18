@@ -38,34 +38,34 @@ class ProfilePage extends React.Component{
         bio = this.props.profileUser.bio ? <p className="bio">{this.props.profileUser.bio}</p> : <div></div>
 
         let city;
-        city = this.props.profileUser.city ? <p className="city">{this.props.profileUser.city}</p> : <div></div>
+        city = this.props.profileUser.city ? <p id="city">{this.props.profileUser.city}</p> : <div></div>
 
         let state;
-        state = this.props.profileUser.state ? <p className="state">{this.props.profileUser.state}</p> : <div></div>
+        state = this.props.profileUser.state ? <p id="state">{this.props.profileUser.state}</p> : <div></div>
 
         let country;
-        country = this.props.profileUser.country ? <p className="country">{this.props.profileUser.country}</p> : <div></div>
+        country = this.props.profileUser.country ? <p id="country">{this.props.profileUser.country}</p> : <div></div>
 
         let cameras;
-        cameras = this.props.profileUser.cameras ? <p className="cameras">{this.props.profileUser.cameras}</p> : <div></div>
+        cameras = this.props.profileUser.cameras ? <p id="cameras">{this.props.profileUser.cameras}</p> : <div></div>
 
         let lenses;
-        lenses = this.props.profileUser.lenses ? <p className="lenses">{this.props.profileUser.lenses}</p> : <div></div>
+        lenses = this.props.profileUser.lenses ? <p id="lenses">{this.props.profileUser.lenses}</p> : <div></div>
 
         let email;
-        email = this.props.profileUser.email ? <p className="email">{this.props.profileUser.email}</p> : <div></div>
+        email = this.props.profileUser.email ? <p id="email">{this.props.profileUser.email}</p> : <div></div>
 
         let firstName;
-        firstName = this.props.profileUser.first_name ? <p className="firstName">{this.props.profileUser.first_name}</p> : <div></div>
+        firstName = this.props.profileUser.first_name ? <p id="firstName">{this.props.profileUser.first_name}</p> : <div></div>
 
         let lastName;
-        lastName = this.props.profileUser.last_name ? <p className="lastName">{this.props.profileUser.last_name}</p> : <div></div>
+        lastName = this.props.profileUser.last_name ? <p id="lastName">{this.props.profileUser.last_name}</p> : <div></div>
 
         let birthday;
-        birthday = this.props.profileUser.birthday ? <p className="birthday">{this.props.profileUser.birthday}</p> : <div></div>
+        birthday = this.props.profileUser.birthday ? <p id="birthday">{this.props.profileUser.birthday}</p> : <div></div>
 
         let gender;
-        gender = this.props.profileUser.gender ? <p className="gender">{this.props.profileUser.gender}</p> : <div></div>
+        gender = this.props.profileUser.gender ? <p id="gender">{this.props.profileUser.gender}</p> : <div></div>
 
 
 
@@ -157,16 +157,17 @@ class ProfilePage extends React.Component{
               </TabPanel>
               <TabPanel>
                 <div className="about-tab">
-                  {city}
-                  {state}
-                  {country}
-                  {cameras}
-                  {lenses}
-                  {email}
-                  {firstName}
-                  {lastName}
-                  {birthday}
-                  {gender}
+                  <section className="about-info">
+                    <div>Name: {firstName} {lastName}</div>
+                    <div>City: {city}</div>
+                    <div>State: {state}</div>
+                    <div>Country: {country}</div>
+                    <div>Birthday: {birthday}</div>
+                    <div>Gender: {gender}</div>
+                    <div>Cameras: {cameras}</div>
+                    <div>Lenses: {lenses}</div>
+                    <div>Email: {email}</div>
+                  </section>
                 </div>
               </TabPanel>
             </Tabs>

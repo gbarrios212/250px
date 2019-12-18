@@ -7,11 +7,13 @@ import { selectUserPhotos } from '../../reducers/selectors';
 
 const msp = (state) => {
   // // ;
-  let currentUser = state.entities.users[state.session.id]
-  let photos = selectUserPhotos(state, currentUser)
+  let currentUser = state.entities.users[state.session.id];
+  let photos = selectUserPhotos(state, currentUser);
+  let activePhotoId = state.ui.activePhotoId;
   return ({
-    currentUser: currentUser,
-    photos: photos
+    currentUser,
+    photos,
+    activePhotoId
   })
 }
 

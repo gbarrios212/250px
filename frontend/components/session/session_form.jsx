@@ -39,14 +39,19 @@ class SessionForm extends React.Component {
                 this.props.fireSuccess(this.state.username);
                 submit.disabled = false;
                 this.setState({loading: false});
+            }, () => {
+                this.setState({ loading: false });
             }
         );
     }
 
     demoLogin(e){
         e.preventDefault();
-        this.props.demoLogin();
-        this.props.fireSuccess("guest");
+        this.setState({ loading: true });
+        this.props.demoLogin().then(() => {
+            this.props.fireSuccess("guest");
+            this.setState({ loading: false });
+        })
     }
     
     render() {

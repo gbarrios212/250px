@@ -8,7 +8,7 @@ class Manage extends React.Component {
     constructor(props){
         super(props)
         // // ;
-        // this.state = { activePhoto: "" }
+        this.state = { activePhoto: this.props.activePhoto }
     }
 
     componentDidMount() {
@@ -18,6 +18,21 @@ class Manage extends React.Component {
 
     render(){
         // // ;
+        let text = !this.props.photos.length ? "Upload a photo to get started." : "Select a photo to get started."
+ 
+        let editForm = (
+          <span className="item-f">
+            <p className="item-f-text">{text}</p>
+          </span>
+        );
+
+        if (this.props.activePhotoId) {
+            editForm = (
+              <span className="item-f">
+                <PhotoEditFormContainer />
+              </span>
+            );
+        }
         return (
             <div>
                 <span className="manage-grid">
@@ -40,9 +55,7 @@ class Manage extends React.Component {
                     <span className="item-e">
                         <ManageLibraryContainer />
                     </span>
-                    <span className="item-f">
-                        <PhotoEditFormContainer />
-                    </span>
+                    {editForm}
                 </span>
             </div>
         );
