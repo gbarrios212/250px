@@ -4,7 +4,7 @@ import { RECEIVE_PHOTO_ERRORS } from '../../actions/photo_actions'
 class PhotosForm extends React.Component {
     constructor(props){
         super(props);
-        let newPhotoProps = Object.assign({}, this.props.photo, {photoConnect: null, photoUrl: null});
+        let newPhotoProps = Object.assign({}, this.props.photo, {photoConnect: null, photoUrl: null, loading: false});
         this.state = newPhotoProps;
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -21,10 +21,12 @@ class PhotosForm extends React.Component {
  
     handleSubmit(e) {
         e.preventDefault();
+        this.setState({loading: true})
         let createButton = document.getElementById("create-button");
         createButton.disabled = true;
         const formData = new FormData();
-        let keys = Object.keys(this.state)
+        let keys = Object.keys(this.state);
+        keys = keys.slice(0, keys.length - 1);
         keys.forEach(key => {
             if (this.state[key]){
                 formData.append(`photo[${key}]`, this.state[key])
@@ -38,15 +40,18 @@ class PhotosForm extends React.Component {
             processData: false
         })
         .then((response) => {
+            this.setState({ loading: false });
             this.props.receiveNewPhoto(response)
             this.props.fireSuccess("Photo created successfully.");
         },
             (response) => {
+                this.setState({ loading: false });
                 this.props.receivePhotoErrors(response.responseJSON);
                 createButton.disabled = false;
             }
         )
         .then(() => {
+            this.setState({ loading: false });
             this.props.closeModal();
             createButton.disabled = false;
         });
@@ -73,6 +78,10 @@ class PhotosForm extends React.Component {
     }
 
     render() {
+        let submit = this.state.loading ? 
+            <div className="loading-container"><div className="lds-ring"><div></div><div></div><div></div><div></div></div></div>
+            : <button className="create-button" id="create-button">Save that Swan!</button>
+
     
         const errorsList = (this.props.errors) ? ( 
             this.props.errors.map((error, index) => (
@@ -151,7 +160,7 @@ class PhotosForm extends React.Component {
                     <input id="shutter_speed" type="text" onChange={this.update("shutter_speed")} value={this.state.shutter_speed}/>
                     <label htmlFor="iso">ISO:</label>
                     <input id="iso" type="text" onChange={this.update("iso")} value={this.state.iso}/>
-                    <button className="create-button" id="create-button">Save that Swan!</button>
+                    {submit}
                 </form>
             </div>
         );
