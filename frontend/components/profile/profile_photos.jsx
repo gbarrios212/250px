@@ -1,6 +1,7 @@
 import React from 'react';
 import ProfilePhotosDetail from './profile_photos_detail';
 import { Link } from 'react-router-dom';
+var imagesLoaded = require("imagesloaded");
 
 class ProfilePhotos extends React.Component{
     constructor(props){
@@ -34,20 +35,33 @@ class ProfilePhotos extends React.Component{
 
         let photosList = this.props.photos.map(photo => {
                 return (
-            <Link to={`/photos/${photo.id}`}>
-                <li key={photo.id} className="profile-thumbnail" value={photo.id}>
-            {/* return <li key={photo.id} className="profile-thumbnail" value={photo.id}> */}
-                    <ProfilePhotosDetail photo={photo} key={photo.id}/>
-            </li>
-                </Link>)
+                  <div className="profile-thumbnail">
+                    <Link to={`/photos/${photo.id}`}>
+                      <li key={photo.id} value={photo.id}>
+                        {/* return <li key={photo.id} className="profile-thumbnail" value={photo.id}> */}
+                        <ProfilePhotosDetail photo={photo} key={photo.id} />
+                      </li>
+                    </Link>
+                  </div>
+                );
         })
+
+        var $grid = $('.profile-grid');
+            $grid.imagesLoaded( function() {
+                $grid.masonry({
+                    itemSelector: '.profile-thumbnail',
+                    columnWidth: 400,
+                    fitWidth: true
+          })
+        })
+
         return(
-            // <div className="outer-profile-container">
+            <div className="outer-profile-container">
                 <div className="profile-grid">
                 {/* <div className="profile-grid"> */}
                     {photosList}
                 </div>
-            // </div>
+            </div>
         )
     }
 }
