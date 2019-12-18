@@ -1,0 +1,36 @@
+.featured-photos-index{
+    display: block;
+    position: relative;
+    min-height: 1000px;
+    width: 100%;
+    top: 180px;
+}
+
+.featured-photo-section-header{
+    font-size: 30px;
+    line-height: 40px;
+    letter-spacing: -0.32px;
+    position: relative;
+    left: 40px;
+    font-weight: bold;
+}
+
+.featured-photo-container{
+    display: grid;
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+
+.featured-photo-item{
+    width: 500px;
+    margin-bottom: 10px;
+}
+
+// #featured-thumbnail{
+//     width: 500px;
+// }
+
+
