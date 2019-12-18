@@ -81,6 +81,7 @@
     display: block;
     width: 100%;
     max-height: 100%;
+    background: #cfd3d4;
 }
 
 .splash-welcome-header{
@@ -125,19 +126,20 @@
     margin-bottom: 100px;
 }
 
-.follow-section-header, .photo-section-header{
+.follow-section-header{
     font-size: 30px;
     line-height: 40px;
     letter-spacing: -0.32px;
     position: relative;
     left: 40px;
     font-weight: bold;
+    padding: 10px;
+    text-align: center;
 }
 
-#index-thumbnail{
-    width: 100%;
-    display: inline-block;
-    height: auto;
+.index-thumbnail{
+    height: 100%;
+    width: auto;
 }
 
 .outer-splash-container{
@@ -148,18 +150,21 @@
     background-position: right;
 }
 
-.photos-index-2, .photos-index-3{
+
+
+.photos-index-3{
     padding: 0 64px;
     display: flex;
     flex-wrap: wrap;
-    top: 180px;
     position: relative;
     max-width: 100%;
-    align-items: center;
-}
-
-.photos-index-3{
-    position: static;
+    height: 500px;
+    background: white;
+    top: 70px;
+    position: relative;
+    /* align-items: center; */
+    flex-direction: column;
+    box-shadow: 0px 0px 5px 0px #888888;
 }
 
 .photos-index-2{
@@ -172,11 +177,89 @@
     // flex-grow: 1;
 }
 
-.follow-section {
+.follow-photo-container {
     display: flex;
-    flex-direction: column;
+    overflow: scroll;
     position: relative;
-    top: 100px;
+    width: 100%;
+    border-left: 10px solid black;
+    border-right: 10px solid black;
+    height: 74%;
+}
+
+.follow-items-list-items {
+    position: relative;
+    height: 350px;
+    width: auto;
+    border: 10px solid black;
+    border-left: 5px solid black;
+    border-right: 5px solid black;
+}
+
+.follow-author-info {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    background: transparent;
+}
+
+.follow-avatar-container{
+    border-radius: 50%;
+    overflow: hidden;
+    height: 40px;
+    width: 40px;
+    margin-right: 20px;
+}
+
+.follow-avatar{
+    height: 100%;
+    object-fit: cover;
+}
+
+.follow-modal{
+    position: absolute;
+    bottom: 0;
+    height: 24%;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.5098039215686274);
+    transition: ease-in .3s;
+    cursor: pointer;
+}
+
+.follow-name{
+    font-size: 25px;
+}
+
+.follow-items-list-items:hover .follow-modal{
+    height: 100%;
+    transition: ease-in .3s;
+}
+
+.follow-items-list-items:hover .follow-info{
+    top: 46%;
+    animation: fadeIn .8s;
+    animation-fill-mode: forwards;
+}
+
+.follow-info{
+    display: flex;
+    opacity: 0;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 21%;
+}
+
+@keyframes fadeIn{
+    0% { opacity: 0;}
+    100% { opacity: 1;}
+}
+
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px black;
 }
 
 @media (min-width: 1024px){
