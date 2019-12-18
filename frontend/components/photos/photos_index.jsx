@@ -1,5 +1,5 @@
 import React from 'react';
-import PhotosIndexItem from './photos_index_item';
+import PhotosIndexItemContainer from './photo_index_item_container';
 import FeaturedPhotosIndexItem from './featured_photos_index_item';
 var imagesLoaded = require("imagesloaded");
 
@@ -22,7 +22,7 @@ class PhotosIndex extends React.Component{
         if (this.props.followPhotos.length > 0) {
             let sortedFollowPhotos = this.props.followPhotos.sort((a, b) => (a.like_ids.length < b.like_ids.length) ? 1 : -1);
             followList = sortedFollowPhotos.map(photo => {
-                return <PhotosIndexItem photo={photo} key={photo.id * 1000} />
+                return <PhotosIndexItemContainer photo={photo} key={photo.id * 1000} />
             })
             followSection = (
                 <div className="follow-photo-container">  

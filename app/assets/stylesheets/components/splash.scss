@@ -187,11 +187,46 @@
 }
 
 .follow-items-list-items {
+    position: relative;
     height: 350px;
     width: auto;
     border: 10px solid black;
     border-left: 5px solid black;
     border-right: 5px solid black;
+}
+
+.follow-author-info {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    background: white;
+}
+
+.follow-avatar-container{
+    border-radius: 50%;
+    overflow: hidden;
+    height: 40px;
+    width: 40px;
+}
+
+.follow-avatar{
+    height: 100%;
+    object-fit: cover;
+}
+
+.follow-modal{
+    position: absolute;
+    bottom: 0;
+    height: 24%;
+    width: 100%;
+    background: white;
+}
+
+.follow-modal:hover{
+    height: 100%;
+    transition: ease-in .3s;
 }
 
 body::-webkit-scrollbar-track {
