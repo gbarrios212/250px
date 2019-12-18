@@ -18,7 +18,13 @@ class Manage extends React.Component {
 
     render(){
         // // ;
-        let editForm = <span className="item-f"></span>
+        let text = !this.props.photos.length ? "Upload a photo to get started." : "Select a photo to get started."
+ 
+        let editForm = (
+          <span className="item-f">
+            <p className="item-f-text">{text}</p>
+          </span>
+        );
 
         if (this.props.activePhotoId) {
             editForm = (
