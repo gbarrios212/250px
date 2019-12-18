@@ -7,7 +7,7 @@
     margin: 0 auto;
     padding: 0 0 32px;
     background-color: transparent;
-    width: calc(100%);
+    width: 1000px;
     background: green;
     top: 150px;
     height: auto;
@@ -57,7 +57,7 @@
 .save-user-changes-button{
     position: absolute;
     top: calc(100% - 34px);
-    right: 0;
+    right: -85px;
     color: #fff;
     background-color: #0870d1;
     border-radius: 28px;
@@ -100,7 +100,7 @@
     cursor: pointer;
     margin-right: 180px;
     margin-bottom: 60px;
-    right: 200px;
+    right: 110px;
 }
 
 .return-button:hover{
