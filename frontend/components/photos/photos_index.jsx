@@ -23,13 +23,16 @@ class PhotosIndex extends React.Component{
             let sortedFollowPhotos = this.props.followPhotos.sort((a, b) => (a.like_ids.length < b.like_ids.length) ? 1 : -1);
             followList = sortedFollowPhotos.map(photo => {
                 return <PhotosIndexItemContainer photo={photo} key={photo.id * 1000} />
-            })
+            }).slice(0, 5);
             followSection = (
                 <div className="follow-photo-container">  
                     {followList}
                 </div>
             )
+        } else {
+            followSection = <div></div>
         }
+
         let sorted = this.props.photos.sort((a, b) => (a.like_ids.length < b.like_ids.length) ? 1 : -1);
         let photosList = sorted.map(photo => {
             return <FeaturedPhotosIndexItem photo={photo} key={photo.id}/>
@@ -39,6 +42,17 @@ class PhotosIndex extends React.Component{
                 {photosList}
             </div>
         )
+
+        let UsersYouFollow = <div></div>
+
+        if (this.props.followPhotos.length > 0) {
+            UsersYouFollow = (
+              <ul className="photos-index-3">
+                <h1 className="follow-section-header"> By users you follow </h1>
+                {followSection}
+              </ul>
+            );
+        } 
 
         var $featuredGrid = $('.featured-photo-container');
         $featuredGrid.imagesLoaded(function() {
@@ -54,10 +68,7 @@ class PhotosIndex extends React.Component{
           <div className="photos-index-container">
             {/* <div className="home-feed-text">Home Feed</div> */}
             <div className="home-feed-text">The Roost</div>
-            <ul className="photos-index-3">
-              <h1 className="follow-section-header"> By users you follow </h1>
-              {followSection}
-            </ul>
+            {UsersYouFollow}
             <div className="featured-photos-index">
               <h1 className="featured-photo-section-header"> Featured </h1>
               {featuredPhotoSection}

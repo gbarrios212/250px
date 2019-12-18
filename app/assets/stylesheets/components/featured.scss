@@ -14,11 +14,12 @@
 }
 
 .featured-photo-section-header{
+    display: inline-block;
     font-size: 30px;
     line-height: 40px;
     letter-spacing: -0.32px;
     position: relative;
-    left: 40px;
+    left: 50%;
     top: 40px;
     font-weight: bold;
     text-align: center;
