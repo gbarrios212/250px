@@ -25,8 +25,7 @@ class PhotosIndex extends React.Component{
                 return <PhotosIndexItem photo={photo} key={photo.id * 1000} />
             })
             followSection = (
-                <div className="follow-section">
-                    <h1 className="follow-section-header"> Users you like </h1> 
+                <div className="follow-photo-container">  
                     {followList}
                 </div>
             )
@@ -56,7 +55,8 @@ class PhotosIndex extends React.Component{
             {/* <div className="home-feed-text">Home Feed</div> */}
             <div className="home-feed-text">The Roost</div>
             <ul className="photos-index-3">
-                {followSection}
+              <h1 className="follow-section-header"> Users you like </h1>
+              {followSection}
             </ul>
             <div className="featured-photos-index">
               <h1 className="featured-photo-section-header"> Featured </h1>
