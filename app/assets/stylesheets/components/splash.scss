@@ -164,6 +164,7 @@
     position: relative;
     /* align-items: center; */
     flex-direction: column;
+    box-shadow: 0px 0px 5px 0px #888888;
 }
 
 .photos-index-2{
@@ -231,7 +232,7 @@
     font-size: 25px;
 }
 
-.follow-items-list-items:hover > .follow-modal{
+.follow-items-list-items:hover .follow-modal{
     height: 100%;
     transition: ease-in .3s;
 }
@@ -248,7 +249,7 @@
     flex-direction: column;
     align-items: center;
     position: relative;
-    top: 106%;
+    top: 21%;
 }
 
 @keyframes fadeIn{
