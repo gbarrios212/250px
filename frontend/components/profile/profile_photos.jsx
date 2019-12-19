@@ -11,7 +11,16 @@ class ProfilePhotos extends React.Component{
     }
 
     componentDidMount() {
-        this.props.fetchPhotos();
+        this.props.fetchPhotos().then(() => {
+            var $grid = $(".profile-grid");
+            $grid.imagesLoaded(function() {
+                $grid.masonry({
+                itemSelector: ".profile-thumbnail",
+                columnWidth: 400,
+                fitWidth: true
+                });
+            });
+        });
     }
 
     render() {
@@ -44,15 +53,6 @@ class ProfilePhotos extends React.Component{
                     </Link>
                   </div>
                 );
-        })
-
-        var $grid = $('.profile-grid');
-            $grid.imagesLoaded( function() {
-                $grid.masonry({
-                    itemSelector: '.profile-thumbnail',
-                    columnWidth: 400,
-                    fitWidth: true
-          })
         })
 
         return(
