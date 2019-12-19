@@ -2,7 +2,10 @@
 //click updates string 
 //edit form grabs string from ui active photo 
 
-import { RECEIVE_ACTIVE_PHOTO_ID, CLEAR_ACTIVE_PHOTO_ID } from '../actions/active_photo_actions';
+import { 
+    RECEIVE_ACTIVE_PHOTO_ID, 
+    CLEAR_ACTIVE_PHOTO_ID 
+} from '../actions/active_photo_actions';
 
 const activePhotoReducer = (state = null, action) => {
     Object.freeze(state);

@@ -6,7 +6,6 @@ import { receiveActivePhotoId, clearActivePhotoId } from '../../actions/active_p
 import { fireSuccess, clearSuccess } from '../../actions/alert_actions';
 
 const msp = (state, ownProps) =>{
-    // // ;
     let currentUser = state.entities.users[state.session.id];
     let photoId = state.ui.activePhotoId;
     let photo = state.entities.photos[photoId] || { name: "", 

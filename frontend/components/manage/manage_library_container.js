@@ -6,12 +6,10 @@ import { selectUserPhotos } from '../../reducers/selectors';
 import { receiveActivePhotoId, clearActivePhotoId } from '../../actions/active_photo_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
 
-const msp = (state) => {
-    // // ; 
+const mapStateToProps = (state) => {
     let activePhotoId = state.ui.activePhotoId;
     let currentUser = state.entities.users[state.session.id];
     return({
-        // photos: currentUser.photo_ids.map(id => state.entities.photos[id])
         photos: selectUserPhotos(state, currentUser),
         activePhotoId
     })

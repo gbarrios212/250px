@@ -8,11 +8,6 @@ class PhotoEditForm extends React.Component {
       this.state = { photo: this.props.photo, disabled: false }
       this.handleSubmit = this.handleSubmit.bind(this);
       this.confirmDelete = this.confirmDelete.bind(this);
-      this.toggleDisable = this.toggleDisable.bind(this);
-    }
-
-    toggleDisable(){
-      
     }
 
     componentDidUpdate(prevProps){

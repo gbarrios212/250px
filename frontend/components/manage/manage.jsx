@@ -7,18 +7,16 @@ import PhotoEditFormContainer from '../photos/photo_edit_form_container';
 class Manage extends React.Component {
     constructor(props){
         super(props)
-        // // ;
         this.state = { activePhoto: this.props.activePhoto }
     }
 
     componentDidMount() {
-        // // ;
         this.props.fetchPhotos();
     }
 
     render(){
-        // // ;
-        let text = !this.props.photos.length ? "Upload a photo to get started." : "Select a photo to get started."
+        let text = !this.props.photos.length ? "Upload a photo to get started." 
+            : "Select a photo to get started."
  
         let editForm = (
           <span className="item-f">
@@ -33,6 +31,7 @@ class Manage extends React.Component {
               </span>
             );
         }
+        
         return (
             <div>
                 <span className="manage-grid">
