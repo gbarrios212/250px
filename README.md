@@ -12,6 +12,43 @@ Created by
 
 500chix is a social networking website that allows bird enthusiasts to share their favorite pictures of birds and discover new talent in the world of nature photography. 
 
+
+## Technologies
+ 
+500Chix is built with Node, Rails, React, React-Redux, PostgreSQL, and AWS image hosting. 
+
+
+---
+
+## Key Features
+
+### Photo Display 
+
+![alt text](https://i.imgur.com/rrxmcMa.png)
+
+
+* Proper photo display is paramount to 500chix.  Photographs of all aspect ratios are accomodated.  Every photo gets its own display page, where it is set neatly within a matte box with neutral coloring to ensure no color is influenced by the surrounding containers. 
+
+* Within a photo show page, users can easily view important information about the photograph.  Photo title, author, location, as well as specific information pertaining to that shot is included neatly in a column to the left.  Users are given the option to like a photo and increase its popularity (and, ultimately, its viewability in the home page).
+
+* To the right, viewers can see a collection of comments related to the picture.  Signed in users may add to the comment thread.  Here, users may easily navigate to another user's profile to view their contributions to the community.   
+
+
+### Photo Edit
+* Beyond visually appealing backdrops, 500chix leverages React-Redux's global state management system to provide a seamless user experience.  This is best exemplified by the manage uploads page. Here, users can upload, edit, and delete their own photographs.  
+
+![alt text](https://i.imgur.com/6MnMTj7.png)
+
+* Uploads are done easily via a modal.  Users can view image previews as well as add information to their photograph.  At least a photo name and image is required for submission. 
+
+* Photo editing is made simple for the user via the manage page.  Here, a user can easily navigate through their photos and watch the edit panel on the right populate with the associated information.  Clicking between photos allows for quick edits across multiple images. 
+
+![alt text](https://i.imgur.com/0jfaoIK.png)
+![alt text](https://i.imgur.com/8BSQv4z.png)
+
+* In order to provide the user with easy navigation through the different components of our app, React and Redux proved essential.  The edit form is a great example of this.  In order to implement its responsiveness, a slice of state dedicated toward keeping track of a currently selected photo was added to our state.  On click, a photo's ID was passed to this slice, which was then accessed by our edit form container in order to properly render the information related to this image.  Changes were reflected in realtime, and upon inspection of the photo, one could see the changes had indeed been saved. 
+
+
 ## Functionality
 
 ### User Auth
@@ -67,43 +104,4 @@ Created by
 * Users can view author name and photo title under each thumbnail 
 * Photos adjust according to screen size
 
-
-
-## Technologies
- 
-500Chix is built with Node, Rails, React, React-Redux, PostgreSQL, and AWS image hosting. 
-
-
----
-
-## Key Features
-
-### Photo Display 
-
-![alt text](https://i.imgur.com/rrxmcMa.png)
-
-
-* Proper photo display is paramount to 500chix.  Photographs of all aspect ratios are accomodated.  Every photo gets its own display page, where it is set neatly within a matte box with neutral coloring to ensure no color is influenced by the surrounding containers. 
-
-* Within a photo show page, users can easily view important information about the photograph.  Photo title, author, location, as well as specific information pertaining to that shot is included neatly in a column to the left.  Users are given the option to like a photo and increase its popularity (and, ultimately, its viewability in the home page).
-
-* To the right, viewers can see a collection of comments related to the picture.  Signed in users may add to the comment thread.  Here, users may easily navigate to another user's profile to view their contributions to the community.   
-
-
-### Photo Edit
-leverage state management to create session information that maintained the current selected photo to be edited 
-    Coordination between frontend and backend to create an experience that caters toward the visually oriented followers of birding and art. 
-
-* Each user is given their own manage page.  This is the heart of 500chix, where users can upload, edit, and delete their own photographs.  
-
-![alt text](https://i.imgur.com/6MnMTj7.png)
-
-* Uploads are done easily via a modal.  Users can view image previews as well as add information to their photograph.  At least a photo name and image is required for submission. 
-
-* Photo editing is made simple for the user via the manage page.  Here, a user can easily navigate through their photos and watch the edit panel on the right populate with the associated information.  Clicking between photos allows for quick edits across multiple images. 
-
-![alt text](https://i.imgur.com/0jfaoIK.png)
-![alt text](https://i.imgur.com/8BSQv4z.png)
-
-* In order to provide the user with easy navigation through the different components of our app, React and Redux proved essential.  The edit form is a great example of this.  In order to implement its responsiveness, a slice of state dedicated toward keeping track of a currently selected photo was added to our state.  On click, a photo's ID was passed to this slice, which was then accessed by our edit form container in order to properly render the information related to this image.  Changes were reflected in realtime, and upon inspection of the photo, one could see the changes had indeed been saved. 
 
