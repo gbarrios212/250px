@@ -22,7 +22,7 @@ class ProfilePhotos extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.currentUser !== prevProps.currentUser) {
+    if (this.props.currentId !== prevProps.currentId) {
       var $grid = $(".profile-grid");
       $grid.imagesLoaded(function() {
         $grid.masonry({
