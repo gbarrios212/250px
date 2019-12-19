@@ -181,6 +181,7 @@
 .follow-photo-container {
     display: flex;
     overflow: scroll;
+    overflow-y: hidden;
     position: relative;
     width: 100%;
     border-left: 10px solid black;
