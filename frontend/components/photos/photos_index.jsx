@@ -11,7 +11,17 @@ class PhotosIndex extends React.Component{
     }
 
     componentDidMount() {
-        this.props.fetchPhotos();
+        this.props.fetchPhotos().then(() => {
+          var $featuredGrid = $('.featured-photo-container');
+          $featuredGrid.imagesLoaded(function() {
+            $featuredGrid.masonry({
+              itemSelector: '.featured-photo-item',
+              columnWidth: 500,
+              fitWidth: true,
+              gutter: 10
+            });
+          });
+        });
         this.props.fetchAllUsers();
     }
 
@@ -54,15 +64,7 @@ class PhotosIndex extends React.Component{
             );
         } 
 
-        var $featuredGrid = $('.featured-photo-container');
-        $featuredGrid.imagesLoaded(function() {
-          $featuredGrid.masonry({
-            itemSelector: '.featured-photo-item',
-            columnWidth: 500,
-            fitWidth: true,
-            gutter: 10
-          });
-        });
+
 
         return (
           <div className="photos-index-container">
