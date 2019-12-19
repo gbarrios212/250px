@@ -1,6 +1,6 @@
 # 500chix
 
-![alt text](https://i.imgur.com/GpBLL0a.jpg)
+![alt text](https://imgur.com/RBIVG0h.jpg)
 
 [Visit Here!](https://app500chix.herokuapp.com/#/)
 
