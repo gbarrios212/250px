@@ -166,6 +166,7 @@
     /* align-items: center; */
     flex-direction: column;
     box-shadow: 0px 0px 5px 0px #888888;
+    align-items: center;
 }
 
 .photos-index-2{
@@ -183,11 +184,13 @@
     overflow: scroll;
     overflow-y: hidden;
     position: relative;
-    width: 100%;
-    border-left: 10px solid black;
-    border-right: 10px solid black;
+    border: 5px solid black;
+    // border-left: 10px solid black;
+    // border-right: 10px solid black;
     height: 74%;
     animation: loadPhotos 1s;
+    width: 100%;
+    max-width: 2000px;
 }
 
 @keyframes loadPhotos{
@@ -201,8 +204,8 @@
     height: 350px;
     width: auto;
     border: 10px solid black;
-    border-left: 5px solid black;
-    border-right: 5px solid black;
+    // border-left: 5px solid black;
+    // border-right: 5px solid black;
 }
 
 .follow-author-info {
