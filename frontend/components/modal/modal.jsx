@@ -2,6 +2,7 @@ import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import CreatePhotosFormContainer from '../photos/create_photos_form_container'
+import FollowersListContainer from '../profile/followers_list';
 
 function Modal({modal, closeModal}) {
   if (!modal) {
@@ -11,6 +12,9 @@ function Modal({modal, closeModal}) {
   switch (modal) {
     case 'upload':
       component = <CreatePhotosFormContainer />;
+      break;
+    case 'followers':
+      component = <FollowersListContainer/>;
       break;
     default:
       return null;
