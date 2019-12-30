@@ -29,10 +29,20 @@
 .featured-photo-container{
     display: grid;
     position: relative;
+    opacity: 0;
     width: 100%;
     margin: 0 auto;
     margin-top: 100px;
     min-height: 1000px;
+    animation: loadPhotos 1s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes loadPhotos{
+    0% { opacity: 0;}
+    // 75% { opacity: .2}
+    100% {opacity: 1;}
 }
 
 

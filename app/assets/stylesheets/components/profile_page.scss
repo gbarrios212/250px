@@ -95,10 +95,19 @@
 .profile-grid{
   display: grid;
   position: relative;
+  opacity: 0;
   top: 100px;
   width: 100%;
   margin: 0 auto;
   margin-bottom: 100px;
+  animation: loadPhotos 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes loadPhotos{
+  0% { opacity: 0;}
+    // 75% { opacity: .2}
+  100% {opacity: 1;}
 }
 
 .profile-thumbnail{
