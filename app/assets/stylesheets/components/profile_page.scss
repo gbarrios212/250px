@@ -102,10 +102,12 @@
   margin-bottom: 100px;
   animation: loadPhotos 1s;
   animation-fill-mode: forwards;
+  animation-delay: .5s;
 }
 
 @keyframes loadPhotos{
   0% { opacity: 0;}
+  // 70% { opacity: 0;}
     // 75% { opacity: .2}
   100% {opacity: 1;}
 }
