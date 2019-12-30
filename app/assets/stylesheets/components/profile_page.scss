@@ -392,6 +392,16 @@
   font-weight: lighter;
 }
 
+.details-list-followers:hover{
+  color: $blue;
+  cursor: pointer;
+}
+
+.details-list-following:hover{
+  color: $blue;
+  cursor: pointer;
+}
+
 // for when i have followers set up 
 
 // .details-list-followers:after{
