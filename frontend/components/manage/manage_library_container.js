@@ -17,7 +17,7 @@ const msp = (state) => {
 
 const mdp = (dispatch) => ({
     fetchPhotos: () => dispatch(fetchPhotos()),
-    modalSelect: () => dispatch(openModal('upload')),
+    // modalSelect: () => dispatch(openModal('upload')),
     receiveActivePhotoId: (id) => dispatch(receiveActivePhotoId(id))  
 })
 
