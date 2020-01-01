@@ -1,4 +1,4 @@
-.followers-list {
+.followers-list, .followings-list {
     // height: 700px;
     min-height: 250px;
     width: 600px;
@@ -7,7 +7,7 @@
     border-radius: 2px;
 }
 
-.follower-item {
+.follower-item,  .following-item{
     padding: 20px;
     border-bottom: 1px solid $blue;
     list-style: none;
@@ -15,15 +15,15 @@
     align-items: center;
 }
 
-.follower-name {
+.follower-name, .following-name{
     
 }
 
-.follower-name:hover {
+.follower-name:hover, .following-name:hover {
     color: $blue;
 }
 
-.follower-avatar-container{
+.follower-avatar-container, .following-avatar-container{
     font-size: 30px;
     position: relative;
     // left: -9px;
@@ -38,12 +38,12 @@
     margin-right: 20px;
 }
 
-.follower-avatar{
+.follower-avatar, .following-avatar{
     width: 100%;
     height: 32px;
 }
 
-.no-followers {
+.no-followers, .no-followings {
     text-align: center;
     // padding-top: 250px;
     padding: 100px;

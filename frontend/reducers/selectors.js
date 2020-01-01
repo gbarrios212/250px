@@ -14,3 +14,8 @@ export const selectUserFollowers = (state, user) => {
     let followers = user ? user.follower_ids.map(id => state.entities.users[id]) : [];
     return followers.filter(follower => follower !== undefined);
 }
+
+export const selectUserFollowings = (state, user) => {
+    let followings = user ? user.following_ids.map(id => state.entities.users[id]) : [];
+    return followings.filter(following => following !== undefined);
+}

@@ -3,6 +3,7 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import CreatePhotosFormContainer from '../photos/create_photos_form_container'
 import FollowersListContainer from '../profile/followers_list_container';
+import FollowingListContainer from '../profile/following_list_container';
 
 function Modal({payload, closeModal}) {
   if (!payload) {
@@ -15,6 +16,9 @@ function Modal({payload, closeModal}) {
       break;
     case 'followers':
       component = <FollowersListContainer followers={payload.followers}/>;
+      break;
+    case 'followings':
+      component = <FollowingListContainer followings={payload.followings}/>;
       break;
     default:
       return null;

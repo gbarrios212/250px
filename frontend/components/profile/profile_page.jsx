@@ -121,7 +121,9 @@ class ProfilePage extends React.Component{
                   >
                     {this.props.profileUser.follower_ids.length} Followers
                   </li>
-                  <li className="details-list-following">
+                  <li className="details-list-following"
+                    onClick={() => this.props.openModal({modal: "followings", followings: this.props.followings})}
+                  >
                     {this.props.profileUser.following_ids.length} Following
                   </li>
                   <li>{follow}</li>
