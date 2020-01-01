@@ -4,17 +4,17 @@ import { connect } from 'react-redux';
 import CreatePhotosFormContainer from '../photos/create_photos_form_container'
 import FollowersListContainer from '../profile/followers_list_container';
 
-function Modal({modal, closeModal}) {
-  if (!modal) {
+function Modal({payload, closeModal}) {
+  if (!payload) {
     return null;
   }
   let component;
-  switch (modal) {
+  switch (payload.modal) {
     case 'upload':
       component = <CreatePhotosFormContainer />;
       break;
     case 'followers':
-      component = <FollowersListContainer/>;
+      component = <FollowersListContainer followers={payload.followers}/>;
       break;
     default:
       return null;
@@ -30,7 +30,7 @@ function Modal({modal, closeModal}) {
 
 const mapStateToProps = state => {
   return {
-    modal: state.ui.modal
+    payload: state.ui.modal
   };
 };
 

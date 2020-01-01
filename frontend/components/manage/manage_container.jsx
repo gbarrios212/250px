@@ -21,7 +21,7 @@ const mdp = dispatch => {
     return ({
       fetchPhotos: () => dispatch(fetchPhotos()),
       modalSelect: (
-        <button className="upload-button" onClick={() => dispatch(openModal('upload'))}>
+        <button className="upload-button" onClick={() => dispatch(openModal({modal:'upload'}))}>
           Upload to Library
         </button>
       ),

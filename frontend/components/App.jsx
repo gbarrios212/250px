@@ -25,11 +25,7 @@ const App = () => (
     </header>
       <AuthRoute path="/signup" component={SignUpFormContainer}/>
       <AuthRoute path="/login" component={LoginFormContainer}/>
-      
       <Route exact path="/" component={SplashContainer} />
-      {/* <Route exact path="/" component={PhotosIndexContainer} /> */}
-
-      {/* <Route path="/photos/:photoId/comments" component={CommentsIndexContainer} /> */}
       <Route path="/photos/:photoId" component={PhotoShowContainer} />
       <ProtectedRoute exact path="/photos/:photoId/edit" component={PhotoEditFormContainer} />
       <ProtectedRoute exact path="/manage/upload" component={ManageContainer} />
@@ -39,8 +35,6 @@ const App = () => (
     <footer>
       <Route path="/" component={Footer} />
     </footer>
-      {/* <Route exact path="/photos/:photoId" component={CommentsIndexContainer} /> */}
-
   </>
 );
 

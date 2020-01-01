@@ -14,7 +14,8 @@ const msp = (state, ownProps) => {
   return ({
     currentUser: currentUser,
     photos: photos,
-    profileUser: profileUser
+    profileUser: profileUser,
+    followers: followers
   })
 }
 
@@ -23,7 +24,7 @@ const mdp = (dispatch) => {
       fetchPhotos: () => dispatch(fetchPhotos()),
       fetchUser: (id) => dispatch(fetchUser(id)),
       fetchAllUsers: () => dispatch(fetchAllUsers()), 
-      openModal: (modal) => dispatch(openModal(modal))
+      openModal: (payload) => dispatch(openModal(payload))
     });
 };
   
