@@ -109,16 +109,15 @@ class ProfilePage extends React.Component{
                 <div className="buttons-wrapper">{settings}</div>
               </div>
               <div className="user-details">
-                <h1>
-                  {this.props.profileUser.username}
-                </h1>
+                <h1>{this.props.profileUser.username}</h1>
                 {bio}
                 <ul className="stat-details">
                   <li className="details-list-photo">
                     {this.props.profileUser.photo_ids.length}
                   </li>
-                  <li className="details-list-followers"
-                    onClick={() => this.props.openModal()}
+                  <li
+                    className="details-list-followers"
+                    onClick={() => this.props.openModal("followers", this.props.followers)}
                   >
                     {this.props.profileUser.follower_ids.length} Followers
                   </li>
@@ -138,12 +137,17 @@ class ProfilePage extends React.Component{
                 <Tab className="tab-single">ABOUT</Tab>
               </TabList>
               <TabPanel>
-                <ProfilePhotosContainer photos={this.props.photos} id={this.props.profileUser.id}/>
+                <ProfilePhotosContainer
+                  photos={this.props.photos}
+                  id={this.props.profileUser.id}
+                />
               </TabPanel>
               <TabPanel>
                 <div className="about-tab">
                   <section className="about-info">
-                    <div>Name: {firstName} {lastName}</div>
+                    <div>
+                      Name: {firstName} {lastName}
+                    </div>
                     <div>City: {city}</div>
                     <div>State: {state}</div>
                     <div>Country: {country}</div>
