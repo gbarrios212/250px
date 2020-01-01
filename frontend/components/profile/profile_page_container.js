@@ -5,7 +5,6 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 import React from 'react';
 import { selectUserPhotos } from '../../reducers/selectors';
 import { fetchUser, fetchAllUsers } from '../../actions/user_actions';
-import { openModal } from '../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
   let currentUser = state.entities.users[state.session.id]
@@ -23,7 +22,7 @@ const mdp = (dispatch) => {
       fetchPhotos: () => dispatch(fetchPhotos()),
       fetchUser: (id) => dispatch(fetchUser(id)),
       fetchAllUsers: () => dispatch(fetchAllUsers()), 
-      openModal: () => dispatch(openModal())
+      openModal: () => dispatch(openModal('followers'))
     });
 };
   

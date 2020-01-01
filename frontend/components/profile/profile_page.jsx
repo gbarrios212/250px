@@ -19,9 +19,7 @@ class ProfilePage extends React.Component{
 
     componentDidUpdate(prevProps) {
         if (prevProps.match.params.userId !== this.props.match.params.userId){
-            // this.props.fetchAllUsers();
             this.props.fetchPhotos();
-             ;
             this.props.fetchUser(this.props.match.params.userId);
         }
       }
@@ -104,7 +102,6 @@ class ProfilePage extends React.Component{
                       src={this.props.profileUser.profilePictureUrl}
                       alt=""
                     />
-                    {/* <i className="fas fa-user-circle profile-avatar"></i> */}
                   </div>
                 </div>
               </div>
@@ -113,7 +110,6 @@ class ProfilePage extends React.Component{
               </div>
               <div className="user-details">
                 <h1>
-                  {/* {this.props.profileUser.username} */}
                   {this.props.profileUser.username}
                 </h1>
                 {bio}
@@ -121,7 +117,9 @@ class ProfilePage extends React.Component{
                   <li className="details-list-photo">
                     {this.props.profileUser.photo_ids.length}
                   </li>
-                  <li className="details-list-followers">
+                  <li className="details-list-followers"
+                    onClick={() => this.props.openModal()}
+                  >
                     {this.props.profileUser.follower_ids.length} Followers
                   </li>
                   <li className="details-list-following">
@@ -131,15 +129,6 @@ class ProfilePage extends React.Component{
                 </ul>
               </div>
             </div>
-            {/* <div className="tabs-container">
-                <ul className="tabs">
-                <li>
-                    <Link to={`/users/${this.props.profileUser.id}`}>PHOTOS</Link>
-                </li>
-                    
-                    <li>ABOUT</li>
-                </ul>
-            </div> */}
             <Tabs
               className="react-tabs"
               selectedTabClassName="tab-single-selected"
@@ -148,10 +137,6 @@ class ProfilePage extends React.Component{
                 <Tab className="tab-single">PHOTOS</Tab>
                 <Tab className="tab-single">ABOUT</Tab>
               </TabList>
-
-              {/* <TabPanel>{publishedArt}</TabPanel>
-              <TabPanel>{publishedArticles}</TabPanel>
-              <TabPanel>{recentlyLikedTab}</TabPanel> */}
               <TabPanel>
                 <ProfilePhotosContainer photos={this.props.photos} id={this.props.profileUser.id}/>
               </TabPanel>
