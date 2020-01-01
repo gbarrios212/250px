@@ -9,9 +9,11 @@ class FollowsList extends React.Component {
     render() {
         let followerList;
         if (this.props.followers) {
-            followerList = this.props.followers.map(follower => {
-                return (
-                  <li className="follower-item">
+            if (this.props.followers.length !== 0) {
+
+                followerList = this.props.followers.map(follower => {
+                    return (
+                        <li className="follower-item">
                     <div className="follower-avatar-container">
                         <img src={follower.profilePictureUrl} className="follower-avatar"></img>
                     </div>
@@ -19,8 +21,11 @@ class FollowsList extends React.Component {
                         <div className="follower-name">{follower.username}</div>
                     </Link>
                   </li>
-                );
-            })
+                    );
+                })
+            } else {
+                followerList = <div className="no-followers">This user does not have any followers.</div>
+            }
         }
         return (
            <div className="followers-list">
