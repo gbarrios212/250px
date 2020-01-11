@@ -4,25 +4,18 @@ import { fetchPhotos } from '../../actions/photo_actions';
 import { fetchAllUsers } from '../../actions/user_actions';
 
 const msp = (state) => {
-    //  ;
     let currentUser = state.entities.users[state.session.id];
     let photos = Object.values(state.entities.photos);
     let followPhotos = [];
 
-    // if (photos.length > 0) {
         if (currentUser.following_ids.length > 0) {
             photos.forEach(photo => {
                 let authorId = photo.author_id;
                 if (currentUser.following_ids.includes(authorId)) {
                     followPhotos.push(photo);
-                    // photos.pull(photo);
                 }
             })
-        }
-    // }
-
-
-    // if 
+        } 
         return ({
         photos,
         followPhotos
