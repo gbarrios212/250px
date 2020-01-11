@@ -33,7 +33,7 @@ class PhotosIndex extends React.Component{
             let sortedFollowPhotos = this.props.followPhotos.sort((a, b) => (a.like_ids.length < b.like_ids.length) ? 1 : -1);
             followList = sortedFollowPhotos.map(photo => {
                 return <PhotosIndexItemContainer photo={photo} key={photo.id * 1000} />
-            }).slice(0, 5);
+            }).slice(0, 9);
             followSection = (
                 <div className="follow-photo-container">  
                     {followList}
